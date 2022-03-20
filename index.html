@@ -91,7 +91,29 @@
         		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/浏览器/" class="animsition-link">浏览器<small>(1)</small></a></li>
+				    <li><a href="/categories/Js相关/" class="animsition-link">Js相关<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/Promise相关/" class="animsition-link">Promise相关<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/React相关/" class="animsition-link">React相关<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/Ts相关/" class="animsition-link">Ts相关<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/Uni-app相关/" class="animsition-link">Uni-app相关<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Vue相关/" class="animsition-link">Vue相关<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/Webpack相关/" class="animsition-link">Webpack相关<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/axios相关/" class="animsition-link">axios相关<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/框架通用/" class="animsition-link">框架通用<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/浏览器/" class="animsition-link">浏览器<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/计划中的HC/" class="animsition-link">计划中的HC<small>(2)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -214,7 +236,37 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2022/03/20/first/">first</a></h3>
+                    <h3><a href="/2022/03/20/算法相关/概述/"></a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-20T15:12:19.423Z" itemprop="datePublished">
+          2022-03-20
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/20/算法相关/概述/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/20/Js相关/箭头函数/">箭头函数</a></h3>
                     <span>
                         <span class="post-meta">
       <time datetime="2022-03-20T12:45:36.000Z" itemprop="datePublished">
@@ -227,14 +279,60 @@
                 <div class="col-md-8">
                     <p>
                       
-                        第一章内容
-我参考文献
+                        语法更加简洁、清晰
+箭头函数不会创建自己的this
+箭头函数继承而来的this指向永远不变：
+箭头函数没有自己的this，它会捕获自己在定义时（注意，是定义时，不是调用时）所处的外层执行环境的this，并继承这个this值。所以，箭头函数中this的指向在它被定义的时候就已经确定了，之后永远不会改变。
+call()&#x2F;.apply()&#x2F;.bind()无法改变箭头函数中this的指向
+箭头函数不能作为构造函数使用
+箭头函
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/20/Js相关/箭头函数/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/20/Js相关/类、原型、原型链/">类，原型，原型链</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-20T12:45:36.000Z" itemprop="datePublished">
+          2022-03-20
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        1.new调用函数和普通函数有什么区别
+在内存中创建新的一个对象（空对象）；
 
+这个对象的__proto__属性（对象的原型是隐式原型）会被赋值为该构造函数的prototype属性
+Bar._proto_ &#x3D;&#x3D;&#x3D; Function.prototype
+
+构造函数内部的this，会指向创建出来的新对象；
+
+执行函数的内部代码（函数体代码）；
+
+如果构造函数没有返回非空对象，则返回创建出来的对象；
+
+&#96;
                       
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2022/03/20/first/">Read More...</a>
+                        <a href="/2022/03/20/Js相关/类、原型、原型链/">Read More...</a>
                     </p>
                     
                 </div>
@@ -246,32 +344,30 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2022/03/20/调用帧栈/">first</a></h3>
+                    <h3><a href="/2022/03/20/Promise相关/A+规范/">A+ 规范</a></h3>
                     <span>
                         <span class="post-meta">
       <time datetime="2022-03-20T12:45:36.000Z" itemprop="datePublished">
           2022-03-20
       </time>
     
-    
-    | 
-    <a href='/tags/栈帧/'>栈帧</a>
-    
-    
 </span>
                     </span>
                 </div>
                 <div class="col-md-8">
                     <p>
                       
-                        每一次的函数调用的，都会在执行栈中，创造一个函数执行帧，如果有递归的算法，函数帧栈将会不断的叠加上，到最后，满足return条件，在从栈顶向下 “归”到最低栈帧，同时每次最上面的函数调用栈也会一层一层消失。
-所以说以前的react，都是深度递归渲染组件实现的，无法中断执行。
-之后react使用链表，并且保存着链表节点的引用（current，工作到了哪个节点），current不断变化，上一个工作节点完成之后，函数调用栈就会消失，进入下一个
+                        PromiseA+规范讲解PromiseA+规范前, 咱们先来了解一下这些术语, 以便在后续提到的时候有明确且统一的概念.
+术语
+promise 是一个有then方法的对象或者是函数，行为遵循本规范
+thenable 是一个有then方法的对象或者是函数
+value 是promise状态成功时的值，也就是resolve的参数, 包括各种数据类型, 也包括undefined&#x2F;thenable或者是 promise
+reason 
                       
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2022/03/20/调用帧栈/">Read More...</a>
+                        <a href="/2022/03/20/Promise相关/A+规范/">Read More...</a>
                     </p>
                     
                 </div>
@@ -283,10 +379,10 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2022/03/20/hello-world/">Hello World</a></h3>
+                    <h3><a href="/2022/03/20/Promise相关/手写Promise/">手写promise</a></h3>
                     <span>
                         <span class="post-meta">
-      <time datetime="2022-03-20T12:42:59.275Z" itemprop="datePublished">
+      <time datetime="2022-03-20T12:45:36.000Z" itemprop="datePublished">
           2022-03-20
       </time>
     
@@ -296,13 +392,168 @@
                 <div class="col-md-8">
                     <p>
                       
-                        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new p
+                        1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021031041051061071081091
                       
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2022/03/20/hello-world/">Read More...</a>
+                        <a href="/2022/03/20/Promise相关/手写Promise/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/20/Promise相关/拓展方法-limit/">limit-拓展方法</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-20T12:45:36.000Z" itemprop="datePublished">
+          2022-03-20
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        Promise-limit(限制并发数量promise)12345678910111213141516171819202122232425262728293031323334353637383940414243function promiseLimit(arr, maxCount) &#123;  let current = 0;  let callback = [];  for (let i = 0; i &lt; arr.lengt
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/20/Promise相关/拓展方法-limit/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/20/Promise相关/方法解读/">方法解读</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-20T12:45:36.000Z" itemprop="datePublished">
+          2022-03-20
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        原型上的方法：1、then： 1、用于链式调用
+ 2、只有promise的状态改变了，才会执行回调函数
+​     3、返回值是新的一个promise的值：普通值会被包裹成一个新的promise的resolve值，返回值为状态为成功的promise，如果传入的是参数为promise对象，返回的promise的状态为参数Promise的状态，promise结果是参数Promise的结果
+2、catch：​     1、promise A+
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/20/Promise相关/方法解读/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/20/Promise相关/面试题/">面试题</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-20T12:45:36.000Z" itemprop="datePublished">
+          2022-03-20
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        promise相关面试题：问：为什么promise resolve了一value, 最后输出的value值确是undefined12345const test = new MPromise((resolve, reject) =&gt; &#123;  setTimeout(() =&gt; resolve(&#x27;网络请求data&#x27;), 1000);&#125;).then(console.log);setTimeout
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/20/Promise相关/面试题/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/20/React相关/hook-1/">Hook</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-20T12:45:36.000Z" itemprop="datePublished">
+          2022-03-20
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        useState每一次渲染都有它自己的 props 和 state，每一次渲染都有它自己的事件处理函数。
+12const [count setState]= useState(0)//不想采用合并策略，使用回调函数更新方式，也称函数式更新const click=()=&gt;&#123;setState(count =&gt; count + 1 );//如此方法解决setState合并问题&#125;
+
+惰性初始化State，stat
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/20/React相关/hook-1/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2022/03/20/React相关/DIFF/">DIFF</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2022-03-20T12:45:36.000Z" itemprop="datePublished">
+          2022-03-20
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        三个前提：1. 只做同级比较，跨层级的dom不会复用2. 不同类型节点生成的dom树不同，此时会直接销毁老节点以及子孙节点，并新创建节点3. 通过key值，对元素diff的过程，提供复用的线索单节点DIFF多节点DIFF
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2022/03/20/React相关/DIFF/">Read More...</a>
                     </p>
                     
                 </div>
@@ -313,7 +564,7 @@ Quick StartCreate a new p
         
         <nav class="pagination" role="pagination">
           
-          
+          <a class="pull-right" href="/page/2/">Older Posts →</a>
         </nav>
     </div>
 </section>

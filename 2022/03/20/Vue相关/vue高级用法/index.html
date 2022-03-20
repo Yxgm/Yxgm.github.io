@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>vue高阶用法 | Hexo</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Hexo">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Js相关/" class="animsition-link">Js相关<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/Promise相关/" class="animsition-link">Promise相关<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/React相关/" class="animsition-link">React相关<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/Ts相关/" class="animsition-link">Ts相关<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/Uni-app相关/" class="animsition-link">Uni-app相关<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Vue相关/" class="animsition-link">Vue相关<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/Webpack相关/" class="animsition-link">Webpack相关<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/axios相关/" class="animsition-link">axios相关<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/框架通用/" class="animsition-link">框架通用<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/浏览器/" class="animsition-link">浏览器<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/计划中的HC/" class="animsition-link">计划中的HC<small>(2)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Hexo</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-03-20T12:45:36.000Z" itemprop="datePublished">
+          2022-03-20
+      </time>
+    
+</span>
+                <h1>vue高阶用法</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="vue进阶用法"><a href="#vue进阶用法" class="headerlink" title="vue进阶用法"></a>vue进阶用法</h2><h3 id="特征一：模板化"><a href="#特征一：模板化" class="headerlink" title="特征一：模板化"></a>特征一：模板化</h3><h4 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h4><h5 id="具名插槽：以name标识插槽的身份，从而在组件内部做到可区分"><a href="#具名插槽：以name标识插槽的身份，从而在组件内部做到可区分" class="headerlink" title="具名插槽：以name标识插槽的身份，从而在组件内部做到可区分"></a>具名插槽：以name标识插槽的身份，从而在组件内部做到可区分</h5><h5 id="作用域插槽：外部做结构描述勾勒，内部做传参"><a href="#作用域插槽：外部做结构描述勾勒，内部做传参" class="headerlink" title="作用域插槽：外部做结构描述勾勒，内部做传参"></a>作用域插槽：外部做结构描述勾勒，内部做传参</h5><h4 id="模板数据的二次加工"><a href="#模板数据的二次加工" class="headerlink" title="模板数据的二次加工"></a>模板数据的二次加工</h4><ol>
+<li>watch、computed &#x3D;&gt; 相应流过于复杂（computed赋值）</li>
+<li>方案一：函数 - 独立、管道 &#x2F; 无法响应式<br>方案二：<code>v-html </code><br>方案三：过滤器 - 追问：无上下文 <code>&#123;&#123; time | format &#125;&#125;</code></li>
+</ol>
+<h4 id="jsx-更自由的基于js书写"><a href="#jsx-更自由的基于js书写" class="headerlink" title="jsx 更自由的基于js书写"></a>jsx 更自由的基于js书写</h4><p>vue的编译路径：template-&gt;render-&gt;vm.render-&gt;vm.render() diff &#x3D;&gt; 可以使用性能优化方案</p>
+<p>如果在vue中直接写render写法，就不会走vue的template优化，导致性能下降.</p>
+<h3 id="特征二：组件化"><a href="#特征二：组件化" class="headerlink" title="特征二：组件化"></a>特征二：组件化</h3><h4 id="传统模板化"><a href="#传统模板化" class="headerlink" title="传统模板化"></a>传统模板化</h4><ul>
+<li><ol>
+<li>抽象复用</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>精简 &amp; 内部的功能聚合</li>
+</ol>
+</li>
+</ul>
+<p>组件的模版化是更重，更聚合的，对可视化的部分做复用</p>
+<p>逻辑复用的话就使用mixin或者extends</p>
+<h4 id="1-混入mixin-逻辑混入"><a href="#1-混入mixin-逻辑混入" class="headerlink" title="1. 混入mixin - 逻辑混入"></a>1. 混入mixin - 逻辑混入</h4><p>应用： 抽离公共逻辑（逻辑相同，模板不同，可用mixin）</p>
+<p>缺点： 数据来源不明确 </p>
+<p>合并策略<br>a. 递归合并（同一对象下的属性，也会合并）<br>b. data合并冲突时，以组件优先<br>c. 生命周期回调函数不会覆盖，优先级为<strong>先mixin 后组件</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mixins</span>: [demoMixin],</span><br><span class="line"><span class="attr">extends</span>: demoExtends,</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-继承拓展extends-逻辑拓展"><a href="#2-继承拓展extends-逻辑拓展" class="headerlink" title="2. 继承拓展extends - 逻辑拓展"></a>2. 继承拓展extends - 逻辑拓展</h4><p>应用： 拓展独立逻辑</p>
+<p>与mixin的区别，传值mixin为数组</p>
+<p>合并策略<br>a. 同mixin，也是递归合并<br>b.<strong>合并优先级 组件 &gt; mixin &gt; extends</strong><br>c. 回调优先级 extends &gt; mixin</p>
+<h4 id="3-整体拓展类extend-Vue-extend-）"><a href="#3-整体拓展类extend-Vue-extend-）" class="headerlink" title="3. 整体拓展类extend.    Vue.extend(）"></a>3. 整体拓展类extend.    <code>Vue.extend(）</code></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造一个基础的构造器，然后让vue.extend，作为一个基础的逻辑</span></span><br><span class="line"><span class="keyword">let</span> _baseOptions = &#123;</span><br><span class="line">  <span class="attr">data</span>: &#123;<span class="keyword">return</span> &#123;<span class="attr">course</span>: <span class="string">&#x27;zhaowa&#x27;</span>,&#125;</span><br><span class="line">  created：()=&gt; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;extend base&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">BaseComponent</span> = <span class="title class_">Vue</span>.<span class="title function_">extend</span>(_baseOptions)<span class="comment">//返回一个基础构造器</span></span><br><span class="line"><span class="comment">// 基于_BaseComponent，再拓展逻辑</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">BaseComponent</span>(&#123; <span class="variable constant_">TODO</span>...&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>从预定义的配置中拓展出来一个独立的配置项，进行合并。</p>
+<p>**<code>mergeOption</code>**：就是将我们写的一些config，不断的merge，并且依据一定的优先级</p>
+<p>应用方法：动态拓展，针对于不同的场景需求，去构建不同的拓展器，参数写成函数</p>
+<h4 id="Vue-use-插件"><a href="#Vue-use-插件" class="headerlink" title="Vue.use - 插件"></a>Vue.use - 插件</h4><ul>
+<li><ol>
+<li>注册外部插件，作为整体实例的补充</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>会除重，不会重复注册，底层是 <code>map数据结构</code></li>
+</ol>
+</li>
+<li><ol start="3">
+<li>手写插件<br> a. 外部使用Vue.use(myPlugin, options)<br> b. 默认调用的是内部的install方法</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>微内核：自己本身的东西很少，都是通过插件的方式（有点中间件的意思）来注入，webpack就是如此</li>
+</ol>
+</li>
+</ul>
+<p>vue的组件化：丰富多样，</p>
+<p>react：就是传参数</p>
+<h4 id="组件的高级引用"><a href="#组件的高级引用" class="headerlink" title="组件的高级引用"></a>组件的高级引用</h4><ul>
+<li><ol>
+<li>递归组件 - es6 vue-tree</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>动态组件 - <component :is='name'/></li>
+</ol>
+</li>
+<li><ol start="3">
+<li>异步组件 - router（用到的时候在加载，懒加载），一般在大型项目中，考虑首屏渲染的加载时间，资源大小问题，需要用到的技术方案，详细api查阅文档</li>
+</ol>
+</li>
+</ul>
+<p>使用$set的时候就是数据没有被收集依赖 </p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2022/03/20/Vue%E7%9B%B8%E5%85%B3/vue%E6%8B%93%E5%B1%95%E6%9E%84%E9%80%A0%E5%99%A8/" style="float: left;">
+        ← 拓展构造器
+    </a>
+    
+    
+    <a class="pull-right" href="/2022/03/20/Vue%E7%9B%B8%E5%85%B3/%E4%B8%89%E7%A7%8Dwatcher/">
+        响应式原理，三种watcher →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

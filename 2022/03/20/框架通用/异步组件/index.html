@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>异步组件 | Hexo</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Hexo">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Js相关/" class="animsition-link">Js相关<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/Promise相关/" class="animsition-link">Promise相关<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/React相关/" class="animsition-link">React相关<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/Ts相关/" class="animsition-link">Ts相关<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/Uni-app相关/" class="animsition-link">Uni-app相关<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Vue相关/" class="animsition-link">Vue相关<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/Webpack相关/" class="animsition-link">Webpack相关<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/axios相关/" class="animsition-link">axios相关<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/框架通用/" class="animsition-link">框架通用<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/浏览器/" class="animsition-link">浏览器<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/计划中的HC/" class="animsition-link">计划中的HC<small>(2)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Hexo</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-03-20T12:45:36.000Z" itemprop="datePublished">
+          2022-03-20
+      </time>
+    
+</span>
+                <h1>异步组件</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="Router引出的一些问题"><a href="#Router引出的一些问题" class="headerlink" title="Router引出的一些问题"></a>Router引出的一些问题</h1><h2 id="异步组件："><a href="#异步组件：" class="headerlink" title="异步组件："></a>异步组件：</h2><p><code>Code-splitting</code>代码分割，为了减少首屏代码体积，往往会把一些非首屏的组件，一些我们不怎么常用，而且不是太重要的组件，设计成异步组件，按需加载。</p>
+<p>异步组件可以减少打包的结果。会将异步组件分开打包(形成不同的chunk)，会采用异步的方式加载组件，可以有效的解决一个组件过大的问题。异步组件的核心可以给组件定义变成一个函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="title function_">import</span>(*<span class="regexp">/\* webpackChunkName: &quot;about&quot; \*/</span>* <span class="string">&#x27;../views/About.vue&#x27;</span>)，<span class="keyword">const</span> <span class="attr">compoment</span>: <span class="title class_">React</span>.<span class="title function_">lazy</span>(<span class="function">()=&gt;</span><span class="title function_">import</span>(*<span class="regexp">/\* webpackChunkName: &quot;about&quot; \*/</span>* <span class="string">&quot;./About&quot;</span>))</span><br></pre></td></tr></table></figure>
+
+<p>react中引入了React.lazy和React.Suspense两个API，配合import语法即可实现异步组件，打包分割和异步加载。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Suspense</span> fallback=&#123;<span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>loadind...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>&#125;&gt; 异步组件 &lt;/<span class="title class_">Suspense</span>&gt; <span class="title class_">Suspense</span>为降级<span class="variable constant_">UI</span>，报错展示<span class="variable constant_">UI</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="异步组件手写："><a href="#异步组件手写：" class="headerlink" title="异步组件手写："></a>异步组件手写：</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根组件.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Home</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> <span class="title class_">About</span> = <span class="title function_">lazy</span>(</span><br><span class="line">    <span class="function">() =&gt;</span></span><br><span class="line">      <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="title function_">resolve</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>About Component<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>);</span><br><span class="line">        &#125;, <span class="number">1200</span>);</span><br><span class="line">      &#125;)</span><br><span class="line">  );</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">Suspense</span> <span class="attr">fallback</span>=<span class="string">&#123;</span>&lt;<span class="attr">div</span>&gt;</span>Loading....<span class="tag">&lt;/<span class="name">div</span>&gt;</span>&#125;&gt; <span class="tag">&lt;<span class="name">About</span> /&gt;</span><span class="tag">&lt;/<span class="name">Suspense</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//lazy函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">lazy</span>(<span class="params">fn</span>) &#123;</span><br><span class="line">  <span class="comment">//lazy函数应该返回一个组件，如果返回一个jsx，那用&lt;jsx&gt;,那成什么了，是错误的。</span></span><br><span class="line">  <span class="comment">//我们思考一下，应该什么时候去请求组件，不应把一使用lazy就是去加载组件吧，应该是框架在解析的时候，</span></span><br><span class="line">  <span class="comment">//碰到了这个异步组件，然后再加载的，所以说应该写在返回的组件逻辑中</span></span><br><span class="line">  <span class="keyword">let</span> fetch = &#123;</span><br><span class="line">    <span class="attr">status</span>: <span class="string">&#x27;pending&#x27;</span>,</span><br><span class="line">    <span class="attr">result</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">promise</span>: <span class="literal">null</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> <span class="title function_">LazyComponent</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title class_">React</span>.<span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (fetch.<span class="property">status</span> === <span class="string">&#x27;pending&#x27;</span>) &#123;<span class="keyword">throw</span> fetch&#125;</span><br><span class="line">      ！！核心代码就是将promise抛出去，让外层的组件<span class="keyword">catch</span>住，写then的逻辑</span><br><span class="line">    &#125;, []);</span><br><span class="line">    fetch.<span class="property">promise</span> = <span class="title function_">fn</span>();</span><br><span class="line">    <span class="keyword">if</span> (fetch.<span class="property">status</span> === <span class="string">&#x27;fulfilled&#x27;</span>) &#123;<span class="keyword">return</span> fetch.<span class="property">result</span> &#125;</span><br><span class="line">    fetch.<span class="property">promise</span>.<span class="title function_">then</span>(</span><br><span class="line">      <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        fetch.<span class="property">status</span> = <span class="string">&#x27;fulfilled&#x27;</span>;</span><br><span class="line">        fetch.<span class="property">result</span> = res;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);<span class="comment">//此处添加的then回调是首先执行的。</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;<span class="keyword">throw</span> &#123; <span class="attr">reason</span>: err &#125;&#125;</span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">return</span> fetch.<span class="property">result</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Suspense组件</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> <span class="title class_">Suspense</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">  state = &#123; <span class="attr">isLoadRender</span>: <span class="literal">false</span> &#125;;</span><br><span class="line">  <span class="title function_">componentDidCatch</span>(<span class="params">event</span>) &#123;<span class="comment">//组件挂载的时候，一定是没有请求回来的状态，所以catch住，展示的是降级UI，</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123; <span class="attr">isLoadRender</span>: <span class="literal">true</span> &#125;);</span><br><span class="line">    event.<span class="property">promise</span>.<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123; <span class="attr">isLoadRender</span>: <span class="literal">false</span> &#125;);</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>);<span class="comment">//此处添加的then会调在1之后执行</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; children, fallback &#125; = <span class="variable language_">this</span>.<span class="property">props</span>;</span><br><span class="line">    <span class="keyword">const</span> &#123; isLoadRender &#125; = <span class="variable language_">this</span>.<span class="property">state</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;isLoadRender ? fallback : children&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实现文件的分割加载，<code>import</code>语法是webpack提供的，采用的就是jsonp。</p>
+<blockquote>
+<p>三种异步组件：普通函数异步组件、promise异步组件、高阶异步组件（可配置的）</p>
+</blockquote>
+<blockquote>
+<p>高级异步组件的实现是非常巧妙的，它实现了 loading、resolve、reject、timeout 4 种状态。异步组件实现的本质是 2 次渲染，除了 0 delay 的高级异步组件第一次直接渲染成 loading 组件外，其它都是第一次渲染生成一个注释节点，当异步获取组件成功后，再通过 <code>forceRender</code> 强制重新渲染，这样就能正确渲染出我们异步加载的组件</p>
+</blockquote>
+<h4 id="异步组件大概原理："><a href="#异步组件大概原理：" class="headerlink" title="异步组件大概原理："></a>异步组件大概原理：</h4><h5 id="概括："><a href="#概括：" class="headerlink" title="概括："></a>概括：</h5><p><strong>将组件独立打包成 UMD 格式的 js 文件，页面加载时通过动态生成 script标签插入该 js，插入完成后渲染组件。</strong></p>
+<h5 id="webpack-异步加载原理（按需加载）"><a href="#webpack-异步加载原理（按需加载）" class="headerlink" title="webpack 异步加载原理（按需加载）"></a>webpack 异步加载原理（按需加载）</h5><p><code>webpack ensure</code> 称它为异步加载，也称为代码切割，其实就是将 js 模块给独立导出一个.js 文件，然后使用这个模块的时候，再创建一个 <code>script</code> 对象，加入到 <code>document.head</code> 对象中，浏览器会自动帮我们发起请求，去请求这个 js 文件，然后写个回调函数，让请求到的 js 文件做一些业务操作（挂载组件）。（中间还有<code>pormise.all</code>的操作）</p>
+<blockquote>
+<p>知识补充：jsonp：script标签请求到的内容会自动执行，请求回来的回调函数的调用，后端是将把函数的调用和参数一并返回</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.<span class="title function_">end</span>(<span class="string">&#x27;test(&#123;&quot;name&quot;: &quot;Monkey&quot;&#125;)&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>前端请求回来了<code>&#39;test(&#123;&quot;name&quot;: &quot;Monkey&quot;&#125;)&#39;</code>，再执行函数，即可完成函数执行</p>
+</blockquote>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2022/03/20/%E6%A1%86%E6%9E%B6%E9%80%9A%E7%94%A8/%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1/" style="float: left;">
+        ← 前端路由
+    </a>
+    
+    
+    <a class="pull-right" href="/2022/03/20/%E6%A1%86%E6%9E%B6%E9%80%9A%E7%94%A8/%E6%9B%B4%E6%96%B0%E7%B2%92%E5%BA%A6/">
+        更新粒度 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

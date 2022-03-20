@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>redux中间件异步操作 | Hexo</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Hexo">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Js相关/" class="animsition-link">Js相关<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/Promise相关/" class="animsition-link">Promise相关<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/React相关/" class="animsition-link">React相关<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/Ts相关/" class="animsition-link">Ts相关<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/Uni-app相关/" class="animsition-link">Uni-app相关<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Vue相关/" class="animsition-link">Vue相关<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/Webpack相关/" class="animsition-link">Webpack相关<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/axios相关/" class="animsition-link">axios相关<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/框架通用/" class="animsition-link">框架通用<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/浏览器/" class="animsition-link">浏览器<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/计划中的HC/" class="animsition-link">计划中的HC<small>(2)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Hexo</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-03-20T12:45:36.000Z" itemprop="datePublished">
+          2022-03-20
+      </time>
+    
+</span>
+                <h1>redux中间件异步操作</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="redux中间件异步操作"><a href="#redux中间件异步操作" class="headerlink" title="redux中间件异步操作"></a>redux中间件异步操作</h3><ol>
+<li>为了使用一些异步的代码，使用Middleaware中间件,比如说cookie解析，日志记录，文件压缩，调用接口等操作。</li>
+<li>中间件的概念：在dispatch派发action到reducer这个过程中，拓展一些自己的代码</li>
+</ol>
+<p>redux-thunk：网络请求中间件（只是将传入的action函数帮我们执行了，并且又dispatch了一次同步action）</p>
+<h4 id="自己实现中间件"><a href="#自己实现中间件" class="headerlink" title="自己实现中间件"></a>自己实现中间件</h4><ol>
+<li>hack技术：monkeyingpatch（修改原有的api）</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> next=store.<span class="property">dispatch</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">dispatchAndLodding</span>(<span class="params">action</span>)&#123;</span><br><span class="line">  <span class="comment">//在派发之前做一些逻辑处理</span></span><br><span class="line">  next（action）</span><br><span class="line">  <span class="comment">//派发之后做一些逻辑处理</span></span><br><span class="line">&#125;</span><br><span class="line">store.<span class="property">dispatch</span>=dispatchAndLodding</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>将上面的函数封装：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">patchLogging</span>(<span class="params">store</span>)&#123;</span><br><span class="line">  <span class="keyword">const</span> next=store.<span class="property">dispatch</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">dispatchAndLogging</span>(<span class="params">action</span>)&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;在派发之前做一些逻辑处理,比如说日志记录等&quot;</span>)</span><br><span class="line">  	next（action）</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;在派发之后做一些逻辑处理,比如说日志记录等&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line"> <span class="comment">// store.dispatch=disopatchAndLogging</span></span><br><span class="line">  <span class="keyword">return</span> disopatchAndLogging</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>封装patchThunk的功能：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">patchThunk</span>(<span class="params">store</span>)&#123;</span><br><span class="line">	<span class="keyword">const</span> next=store.<span class="property">dispatch</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">dispatchAndThunk</span>(<span class="params">action</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> action === <span class="string">&#x27;function&#x27;</span>)&#123;</span><br><span class="line">			<span class="title function_">action</span>(next,store.<span class="property">getStore</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    	<span class="title function_">next</span>(action)  </span><br><span class="line">    &#125;</span><br><span class="line">  &#125; </span><br><span class="line"> <span class="comment">//store.dispatch=dispatchThunk</span></span><br><span class="line">  <span class="keyword">return</span> dispatchThunk</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果我们想使用这个中间件的话，在index文件夹中直接调用即可,但是不会直接调用，而是使用applyMiddleware </p>
+<ol start="4">
+<li>applyMiddleware封装：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">appleMiddleware</span> (...middlewares)&#123;</span><br><span class="line">  <span class="keyword">const</span> newMiddlewares = [...middlewares]</span><br><span class="line">	newMiddlewares.<span class="title function_">forEach</span>(<span class="function">(<span class="params">middleware</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">//middleware(store) 下面的写法是patchLogging,patchThunk纯函数化写法</span></span><br><span class="line">		store.<span class="property">dispatch</span> = <span class="title function_">middleware</span>(store)</span><br><span class="line">&#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//外层调用方式：</span></span><br><span class="line"><span class="title function_">appleMiddleware</span>(patchLogging,patchThunk)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="combineReducer函数"><a href="#combineReducer函数" class="headerlink" title="combineReducer函数"></a>combineReducer函数</h3><p>combineReducer函数内部源码中判断派发的action是否改变了state，如果没有改变的话，代表不需要刷新界面，返回的state还是旧的state。</p>
+<ol>
+<li>ui相关的组件内部可以维护的状态，在组件内部自己来维护</li>
+<li>只要是需要共享的状态，组件共享的数据，都交给redux来管理和维护</li>
+<li>从服务器请求回来的数据（包括请求的操作），交给redux来维护</li>
+<li>在路由发生改变的时候，数据需要保留的情况下（数据持久化），应放入redux之中</li>
+</ol>
+<h2 id="reduer是纯函数"><a href="#reduer是纯函数" class="headerlink" title="reduer是纯函数"></a>reduer是纯函数</h2><p>其一是保证新旧 state 不是同一个对象引用, 所以不能直接修改旧 state 中的数据, 然后返回旧 state, 这会导致 combineReducers 中的判断失效( hasChanged &#x3D; hasChanged || nextStateForKey !&#x3D;&#x3D; previousStateForKey ), 最后redux会直接返回旧 state, 从而导致操作无效;</p>
+<p>其二为了保证返回的新 state 是确定的, 而不是会因为某些副作用返回不确定值的 state.</p>
+<p>然后说一下为什么reducer最好是纯函数，首先你得看看文档怎么说reducer的作用的，‘接收旧的 state 和 action，返回新的 state’，您可得瞧好咯，他就是起一个对数据做简单处理后返回state的作用，为什么只起这个作用，这时用设计这个词回答这个问题才恰当，因为redux把reducer设计成只负责这个作用。很白痴的问答对吧，所以题目的答案也就简单了，reducer的职责不允许有副作用，副作用简单来说就是不确定性，如果reducer有副作用，那么返回的state就不确定，举个例子，你的reducer就做了一个value &#x3D; value + 1这个逻辑，然后返回state为{value}，ok，这个过程太jr纯了，然后你可能觉得要加个请求来取得value后再加1，那么你的逻辑就是value &#x3D; getValue() + 1, getValue是个请求函数，返回一个值，这种情况，退一万步讲，如果你的网络请求这次出错，那么getValue就返回的不是一个数值，value就不确定了，所以return的state你也不确定了，前端UI拿到的数据也不确定了，所以就是这个环节引入了副作用，他娘的redux设计好的规范就被你破坏了，redux就没卵用了。</p>
+<p>最后我回答下如何解决这个副作用，实际上也很白痴的问题，这里的请求可以放在reducer之前，你先请求，该做出错处理的就做出错处理，等拿到实际数据后在发送action来调用reducer。这样通过前移副作用的方式，使reducer变得纯洁。</p>
+<p>纯函数没有副作用，方便做tree shaking</p>
+<p>当网络请求回来的数据，发生改变的时候，useSelector依赖的书redux中的数据的页面，就会自动刷新页面，就可以重新拿到redux中数据，就可以正常显示了，</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2022/03/20/React%E7%9B%B8%E5%85%B3/react%E7%9A%84router/" style="float: left;">
+        ← React-Router
+    </a>
+    
+    
+    <a class="pull-right" href="/2022/03/20/React%E7%9B%B8%E5%85%B3/redux%EF%BC%8C%E6%9B%BF%E4%BB%A3redux/">
+        redux、替代redux →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>
