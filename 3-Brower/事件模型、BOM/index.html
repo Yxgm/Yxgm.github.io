@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>事件模型和BOM对象 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2021-05-09T09:19:21.000Z" itemprop="datePublished">
+          2021-05-09
+      </time>
+    
+    
+    | 
+    <a href='/tags/浏览器/'>浏览器</a>,
+    
+    <a href='/tags/事件模型/'>事件模型</a>
+    
+    
+</span>
+                <h1>事件模型和BOM对象</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="浏览器事件捕获冒泡"><a href="#浏览器事件捕获冒泡" class="headerlink" title="浏览器事件捕获冒泡"></a>浏览器事件捕获冒泡</h1><img src="https://bucket922.oss-cn-beijing.aliyuncs.com/blog-img/%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B.jpg"> 
+
+<p><strong>浏览器事件模型中的过程主要分为三个阶段：捕获阶段 -&gt; 目标阶段 -&gt;冒泡阶段</strong></p>
+<p> <code>window -&gt; document -&gt; body -&gt; input -&gt; body -&gt; document -&gt; window </code></p>
+<h4 id="三类事件模型"><a href="#三类事件模型" class="headerlink" title="三类事件模型"></a>三类事件模型</h4><h6 id="传统模型："><a href="#传统模型：" class="headerlink" title="传统模型："></a>传统模型：</h6><p>window.onload或者直接在dom上绑定事件，首先这种传统模式可以在所有的浏览器上成功运行，这是它最大的优势，但是这种传统模式只支持冒泡，而不支持捕获，并且一次只能绑定一个事件处理器在dom上，后面定义的事件句柄会覆盖掉前面的事件</p>
+<h6 id="W3C模型："><a href="#W3C模型：" class="headerlink" title="W3C模型："></a>W3C模型：</h6><p>使用addEventListener和removeEventListener两个函数，对于这两个方法，可以控制事件的捕获或者冒泡，对于addEventListener，可以添加多个事件句柄。</p>
+<h6 id="IE-Event-Model："><a href="#IE-Event-Model：" class="headerlink" title="IE Event Model："></a>IE Event Model：</h6><p>IE的事件模型和W3C类似，主要是通过attachEvent和detachEvent两个函数来实现，可以发现它跟W3C的区别是没有第三个参数，而且第一个表示事件类型的参数也必须把’on’给加上。这种方式的优点就是能绑定多个事件处理函数在同一个DOM元素上。</p>
+<p>缺点：首先IE浏览器本身只支持Bubbling不支持Capturing；而且在事件处理的function内部this关键字也无法使用，因为this永远都只想window object这个全局对象。要想得到event对象必须通过window.event方式，最后一点，在别的浏览器中，它显然是无法工作的。</p>
+<p>事件委托的优点:</p>
+<ol>
+<li>提高性能:每一个函数都会占用内存空间，只需添加一个事件处理程序代理所有事件，所占用的内存空间更少。</li>
+<li>动态监听:使用事件委托可以自动绑定动态添加的元素，即新增的节点不需要主动添加也可以一样具有和其他元素一样的事件。</li>
+<li>代理模式的体现</li>
+<li>同时对于绑定的回调函数，也是作为一个观察者</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>不适应所有的事件，只适用于支持事件冒泡的事件</li>
+<li>原理上执行就近委托</li>
+</ol>
+<h2 id="1-addEventListener-第三个参数"><a href="#1-addEventListener-第三个参数" class="headerlink" title="1. addEventListener 第三个参数"></a>1. addEventListener 第三个参数</h2><table>
+<thead>
+<tr>
+<th>capture：true&#x2F;false</th>
+<th>代表在捕获阶段执行 &#x2F; 冒泡阶段进行（我们平时写的都是在冒泡时的监听事件）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>passive：true&#x2F;false</td>
+<td>若为真，保证回调内永远不会阻止默认事件（调用preventDefault）</td>
+</tr>
+<tr>
+<td>once：true&#x2F;false</td>
+<td>只触发一次</td>
+</tr>
+<tr>
+<td>e.target</td>
+<td>鼠标点击的真实元素，点谁输出谁</td>
+</tr>
+<tr>
+<td>e.currentTarget</td>
+<td>绑定事件的真实元素，谁绑定的事件输出谁</td>
+</tr>
+</tbody></table>
+<p>passive解释：输入事件分类：1.由主线程处理的事件 2.直接由合成线程处理的事件</p>
+<p>​        在主线程处理的事件：需要经过内核线程处理的输入事件要在内核线程执行逻辑，遇到内核线程（大量的输入事件都和页面有关）在忙，无法立即响应。</p>
+<p>​        直接由合成线程处理的事件：不经过内核线程就能快速处理的输入事件为手势输入事件（滑动、捏合）。</p>
+<p>⚠️但是虽然手势事件不在内核线程处理，但是手势事件的发生是离不开主线程的。</p>
+<blockquote>
+<p>手势输入事件是由连续的 普通输入事件 组成的，普通的输入事件可能会被内部的<code>preventDefault</code>来阻止掉事件后续的默认行为，在将回调放入内核线程执行前，浏览器根本不知道回调内有没有阻止后续默认行为，也就无法进行优化</p>
+<p>解决方法：passive为了解决浏览器页面滑动流畅度而设计的，它通过扩展事件属性passive让Web开发者来告知浏览器监听器是否会阻止事件的默认行为，从而让浏览器可以更智能地决策并优化。</p>
+</blockquote>
+<h2 id="2-阻止事件传播"><a href="#2-阻止事件传播" class="headerlink" title="2. 阻止事件传播"></a>2. 阻止事件传播</h2><p><strong>e.stopPropagation()</strong> 普绕不给神</p>
+<ol>
+<li>大家经常听到的可能是阻止冒泡，实际上这个方法不只能阻止冒泡，还能阻止捕获阶段的传播。</li>
+<li>这个方法阻止事件的传播，如果的捕获阶段添加这个事件，后面一系列的事件都不会触发，在冒泡阶段的话，捕获阶段的事件还是可以正常执行的。<blockquote>
+<p><strong>场景设计题</strong>：用户进入页面，会有一个状态 banned（boolean）,true：当前用户被封禁了，不可以触发任何事件，提醒用户“被封禁了”,false：正常访问页面</p>
+<ol>
+<li>在 window 的捕获阶段（第三个参数为true时），判断 banned，添加 e.stopPropagation()事件</li>
+<li>写一个全屏的 最高层级的元素，遮罩住整个页面</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<p><strong>stopImmediatePropagation()</strong><br>如果有多个相同类型事件的事件监听函数绑定到同一个元素，当该类型的事件触发时，它们会按照被添加的顺序执行。如果其中某个监听函数执行了 event.stopImmediatePropagation() 方法，则当前元素剩下的监听函数将不会被执行。</p>
+<h2 id="3-阻止默认行为"><a href="#3-阻止默认行为" class="headerlink" title="3. 阻止默认行为"></a>3. 阻止默认行为</h2><p>e.preventDefault()</p>
+<p>e.preventDefault()可以阻止事件的默认行为发生，默认行为是指：点击 a 标签就转跳到其他页面、拖拽一个图片到浏览器会自动打开、点击表单的提交按钮会提交表单等等，因为有的时候我们并不希望发生这些事情，所以需要阻止默认行为</p>
+<h2 id="4-兼容性"><a href="#4-兼容性" class="headerlink" title="4. 兼容性"></a>4. 兼容性</h2><p>attachEvent——兼容：IE7、IE8； 不支持第三个参数来控制在哪个阶段发生，默认是绑定在冒泡阶段<br>addEventListener——兼容：firefox、chrome、IE、safari、opera；</p>
+<h1 id="Browser-Object-Model（浏览器对象模型）"><a href="#Browser-Object-Model（浏览器对象模型）" class="headerlink" title="Browser Object Model（浏览器对象模型）,"></a>Browser Object Model（浏览器对象模型）,</h1><p>浏览器模型提供了独立于内容的、可以与浏览器窗口进行滑动的对象结构，就是浏览器提供的 API<br>其主要对象有：</p>
+<ol>
+<li>window 对象——BOM 的核心，是 js 访问浏览器的接口，也是 ES 规定的 Global 对象</li>
+<li>location 对象：提供当前窗口中的加载的文档有关的信息和一些导航功能。既是 window 对象属性，也是 document 的对象属性</li>
+<li>navigation 对象：获取浏览器的系统信息</li>
+<li>screen 对象：用来表示浏览器窗口外部的显示器的信息等</li>
+<li>history 对象：保存用户上网的历史信息</li>
+</ol>
+<h4 id="Window-对象"><a href="#Window-对象" class="headerlink" title="Window 对象"></a>Window 对象</h4><p>windows 对象是整个浏览器对象模型的核心，其扮演着既是接口又是全局对象的角色</p>
+<p>open() 打开一个新的页面<br>onerror() 前端监听，监控全局是否报错， addEventListener（“error”）</p>
+<p>窗口位置：screenLef、tscreenTop、screenX、screenY、moveBy(x,y)、moveTo(x,y)</p>
+<p>窗口大小：innerWidth、innerHeight，移动端是 document.body.clientWidth、outerWidth、outerHeight</p>
+<p>resizeTo(width, height)<br>resizeBy(width, height)</p>
+<h4 id="Location-对象-楼k神-：所在位置"><a href="#Location-对象-楼k神-：所在位置" class="headerlink" title="Location 对象(楼k神)：所在位置"></a>Location 对象(楼k神)：所在位置</h4><p>提供当前窗口中的加载的文档有关的信息和一些导航功能。既是 window 对象属性，也是 document 的对象属性</p>
+<img src="https://bucket922.oss-cn-beijing.aliyuncs.com/blog-img/location%E5%AF%B9%E8%B1%A1.png" style="width:500px"/>
+
+<h4 id="Navigation-对象"><a href="#Navigation-对象" class="headerlink" title="Navigation 对象"></a>Navigation 对象</h4><p>navigation 接口表示用户代理的状态和标识，允许脚本查询它和注册自己进行一些活动</p>
+<p>isOnline:判断是否断网</p>
+<h4 id="History-对象"><a href="#History-对象" class="headerlink" title="History 对象"></a>History 对象</h4><p>history 对象保存着用户上网的历史记录，从窗口被打开的那一刻算起，history 对象是用窗口的浏览历史用文档和文档状态列表的形式表示。</p>
+<p>go()<br>back()<br>forword()<br>length<br>pushState和onPopState</p>
+<h3 id="常见浏览器-JS-对象常见-API-及用法"><a href="#常见浏览器-JS-对象常见-API-及用法" class="headerlink" title="常见浏览器 JS 对象常见 API 及用法"></a>常见浏览器 JS 对象常见 API 及用法</h3><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000014212576">https://segmentfault.com/a/1190000014212576</a></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/4-Webpack/chunk%E5%92%8Cbundle/" style="float: left;">
+        ← chunk和bundle
+    </a>
+    
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

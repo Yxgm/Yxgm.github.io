@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>https，密钥交换和加密算法 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-04-21T08:04:28.005Z" itemprop="datePublished">
+          2022-04-21
+      </time>
+    
+    
+    | 
+    <a href='/tags/网络/'>网络</a>,
+    
+    <a href='/tags/NetWork/'>NetWork</a>
+    
+    
+</span>
+                <h1>https，密钥交换和加密算法</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="密钥交换"><a href="#密钥交换" class="headerlink" title="密钥交换"></a>密钥交换</h1><h2 id="前置知识补充"><a href="#前置知识补充" class="headerlink" title="前置知识补充"></a>前置知识补充</h2><ol>
+<li><p>对称加密：密钥明文传输到<code>client</code>,  <code>client</code>和<code>server</code>同一套的加密解密方式，钥匙存在<code>client</code>和<code>server</code>各一把。</p>
+<p>⚠️存在问题：密钥被第三方拦截到，数据存于隐患。</p>
+</li>
+<li><p>非对称加密：server接收到请求，将公钥明文给client，client发送数据的时候，用公钥将数据加密，send到server，server在用私钥解密。</p>
+<p>⚠️存在问题：似乎只能保证client到server的安全（仍存在bug，下文会说），如果公钥被第三方拦截，在server发送数据给client的时候，用私钥加密，第三方可以用劫持的公钥解开加密数据，有隐患。</p>
+</li>
+</ol>
+<h2 id="两种方法都不可行，我们开始改良"><a href="#两种方法都不可行，我们开始改良" class="headerlink" title="两种方法都不可行，我们开始改良"></a>两种方法都不可行，我们开始改良</h2><ol>
+<li><h5 id="使用两对非对称加密方式，即client和server各有一套公钥私钥，相互交换公钥，达成通信。"><a href="#使用两对非对称加密方式，即client和server各有一套公钥私钥，相互交换公钥，达成通信。" class="headerlink" title="使用两对非对称加密方式，即client和server各有一套公钥私钥，相互交换公钥，达成通信。"></a>使用两对非对称加密方式，即client和server各有一套公钥私钥，相互交换公钥，达成通信。</h5></li>
+</ol>
+<p>⚠️存在问题：这里面仍有的漏洞不谈（下文会讲），HTTPS的加密却没使用这种方案，为什么？很重要的原因是非对称加密算法非常耗时，而对称加密快很多。中途第三方劫持了公钥，一样会造成数据泄漏</p>
+<ol start="2">
+<li><h5 id="对称加密和非对称加密，server拥有公钥，私钥，先将公钥给client，client同时生成对称加密的密钥X，将X通过公钥加密send到server，这时双方都拥有了X密钥，之后通信使用X通信。"><a href="#对称加密和非对称加密，server拥有公钥，私钥，先将公钥给client，client同时生成对称加密的密钥X，将X通过公钥加密send到server，这时双方都拥有了X密钥，之后通信使用X通信。" class="headerlink" title="对称加密和非对称加密，server拥有公钥，私钥，先将公钥给client，client同时生成对称加密的密钥X，将X通过公钥加密send到server，这时双方都拥有了X密钥，之后通信使用X通信。"></a>对称加密和非对称加密，server拥有公钥，私钥，先将公钥给client，client同时生成对称加密的密钥X，将X通过公钥加密send到server，这时双方都拥有了X密钥，之后通信使用X通信。</h5>这种方法是现在大多https的做法，但是还有一些问题。</li>
+</ol>
+<p>⚠️存在问题：在首次传输公钥A给client时，中间人将公钥A调包，将自己生成的公钥Bsend到client，client并不知情，继续正常处理，将X密钥加密发出，中间人再次劫持到，用自己的私钥B解开，取出X并存储。并且再次将X用公钥A加密，send到server。中间人拥有了X，数据泄漏。</p>
+<h2 id="如此循环的问题，就引申出了CA机构"><a href="#如此循环的问题，就引申出了CA机构" class="headerlink" title="如此循环的问题，就引申出了CA机构"></a>如此循环的问题，就引申出了CA机构</h2><blockquote>
+<p> 上面的第二种方法，已经交完美了，那我们只需要确定公钥是server所生成的即可，请看下文。</p>
+</blockquote>
+<h4 id="CA机构，它是如今互联网世界正常运作的前提，而CA机构颁发的“服务器身份证”就是，证明“该公钥对应该网站”。"><a href="#CA机构，它是如今互联网世界正常运作的前提，而CA机构颁发的“服务器身份证”就是，证明“该公钥对应该网站”。" class="headerlink" title="CA机构，它是如今互联网世界正常运作的前提，而CA机构颁发的“服务器身份证”就是，证明“该公钥对应该网站”。"></a>CA机构，它是如今互联网世界正常运作的前提，而CA机构颁发的“服务器身份证”就是，证明“该公钥对应该网站”。</h4><p>如何证明证书本身的真实性？流程如下：</p>
+<ol>
+<li><p>服务方S<strong>向第三方机构CA</strong>提交公钥、组织信息、个人信息(域名)等信息并申请认证。</p>
+</li>
+<li><p>CA颁发证书，证书包含信息：1. Server公钥、组织信息等信息的明文，2. 一个签名<code>sign</code>（明文先散列函数一遍，在ca机构的私钥加密行成签名）</p>
+</li>
+<li><p>C 向服务器 S 发出请求时，<strong>S 返回证书</strong>文件。</p>
+</li>
+<li><p>C拿到证书中明文信息，使用ca机构下的ca公钥，对<code>sign</code>进行解密，再将明文信息执行散列函数计算得到<strong>信息摘要</strong>，对比解密出的<code>sign</code>和明文信息计算的散列值，如果一致，则可以确认证书的合法性，即公钥合法。</p>
+</li>
+<li><p>服务器的公钥合法，那么就可以用服务器的公钥加密浏览器的对称加密的密钥X，send到服务器。建立起可靠消息通道。</p>
+</li>
+<li><p>客户端会内置信任CA的证书信息(包含公钥)，如果CA不被信任，则找不到对应 CA的证书，证书也会被判定非法</p>
+<blockquote>
+<p>CA证书集成在了浏览器和操作系统里面。A拿到浏览器或者操作系统的时候，已经有了CA证书，没有必要通过网络获取，那自然也不存在劫持的问题。证书是需要预装的，特别是根证书。IE和Chrome是通过内置在Windows系统中的TrustStore来管理根证书</p>
+<p>实际上证书之间的认证也可以不止一层，可以A信任B，B信任C，以此类推，我们把它叫做<code>信任链</code>或<code>数字证书链</code>。也就是一连串的数字证书，由根证书为起点，透过层层信任，使终端实体证书的持有者可以获得转授的信任，以证明身份。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="SSL协议（ca证书颁发和非对称加密和对称加密的结合）"><a href="#SSL协议（ca证书颁发和非对称加密和对称加密的结合）" class="headerlink" title="SSL协议（ca证书颁发和非对称加密和对称加密的结合）"></a>SSL协议（ca证书颁发和非对称加密和对称加密的结合）</h2><ol>
+<li>经过上面的过程已经拿到了server的公钥，所以将对程密钥X公钥加密，send到server。</li>
+<li>Server拿到这个加密的X密钥，解密获取密钥。</li>
+<li>之后过程使用对称加密算法，和用户完成接下来的网络通信。</li>
+</ol>
+<blockquote>
+<p> 一点歧义: </p>
+<p>ca签名不用私钥加密数据，而是加密数据的hash值，也就是所谓数字签名。数据本身是明文的，证书、SSL payload（当然，payload会用对端公钥加密）都是这样。</p>
+<p>用私钥加密任意内容是有风险的，某些特定内容用私钥加密将会把私钥暴露出来，至少RSA是这样的，这样攻击者就可以通过诱使服务器加密特定文本（例如，上传特定文件再下载下来）从而破解私钥，所以实际上应该是将payload再以某些方式填充一些没有用的数据进去，算hash值，然后加密hash值的</p>
+</blockquote>
+<h1 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h1><img src="../assets/SSl.jpg" width="800" height="400">
+
+<h3 id="非对程加密"><a href="#非对程加密" class="headerlink" title="非对程加密"></a>非对程加密</h3><p>非对称加密最著名的是RSA算法，生成公钥和私钥过程如下:</p>
+<ol>
+<li>随意选择两个不相等的企业级的大质数 p和 q，（实际应用中，两个数越大越安全）；</li>
+<li>计算 p和 q的乘积n 并转化为二进制树（注：实际应用中，RSA密钥一般是1024位，重要场合则为2048位。）</li>
+<li>计算n的欧拉函数φ(n)，φ(n) &#x3D; φ(p * q) &#x3D; φ( p)* φ(q) &#x3D;（p-1) * (q-1)</li>
+<li>随机选择一个整数e，条件是1&lt; e &lt; φ(n)，且e与φ(n) 互质</li>
+<li>计算e对于φ(n)的模反元素d，ed ≡ 1 (mod φ(n))，这个公式的意思就是找到整数d，使得ed被φ(n)除的余数为1。设ed是φ(n)的k的整数倍，余数为1</li>
+<li>至此，所有计算就完成，将n和e封装成公钥，n和d封装成私钥，</li>
+</ol>
+<h3 id="对程加密"><a href="#对程加密" class="headerlink" title="对程加密"></a>对程加密</h3><p>AES等</p>
+<h3 id="散列哈希算法"><a href="#散列哈希算法" class="headerlink" title="散列哈希算法"></a>散列哈希算法</h3><h5 id="SHA"><a href="#SHA" class="headerlink" title="SHA"></a>SHA</h5><p>​        SHA（安全哈希算法）：该算法的思想是接收一段明文，然后以一种不可逆的方式将它转换成一段（通常更小）密文，也可以简单的理解为取一串输入码（称为预映射或信息），并把它们转化为长度较短、位数固定的输出序列即散列值（也称为信息摘要或信息认证代码）的过程。可以对任意长度的数据运算生成一个160位的数值。SHA将输入流按照每块512位（64个字节）进行分块，并产生20个字节的被称为信息认证代码或信息摘要的输出。SHA-1是不可逆的、防冲突，并具有良好的雪崩效应。</p>
+<h5 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h5><p>​         MD5算法是Hash算法的一种，叫做讯息摘要演算法。所谓摘要，从字面意思理解，是指内容的大概。在MD5算法中，这个摘要是指将任意数据映射成一个128位长的摘要信息。并且其是不可逆的，即从摘要信息无法反向推演中原文，在演算过程中，原文的内容也是有丢失的。</p>
+<p>   因为MD5算法最终生成的是一个128位长的数据，从原理上说，有2^128种可能，这是一个非常巨大的数据，约等于3.4乘10的38次方，虽然这个是个天文数字，但是世界上可以进行加密的数据原则上说是无限的，因此是可能存在不同的内容经过MD5加密后得到同样的摘要信息，但这个碰中的概率非常小。</p>
+<p>两者比较：</p>
+<p>（1）对强行攻击的安全性：最显著和最重要的区别是SHA-1摘要比MD5摘要长32位。使用强行技术，产生任何一个报文使其摘要等于给定报摘要的难度对MD5是2^128数量级的操作，而对SHA-1则是2^160数量级的操作。这样，SHA-1对强行攻击有更大的强度。</p>
+<p>（2）对密码分析的安全性：由于MD5的设计，易受密码分析的攻击，SHA-1显得不易受这样的攻击。</p>
+<p>（3）速度：在相同的硬件上，SHA-1的运行速度比MD5慢。</p>
+<h1 id="TLS和SSL"><a href="#TLS和SSL" class="headerlink" title="TLS和SSL"></a>TLS和SSL</h1><p>TLS（传输层安全）是更为安全的升级版 SSL。由于 SSL 这一术语更为常用，因此我们仍然将我们的安全证书称作 SSL。</p>
+<p>TLS&#x2F;SSL是一种加密通道的规范</p>
+<p>它利用对称加密、公私钥不对称加密及其密钥交换算法，CA系统进行加密且可信任的信息传输</p>
+<p>在HTTP SSL中常用的对称加密算法有RC4,AES,3DES,Camellia等</p>
+<p>TLS是SSL的标准化后的产物</p>
+<p>有1.0 1.1 1.2三个版本</p>
+<p>默认使用1.0</p>
+<p>TLS1.0和SSL3.0几乎没有区别</p>
+<p>事实上我们现在用的都是TLS，但因为历史上习惯了SSL这个称呼</p>
+<p>平常还是以SSL为多。</p>
+<p>SSL(Secure Sockets Layer 安全套接层),及其继任者传输层安全（Transport Layer Security，TLS）是为网络通信提供安全及数据完整性的一种安全协议。TLS与SSL在传输层对网络连接进行加密。</p>
+<p>SSL协议位于TCP&#x2F;IP协议与各种应用层协议之间，为数据通讯提供安全支持。SSL协议可分为两层： SSL记录协议（SSL Record Protocol）：它建立在可靠的传输协议（如TCP）之上，为高层协议提供数据封装、压缩、加密等基本功能的支持。 SSL握手协议（SSL Handshake Protocol）：它建立在SSL记录协议之上，用于在实际的数据传输开始前，通讯双方进行身份认证、协商加密算法、交换加密密钥等。</p>
+<p>安全传输层协议（TLS）用于在两个通信应用程序之间提供保密性和数据完整性。该协议由两层组成： TLS 记录协议（TLS Record）和 TLS 握手协议（TLS Handshake）。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/3-NetWork/http%E7%89%B9%E7%82%B9/" style="float: left;">
+        ← http特点
+    </a>
+    
+    
+    <a class="pull-right" href="/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/%E8%BD%AE%E8%AE%AD%E5%92%8Cjson%E4%B8%B2/">
+        轮训和Json串 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

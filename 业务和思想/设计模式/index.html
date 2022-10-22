@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>设计模式和原则 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-04-16T06:47:23.359Z" itemprop="datePublished">
+          2022-04-16
+      </time>
+    
+    
+    | 
+    <a href='/tags/设计模式/'>设计模式</a>
+    
+    
+</span>
+                <h1>设计模式和原则</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="原则和设计模式"><a href="#原则和设计模式" class="headerlink" title="原则和设计模式"></a>原则和设计模式</h1><h4 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h4><p>针对设计问题的通用解决方案</p>
+<h4 id="学习设计模式的原因"><a href="#学习设计模式的原因" class="headerlink" title="学习设计模式的原因"></a>学习设计模式的原因</h4><p>有利于代码复用<br>有利于代码稳定可拓展<br>有利于代码可读性提升</p>
+<h4 id="学习设计模式的目的："><a href="#学习设计模式的目的：" class="headerlink" title="学习设计模式的目的："></a>学习设计模式的目的：</h4><ol>
+<li>帮助我们组织模块 2. 帮助我们设计沟通 3. 提高代码质量</li>
+</ol>
+<h4 id="什么时候需要设计模式"><a href="#什么时候需要设计模式" class="headerlink" title="什么时候需要设计模式"></a>什么时候需要设计模式</h4><ol>
+<li>优先考虑全局设计</li>
+<li>合理权衡使用需求以及维护成本</li>
+</ol>
+<h4 id="掌握程度"><a href="#掌握程度" class="headerlink" title="掌握程度"></a>掌握程度</h4><ol>
+<li>什么是设计模式 &#x3D;&gt; 开发工作中有使用设计模式的概念或者思路</li>
+<li>清晰概念 &#x3D;&gt; 了解基本的设计模式分类、常用设计模式类型</li>
+<li>不同场景下能关联到对应的模式 &#x3D;&gt; 合理使用</li>
+</ol>
+<blockquote>
+<p>完成功能的同时，整个系统稳定可靠，同时以后，我或者同事在我设计结构之上，可以轻松的拓展，迭代需求，代码可读可改。</p>
+<p>从每一个类的数据集，状态集，单个类行为分析整个项目的架构，最后串联，自底向上完成。</p>
+</blockquote>
+<h2 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h2><ol>
+<li><p>开闭原则：程序要对扩展开放，对修改关闭；我们的程序要给具体使用的时候扩展的接口，但是在具体使用的时候不能让其修改我们的源码， 不用修改源码就能扩展功能，像vue，react等都有扩展的接口。</p>
+<blockquote>
+<p><strong>软件系统的核心逻辑都不应该轻易改变，否则会破坏系统的稳定性和增加测试成本。我们应当建立合适的抽象并统一接口，当业务需要扩展时，我们可以通过增加实体类来完成。</strong></p>
+</blockquote>
+</li>
+<li><p>单一职责原则：我们的模块只做一件事情，模块的职责越单一越好。可以联想到实习期间的父子组件的命令模式，命令模式也是单一指责的体现。    </p>
+</li>
+<li><p>依赖倒置原则：我们的上层模块不要依赖与具体的下层模块，应该依赖于抽象</p>
+</li>
+<li><p>接口隔离原则：我们的接口要细化，功能要单一，一个接口不要调用太多方法，使其能力单一，听起来像单一职责原则；但是2者的关注点不同， 单一职责原则主要关注于模块本身，接口隔离原则关注于接口；我们尽量细化接口，每个接口做的事情尽量单一</p>
+<blockquote>
+<p>多个专业接口比单一胖接口更好用</p>
+</blockquote>
+</li>
+<li><p>迪米特法则：我们让2个对象之间产生沟通，我们最好让2个对象之间知道的越少越好，没必要2者之间非常的了解；我们的中介者模式是一个很好体现迪米特法则的设计模式，中介者模式让2个对象之间没必要直接的沟通，如果直接沟通需要了解2者之间的api和彼此的调用方式，这个时候我们可以采用一个中介者来转达我们的需求，而不用彼此知道</p>
+</li>
+<li><p>里氏替换原则：子类可以拓展，但是不可以修改父类属性。关注于继承，任何使用父类的地方都可以用子类去替换，直白的说我们子类继承父类的时候，我们的子类必须完全保证继承父类的属性和方法，这样的话父类使用的地方，子类可以进行替换</p>
+</li>
+</ol>
+<img src="../assets/DP.png" >
+
+<h2 id="常用设计模式"><a href="#常用设计模式" class="headerlink" title="常用设计模式"></a>常用设计模式</h2><h3 id="1-创造型："><a href="#1-创造型：" class="headerlink" title="1. 创造型："></a>1. 创造型：</h3><ol>
+<li><p>工厂模式：函数柯里化（批量生产同类型应用来满足频繁使用同一种类型需求时 - 工厂模式）</p>
+<p>Button Producer：生产不同类型的按钮 &#x3D;&gt; 生产多个本质相同，利用传参区分不同属性的元素 。</p>
+<p>工厂模式是属于创建型的设计模式。简单工厂模式又叫静态工厂方法，用来创建某一种产品对象的实例，用来创建单一对象；工厂方法模式是将创建实例推迟到子类中进行；抽象工厂模式是对类的工厂抽象用来创建产品类簇，不负责创建某一类产品的实例。</p>
+</li>
+<li><p>建造者模式：成为基建平台，结合不同模块（当我们需要模块化拆分一个大模块，同时使模块间独立解耦分工 - 建造者模式）</p>
+<p>页头组件Header: 包含了title、button、breadcum &#x3D;&gt; 生产多重不同类型的元素 </p>
+</li>
+<li><p>单例模式：（全局只需要一个实例，注重统一一体化 - 单例）</p>
+<p>全局应用 router 和 store ，对与开发之中，我们只需要利用闭包+模块化即可了</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="attr">config</span>: <span class="built_in">any</span>;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="attr">instance</span>: <span class="title class_">Singleton</span>;</span><br><span class="line">  <span class="keyword">private</span> <span class="title function_">constructor</span>(<span class="params">config: <span class="built_in">any</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">config</span> = config;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> getInstance = <span class="function">(<span class="params">config: <span class="built_in">any</span></span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="title class_">Singleton</span>.<span class="property">instance</span>) &#123;</span><br><span class="line">      <span class="title class_">Singleton</span>.<span class="property">instance</span> = <span class="keyword">new</span> <span class="title class_">Singleton</span>(config);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Singleton</span>.<span class="property">instance</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">instance</span>: <span class="title class_">Singleton</span> = <span class="title class_">Singleton</span>.<span class="title function_">getInstance</span>(<span class="string">&#x27;I am Singleton&#x27;</span>); <span class="comment">// do some thing with the instance</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(instance.<span class="property">config</span>);</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="2-结构型："><a href="#2-结构型：" class="headerlink" title="2. 结构型："></a>2. 结构型：</h3><ol>
+<li><p>适配器模式：适配已有方案  一个对象，经过转化，变成我们适配的对象，中间转换参数、保持模块间独立的时候。</p>
+<p><code>eg1</code>:两个模块：筛选器和表格，需要做一个联动。但筛选器的数据不能直接传入表格，需要做数据结构转换 &#x3D;&gt; 模块之间独立，需要做数据结构转换</p>
+<p><code>eg2</code>:后端接口返回的不是我们想要的字段，可能会多一些属性，需要<code>adaptor</code>类做一个简单的适配</p>
+</li>
+<li><p>代理模式：将代理对象与调用对象分离，不直接调用目标对象 </p>
+<p><code>eg1</code>:proxy（vue3的响应式）</p>
+<p><code>eg2</code>:ul中多个li，每个li上的点击事件 &#x3D;&gt; 利用冒泡做委托，事件绑定在ul上</p>
+</li>
+<li><p>装饰器模式：增强已有方案</p>
+<p>附着于多个组件上，批量动态赋予功能的时候 - 装饰器模式，目前有按钮、title、icon三个组件。希望开发一个模块，让三个组件同时具备相同功能 &#x3D;&gt; 套一层装甲对于每个组见有统一的能力提升，且可以动态添加功能进行拓展 &#x3D;&gt; 装饰器模式</p>
+</li>
+</ol>
+<p>​        对装饰器的补充：装饰器&#x3D;高阶函数+函数嵌套+闭包，装饰器就是高阶函数，两者都可以在不改变目标函数代码的情况下，给目标函数添加新功能。<br>​        在面向对象编程里，由于多用组合，少用继承的设计思想，使用装饰器可以给对象动态添加额外的职责。装饰器其实就是通过函数式编程，在面向对象编程里找到一个切面（面向切面编程），来灵活实现功能。<br>​        在项目中可以抽出功能相同的代码块，比如页面的防抖节流，打印日志，计算函数执行时间，当然还有装饰器模式，从一个基类里衍生出来的类，共同实现了同一个接口，这时候可以灵活的组合各个衍生类，不用把所有情况的组合都写出来。使用装饰器模式，类似洋葱模型的运行机制，可以动态的组合。</p>
+<p>​        总结：高阶函数可以是装饰器但不仅限于装饰器。</p>
+<h3 id="3-行为型："><a href="#3-行为型：" class="headerlink" title="3. 行为型："></a>3. 行为型：</h3><ol>
+<li><p>命令模式：发出指令，中间层传递命令本身，命中包含执行对象 </p>
+<p><code>eg1</code>:调度器在接受到一组新的数据时候，解析数据，并且根据数据类型包裹在对象中传递到下级helper，helper再去执行相应操作</p>
+<p><code>eg2</code>:父组件通过ref调用子组件的方法，<code>getData</code>获取数据等</p>
+</li>
+<li><p>观察者模式：通过观察者，可以让被观察值统一发生变化，触发相应依赖值的统一更新 </p>
+</li>
+<li><p>独立职责的单元通过链式执行，逐步操作流程 - 职责链</p>
+<p>提交表单进行表单逐行校验，链式调用validate，axios的拦截器链式调用。 依次执行 </p>
+</li>
+<li><p>模板模式：通过模板定义执行顺序，做独立操作 </p>
+<p>echart准备工作：canvas、config、init、draw()，规划顺序执行 </p>
+</li>
+<li><p>策略模式：根据不同的context，来执行不同的逻辑，逻辑本身和context解耦</p>
+<p><code>eg1</code>：可鉴<code>./策略模式</code></p>
+</li>
+</ol>
+<blockquote>
+<p>策略模式 让我们在程序运行的时候动态地指定要使用的算法</p>
+<p>模板方法模式 是在子类定义的时候就已经确定了使用的算法</p>
+</blockquote>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2-Redux&Router/mobx%E5%92%8C%E6%89%8B%E5%86%99redux/" style="float: left;">
+        ← mobx和手写redux
+    </a>
+    
+    
+    <a class="pull-right" href="/3-Brower/%E8%B7%A8%E5%9F%9F%E6%84%8F%E4%B9%89%E3%80%81opt%E8%AF%B7%E6%B1%82/">
+        跨域意义，复杂请求 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

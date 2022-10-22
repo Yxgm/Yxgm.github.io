@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>AOT和JIT | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-05-10T07:51:19.054Z" itemprop="datePublished">
+          2022-05-10
+      </time>
+    
+</span>
+                <h1>AOT和JIT</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="老子上来就是一个滑铲"><a href="#老子上来就是一个滑铲" class="headerlink" title="老子上来就是一个滑铲"></a>老子上来就是一个滑铲</h3><blockquote>
+<p><code>JIT</code>：代码在宿主环境执行时，被称为JIT（Just In Time，即使编译），代码在宿主环境编译并运行。</p>
+<p><code>AOT</code>：代码构建时，被称为AOT（Ahead Of Time，预编译），宿主环境获得的是编译后的代码。</p>
+</blockquote>
+<p>​        前端框架中都需要编译这一步骤，ts转js，polyfill，vue预编译优化，代码打包，压缩等等。下面说书两者的区别和前端框架中的AOT的应用。</p>
+<h3 id="拿angular举例"><a href="#拿angular举例" class="headerlink" title="拿angular举例"></a>拿angular举例</h3><p>​        在模版中<code>&#123;&#123;&#125;&#125;</code>语法中，如果代码拼错<code>eg：&#123;&#123;getDataX()&#125;&#125;</code>，在使用AOT的情况下，就会报错。如果使用JIT的话，编译后不会报错，代码在浏览器中执行时会报错。</p>
+<p>​        造成以上区别的原因是：当使用<code>JIT</code>时，构建阶段仅仅使用<code>tsc</code>将<code>ts</code>编译为<code>js</code>并将代码打包。打包后的代码在浏览器运行后，执行到<code>Decorator</code>（上例中的<code>@Component</code>语句）时，<code>Angular的模版编译器</code>才开始编译<code>template</code>字段包含的模版语法，并报错。</p>
+<p>​        当使用<code>AOT</code>时，<code>tsc</code>、<code>Angular的模版编译器</code>都会在构建阶段进行编译，所以会立刻发现<code>template</code>字段包含的错误（an gui le ）</p>
+<h3 id="除上述此外的区别"><a href="#除上述此外的区别" class="headerlink" title="除上述此外的区别"></a>除上述此外的区别</h3><ul>
+<li>使用<code>JIT</code>的应用在首次加载时慢于<code>AOT</code>，因为其需要先编译代码，而使用<code>AOT</code>的应用已经在构建时完成编译，可以直接执行代码</li>
+<li>使用<code>JIT</code>的应用代码体积普遍大于使用<code>AOT</code>的应用，因为在运行时会多出编译器代码</li>
+</ul>
+<h3 id="从前端框架的角度看AOT"><a href="#从前端框架的角度看AOT" class="headerlink" title="从前端框架的角度看AOT"></a>从前端框架的角度看AOT</h3><p>​        前端框架的工作原理：1. 根据组件状态变化找到变化的UI、2. 将UI的变化协同到真实的UI上</p>
+<p>​        所以说借助AOT对模版语法的编译时优化，就可以减少性能开销，如今的vue，angular，sevlete也是这样做的。（静态节点提升）</p>
+<p>​        ‼️本质原因：模版写法是固定的，固定意味着可分析，而可分析就意味着可以将模版语法中的静态部分和动态部分分离，跳过静态部分，只操作动态，依次来提升性能。</p>
+<p>​        甚至<code>Svelte</code>、<code>Solid.js</code>直接利用<code>AOT</code>在编译时建立了<strong>「组件状态与UI中动态部分的关系」</strong>，在运行时，组件状态变化后，可以直接执行步骤2。</p>
+<h3 id="AOT和JSX"><a href="#AOT和JSX" class="headerlink" title="AOT和JSX"></a>AOT和JSX</h3><p>​    采用JSX描述UI的前端框架很难从AOT中获益，JSX是ES的语法糖，而js语言只又能执行后才知道结果，很难被静态分析。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>前端框架可以从<code>AOT</code>中收获很多益处，其中最主要的一条是：</p>
+<blockquote>
+<p>减少根据<code>组件状态变化</code>找到<code>变化的UI</code>这一步骤的工作量，减少diff的工作量。</p>
+</blockquote>
+<p>要实现<code>AOT</code>的前提是：组件代码易于分析。</p>
+<h4 id="其他的联系关系"><a href="#其他的联系关系" class="headerlink" title="其他的联系关系"></a>其他的联系关系</h4><p>​        老版本的vue中：complier+runtime 就是JIT，所有的工作都在宿主环境下，编译运行。新版本的vue，直接将runtime 设为默认值。编译由vue-loader负责。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/%E4%B8%9A%E5%8A%A1%E5%92%8C%E6%80%9D%E6%83%B3/AOP/" style="float: left;">
+        ← AOP思想
+    </a>
+    
+    
+    <a class="pull-right" href="/2-React_Hooks/%E9%97%AD%E5%8C%85%E9%99%B7%E9%98%B1/">
+        闭包陷阱 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

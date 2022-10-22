@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>AOP和OOP的区别联系 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-08-19T14:04:38.725Z" itemprop="datePublished">
+          2022-08-19
+      </time>
+    
+    
+    | 
+    <a href='/tags/编程思想/'>编程思想</a>
+    
+    
+</span>
+                <h1>AOP和OOP的区别联系</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="AOP-面向切面编程"><a href="#AOP-面向切面编程" class="headerlink" title="AOP(面向切面编程)"></a>AOP(面向切面编程)</h2><p>​    面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。<strong>AOP是OOP的延续</strong>，是软件开发中的一个热点，也是很多框架如 java中的Spring框架中的一个重要内容，是函数式编程的一种衍生范型。 利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。</p>
+<p>​    AOP只是一种思想的统称，实现这种思想的方法有挺多。AOP通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。利用AOP可以对业务逻辑的各个部分进行隔离，<span style="color:red">从而使得业务逻辑各部分之间的耦合度降低</span>，提高程序的可重用性，提高开发效率。</p>
+<p>​    主要意图：将日志记录，性能统计，安全控制，事务处理，异常处理等代码从业务逻辑代码中划分出来，通过对这些行为的分离，我们希望可以将它们独立到非指导业务逻辑的方法中，进而改变这些行为的时候不影响业务逻辑的代码。</p>
+<p>​    简单的来讲，AOP是一种：可以在不改变原来代码的基础上，通过“动态注入”代码，来改变原来执行结果的技术。</p>
+<h2 id="OOP-面向对象程序设计"><a href="#OOP-面向对象程序设计" class="headerlink" title="OOP(面向对象程序设计)"></a>OOP(面向对象程序设计)</h2><p>​    面向对象程序设计（Object Oriented Programming，OOP）是一种计算机编程架构。OOP&#x3D;对象+类+继承+多态+消息，其中核心概念是类和对象。</p>
+<p>​    <strong>OOP（面向对象编程）</strong>针对业务处理过程的实体及其属性和行为进行抽象封装，以获得更加清晰高效的逻辑单元划分。但是也有它的缺点，最明显的就是关注点聚焦时，面向对象无法简单的解决这个问题，一个关注点是面向所有而不是单一的类，不受类的边界的约束，因此OOP无法将关注点聚焦来解决，只能分散到各个类中<br>​    面向对象程序设计以对象为核心，该方法认为程序由一系列对象组成。类是对现实世界的抽象，包括表示静态属性的数据和对数据的操作，对象是类的实例化。对象间通过消息传递相互通信，来模拟现实世界中不同实体间的联系。在面向对象的程序设计中，对象是组成程序的基本模块。</p>
+<p>​    特点：封装、继承、多态</p>
+<h2 id="AOP和OOP的区别"><a href="#AOP和OOP的区别" class="headerlink" title="AOP和OOP的区别"></a>AOP和OOP的区别</h2><blockquote>
+<ol>
+<li>AOP、OOP在字面上虽然非常类似，但却是面向不同领域的两种设计思想。</li>
+<li>AOP（面向切面编程) ：通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。</li>
+<li>OOP（面向对象编程）：针对业务处理过程的实体及其属性和行为进行抽象封装，以获得更加清晰高效的逻辑单元划分。</li>
+</ol>
+</blockquote>
+<h5 id="一、注重方面不同：OOP注重业务逻辑单元的划分，AOP偏重业务处理过程的某个步骤或阶段。"><a href="#一、注重方面不同：OOP注重业务逻辑单元的划分，AOP偏重业务处理过程的某个步骤或阶段。" class="headerlink" title="一、注重方面不同：OOP注重业务逻辑单元的划分，AOP偏重业务处理过程的某个步骤或阶段。"></a>一、注重方面不同：OOP注重业务逻辑单元的划分，AOP偏重业务处理过程的某个步骤或阶段。</h5><p>​    OOP面向对象的三大特征：封装,继承,多态。将功能分散到不同的对象中去，让不同的类设计不同的方法，降低代码的复杂程度，提高类的复用性，但也增加了代码的重复性。<br>​    AOP是针对业务处理过程中的切面进行提取，它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合性的隔离效果。针对业务处理过程的实体及其属性和行为进行抽象封装，以获得更加清晰高效的逻辑单元划分</p>
+<h5 id="二、面向目标不同：OOP面向名词领域，AOP面向动词领域。"><a href="#二、面向目标不同：OOP面向名词领域，AOP面向动词领域。" class="headerlink" title="二、面向目标不同：OOP面向名词领域，AOP面向动词领域。"></a>二、面向目标不同：OOP面向名词领域，AOP面向动词领域。</h5><p>​    OOP关注将需求功能划分为不同的并且相对独立，封装良好的类，并让它们有着属于自己的行为，依靠继承和多态等来定义彼此的关系。<br>​    AOP希望能够将通用需求功能从不相关的类当中分离出来，能够使得很多类共享一个行为，一旦发生变化，不必修改很多类，而只需要修改这个行为即可。</p>
+<h5 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h5><p>​    <strong>AOP（面向切面编程）</strong>则是针对业务处理过程中的<strong>切面进行提取</strong>，它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合性的隔离效果。这两种设计思想在目标上有着本质的差异。 <strong>AOP并不是与OOP对立的</strong>，而是为了弥补OOP的不足。<strong>OOP解决了竖向的问题，AOP则解决横向的问题</strong>。因为有了AOP我们的调试和监控就变得简单清晰。</p>
+<p>AOP：封装的是业务，将主业务和通用业务区分开，将通用业务划分为切面，切面又划分为通知和切入点。<br>OOP：封装的是方法和属性，以对象为最小操作单元，属性和方法都要通过对象才能调用。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/%E4%B8%9A%E5%8A%A1%E5%92%8C%E6%80%9D%E6%83%B3/%E8%80%A6%E5%90%88%E5%92%8C%E5%86%85%E8%81%9A/" style="float: left;">
+        ← 耦合和内聚的理解
+    </a>
+    
+    
+    <a class="pull-right" href="/%E8%B6%85%E8%84%B1%E9%A2%86%E6%82%9F/%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B/">
+        响应式编程 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>类、原型、原型链 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-01-23T02:22:31.347Z" itemprop="datePublished">
+          2022-01-23
+      </time>
+    
+    
+    | 
+    <a href='/tags/js/'>js</a>
+    
+    
+</span>
+                <h1>类、原型、原型链</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h4 id="1-new调用函数和普通函数有什么区别"><a href="#1-new调用函数和普通函数有什么区别" class="headerlink" title="1.new调用函数和普通函数有什么区别"></a>1.new调用函数和普通函数有什么区别</h4><ol>
+<li><p>在内存中创建新的一个对象（空对象）；</p>
+</li>
+<li><p>这个对象的__proto__属性（对象的原型是隐式原型）会被赋值为该构造函数的prototype属性</p>
+<p>Bar._<em>proto</em>_ &#x3D;&#x3D;&#x3D; Function.prototype</p>
+</li>
+<li><p>构造函数内部的this，会指向创建出来的新对象；</p>
+</li>
+<li><p>执行函数的内部代码（函数体代码）；</p>
+</li>
+<li><p>如果构造函数没有返回非空对象，则返回创建出来的对象；</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">myNew</span> = (<span class="params">Constructor, config</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> obj = <span class="title class_">Object</span>.<span class="title function_">create</span>(<span class="literal">null</span>);</span><br><span class="line">  <span class="title class_">Object</span>.<span class="title function_">setPrototypeOf</span>(obj, <span class="title class_">Constructor</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line">  <span class="keyword">const</span> returnInstance = <span class="title class_">Constructor</span>.<span class="title function_">call</span>(obj, config);</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(returnInstance).<span class="title function_">slice</span>(<span class="number">8</span>, -<span class="number">1</span>) == <span class="string">&#x27;Object&#x27;</span></span><br><span class="line">    ? returnInstance</span><br><span class="line">    : obj;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> instance = <span class="title function_">myNew</span>(<span class="title class_">Person</span>, <span class="string">&#x27;sxy&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(instance);</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>对象的__<em>proto__属性的意义：谁创建的我，也就是谁new的我，我就把它作为我的原型链的上流，作为查找对象</em></li>
+<li>函数的prototype意义：就是函数自己的原型对象，我将创造的一个实例，实例的隐式原型将会指向函数的原型对象（显式）。</li>
+<li>而函数作为一个对象来说的话，他的__proto__属性是Function构造函数</li>
+</ol>
+<h4 id="2-构造函数的缺点"><a href="#2-构造函数的缺点" class="headerlink" title="2.构造函数的缺点"></a>2.构造函数的缺点</h4><p>如下代码：如果我创建了多个对象，每个对象的都会有一个eating的函数（类似逻辑的函数），这是没有必要的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">eating</span>=<span class="keyword">function</span> (<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>+<span class="string">&quot;...&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-引出原型和原型链概念"><a href="#3-引出原型和原型链概念" class="headerlink" title="3.引出原型和原型链概念"></a>3.引出原型和原型链概念</h4><p>原型链:</p>
+<blockquote>
+<p>从对象中获取某一个属性，<strong>！！只针对于对象</strong>，它会触发 [[get]] 操作，在当前对象中去查找对应的属性, 如果找到就直接使用，如果没有找到, 那么会沿着它的 __proto__属性去原型对象上查找（这个原型对象是当前对象的构造函数的prototype的指向），一直找到Object的原型对象，这个如同链式查找，叫做原型链。</p>
+<p>正是原型链查找的这个机制实现了类的继承，让js更像一门面向对象的语言</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">address</span> = <span class="string">&quot;黑龙江&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj.<span class="property">address</span>); <span class="comment">//黑龙江</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj.<span class="property">__proto__</span> === <span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>); <span class="comment">//true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">__proto__</span>); <span class="comment">//null </span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Object的原型对象是没有原型，Object的原型对象是顶层，是所有类的父类</p>
+<p>Object的原型对象有很多默认的属性和方法</p>
+</blockquote>
+<p>原型：</p>
+<blockquote>
+<p>对象上是隐式原型属性，函数上是显式原型属性，他们都指向同一个对象（原型对象，拥有一个constructor属性（指向构造函数本身））</p>
+</blockquote>
+<img  src="../assets/02.png"/>
+
+<ol>
+<li><code>Object</code>作为一个对象来说，隐式原型是<code>Function.prototype</code>， 可以看做为<code> const Object = new Function（）</code>,</li>
+</ol>
+<p><code>Function.prototype === Object.getPrototypeOf(Object)</code></p>
+<ol start="2">
+<li><code>Object</code>作为一个函数来说，显示原型对象就是<code>Object.protptype</code>，为顶层的原型对象，它的<code>__proto__ === null</code>，所以说平时创建的对象，都是相当于<code>const obj = new Object(..)</code>，所以得出<code>Object.getPotptypeOf(obj) === Object.prototype</code></li>
+<li>Foo作为对象来说，继承Function原型对象，Function原型对象继承Object的原型对象</li>
+</ol>
+<h4 id="4-创建对象方案："><a href="#4-创建对象方案：" class="headerlink" title="4 .创建对象方案："></a>4 .创建对象方案：</h4><ol>
+<li><p>原型链继承</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Student</span>.<span class="property"><span class="keyword">prototype</span></span> = <span class="keyword">new</span> <span class="title class_">Person</span>（）<span class="comment">//让person的实例作为Student的原型对象</span></span><br></pre></td></tr></table></figure>
+
+<p>第一个弊端:：打印子类对象, 继承的属性是看不到的</p>
+<p>第二个弊端：获取父类的引用, 修改引用中的值，会相互影响，相当于修改了父类的属性值</p>
+<p>第三个弊端：无法向构造函数传参数</p>
+</li>
+<li><p>借用构造函数继承</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Person</span>.<span class="title function_">call</span>(<span class="variable language_">this</span>, name, age, friends)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>​         第一个弊端：构造函数调用了两次</p>
+<p>​         第二个弊端：子类的原型的原型对象上会有一些多余的属性，（在new Person的时候造成的）</p>
+<ol start="3">
+<li><p>原型式继承函数（dgls）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">create</span>(<span class="params">obj</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> newobj = &#123; &#125;;</span><br><span class="line">  <span class="title class_">Reflect</span>.<span class="title function_">setPrototypeOf</span>(newobj, obj);</span><br><span class="line">  <span class="keyword">return</span> newobj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//让传入的对象作为返回对象的原型</span></span><br></pre></td></tr></table></figure>
+
+<p>创造一个新的对象以传入的对象为自己的原型，针对于对象之间的继承</p>
+<p>第一个弊端：局限于对象，失去了继承构造函数继承的意义</p>
+</li>
+<li><p>寄生式继承函数</p>
+<p>创建一个仅用于封装继承过程的函数，该函数在内部以某种形式来做增强对象，最后返回对象，结合原型式继承和工厂函数实现，也是局限于对象。</p>
+</li>
+<li><p>寄生组合式继承</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Student</span>.<span class="property"><span class="keyword">prototype</span></span> = <span class="title class_">Object</span>.<span class="title function_">create</span>(<span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>)</span><br></pre></td></tr></table></figure>
+
+<img src="../assets/03.jpg" />
+
+<p>以父类的原型为目标，创造一个以父类原型为原型的对象，（这个新的对象隐式原型和Person构造函数的显示原型都是同一个指向），在以这个对象为子类的原型</p>
+<p>这种方式的高效率体现它只调用了一次 Parent 构造函数，并且因此避免了在 Parent.prototype 上面创建不必要的、多余的属性。与此同时，原型链还能保持不变；因此，还能够正常使用 instanceof 和 isPrototypeOf。开发人员普遍认为寄生组合式继承是引用类型最理想的继承范式。</p>
+</li>
+</ol>
+<h4 id="5-对类的理解大彻大悟"><a href="#5-对类的理解大彻大悟" class="headerlink" title="5.对类的理解大彻大悟"></a>5.对类的理解大彻大悟</h4><p>ES6的CLASS extends关键字是使用了寄生式组合式继承和使用父类构造函数来实现类的继承</p>
+<p>继承核心代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">inheritAttrsPrototype</span>(<span class="params">SubType, SuperType</span>) &#123;</span><br><span class="line">  <span class="title class_">SubType</span>.<span class="property"><span class="keyword">prototype</span></span> = <span class="title class_">Object</span>.<span class="title function_">create</span>(<span class="title class_">SuperType</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line">  <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(<span class="title class_">SubType</span>.<span class="property"><span class="keyword">prototype</span></span>, <span class="string">&quot;constructor&quot;</span>, &#123;</span><br><span class="line">    <span class="attr">value</span>: <span class="title class_">SubType</span>,</span><br><span class="line">    <span class="attr">enumerable</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">writable</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">configurable</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>子类的构造方法的__proto__指向了父类，实现了静态方法的继承，请看如下代码和解释</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">_setPrototypeOf</span>(subClass, superClass);</span><br><span class="line"><span class="comment">//和下面做法如出一辙</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Student</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">setPrototypeOf</span>(<span class="title class_">Student</span>, <span class="title class_">Person</span>);</span><br></pre></td></tr></table></figure>
+
+<p>（这一步操作相当于把子类的构造函数看作一个对象，让该对象的原型指针（__proto__）不指向Object，而指向父类，所以说在父类上定义的静态方法，是加到它本身的，所以可以让子类继承）</p>
+<h4 id="6-super"><a href="#6-super" class="headerlink" title="6.super"></a>6.super</h4><p>JS引擎再解析子类的时候有要求，如果我么实现了继承，那么在子类的构造方法中，必须使用super，并且在this使用之前。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;<span class="title function_">constructor</span>(<span class="params"></span>) &#123;&#125;&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Person</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>为什么呢？</p>
+<p>super代替的是父类的构造函数，super（name）相当于调用了Person.prototype.construct or. call(this,name),借用了父类的构造函数实例化了子类实例，就是如此规定的，所以不调用super的话，子类就不能实例化，得不到自己的this，所以先于super使用this，就会报错。</p>
+<p>源码中的操作：<br>通过Super创建出来一个实例，但是这个实例的constructor指向的是子类（NewTarget）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Reflect</span>.<span class="title function_">construct</span>(<span class="title class_">Super</span>,argument,<span class="title class_">NewTarget</span>)</span><br></pre></td></tr></table></figure>
+
+<p>与下面方法等效：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj2 = <span class="title class_">Object</span>.<span class="title function_">create</span>(<span class="title class_">OtherClass</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line"><span class="title class_">OneClass</span>.<span class="title function_">apply</span>(obj2, args);</span><br></pre></td></tr></table></figure>
+
+<h4 id="一些问题的补充"><a href="#一些问题的补充" class="headerlink" title="一些问题的补充"></a>一些问题的补充</h4><ol>
+<li><p>在class中，只要是用 <code>= </code>声明的属性或者方法都是在实例身上的。</p>
+</li>
+<li><p>函数直接声明<code>class Person &#123; foo() &#123;&#125;&#125;</code>，是放在类原型对象上的。</p>
+</li>
+<li><p>静态的属性或者方法是放在类的本身上的。</p>
+</li>
+<li><p>无法在类中将属性放在原型对象。</p>
+</li>
+</ol>
+<h4 id="7-为什么要有原型链？"><a href="#7-为什么要有原型链？" class="headerlink" title="7. 为什么要有原型链？"></a>7. 为什么要有原型链？</h4><p>​    一针见血：逻辑复用</p>
+<p>​    原型链规范了属性查找的路径，一直查到顶层，如此的查找属性或者方法的模式，就是原型链。无论是js本身一些数据结构的设计还是说我们平时开发使用的class，都是将可能复用的方法挂在对象原型上，来减少代码冗余。而在使用的时候，会沿着原型连查找方法，从而达到目的。</p>
+<p>​    同时这种想法处处可见，vue的原型对象上挂载了大量复用的逻辑。</p>
+<p>​    class的继承，也是将js变了更像一门面向对象的语言，实际是寄生组合式继承的应用。</p>
+<p>super使用的注意点：</p>
+<ol>
+<li>只能在派生类的构造函数和静态方法中使用；</li>
+<li>不能单独引用super关键字，要门用它调用构造函数，要么用它引用静态方法；</li>
+<li>调用super()对调用父类的构造函数，并将返回的实例赋值给this;</li>
+<li>super()的行为如同调用构造函数，若需要给父类构造函数传参，则需要手动传入；</li>
+<li>若没有没有定义派生类的构造函数，那么在实例化派生类时，会自动调用super(),并且，会传入所有传给派生类的参数；</li>
+<li>在派生类的构造函数中，不能在调用super（）之前引用this;</li>
+<li>若派生类中显式定义了构造函数，则要门必须在其中调用super（），要么在其中返回一个对象。</li>
+</ol>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/1-JavaScript/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/" style="float: left;">
+        ← 箭头函数
+    </a>
+    
+    
+    <a class="pull-right" href="/2-Redux&Router/router/">
+        router →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

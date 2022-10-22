@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>vite和es build | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-07-27T00:43:42.962Z" itemprop="datePublished">
+          2022-07-27
+      </time>
+    
+    
+    | 
+    <a href='/tags/webpack/'>webpack</a>
+    
+    
+</span>
+                <h1>vite和es build</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="1-Vite做了什么"><a href="#1-Vite做了什么" class="headerlink" title="1. Vite做了什么"></a>1. Vite做了什么</h3><p>在开发环境中，Vite 主要做了两件事情:</p>
+<ul>
+<li>基于 Esbuild 打包外部依赖</li>
+<li>创建 HTTP Server 以响应浏览器中<code>&lt;script type=&quot;module&quot;&gt;</code> 所发起的一系列模块请求</li>
+</ul>
+<p>而生产环境下直接使用 Rollup 进行打包。Vite 整体的优势是在于开发阶段，服务启动快、热更新快，明显地优化了开发者体验。</p>
+<h3 id="2-为什么-Webpack-这么慢"><a href="#2-为什么-Webpack-这么慢" class="headerlink" title="2. 为什么 Webpack 这么慢"></a>2. 为什么 Webpack 这么慢</h3><p>​    浏览器中没有模块化的设计，所以期望把所有源代码编译进一个 js 文件中提供给浏览器使用，所以在开发中当我们运行启动命令的时候，webpack 总是需要从入口文件去索引整个项目的文件，编译成一个或多个单独的 js 文件，即使采用了代码拆分，也需要一次生成所有路由下的编译后文件（这也是为什么代码拆分对开发模式性能没有帮助）。这也导致了服务启动时间随着项目复杂度而指数增长 </p>
+<h3 id="3-Vite-是如何解决问题的"><a href="#3-Vite-是如何解决问题的" class="headerlink" title="3. Vite 是如何解决问题的"></a>3. Vite 是如何解决问题的</h3><p>​    vite 是如何通过使用 <a href="https://link.juejin.cn/?target=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">native ES modules</a> 优化服务启动时间的，使用 Vite 启动开发服务器的时候并不需要提前编译文件（其实是有一个类似过程的，下文详述），而是在浏览器请求对应 URL 的时候，再提供对应的文件，这就实现了在使用了路由懒加载的项目中，仅提供对应路由下的模块的编译文件，而没有索引全部代码的这一过程，项目启动时间始终为常量级。并不会随着项目复杂度变高而一直增长。</p>
+<h3 id="4-为什么-esbuild-这么快？"><a href="#4-为什么-esbuild-这么快？" class="headerlink" title="4. 为什么 esbuild 这么快？"></a>4. 为什么 esbuild 这么快？</h3><h5 id="1-使用-Go-编写，将源码编译成native-code"><a href="#1-使用-Go-编写，将源码编译成native-code" class="headerlink" title="1. 使用 Go 编写，将源码编译成native code"></a>1. 使用 Go 编写，将源码编译成native code</h5><blockquote>
+<p>​    native code是一种在制定处理器运行的特别编写的计算机代码，native code可以最大化制定处理器的效率。native code 可以在指定处理器中运行的更好的原因是它使用了处理器的硬件相关协议和逻辑顺序。</p>
+</blockquote>
+<p>​    现在的构建工具一般都是用 js 编写的，对于这种解释型语言（动态语言）来说，在命令行下的性能非常糟糕。因为每次运行编译的时候 V8 引擎都是第一次遇见代码，无法进行任何优化措施。同时 js 每次执行均需要现有解释器将源码翻译成 native code，再进行执行。而 Go 语言是编译型语言，在编译阶段就已经将 源码转化为 native code，Go 每次执行，直接执行 native code，Go 语言的执行性能更佳。</p>
+<ul>
+<li>Js 是一种 IO 密集型语言不同，Go 语言是一种 CPU 密集型语言。在源码编译打包这种 CPU 密集型的场景下，Go 语言具有天然的语言优势。除此之外，Go 语言是为并发而设计的语言，而 Js 是老单线程了。</li>
+<li>Go 在线程之间共享使用内存空间，而JS 想要在线程间传递数据还需要把数据序列化之后再传送。</li>
+<li>Go 和 JS 的并发都有相应的垃圾回收机制，Go 会在所有线程之间共享堆，对于 JS 而言，每一个线程都有一个独立的堆。</li>
+</ul>
+<p>​    根据 esbuild 的作者的测试，这似乎将 JavaScript 的工作线程的并行处理能力减少了一半，可能是因为你的一半 CPU 核心忙于为另一半收集垃圾</p>
+<h5 id="2-大量使用并行算法"><a href="#2-大量使用并行算法" class="headerlink" title="2. 大量使用并行算法"></a>2. 大量使用并行算法</h5><p>​    除了 Go 语言天生对于并发的优势，使得其处理并发任务性能远远优于 Js， Esbuild 的内部算法也是经过精心设计的，尽可能的压榨所有的 CPU 核心。</p>
+<h5 id="3-esbuild-的所有内容都是从零编写的"><a href="#3-esbuild-的所有内容都是从零编写的" class="headerlink" title="3. esbuild 的所有内容都是从零编写的"></a>3. esbuild 的所有内容都是从零编写的</h5><p>​    自己编写一切而不是使用第三方库有很多性能上的好处。可以从一开始就考虑到性能，可以确保所有的东西都使用一致的数据结构以避免昂贵的转换，当然，缺点就是这工作量非常大。</p>
+<h5 id="4-更有效利用内存"><a href="#4-更有效利用内存" class="headerlink" title="4. 更有效利用内存"></a>4. 更有效利用内存</h5><ul>
+<li>esbuild 通过减少 AST 遍历次数（三次），来减小内存访问速度对于打包速度的影响</li>
+<li>Go语言还有一个好处就是可以把数据更加紧凑的储存在内存中，从而使得高速 CPU 缓存可以存下更多的内容</li>
+</ul>
+<h3 id="5-缺点"><a href="#5-缺点" class="headerlink" title="5. 缺点"></a>5. 缺点</h3><h4 id="1-文件编译耗时较长"><a href="#1-文件编译耗时较长" class="headerlink" title="1 文件编译耗时较长"></a>1 文件编译耗时较长</h4><p>​    No-bundle 方案虽然省去了 bundle 的开销，但仍然需要进行单文件的编译(如 TS、JSX、Less、Sass)，编译的时长仍然可能会比较长(某些业务项目编译要 20 s 左右)。</p>
+<p>​    Vite 在二次请求时会采用 Etag 标识返回协商缓存的内容，可以跳过编译消耗的时间，但服务重启后仍然需要进行全量的编译，体验不太好。</p>
+<p>​    对此，一个比较好的解决方法是在服务退出时将 ModuleGraph 的内容缓存到本地，然后重启的时候激活缓存(hydrate)，那么二次启动时仍然会使用协商缓存，达到比较快的首屏加载效果。</p>
+<p>​    本地缓存在 Vite 中暂时还没有被完全实现，但也是未来的一个优化方向。<a target="_blank" rel="noopener" href="https://github.com/vitejs/vite/issues/1309">https://github.com/vitejs/vite/issues/1309</a></p>
+<h4 id="2-海量请求的加载性能问题"><a href="#2-海量请求的加载性能问题" class="headerlink" title="2 海量请求的加载性能问题"></a>2 海量请求的加载性能问题</h4><p>​    请求数量达到一定量级(1000 +)的时候，no-bundle 服务都会遇到加载性能问题，对 Vite 而言，尽管二次请求会使用协商缓存，但实际上请求仍然会发送，在开发环境中(一般的业务项目会使用代理进行本地开发)表现仍然不容乐观，以之前接入 Vite 的某个业务项目为例:</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">项目第一次构建 （CSR构建时间为准）</th>
+<th align="center">页面加载时间(二次加载)</th>
+<th align="left">热更新</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Webpack</td>
+<td align="center">80 s 构建</td>
+<td align="center">3~4 s</td>
+<td align="left">5 s 以上</td>
+</tr>
+<tr>
+<td align="center">使用 vite 方案</td>
+<td align="center">10 s 构建</td>
+<td align="center">10 s 左右</td>
+<td align="left">1 s 以内</td>
+</tr>
+<tr>
+<td align="center">时间缩短</td>
+<td align="center">50% 以上</td>
+<td align="center">vite 页面加载时间过长，由于调试后端接口需要频繁刷新页面，影响开发体验，需要进一步优化</td>
+<td align="left">80% 以上</td>
+</tr>
+</tbody></table>
+<p>​    经过一系列的尝试，最后发现 Service Worker 缓存可以很好地解决这一类问题，思路如下：<img src="https://mmbiz.qpic.cn/mmbiz_png/FuxFc4JogFwqPibhdEUiabkoBqz6yhTDrOl1jyd4a8yLgNvh7gpiazjysVIY26GbW0zYR7LImAm3EJkXhfc7ic15LA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1 z" alt="图片" style="zoom:87%;" /></p>
+<p>​    简单来说就是把 Vite 的编译结果缓存到  Service Worker，并对于 HMR 的模块及其依赖模块禁用缓存，保证模块的编译结果永远是最新的。优化之后页面加载时间由 10s 降低到了 5 s 以内，明显地提升了开发体验。</p>
+<h4 id="3-Vite-开发-x2F-生产表现不一致"><a href="#3-Vite-开发-x2F-生产表现不一致" class="headerlink" title="3 Vite 开发&#x2F;生产表现不一致"></a>3 Vite 开发&#x2F;生产表现不一致</h4><p>​    有不少人会吐槽 Vite 开发&#x2F;生产环境的不一致性，因为开发环境使用 Esbuild + Dev Server 架构，而生产环境直接用 Rollup。但由于生产环境的构建场景和开发阶段存在天然差异，开发和生产表现一致是不现实的。所以问题的核心在于保证生产环境构建的稳定性。</p>
+<p>​    而影响生产构建稳定性最主要的部分在于依赖的处理上，进一步说是对于 CommonJS 格式的依赖处理上面，开发环境使用 Esbuild 而生产环境下使用 @rollup&#x2F;plugin-commonjs，就容易导致生产构建出现一些奇怪的问题，如 @rollup&#x2F;plugin-commonjs  <code>ignoreTryCatch</code>行为 <a target="_blank" rel="noopener" href="https://github.com/rollup/plugins/pull/1005%EF%BC%8C%E5%9C%A8%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B%E5%BF%BD%E7%95%A5%E5%AF%B9%E4%BA%8E">https://github.com/rollup/plugins/pull/1005，在默认情况下忽略对于</a> try-catch 代码块中的 require 语法转换，这样对于某些依赖(如 <code>jspdf-autotable</code>)就会出现问题，而开发阶段使用 Esbuild 就不会出现。</p>
+<p>解决这类问题有两种方案:</p>
+<ul>
+<li>生产环境也使用 Esbuild 来进行依赖的打包，确保 CommonJS 的处理规则和开发阶段一致。该 feature 已经实现，将在 Vite 3.0 发布 <a target="_blank" rel="noopener" href="https://github.com/vitejs/vite/pull/8280">https://github.com/vitejs/vite/pull/8280</a></li>
+<li>开发和生产阶段使用 ESM CDN 方案，用同一套依赖产物。</li>
+</ul>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/%E8%B6%85%E8%84%B1%E9%A2%86%E6%82%9F/%E5%8F%AF%E8%A7%86%E5%8C%96%E9%A2%86%E5%9F%9F/" style="float: left;">
+        ← 可视化领域
+    </a>
+    
+    
+    <a class="pull-right" href="/%E4%B8%9A%E5%8A%A1%E5%92%8C%E6%80%9D%E6%83%B3/ssr%E5%92%8Cspa%E7%9A%84%E5%8C%BA%E5%88%AB/">
+        SSR和SPA →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>从更高层的设计思想看两个框架 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-04-22T11:35:16.160Z" itemprop="datePublished">
+          2022-04-22
+      </time>
+    
+    
+    | 
+    <a href='/tags/react/'>react</a>,
+    
+    <a href='/tags/vue/'>vue</a>
+    
+    
+</span>
+                <h1>从更高层的设计思想看两个框架</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="从更高层的设计思想看两个框架"><a href="#从更高层的设计思想看两个框架" class="headerlink" title="从更高层的设计思想看两个框架"></a>从更高层的设计思想看两个框架</h1><h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://bucket922.oss-cn-beijing.aliyuncs.com/blog-img/%E7%BA%AC%E5%BA%A6.jpg" width="400"></h2><h2 id="1-原生和抽象"><a href="#1-原生和抽象" class="headerlink" title="1.原生和抽象"></a>1.原生和抽象</h2><p>react更加接近原生开发（手动挡），而vue更处于一个抽象概念（自动挡）</p>
+<img  src="https://bucket922.oss-cn-beijing.aliyuncs.com/blog-img/%E5%8E%9F.jpg" width="400">
+
+<h2 id="2-编译和运行的占比差异"><a href="#2-编译和运行的占比差异" class="headerlink" title="2.编译和运行的占比差异"></a>2.编译和运行的占比差异</h2><h5 id="vue，注重编译阶段"><a href="#vue，注重编译阶段" class="headerlink" title="vue，注重编译阶段"></a>vue，注重编译阶段</h5><ol>
+<li><p>大致的原理就是把 template 解析成一个函数(render函数)，缺点也很明显，就是每次数据变化，模板内部要全部重新渲染。只会编译一次，也就是在构建的时候。</p>
+</li>
+<li><p>vue3性能提升：预编译时做了静态节点标记，事件缓存，v-if和 v-for 内部通过 block+ 数组的方式维护动态元素等操作，<code>（将不变的节点闭包放在render外，不用在走一遍h函数）</code>由于预编译的这些优化，后期在数据更新的时候可以直接复用，更快速的生成虚拟DOM，而且还可以在diff的时候，永远跳过静态节点。提高diff性能。</p>
+</li>
+</ol>
+<h5 id="react，注重运行阶段（几乎都在运行时）"><a href="#react，注重运行阶段（几乎都在运行时）" class="headerlink" title="react，注重运行阶段（几乎都在运行时）"></a>react，注重运行阶段（几乎都在运行时）</h5><ol>
+<li><p>数据发生变化后，生成一个新的尽可能复用的fiber，并且通过 diff 算法得出最小的操作行为，全部都是在运行时来做的</p>
+</li>
+<li><p>纯js写法，方法很灵活，但是使它在编译时很难做太多的事情，所以说react的历代更新都在解决自己运行时的优化，推出了时间切片和任务分片概念，榨干浏览器性能。</p>
+</li>
+</ol>
+<img  src="https://bucket922.oss-cn-beijing.aliyuncs.com/blog-img/%E4%B8%AD.jpg" width="400">
+
+<h2 id="3-更细化的设计维度"><a href="#3-更细化的设计维度" class="headerlink" title="3.更细化的设计维度"></a>3.更细化的设计维度</h2><p>vue可变数据，基于数据的拦截操作，让我们可以实现修改js对象的同时，就修改view层，这就是vue给我们提供的mvvm的黑盒子，让我们全身心注重于业务。</p>
+<p>react不可变数据，基于Immutable思想，每次都是新的state，diff然后在算出差异，在commit渲染视图。心智模型较重，对与无用渲染的子组件的细致负担，需要自己来承受。</p>
+<img  src="https://bucket922.oss-cn-beijing.aliyuncs.com/blog-img/state.jpg" width="400">
+
+<p>后期作出的权衡：</p>
+<p>最开始的vue监听器很多，并不是以组件为粒度，后期Vue 选择了权衡，以组件作为颗粒度，组件层面用响应式通知，组件内部通过 dom diff 计算 ，既控制了应用内部 Watcher 的数量，也控制了 dom diff 的量级。</p>
+<p>而react 推出fiber，时间切片，任务分片，任务调度等思想架构，让react刚开始雪崩的性能也好转起来。</p>
+<blockquote>
+<p> 时间切片:</p>
+<p>vue3 通过静态标记 + 响应式 + 虚拟 dom 的方式，控制了 diff 的颗粒度，让 diff 的时间不会超过 16ms，但是 React 自上而下的 diff 过程，项目大了之后，一旦 diff 的时间超过 16.6ms，就会造成卡顿，</p>
+<p>对此 React 交出的解决方案就是时间切片，就是把 diff 的任务按照元素拆开，利用浏览器的空闲时间去算 diff，React 把各种优化的策略都留给了开发者，Vue 则是帮开发者做了很多优化的工作</p>
+</blockquote>
+<h2 id="4-组合优于集成"><a href="#4-组合优于集成" class="headerlink" title="4. 组合优于集成"></a>4. 组合优于集成</h2><p>这个思想设计模式里面就有定论，也是现在 hooks 和 composition 大行其道的原因，代码写出来也会更加易于维护，这个图可以很好地体现出可维护性上的变化</p>
+<h2 id="5-跨端"><a href="#5-跨端" class="headerlink" title="5. 跨端"></a>5. 跨端</h2><p>刚才我讲了 Svelte(扫物体) 可以做到直接编译成 JavaScript，性能接近原生，这么优秀的思想，为什么 Vue 还要保留虚拟 dom 这个额外的 runtime 损耗呢，我觉得比较重要的一个答案就是跨端</p>
+<p>虚拟 dom 除了可以用来计算最小的 diff 之外，另外一个重要的功能就是可以用 JavaScript 的对象来去描述一个 dom，这就是一个普通的对象，在跨端领域意义重大，视图层返回的是一个对象，渲染层可以调用不同平台的渲染 api 去绘制即可</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2-Vue/%E7%89%88%E6%9C%AC%E5%8C%BA%E5%88%AB/" style="float: left;">
+        ← Vue版本区别
+    </a>
+    
+    
+    <a class="pull-right" href="/3-NetWork/CND%E6%A6%82%E8%BF%B0/">
+        CDN概述 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

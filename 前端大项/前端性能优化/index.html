@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>前端性能优化 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-04-02T00:26:21.000Z" itemprop="datePublished">
+          2022-04-02
+      </time>
+    
+</span>
+                <h1>前端性能优化</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="性能优化指标-x2F-首屏优化"><a href="#性能优化指标-x2F-首屏优化" class="headerlink" title="性能优化指标&#x2F;首屏优化"></a>性能优化指标&#x2F;首屏优化</h1><h3 id="提前的知识储备"><a href="#提前的知识储备" class="headerlink" title="提前的知识储备"></a>提前的知识储备</h3><img src="../assets/per1.jpg" width="80%">
+
+<p>网页是运行在浏览器端的，优化网页性能无法脱离浏览器，所以首先需要搞清楚浏览器加载一个网页的过程，比较重要的两个点：网络请求过程以及浏览器的工作原理</p>
+<p><strong>明确首屏指标 -&gt; 优化前首屏指标测量与分析 -&gt; 优化 -&gt; 优化后首屏指标测量与分析 -&gt; 优化收益总结</strong></p>
+<p>首先需要确定从指标考虑</p>
+<ul>
+<li>平衡，取舍</li>
+<li>从什么维度剖析性能：</li>
+<li>首屏时间（白屏时间）FP：首次绘制，屏幕上有第一个像素点</li>
+<li>首次可交互时间</li>
+<li>首次有意义的内容渲染时间、</li>
+<li>首屏加载要在bundle size和网络请求的数量中制衡，让这两者均衡，性能达到最优</li>
+</ul>
+<h3 id="浏览器优化"><a href="#浏览器优化" class="headerlink" title="浏览器优化"></a>浏览器优化</h3><ol>
+<li>重排重绘<ol>
+<li>动画单独提层（transform），硬件加速，减少重排重绘面积</li>
+<li>集中读操作</li>
+</ol>
+</li>
+<li>本地缓存（localStorage，减少请求属于网络方向）</li>
+<li>资源加载顺序，js放在最后</li>
+<li>复杂计算：web worker线程</li>
+</ol>
+<h3 id="网络优化"><a href="#网络优化" class="headerlink" title="网络优化"></a>网络优化</h3><ol>
+<li>cdn提升首次访问网站速度，提高用户访问响应速度和命中率，cdn预热</li>
+<li>script标签的预加载，preload，dns-prefetch，prefetch等</li>
+<li>减少网络请求<ol>
+<li>图片base64、渐进式图片格式（降低分辨率）、雪碧图（如果说一个图片过大，将会影响到FP或者onload的时间，造成一首屏加载速度慢）。</li>
+<li>缓存（强缓存，协商缓存，启发式缓存）</li>
+<li>防抖截流</li>
+<li>合并业务中的接口请求</li>
+<li>复杂（options）请求优化（1. 转化为简单请求，jsonp跨域请求，2.options请求缓存，服务端设置access-control-max-age）</li>
+</ol>
+</li>
+<li><span style="color:red">提升网络请求速度</span><ol>
+<li>域名拆分，静态资源放在不同的域名下，（浏览器对同一域名的请求，包括二级域名有限制请求数量），但是要适度拆分，否则会有dns解析拖延</li>
+<li>开启Gzip压缩，文件传输体积变小，传输速度提升，图片webp压缩</li>
+<li>开启keepalive，减少两端连接次数，节省建立时间（效果显著），服务器压力大，要适度</li>
+<li>Http2，多路复用</li>
+<li>将一些不需要在解析 HTML 阶段使用的 JS 标上 async 或 defer。（异步请求延迟执行js，不阻塞页面的渲染）</li>
+<li>对于大的 CSS 文件，可以通过媒体查询，将其拆分为不同用途的 CSS 文件，只在特定场景下加载。防止css阻塞页面渲染。</li>
+</ol>
+</li>
+<li>减少用户感知，fp时间，骨架屏的应用，link标签&lt;link rel&#x3D;”preload” href&#x3D;”index.css” as&#x3D;”style” onload&#x3D; “this. rel &#x3D; ‘stylesheet’”&gt;，通过这种方式，告诉浏览器先不要管 <code>index.css</code>，直接画骨架屏。之后 <code>index.css</code> 加载回来之后，再应用这个样式。或者骨架屏写在index.html（首屏包体积增加），vue-skeleton-webpack-plugin骨架屏的实现思路。</li>
+</ol>
+<h3 id="构建优化"><a href="#构建优化" class="headerlink" title="构建优化"></a>构建优化</h3><ol>
+<li>按需加载（code split，图片懒加载，动态poyfill，首屏包体积）</li>
+<li>减小包体积<ol>
+<li>tree sharking，递归树摇</li>
+<li>scope hoisting</li>
+<li>基础包cdn引入，splitChunk分离包</li>
+<li>代码压缩，代码丑化（Minify，js和css资源压缩，效果显著）</li>
+<li>runtime抽离</li>
+</ol>
+</li>
+<li>提升构建速度：<ol>
+<li>dll，预编译资源模块</li>
+<li>多进程打包，thread Loader</li>
+<li>terser-webpack-plugin 并行压缩缓存</li>
+<li>babel 缓存</li>
+<li>cache-loader缓存大大提升二次构建的速度，但是冷启动会变慢。</li>
+</ol>
+</li>
+</ol>
+<h3 id="技术栈优化"><a href="#技术栈优化" class="headerlink" title="技术栈优化"></a>技术栈优化</h3><ol>
+<li>vue  nextTick，预编译，静态节点提升，长列表优化：虚拟滚动+分页&#x2F; css新特性，key值，</li>
+<li>react：异步更新，批处理更新，抽离状态并且不使用性能优化api，尽量命中react原生性能优化</li>
+</ol>
+<h3 id="网络相关的指标"><a href="#网络相关的指标" class="headerlink" title="网络相关的指标"></a>网络相关的指标</h3><p><strong>0</strong>: {key: ‘Redirect’, desc: ‘网页重定向的耗时’, value: 286.29999999701977}</p>
+<p><strong>1</strong>: {key: ‘AppCache’, desc: ‘检查本地缓存的耗时’, value: 0}</p>
+<p><strong>2</strong>: {key: ‘DNS’, desc: ‘DNS查询的耗时’, value: 0}</p>
+<p><strong>3</strong>: {key: ‘TCP’, desc: ‘TCP连接的耗时’, value: 0}</p>
+<p><strong>4</strong>: {key: ‘Waiting(TTFB)’, desc: ‘从客户端发起请求到接收到响应的时间 &#x2F; Time To First Byte’, value: 314.59999999403954}</p>
+<p><strong>5</strong>: {key: ‘Content Download’, desc: ‘下载服务端返回数据的时间’, value: 203.40000000596046}</p>
+<p><strong>6</strong>: {key: ‘HTTP Total Time’, desc: ‘http请求总耗时’, value: 518}</p>
+<p><strong>7</strong>: {key: ‘DOMContentLoaded’, desc: ‘dom加载完成的时间’, value: 1268.7000000029802}</p>
+<p><strong>8</strong>: {key: ‘Loaded’, desc: ‘页面load的总耗时’, value: 6107.70000000298}</p>
+<h3 id="1-只请求当前所需要的资源"><a href="#1-只请求当前所需要的资源" class="headerlink" title="1.只请求当前所需要的资源"></a>1.只请求当前所需要的资源</h3><p>​        异步路由加载、图片懶加载（图片进入到视野内，才开始加载）、polyfill （转译高级语法）</p>
+<p>​        <a target="_blank" rel="noopener" href="https://polyfill.io/v3/ployfill.min.js">https://polyfill.io/v3/ployfill.min.js</a> 使用这个script标签，会实现转译的按需加载，阿里也有一个cdn</p>
+<p>​        一般来说，用户需要登录状态，才可以看到页面的情况下，这样做懒加载是比较合适的</p>
+<h3 id="2-缩减资源体积"><a href="#2-缩减资源体积" class="headerlink" title="2.缩减资源体积"></a>2.缩减资源体积</h3><p>​        打包压缩 webpack4已经内置了代码压缩</p>
+<p>​        gzip格式（资源压缩的算法）gzip：on 压缩70%~80% 原理：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903661575880717">https://juejin.cn/post/6844903661575880717</a></p>
+<p>​        图片格式优化（压缩图片），根据屏幕的分辨率展示不同的分辨率的图片（不需要高分辨率的图片），</p>
+<p>​        图片格式：webp，对于想要转化图片格式转化成webp，需要判断浏览器的兼容性。</p>
+<p>​        尽量控制cookie的大小，request header，cookie</p>
+<p>尝试写一下，将其他内容的图片转化为webp格式?</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//转成webp格式，需要注意：webp在浏览器中的适配，url的合法性</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">checkWebp</span>(<span class="params"></span>)&#123;</span><br><span class="line"> <span class="comment">//转成base64，尝试转化格式，如果支持转化，则为0</span></span><br><span class="line"><span class="keyword">try</span>&#123;  <span class="keyword">return</span> (<span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;canvas&#x27;</span>).<span class="title function_">toDataURL</span>(<span class="string">&#x27;image/webp&#x27;</span>).<span class="title function_">indexOf</span>(<span class="string">&#x27;image/webp&#x27;</span>)===<span class="number">0</span>) &#125;</span><br><span class="line"><span class="keyword">catch</span>(e)&#123;<span class="keyword">return</span> <span class="literal">false</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> supportWebp = <span class="title function_">checkWebp</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getWebpImageUrl</span>(<span class="params">url</span>)&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!url) <span class="keyword">return</span> url;<span class="comment">//url是否为空</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!supportWebp) <span class="keyword">return</span> url<span class="comment">//是否支持</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(url.<span class="title function_">startsWith</span>(<span class="string">&#x27;data:&#x27;</span>))&#123;<span class="keyword">return</span> url&#125;<span class="comment">//是否是base64格式</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> url+<span class="string">&#x27;?/x-oss-process=image/format,webp&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>需要浏览器适配，不同浏览器是不一样的。</p>
+<h3 id="3-时序优化和预加载"><a href="#3-时序优化和预加载" class="headerlink" title="3. 时序优化和预加载"></a>3. 时序优化和预加载</h3><ol>
+<li><p>ssr，seo</p>
+</li>
+<li><p>预加载prefetch：可能会用的的资源，异步组件的link标识</p>
+</li>
+<li><p>preload：对于首屏（一定用到的组件）link标识是preload，优先级更高</p>
+<h5 id="preload，提前下载，当用到的时候节省了下载的时间，首屏资源"><a href="#preload，提前下载，当用到的时候节省了下载的时间，首屏资源" class="headerlink" title="preload，提前下载，当用到的时候节省了下载的时间，首屏资源"></a>preload，提前下载，当用到的时候节省了下载的时间，首屏资源</h5><p>在遇到需要preload的资源时，浏览器会<strong>立刻</strong>进行预获取，并将结果放在内存中，资源的获取不会影响页面 parse 与 load 事件的触发。直到再次遇到该资源的使用标签时，才会执行。由于我们会将 script标签置于 body底部来保证性能，因此可以考虑在 head标签中适当添加这些资源的 Preload 来加速页面的加载与渲染。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;preload&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/main.js&quot;</span> <span class="attr">as</span>=<span class="string">&quot;script&quot;</span>&gt;</span>link标签主要是用来做资源预加载的，as script，声明preload或者prefetch加载的内容类型</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">preload</span> <span class="attr">as</span>=<span class="string">&quot;image&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://aaa.com/p.png&quot;</span> /&gt;</span>预加载图片，设置类型，加载优先级非常高，需要这样预加载（如果要是动态的话，需要构建标签，插入html）</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">import</span>(<span class="comment">/* webpackPreload: true */</span> <span class="string">&#x27;./sub2.js&#x27;</span>) </span><br><span class="line"><span class="comment">//配合code split， webpack中设置preload，prefetch同。</span></span><br><span class="line"><span class="comment">//或者使用PreloadWebpackPlugin插件配合htmlwebpackplugin使用</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="prefetch，作用异步chunk（code-split产物）"><a href="#prefetch，作用异步chunk（code-split产物）" class="headerlink" title="prefetch，作用异步chunk（code split产物）"></a>prefetch，作用异步chunk（code split产物）</h5><p>是一个低优先级的资源提示，浏览器会在<strong>空闲</strong>的时候下载资源并缓存到disk。当有页面使用的时候，直接从disk缓存中读取。把决定是否和什么时间加载这个资源的决定权交给浏览器。</p>
+<p>如果prefetch还没下载完之前，浏览器发现script标签也引用了同样的资源，浏览器会再次发起请求，这样会严重影响性能的，加载了两次，所以不要在当前页面马上就要用的资源上用prefetch，要用preload。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;/js/HelloWorld.js&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;prefetch&quot;</span>&gt;</span> </span><br><span class="line">异步组件，并没有组件对应的script标签，只有用到了才会创建script标签。</span><br></pre></td></tr></table></figure>
+
+<h5 id="dns-prefetch"><a href="#dns-prefetch" class="headerlink" title="dns-prefetch"></a>dns-prefetch</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;dns-prefetch&quot;</span> <span class="attr">href</span>=<span class="string">&quot;xxx.com&quot;</span>/&gt;</span> </span><br><span class="line">不加这一行代码，会在真正碰到第一个请求的时候，才会去解析dns，这样造成了一定意义上的耗时。如果加上，在加载html的时候，就直接进行了dns的预解析，节省了时间。</span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">preconnect</span> <span class="attr">href</span>=<span class="string">&quot;https://aaa.com&quot;</span> /&gt;</span></span><br><span class="line">和预解析差不多，在访问一个域名的时候，有一个优化效果</span><br></pre></td></tr></table></figure>
+
+<h5 id="pre-render"><a href="#pre-render" class="headerlink" title="pre-render"></a>pre-render</h5><p>预渲染，和prefetch相似，它们都优化了可能导航到的下一页上的资源的加载，区别是 prerendering 在后台渲染了整个页面，整个页面所有的资源。优化了SEO。</p>
+<h5 id="script标签异步加载属性"><a href="#script标签异步加载属性" class="headerlink" title="script标签异步加载属性"></a>script标签异步加载属性</h5><p>这两个标签都是异步下载js脚本，区别在于脚本下载完之后何时运行，</p>
+<ol>
+<li><p>async: 发起请求js，但不阻塞页面的渲染，js加载完成后，如果此时HTML页面还未加载完成，GUI线程刮起，js接管线程，<strong>会阻塞页面的渲染</strong>，js的执行会抢占线程，等他执行完，页面在加载。</p>
+</li>
+<li><p>defer: 不阻塞页面的渲染，js加载完成后，如果此时HTML页面还未加载完成，<strong>不会阻塞页面的渲染</strong>，等页面加载完后再执js，效果如同更像是将script标签放在body后面的效果，由于是异步加载js文件，所以可以节省时间</p>
+</li>
+<li><p>type&#x3D;”module”: 也是能起到异步加载的效果，效果同defer，<strong>使用async属性效果同async</strong>。</p>
+</li>
+<li><p><span style="color:red">defer在所以元素解析完成之后，DomContentLoaded事件触发之前完成。同时defer是按照脚本的加载顺序进行的，这一点性质要善用，而async的是乱序加载的，不管你什么顺序，加载完js脚本就会执行，所以说async对应用程序的用处不大，因为他不考虑依赖关系，不过它对于那些可以不依赖任何脚本或不被任何脚本依赖的脚本来说却是非常合适的，最典型的例子：Google Analytics</span></p>
+</li>
+<li><p>前端脚手架默认配置preload和prefetch</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="4-合理利用缓存"><a href="#4-合理利用缓存" class="headerlink" title="4. 合理利用缓存"></a>4. 合理利用缓存</h3><ol>
+<li>localStroage（数据持久化）</li>
+<li>强缓存，协商缓存</li>
+</ol>
+<h3 id="5-用装饰器模式，封装测时函数，"><a href="#5-用装饰器模式，封装测时函数，" class="headerlink" title="5. 用装饰器模式，封装测时函数，"></a>5. 用装饰器模式，封装测时函数，</h3><p>减少网络请求次数，雪碧图，防抖截流，缓存（http缓存，vue的keep-alive），懒加载</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法装饰器的第一个参数是类的原型对象，这个时候实例还没生成，所以只能去装饰原型（这不同于类的装饰，那种情况时`target`参数指的是类本身）；第二个参数是所要装饰的属性名，第三个参数是该属性的描述对象。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Home</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Vue</span> &#123;</span><br><span class="line">  <span class="title function_">longTimeFn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> <span class="built_in">setTimeout</span>(resolve, <span class="number">100</span>));</span><br><span class="line">  &#125;</span><br><span class="line">  @measure</span><br><span class="line">  <span class="keyword">async</span> <span class="title function_">created</span>(<span class="params"></span>) &#123; <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="title function_">longTimeFn</span>()&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">measure</span>(<span class="params">target, name, descriptor</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> oldFn = descriptor.<span class="property">value</span>; <span class="comment">//属性描述对象</span></span><br><span class="line">  descriptor.<span class="property">value</span> = <span class="keyword">async</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">time</span>(name);</span><br><span class="line">    <span class="keyword">const</span> res = oldFn.<span class="title function_">apply</span>(<span class="variable language_">this</span>, <span class="variable language_">arguments</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">timeEnd</span>(name);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> descriptor;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-额外补充："><a href="#6-额外补充：" class="headerlink" title="6. 额外补充："></a>6. 额外补充：</h3><p>cdn预热（不通过用户，把原站的内容发送到全国各地的网点）cdn刷新（强制回源）cdn强制从原站拉取资源</p>
+<blockquote>
+<p>为什么常见的 cdn 域名和业务域名不一样 ?</p>
+<ol>
+<li>安全问题，公司不想把用户信息传给 cdn </li>
+<li>cdn request header 会携带 cookie，本来是拉一些静态的代码，不需要 cookie，但是携带了，浪费带宽</li>
+<li>更利于cdn的hit命中，降低server压力。</li>
+<li>便于cdn和server业务分离。</li>
+<li>携带的认证信息等，静态资源一般是不需要的。把静态资源和主页面置于不同的域名下，就可以完美地避免请求中携带不必要的 Cookie。</li>
+</ol>
+</blockquote>
+<h2 id="大量图片的优化策略"><a href="#大量图片的优化策略" class="headerlink" title="大量图片的优化策略"></a>大量图片的优化策略</h2><p>懒加载，压缩格式webp、 url-loader：base64、雪碧图、渐进式图片格式、 </p>
+<h3 id="过度懒加载，带来的问题"><a href="#过度懒加载，带来的问题" class="headerlink" title="过度懒加载，带来的问题"></a>过度懒加载，带来的问题</h3><h5 id="1-减慢快速滚动的速度"><a href="#1-减慢快速滚动的速度" class="headerlink" title="1. 减慢快速滚动的速度"></a>1. 减慢快速滚动的速度</h5><p>如果你有一个 Web 应用，比如在线商店，你需要让用户可以快速上下滚动以及导航。对这样的应用使用懒加载会减慢滚动速度，因为我们需要等待数据加载完成。这会降低应用性能以及引发用户体验问题。</p>
+<h5 id="2-因为内容变化而导致的延迟"><a href="#2-因为内容变化而导致的延迟" class="headerlink" title="2. 因为内容变化而导致的延迟"></a>2. 因为内容变化而导致的延迟</h5><p>如果你还没有为懒加载的图片定义的 <code>width</code> 和 <code>height</code> 属性，那么在图片渲染过程中会出现明显的延迟。因为资源在页面初始化时没有加载，浏览器不知道适用于页面布局的内容尺寸。</p>
+<p>一旦内容加载完成，而用户滚动到特定视图中，浏览器需要处理内容以及再一次改变页面布局。这会使其他元素移位，也会带来糟糕的用户体验。</p>
+<h5 id="3-内容缓冲"><a href="#3-内容缓冲" class="headerlink" title="3.内容缓冲"></a>3.内容缓冲</h5><p>如果你在应用中使用非必要的懒加载，这会导致内容缓冲。当用户快速向下滚动而资源却还在下载中时会发生这种情况。尤其是带宽连接较慢时会发生这种情况，这会影响网页渲染速度。</p>
+<h3 id="应该何时使用懒加载"><a href="#应该何时使用懒加载" class="headerlink" title="应该何时使用懒加载"></a>应该何时使用懒加载</h3><h5 id="1-在正确的地方懒加载正确的资源"><a href="#1-在正确的地方懒加载正确的资源" class="headerlink" title="1. 在正确的地方懒加载正确的资源"></a>1. 在正确的地方懒加载正确的资源</h5><p>如果你有一个需要很多资源的冗长的网页，那你可以考虑使用懒加载，但只能针对用户视图外或者被折叠的内容使用。</p>
+<p>确保你没有懒加载后台任务执行所需的资源，比如 JavaScript 组件，背景图片或者其他多媒体内容。而且，你一定不能延迟这些资源的加载。你可以使用谷歌浏览器的 Lighthouse 工具来检查，识别那些可添加懒加载属性的资源。</p>
+<h5 id="2-懒加载那些不妨碍网页使用的内容"><a href="#2-懒加载那些不妨碍网页使用的内容" class="headerlink" title="2. 懒加载那些不妨碍网页使用的内容"></a>2. 懒加载那些不妨碍网页使用的内容</h5><p>懒加载最好是用于不重要的非必需的 Web 资源。另外，如果资源没有像预期那样懒加载，那么不要忘记错误处理和提供良好的用户体验。请注意，原生懒加载依然没有被所有平台和浏览器普遍支持。</p>
+<h5 id="3-懒加载对搜索引擎优化（SEO）而言不重要的资源"><a href="#3-懒加载对搜索引擎优化（SEO）而言不重要的资源" class="headerlink" title="3. 懒加载对搜索引擎优化（SEO）而言不重要的资源"></a>3. 懒加载对搜索引擎优化（SEO）而言不重要的资源</h5>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/4-Webpack/%E7%83%AD%E6%9B%B4%E6%96%B0%E5%92%8C%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" style="float: left;">
+        ← 热更新和性能优化
+    </a>
+    
+    
+    <a class="pull-right" href="/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/%E5%8D%81%E7%A7%8D%E6%8E%92%E5%BA%8F/">
+        十种排序 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>前端虚拟dom | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-04-25T01:08:41.577Z" itemprop="datePublished">
+          2022-04-25
+      </time>
+    
+</span>
+                <h1>前端虚拟dom</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="提前要说知识补充"><a href="#提前要说知识补充" class="headerlink" title="提前要说知识补充"></a>提前要说知识补充</h2><p>​    对于浏览器来说，改变元素的样式的时候，都会开启一个渲染队列，浏览器会继续解析下文，并且将样式修改的操作全部push到渲染队列，浏览器会按照渲染队列批量执行来优化重排过程，一并修改样式 ,这样就把本该多次次的重排优化为1次。</p>
+<p>​    ⚠️：但是如果中途做了一个js的读操作（比如width等等），这就会导致浏览器放弃之前的优化，立刻渲染一遍，导致性能下降。因为浏览器并不确定在下面的代码中是否还有修改同样的样式，为了获取到当前正确的的即时值不得不立刻执行渲染队列触发重排！！！</p>
+<p>​    这就是浏览器的性能问题，所以引出了vDom概念。所以说性能优化的时候，才会有集中读DOM的操作，并且有如下建议。</p>
+<blockquote>
+<ol>
+<li>分离读写操作，dom属性、样式集中修改。</li>
+<li>缓存需要修改的DOM元素</li>
+<li>尽量只修改position：absolute或fixed元素，对其他元素影响不大</li>
+<li>动画开始GPU加速，translate使用3D变化</li>
+</ol>
+</blockquote>
+<h2 id="一、-vDom的真正作用"><a href="#一、-vDom的真正作用" class="headerlink" title="一、 vDom的真正作用"></a>一、 vDom的真正作用</h2><p><span style="color:red;font-size:20px"><strong>Virtual Dom的核心价值是一种视图层的表达力，他通过js对象来描述界面应该渲染的样子，通过声明式、基于状态驱动UI的开发。</strong></span></p>
+<h3 id="1-vdom真的快么？-某种程度上，保证性能一个下限"><a href="#1-vdom真的快么？-某种程度上，保证性能一个下限" class="headerlink" title="1. vdom真的快么？ 某种程度上，保证性能一个下限"></a>1. vdom真的快么？ 某种程度上，保证性能一个下限</h3><p>首先我们需要知道：</p>
+<ul>
+<li>DOM 引擎、JS 引擎 相互独立，但又工作在同一线程（主线程）</li>
+<li>JS 代码调用 DOM API 必须 挂起 JS 引擎、转换传入参数数据、激活 DOM 引擎，DOM 重绘后再转换可能有的返回值，最后激活 JS 引擎并继续执行若有频繁的 DOM API 调用，且浏览器厂商不做“批量处理”优化，</li>
+<li>引擎间切换的单位代价将迅速积累若其中有强制重绘的 DOM API 调用，重新计算布局、重新绘制图像会引起更大的性能消耗。</li>
+<li>vdom，势必会进行diff，patch等操作，大量的js计算，增加的大量的内存消耗，远没有原生要快</li>
+</ul>
+<p>其次是 VDOM 和真实 DOM 的区别和优化：</p>
+<ul>
+<li>虚拟 DOM 不会立马进行排版与重绘操作</li>
+<li>虚拟 DOM 进行频繁修改，然后一次性比较并修改真实 DOM 中需要改的部分，最后在真实 DOM 中进行排版与重绘，减少过多DOM节点排版与重绘损耗</li>
+<li>虚拟 DOM 有效降低大面积真实 DOM 的重绘与排版，因为最终与真实 DOM 比较差异，可以只渲染局部</li>
+</ul>
+<h3 id="2-跨端"><a href="#2-跨端" class="headerlink" title="2. 跨端"></a>2. 跨端</h3><p>虚拟dom的出现和使用，使vue\react这些web框架具备了跨端的能力，结合对原生方法的注入，不仅局限于web，安卓，IOS，小程序等等，jsBridge是我们js对统一三端的目标提供了可靠的解决方案，</p>
+<h3 id="3-作为一个中间层"><a href="#3-作为一个中间层" class="headerlink" title="3. 作为一个中间层"></a>3. 作为一个中间层</h3><p>协调真实dom虚拟dom</p>
+<h3 id="4-尤大的回答"><a href="#4-尤大的回答" class="headerlink" title="4. 尤大的回答"></a>4. 尤大的回答</h3><h5 id="1-原生-DOM-操作-vs-通过框架封装操作-（框架层）"><a href="#1-原生-DOM-操作-vs-通过框架封装操作-（框架层）" class="headerlink" title="1. 原生 DOM 操作 vs. 通过框架封装操作 （框架层）"></a>1. 原生 DOM 操作 vs. 通过框架封装操作 （框架层）</h5><p>​    这是一个性能 vs. 可维护性的取舍。框架的意义在于为你掩盖底层的 DOM 操作，让你用更声明式的方式来描述你的目的，从而让你的代码更容易维护。没有任何框架可以比纯手动的优化 DOM 操作更快，因为框架的 DOM 操作层需要应对任何上层 API 可能产生的操作，它的实现必须是普适的。在构建一个实际应用的时候，难道为每一个地方都去做手动优化吗？</p>
+<p>​    框架给你的保证是，你在不需要手动优化的情况下，我依然可以给你提供过得去的性能。</p>
+<h5 id="2-自动档"><a href="#2-自动档" class="headerlink" title="2. 自动档"></a>2. 自动档</h5><p>无需手动操作 DOM：我们不再需要手动去操作 DOM，只需要写好 View-Model 的代码逻辑，框架会根据虚拟 DOM 和 数据双向绑定，帮我们以可预期的方式更新视图，我们专注于业务，极大提高我们的开发效率；</p>
+<h5 id="3-对-React-的-Virtual-DOM-的误解"><a href="#3-对-React-的-Virtual-DOM-的误解" class="headerlink" title="3. 对 React 的 Virtual DOM 的误解"></a>3. 对 React 的 Virtual DOM 的误解</h5><p>​    React 从来没有说过 “React 比原生操作 DOM 快”。React 的基本思维模式是每次有变动就整个重新渲染整个应用。如果没有 Virtual DOM，简单来想就是直接重置 innerHTML。很多人都没有意识到，在一个大型列表所有数据都变了的情况下，重置 innerHTML 其实是一个还算合理的操作… 真正的问题是在 “全部重新渲染” 的思维模式下，即使只有一行数据变了，它也需要重置整个 innerHTML，这时候显然就有大量的浪费。</p>
+<p>我们可以比较一下 innerHTML vs. Virtual DOM 的重绘性能消耗：</p>
+<ul>
+<li>innerHTML:  render html string <strong>O(template size)</strong> + 重新创建所有 DOM 元素 <strong>O(DOM size)</strong></li>
+<li>Virtual DOM: render Virtual DOM + diff <strong>O(template size)</strong> + 必要的 DOM 更新 <strong>O(DOM change)</strong></li>
+</ul>
+<p>​    vdom render + diff 显然比渲染html字符串要慢，但是纯js计算比dom操作来说依然便宜便宜很多，而且innerHTML的js和dom计算量是和整个页面大小有关，但vdom的计算中，只有js计算量是页面级，而dom操作是和数据变动相关的。js的计算很廉价</p>
+<p>这才是为什么要有 Virtual DOM：它保证了 </p>
+<ol>
+<li>不管你的数据变化多少，每次重绘重排的性能都可以接受；</li>
+<li>你依然可以用类似 innerHTML 的思路去写你的应用。</li>
+</ol>
+<h5 id="4-MVVM-vs-Virtual-DOM"><a href="#4-MVVM-vs-Virtual-DOM" class="headerlink" title="4. MVVM vs. Virtual DOM"></a>4. MVVM vs. Virtual DOM</h5><p>​    相比起 React，其他 MVVM 系框架比如 Angular, Knockout 以及 Vue、Avalon 采用的都是数据绑定：通过 Directive&#x2F;Binding 对象，观察数据变化并保留对实际 DOM 元素的引用，当有数据变化时进行对应的操作。MVVM 的变化检查是数据层面的，而 React 的检查是 DOM 结构层面的。MVVM 的性能也根据变动检测的实现原理有所不同：Angular 的脏检查使得任何变动都有固定的 <strong>O(watcher count)</strong> 的代价；Knockout&#x2F;Vue&#x2F;Avalon 都采用了依赖收集，在 js 和 DOM 层面都是 **O(change)**：</p>
+<ul>
+<li>脏检查：scope digest <strong>O(watcher count)</strong> + 必要 DOM 更新 <strong>O(DOM change)</strong></li>
+<li>依赖收集：重新收集依赖 <strong>O(data change)</strong> + 必要 DOM 更新 <strong>O(DOM change)</strong></li>
+</ul>
+<p>​    可以看到，Angular 最不效率的地方在于任何小变动都有的和 watcher 数量相关的性能代价。但是！当所有数据都变了的时候，Angular 其实并不吃亏。依赖收集在初始化和数据变化的时候都需要重新收集依赖，这个代价在小量更新的时候几乎可以忽略，但在<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%95%B0%E6%8D%AE%E9%87%8F&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:53544875%7D">数据量</a>庞大的时候也会产生一定的消耗。</p>
+<p>​    MVVM 渲染列表的时候，由于每一行都有自己的数据作用域，所以通常都是每一行有一个对应的 ViewModel 实例，或者是一个稍微轻量一些的利用原型继承的 “scope” 对象，但也有一定的代价。所以，MVVM 列表渲染的初始化几乎一定比 React 慢，因为创建 ViewModel &#x2F; scope 实例比起 Virtual DOM 来说要昂贵很多。这里所有 MVVM 实现的一个共同问题就是在列表渲染的数据源变动时，尤其是当数据是全新的对象时，如何有效地复用已经创建的 ViewModel 实例和 DOM 元素。假如没有任何复用方面的优化，由于数据是 “全新” 的，MVVM 实际上需要销毁之前的所有实例，重新创建所有实例，最后再进行一次渲染！这就是为什么题目里链接的 angular&#x2F;knockout 实现都相对比较慢。相比之下，React 的变动检查由于是 DOM 结构层面的，即使是全新的数据，只要最后渲染结果没变，那么就不需要做无用功。</p>
+<p>​    Angular 和 Vue 都提供了列表重绘的优化机制，也就是 “提示” 框架如何有效地复用实例和 DOM 元素。比如数据库里的同一个对象，在两次前端 API 调用里面会成为不同的对象，但是它们依然有一样的 uid。这时候你就可以提示 track by uid 来让 Angular 知道，这两个对象其实是同一份数据。那么原来这份数据对应的实例和 DOM 元素都可以复用，只需要更新变动了的部分。或者，你也可以直接 track by $index 来进行 “原地复用”：直接根据在数组里的位置进行复用。在题目给出的例子里，如果 angular 实现加上 track by $index 的话，后续重绘是不会比 React 慢多少的。甚至在 dbmonster 测试中，Angular 和 Vue 用了 track by $index 以后都比 React 快: </p>
+<p><a href="https://link.zhihu.com/?target=http://vuejs.github.io/js-repaint-perfs/">dbmon</a></p>
+<p> (注意 Angular 默认版本无优化，优化过的在下面）</p>
+<p>顺道说一句，React 渲染列表的时候也需要提供 key 这个特殊 prop，本质上和 track-by 是一回事。</p>
+<h5 id="5-性能比较也要看场合"><a href="#5-性能比较也要看场合" class="headerlink" title="5. 性能比较也要看场合"></a>5. 性能比较也要看场合</h5><p>​    在比较性能的时候，要分清楚初始渲染、小量数据更新、大量数据更新这些不同的场合。Virtual DOM、脏检查 MVVM、数据收集 MVVM 在不同场合各有不同的表现和不同的优化需求。Virtual DOM 为了提升小量数据更新时的性能，也需要针对性的优化，比如 shouldComponentUpdate 或是 immutable data。</p>
+<ul>
+<li>初始渲染：Virtual DOM &gt; 脏检查 &gt;&#x3D; 依赖收集</li>
+<li>小量数据更新：依赖收集 &gt;&gt; Virtual DOM + 优化 &gt; 脏检查（无法优化） &gt; Virtual DOM 无优化</li>
+<li>大量数据更新：脏检查 + 优化 &gt;&#x3D; 依赖收集 + 优化 &gt; Virtual DOM（无法&#x2F;无需优化）&gt;&gt; MVVM 无优化</li>
+</ul>
+<p>​    不要天真地以为 Virtual DOM 就是快，diff 不是免费的，batching 么 MVVM 也能做，而且最终 patch 的时候还不是要用原生 API。在我看来 Virtual DOM 真正的价值从来都不是性能，而是它 </p>
+<ol>
+<li>为函数式的 UI 编程方式打开了大门；</li>
+<li>可以渲染到 DOM 以外的 backend，比如 ReactNative。</li>
+</ol>
+<h5 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a><strong>6. 总结</strong></h5><p>​    以上这些比较，更多的是对于框架开发研究者提供一些参考。主流的框架 + 合理的优化，足以应对绝大部分应用的性能需求。如果是对性能有极致需求的特殊情况，其实应该牺牲一些可维护性采取手动优化：比如 Atom 编辑器在文件渲染的实现上放弃了 React 而采用了自己实现的 tile-based rendering；又比如在移动端需要 DOM-pooling 的虚拟滚动，不需要考虑顺序变化，可以绕过框架的内置实现自己搞一个。</p>
+<h5 id="7-Domain-specific-s北c非克-language"><a href="#7-Domain-specific-s北c非克-language" class="headerlink" title="7. Domain specific(s北c非克) language"></a>7. Domain specific(s北c非克) language</h5><p>​    dsl 是 domain specific language，领域特定语言的意思，html、css 都是 web 领域的 dsl。直接写 vdom 太麻烦了，所以前端框架都会设计一套 dsl，然后编译成 render function，执行后产生 vdom。所以 vue 的 template compiler 是自己实现的，而 react 的 jsx 的编译器是 babel 实现的，是两个团队合作的结果。</p>
+<h2 id="二、-vdom的缺点"><a href="#二、-vdom的缺点" class="headerlink" title="二、 vdom的缺点"></a>二、 vdom的缺点</h2><p>大量的js计算， diff，patch所带来的格外的包体积。无法进行极致优化：虽然虚拟 DOM + 合理的优化，足以应对绝大部分应用的性能需求，但在一些性能要求极高的应用中虚拟 DOM 无法进行针对性的极致优化。</p>
+<p>首次渲染大量 DOM 时，由于多了一层虚拟 DOM 的计算，会比 innerHTML 插入慢。</p>
+<h2 id="三、-cancel-vdom？"><a href="#三、-cancel-vdom？" class="headerlink" title="三、 cancel vdom？"></a>三、 cancel vdom？</h2><p>取消vdom，相当于重写了一套编译策略</p>
+<p>vue3中曾经提出过这个问题，取消虚拟dom，直接生成命令式的dom操作，但这将消除直接编写虚拟 <code>DOM</code> 渲染功能的能力，我们发现这对高级用户和库作者非常有价值。</p>
+<p>Vue的createRenderer就是利用虚拟DOM来实现跨平台的，但成天老是跨平台跨平台的，我们平时开发业务又有多少跨平台项目呢？现在追求的就是一个轻量级，没有了虚拟<code>DOM</code>就没有了<code>Diff</code>算法，不仅可以不用运行一些无谓的计算，而且打包出来的体积那可真是轻上加轻啊！它不香吗？</p>
+<p>但是也不能完全放弃vdom，一方面虚拟dom还有它大展宏图的场景，另一方面直接将vdom删除掉了，那些库怎么办呢，它们有多少是依赖vdom的API呢，有多少组件库是使用的jsx呢，虚拟dom和组件库等第三方库有耦合度。</p>
+<p>对于性能而言，看情况，组件越少<code>Svelte</code>越占优，反之则<code>Vue</code>占优。</p>
+<p>无vdom也有两种模式</p>
+<p>组件模式：比方说你现在手里已经有了长期维护的<code>Vue3</code>项目，你要是直接换成<code>无虚拟DOM模式</code>那肯定是要出问题的，所以可以采用组件模式来精确控制哪些组件不需要虚拟<code>DOM</code>。</p>
+<p>对于无虚拟dom的框架看法，请移步 <strong>超脱领悟&#x2F;对svelte的评价</strong></p>
+<h2 id="四、-取消了vdom，框架的生态会有很大变化"><a href="#四、-取消了vdom，框架的生态会有很大变化" class="headerlink" title="四、 取消了vdom，框架的生态会有很大变化"></a>四、 取消了vdom，框架的生态会有很大变化</h2><p>不再需要沉重的生成虚拟dom，diff，patch等库了，编译策略会有很大的变化，同时对于框架的第三方库，UI库都是依赖vdom的，所以说UI库的编译策略也会发生改变，只要使用中的某一个包，对vdom，h函数有耦合，那么这第三方库就需要重新编写.</p>
+<h2 id="五、-如果说以后浏览器解决了vdom的性能问题，那么框架的生态会是怎样呢"><a href="#五、-如果说以后浏览器解决了vdom的性能问题，那么框架的生态会是怎样呢" class="headerlink" title="五、 如果说以后浏览器解决了vdom的性能问题，那么框架的生态会是怎样呢"></a>五、 如果说以后浏览器解决了vdom的性能问题，那么框架的生态会是怎样呢</h2><p>既然vdom没有性能问题了，那么直接做大做强</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2-React/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" style="float: left;">
+        ← 性能优化
+    </a>
+    
+    
+    <a class="pull-right" href="/3-NetWork/cookie/">
+        cookie →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

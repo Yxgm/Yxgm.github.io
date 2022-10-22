@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>let const、var和作用域 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-06-28T10:20:37.628Z" itemprop="datePublished">
+          2022-06-28
+      </time>
+    
+    
+    | 
+    <a href='/tags/js/'>js</a>
+    
+    
+</span>
+                <h1>let const、var和作用域</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="1-let、const、var"><a href="#1-let、const、var" class="headerlink" title="1. let、const、var"></a>1. let、const、var</h3><h5 id="var："><a href="#var：" class="headerlink" title="var："></a>var：</h5><ol>
+<li><p>存在作用域提升，就是将变量先声明 var b；</p>
+</li>
+<li><p>var声明的是函数作用域，使用var定义变量会成为包含它的函数的局部变量。</p>
+</li>
+<li><p>如果这个变量可以在声明之前被访问，那么我们可以称之为作用域提升，用var声明</p>
+</li>
+<li><p>的局部变量会被提升至函数题的最上方，这样的提升，但并不赋值。所以在声明之前打印的话，只为undefined。</p>
+</li>
+<li><p>在window宿主环境下，使用var声明的变量和顶层函数声明，都是挂在window上的。</p>
+</li>
+<li><p>var x &#x3D; 1声明的变量的作用域是它当前的执行上下文及其闭包（嵌套函数），如果是在所有函数之外，那么也是加在了全局对象身上(<code>window</code>或者globalThis)，<strong>但是在 Node.js CommonJS modules 以及原生 ECMAScript modules 中，顶层变量被声明在模块（module）的作用域内，而不是以属性的形式被添加到全局对象中</strong></p>
+</li>
+<li><p>y &#x3D; 1;&#96;没有修饰的声明变量，是隐式的全局变量，在node环境中，是加在了globalThis对象身上，而window，是在window身上</p>
+</li>
+<li><p>来一道面试题：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!(<span class="string">&quot;a&quot;</span> <span class="keyword">in</span> <span class="variable language_">window</span>))&#123;</span><br><span class="line">  <span class="keyword">var</span> a=<span class="string">&quot;a&quot;</span> <span class="comment">//关键在于var a 提升到了顶部赋值为undefined</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a)<span class="comment">// undefined, 因为语句中没有作用域，var name = &#x27;name&#x27; ,相当于顶层声明 var name = undefined，if判断为false，不会进入</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="let："><a href="#let：" class="headerlink" title="let："></a>let：</h5><p>和const 声明的都是块级作用域，声明只在let命令所在作用域有效，不能重复声明</p>
+<h5 id="const-："><a href="#const-：" class="headerlink" title="const ："></a>const ：</h5><p>一旦声明，常量的值不能改变，但是复杂类型（对象 object，数 组 array，函数 function）中数据结构是可变的，const保存了一个指向实际数据的指针，所以 const 只能保证指针是固定的，至于指针指向的数据结构变不变就无法控制。</p>
+<blockquote>
+<p>暂时性死区:</p>
+<p>ES6 明确规定，代码块内如果存在 let 或者 const，代码块会对这些命令声明的变量从块的开始就形成一个封闭作用域。代码块内，在声明变量 PI 之前使用它会报错,形成暂时性死区。</p>
+<p>红宝书如此解释：</p>
+<p>在此在解析代码时，JavaScript 引(擎也会注意出现在块后面的 let声明，只不过在此之前不能以任何方式来引用末声明的变量。在let 声明之前的执行瞬间被称为 “暂时性死区” (temporal dead zone)，在此阶段引用任何后面才声明的变量都会拋出 ReferenceError。 </p>
+</blockquote>
+<h3 id="2-作用域提升"><a href="#2-作用域提升" class="headerlink" title="2.作用域提升"></a>2.作用域提升</h3><p>用var声明的变量会同时提升自己的创建和初始化阶段，即在词法环境对象填充变量时即将变量初始化为undefined。</p>
+<p>而let声明的变量仅仅是提升了自己的创建阶段，并没有提升自己的初始化阶段(与var声明的区别)，ES6中规定了let声明的变量的初始化阶段是在执行上下文的执行阶段而非创建阶段(即直到它们的定义被执行时才开始初始化)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line"><span class="keyword">let</span> a = <span class="number">10</span>;  </span><br><span class="line"><span class="comment">//报错如下：Uncaught ReferenceError（未捕获引用错误）: Cannot access &#x27;me&#x27; before initialization (在初始化之前，无法访问a)</span></span><br></pre></td></tr></table></figure>
+
+<p>运行结果报错</p>
+<p>这是因为 ES6 中有明确的规定：如果区块中存在 let 和 const 命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域，如果我们在声明前尝试调用它，就会报错</p>
+<p>这一段会报错的危险区域，有一个专属的名字，叫”暂时性死区“。其实暂时性死区的本质：当我们进入当前作用域时，let 或者 const 声明的变量已经存在了——它们只是不允许被获取而已。要想获取他们，必须得等到代码执行到声明的位置。</p>
+<h3 id="3-为什么var可以重复声明，let、const不能重复声明？"><a href="#3-为什么var可以重复声明，let、const不能重复声明？" class="headerlink" title="3. 为什么var可以重复声明，let、const不能重复声明？"></a>3. 为什么var可以重复声明，let、const不能重复声明？</h3><p>在ES6规范有一个词叫做<code>Global Enviroment Records</code>(也就是全局环境变量记录)，它里面包含两个内容，一个是<code>Object Enviroment Record</code>(它不等同于window对象)，另一个是<code>Reclarative Enviroment Record</code>。</p>
+<ul>
+<li>函数声明和使用<code>var</code>声明的变量会添加进入<code>Object Enviroment Record</code>中。</li>
+<li>使用<code>let</code>声明和使用<code>const</code>声明的变量会添加入<code>Reclarative Enviroment Record</code>中。下面是ECMAscript规范中对<code>var</code>,<code>let</code>,<code>const</code>的一些约束。</li>
+<li>使用<code>var</code>声明时，V8引擎只会检查<code>Declarative Enviroment Record</code>中是否有该变量，如果有，就会报错，否则将该变量添加入<code>Object Enviroment Record</code>中。</li>
+<li>使用<code>let</code>和<code>const</code>声明时，引擎会同时检查<code>Object Enviroment Record</code>和<code>Declarative Enviroment Record</code>是否有该变量，如果有，则报错，否则将将变量添加入<code>Declarative Enviroment Record</code>中。</li>
+</ul>
+<h3 id="4-为什么let和const可以形成作用域"><a href="#4-为什么let和const可以形成作用域" class="headerlink" title="4. 为什么let和const可以形成作用域"></a>4. 为什么let和const可以形成作用域</h3><p>js是一门解释执行的语言，代码在执行的时候，会预先经历一段‘编译’的过程。编译运行和作用域。</p>
+<p>使用var声明的变量会进入<strong>变量环境</strong>，而使用const&#x2F;let声明的变量会进入<strong>词法环境</strong>，可以将任意变量绑定在任意的作用域中，通常是{…}内部，隐式地为变量声明了块级作用域。</p>
+<p>在编译阶段，通过var声明的变量，会提升到函数变量环境中。而let&#x2F;const声明的变量，会被推入词法环境中。在代码块内，通过let&#x2F;const声明的变量，既不会推入变量环境，也不会推入词法环境。</p>
+<p>当代码执行到代码块时，这个时候，词法环境会形成一个小型的栈结构，当前代码块内的let&#x2F;const声明的变量，会遵循“后进先出”的原则被推入首位，查询变量的时候，会先从栈的首位开始查找，栈的每个结构体之间相互独立，不受影响。</p>
+<p>同样的道理，在执行到下一个代码块的时候，也会出现代码块中的let&#x2F;const声明的变量被推入栈的情况。</p>
+<p>当作用域被执行完后（块结束了），该作用域的信息结构体会被从栈顶依次弹出，进而我们无法在代码块外访问到我们在代码块内声明的变量，因而这就是<strong>let&#x2F;const命令能形成块级作用域的原因</strong></p>
+<h3 id="5-出自犀牛书对作用域的解释"><a href="#5-出自犀牛书对作用域的解释" class="headerlink" title="5. 出自犀牛书对作用域的解释"></a>5. 出自犀牛书对作用域的解释</h3><p>​    函数是 JavaScript 中最常见的作用域单元。本质上，声明在一个函数内部的变量或函数会在所处的作用域中“隐藏”起来，这是有意为之的良好软件的设计原则。 但函数不是唯一的作用域单元。块作用域指的是变量和函数不仅可以属于所处的作用域，也可以属于某个代码块(通常指 { .. } 内部)。<br>​    从 ES3 开始，try&#x2F;catch 结构在 catch 分句中具有块作用域。在 ES6 中引入了 let 关键字(var 关键字的表亲)，用来在任意代码块中声明变量。if (..) { let a &#x3D; 2; } 会声明一个劫持了 if 的 { .. } 块的变量，并且将变量添加到这个块中。</p>
+<h3 id="6-对闭包的思考"><a href="#6-对闭包的思考" class="headerlink" title="6.对闭包的思考"></a>6.对闭包的思考</h3><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>使用let,let是区块变量，只能在大括号内有效，并不会向后传递。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i&lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>自执行函数 把当前 for 循环过程中的 i 传递进去，构建出块级作用域</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i&lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">       (<span class="keyword">function</span>(<span class="params">i</span>)&#123;</span><br><span class="line">           <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125;, <span class="number">1000</span>)</span><br><span class="line">        &#125;)(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h4><p>利用 setTimeout 函数的第三个参数，会作为回调函数的第一个参数传入</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="variable language_">console</span>.<span class="property">log</span>, <span class="number">1000</span>, i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h4><p>利用try catch</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123; </span><br><span class="line">  <span class="keyword">try</span>&#123;</span><br><span class="line">     <span class="keyword">throw</span> i;</span><br><span class="line">  &#125;<span class="keyword">catch</span>(i)&#123;</span><br><span class="line">     <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(i); &#125;,<span class="number">1000</span>)    </span><br><span class="line">  &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<h4 id="方法五：promise"><a href="#方法五：promise" class="headerlink" title="方法五：promise"></a>方法五：promise</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="title function_">timeoutPromise</span>(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">timeoutPromise</span>(<span class="params">i</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">            <span class="title function_">resolve</span>(<span class="literal">true</span>);</span><br><span class="line">        &#125;, <span class="number">1000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="方法六-generator函数"><a href="#方法六-generator函数" class="headerlink" title="方法六:generator函数"></a>方法六:generator函数</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="title function_">timeoutGenerator</span>(i).<span class="title function_">next</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span>* timeoutGenerator (i) &#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="方法七：await-async"><a href="#方法七：await-async" class="headerlink" title="方法七：await async"></a>方法七：await async</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">init</span> () &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">await</span> <span class="title function_">timeoutPromise</span>(i);</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">timeoutPromise</span> (i) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">            <span class="title function_">resolve</span>(<span class="literal">true</span>);</span><br><span class="line">        &#125;, <span class="number">1000</span>);   </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">init</span>();</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="7-Var重复说明的问题"><a href="#7-Var重复说明的问题" class="headerlink" title="7. Var重复说明的问题"></a>7. Var重复说明的问题</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">a</span>(<span class="params">args</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> args;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//第一种情况</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">&#x27;a1&#x27;</span>; <span class="comment">//等同于 a = &#x27;a1&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);<span class="comment">// a1, var对a进行重复声明</span></span><br><span class="line"><span class="comment">//第二种情况</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="string">&quot;a1&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);<span class="comment">// 报错, Identifier &#x27;a&#x27; has already been declared</span></span><br></pre></td></tr></table></figure>
+
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/4-Webpack/%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B/" style="float: left;">
+        ← 构建过程
+    </a>
+    
+    
+    <a class="pull-right" href="/1-Css/BFC%20IFC%20GFC%20FFC%E5%92%8C%E6%B5%AE%E5%8A%A8/">
+        BFC IFC GFC FFC和浮动 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

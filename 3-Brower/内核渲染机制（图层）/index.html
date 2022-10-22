@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>内核渲染机制（图层） | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-06-07T01:25:53.092Z" itemprop="datePublished">
+          2022-06-07
+      </time>
+    
+    
+    | 
+    <a href='/tags/浏览器/'>浏览器</a>,
+    
+    <a href='/tags/渲染机制/'>渲染机制</a>
+    
+    
+</span>
+                <h1>内核渲染机制（图层）</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="渲染图层："><a href="#渲染图层：" class="headerlink" title="渲染图层："></a>渲染图层：</h2><p>​    <span style="color:red">层叠上下文属性会生成一个新的层叠上下文对象，一个层叠上下文对象就是一个渲染图层，渲染图层无论怎么重叠都是脱离不了根层叠上下文</span></p>
+<p>​    页面普通的<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangfeijiu/article/details/106563074">文档流</a>。我们虽然可以通过绝对定位，相对定位，浮动定位脱离文档流，但它仍然属于默认复合层(根层叠上下文)，共用同一个绘图上下文对象（GraphicsContext）。</p>
+<h4 id="1-形成层叠上下文对象的方法"><a href="#1-形成层叠上下文对象的方法" class="headerlink" title="1. 形成层叠上下文对象的方法"></a>1. 形成层叠上下文对象的方法</h4><ol>
+<li>文档根元素（<code>&lt;html&gt;</code>）；</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/position"><code>position</code></a> 值为 <code>absolute</code>（绝对定位）或 <code>relative</code>（相对定位）且 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/z-index"><code>z-index</code></a> 值不为 <code>auto</code> 的元素；</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/position"><code>position</code></a> 值为 <code>fixed</code>（固定定位）或 <code>sticky</code>（粘滞定位）的元素（沾滞定位适配所有移动设备上的浏览器，但老的桌面浏览器不支持）；</li>
+<li>flex (<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex"><code>flex</code></a>) 容器的子元素，且 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/z-index"><code>z-index</code></a> 值不为 <code>auto</code>；</li>
+<li>grid (<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/grid"><code>grid</code></a>) 容器的子元素，且 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/z-index"><code>z-index</code></a> 值不为 <code>auto</code>；</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/opacity"><code>opacity</code></a> 属性值小于 <code>1</code> 的元素（参见 <a target="_blank" rel="noopener" href="https://www.w3.org/TR/css3-color/#transparency">the specification for opacity</a>）；</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/mix-blend-mode"><code>mix-blend-mode</code></a> 属性值不为 <code>normal</code> 的元素；</li>
+<li>以下任意属性值不为none的元素：<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform"><code>transform</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter"><code>filter</code></a>：filter值不为none，filter：invert(1);将模糊或颜色偏移等图形效果应用于元素。滤镜通常用于调整图像、背景和边框的渲染。<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter">对filter的解释</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/backdrop-filter"><code>backdrop-filter</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/perspective"><code>perspective</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/clip-path"><code>clip-path</code></a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/mask"><code>mask</code></a> &#x2F; <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/mask-image"><code>mask-image</code></a> &#x2F; <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/mask-border"><code>mask-border</code></a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/isolation"><code>isolation</code></a> 属性值为 <code>isolate</code> 的元素；</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/will-change"><code>will-change</code></a> 值设定了任一属性而该属性在 non-initial 值时会创建层叠上下文的元素（参考<a target="_blank" rel="noopener" href="https://dev.opera.com/articles/css-will-change-property/">这篇文章</a>）；</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/contain"><code>contain</code></a> 属性值为 <code>layout</code>、<code>paint</code> 或包含它们其中之一的合成值（比如 <code>contain: strict</code>、<code>contain: content</code>）的元素。</li>
+</ol>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结:"></a>总结:</h5><ol>
+<li>层叠上下文可以包含在其他层叠上下文中，并且一起组建了一个有层级的层叠上下文</li>
+<li>每个层叠上下文完全独立于它的兄弟元素，当处理层叠时只考虑子元素，这里类似于BFC</li>
+<li>每个层叠上下文是自包含的：当元素的内容发生层叠后，整个该元素将会<strong>在父级叠上下文</strong>中按顺序进行层叠</li>
+</ol>
+<h4 id="2-层叠等级-层叠水平-Stacking-Level-决定了同一个层叠上下文中元素在z轴上的显示顺序的概念；"><a href="#2-层叠等级-层叠水平-Stacking-Level-决定了同一个层叠上下文中元素在z轴上的显示顺序的概念；" class="headerlink" title="2. 层叠等级 (层叠水平, Stacking Level) 决定了同一个层叠上下文中元素在z轴上的显示顺序的概念；"></a>2. <strong>层叠等级</strong> (层叠水平, Stacking Level) 决定了同一个层叠上下文中元素在z轴上的显示顺序的<strong>概念</strong>；</h4><ul>
+<li>普通元素的层叠等级优先由其所在的层叠上下文决定</li>
+<li>层叠等级的比较只有在同一个层叠上下文元素中才有意义</li>
+<li>在同一个层叠上下文中，层叠等级描述定义的是该层叠上下文中的元素在Z轴上的上下顺序</li>
+</ul>
+<h4 id="3-z-index-定位子层叠上下文在父级层叠上下文中的z轴位置"><a href="#3-z-index-定位子层叠上下文在父级层叠上下文中的z轴位置" class="headerlink" title="3. z-index:定位子层叠上下文在父级层叠上下文中的z轴位置"></a>3. z-index:定位子层叠上下文在父级层叠上下文中的z轴位置</h4><p>​    <span style="color:red">z-index 只适用于定位的元素，对非定位元素无效</span>，它可以被设置为正整数、负整数、0、auto，如果一个定位元素没有设置 z-index，那么默认为auto；</p>
+<p>​    在层叠上下文中，子元素同样也按照上面解释的规则进行层叠。重要的是，其子级层叠上下文的 <code>z-index</code> 值只在父级中才有意义。子级层叠上下文被自动视为父级层叠上下文的一个独立单元。</p>
+<p>​    如果父级层叠上下文的层叠等级低于另一个层叠上下文的，那么它 z-index 设的再高也没用。所以如果你遇到 z-index 值设了很大，但是不起作用的话，就去看看它的父级层叠上下文是否被其他层叠上下文盖住了。</p>
+<h4 id="4-层叠顺序：描述元素在父级层叠上下文中的z轴顺序"><a href="#4-层叠顺序：描述元素在父级层叠上下文中的z轴顺序" class="headerlink" title="4. 层叠顺序：描述元素在父级层叠上下文中的z轴顺序"></a>4. 层叠顺序：描述元素在父级层叠上下文中的z轴顺序</h4><img src="https://bucket922.oss-cn-beijing.aliyuncs.com/blog-img/%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87.jpg">
+
+<h2 id="合成图层："><a href="#合成图层：" class="headerlink" title="合成图层："></a>合成图层：</h2><p>​    完全独立于根层叠上下文，有自己的独立上下文</p>
+<p>​    又称图形层、复合图层、复合图层。它会单独分配系统资源，每个复合图层都有一个独立的GraphicsContext。（当然也会脱离普通文档流，这样一来，不管这个复合图层中怎么变化，也不会影响默认复合层里的回流重绘），所以有了css3硬件加速</p>
+<h4 id="1-创建方法"><a href="#1-创建方法" class="headerlink" title="1. 创建方法"></a>1. 创建方法</h4><ol>
+<li>3D转换：translate3d，translateZ依此类推；</li>
+<li><code>&lt;video&gt;，&lt;canvas&gt;和&lt;iframe&gt;</code>元件;</li>
+<li>transform和opacity经由Element.animate();</li>
+<li>transform和opacity经由СSS过渡和动画;</li>
+<li>有合成层后代同时本身 fixed 定位</li>
+<li>will-change;</li>
+<li>拥有加速 CSS 过滤器的元素filter;</li>
+<li>元素有一个z-index较低且包含一个复合层的兄弟元素(换句话说就是该元素在复合层上面渲染)</li>
+<li>元素有一个包含复合层的后代节点(换句话说，就是一个元素拥有一个子元素，该子元素在自己的层里)</li>
+</ol>
+<h5 id="隐式合成："><a href="#隐式合成：" class="headerlink" title="隐式合成："></a>隐式合成：</h5><p>我们正常的给A、B设置层级，分别为3，4。如果这时候给A使用了3D变化，因为B的层级高于A，所以B也会单独提成一个合成层，导致层数增多。</p>
+<p>隐式合成出现的根本原是，元素发生了堆叠，浏览器为了保证最后的展示效果，不得不把层级顺序更高的元素拎出来盖在已有合成层上面。使用3D硬件加速提升动画性能时，最好给元素增加一个z-index属性，人为干扰复合层的排序，可以有效减少chrome创建不必要的复合层，提升渲染性能，移动端优化效果尤为明显。</p>
+<h5 id="层爆炸与层压缩"><a href="#层爆炸与层压缩" class="headerlink" title="层爆炸与层压缩"></a>层爆炸与层压缩</h5><p>一个页面在低端机器上滚动时非常卡顿，排查了很久，最后发现原因就在于隐式合成带来的层爆炸。</p>
+<p>隐式合成产生了很多预期外的合成层——页面中所有 z-index 高于它的节点全部被提升，这些合成层都是相当消耗内存和GPU的。所以带给我们的启示是给合成层一个大的z-index值，避免出现隐式合成。</p>
+<p>还好浏览器逐渐进行了优化，也就是层压缩机制——多个渲染层同一个合成层重叠时，会自动将他们压缩到一起，避免“层爆炸”带来的损耗。</p>
+<h4 id="2-优点（为什么硬件加速会使页面流畅）"><a href="#2-优点（为什么硬件加速会使页面流畅）" class="headerlink" title="2. 优点（为什么硬件加速会使页面流畅）"></a>2. 优点（为什么硬件加速会使页面流畅）</h4><p>​        合成层的位图，会交由 GPU 合成，比 CPU 处理要快（毕竟该硬件专为处理图像运算的工作负载而设计）<br>​        当需要 repaint 时，只需要 repaint 本身，不会影响到其他的层<br>​        对于 transform 和 opacity 效果，不会触发 layout 、layer和 paint,直接进入合成线程处理<br>​        CPU 和 GPU 之间的并行性，可以同时运行以创建高效的图形管道。</p>
+<h4 id="3-注意"><a href="#3-注意" class="headerlink" title="3. 注意"></a>3. 注意</h4><ol>
+<li><p>提升到合成层后合成层的位图会交GPU处理，但请注意，仅仅只是合成的处理需要用到GPU，生成合成层的位图处理是需要CPU。</p>
+</li>
+<li><p>当需要 repaint 的时候可以只 repaint 本身，不影响其他层，但是 paint 之前还有 style， layout 渲染过程，那就意味着即使合成层只是 repaint 了自身，但 style 和 layout 本身就很占用时间。</p>
+</li>
+<li><p>通过transform和opacity创建的复合图层不会引发 layout 和paint，其他的属性暂未确定，因为这两个没有发生形变和rgb变化。</p>
+</li>
+</ol>
+<p>​        总结合成层的优势：一般一个元素开启硬件加速后会变成合成层，可以独立于普通文档流中，改动后可以避免整个页面重绘，提升性能。</p>
+<h4 id="4-性能优化点"><a href="#4-性能优化点" class="headerlink" title="4. 性能优化点"></a>4. 性能优化点</h4><p>1.提升动画效果的元素 合成层的好处是不会影响到其他元素的绘制。提升合成层的最好方式是使用 CSS 的 will-change属性。从上一节合成层产生原因中，可以知道 will-change 设置为opacity、transform、top、left、bottom、right 可以将元素提升为合成层。</p>
+<p>2.使用 transform 或者 opacity 来实现动画效果， 这样只需要做合成层的合并就好了。</p>
+<p>3.减少绘制区域 对于不需要重新绘制的区域应尽量避免绘制，以减少绘制区域，比如一个 fix 在页面顶部的固定不变的导航header，在页面内容某个区域 repaint 时，整个屏幕包括 fix 的 header 也会被重绘。而对于固定不变的区域，我们期望其并不会被重绘，因此可以通过之前的方法，将其提升为独立的合成层。减少绘制区域，需要仔细分析页面，区分绘制区域，减少重绘区域甚至避免重绘。</p>
+<h4 id="5-复合图层的使用注意事项"><a href="#5-复合图层的使用注意事项" class="headerlink" title="5. 复合图层的使用注意事项"></a>5. 复合图层的使用注意事项</h4><ol>
+<li><p>尽量不要大量使用复合图层，否则由于资源消耗过度，页面反而会变的更卡</p>
+</li>
+<li><p>层爆炸，由于某些原因可能导致产生大量不在预期内的合成层，虽然有浏览器的层压缩机制，但是也有很多无法进行压缩的情况，这就可能出现层爆炸的现象（简单理解就是，很多不需要提升为合成层的元素因为某些不当操作成为了合成层）。</p>
+</li>
+<li><p>复合图层会占用系统 RAM 与 GPU(在移动设备上尤其有限)的内存，并且拥有大量的层会因为记录哪些是可见的而引入额外的开销。许多层还会因为过大与许多内容重叠而导致“过度绘制(overdraw)”的情况发生，从而增加栅格化的时间。</p>
+</li>
+</ol>
+<h2 id="chrome渲染路径"><a href="#chrome渲染路径" class="headerlink" title="chrome渲染路径"></a>chrome渲染路径</h2><p>​    Chrome 拥有两套不同的渲染路径(rendering path)：硬件加速路径和旧软件路径(older software path)<br>​    Chrome 中有不同类型的层： RenderLayer(渲染层)和GraphicsLayer(图形层，也称复合图层)，只有 GraphicsLayer 是作为纹理(texture)上传给GPU的。<br>​    什么是纹理？可以把它想象成一个从主存储器(例如 RAM)移动到图像存储器(例如 GPU 中的 VRAM)的位图图像(bitmapimage)<br>​    Chrome 使用纹理从 GPU上获得大块的页面内容。通过将纹理应用到一个非常简单的矩形网格就能很容易匹配不同的位置(position)和变形(transformation)。这也就是3D CSS 的工作原理，它对于快速滚动也十分有效。</p>
+<blockquote>
+<p> 为什么transform动画没有触发repaint呢？</p>
+<p>简而言之，transform动画由GPU控制，支持硬件加载，并不需要软件方面的渲染。Chrome 可以使用早已作为纹理而存在于 GPU 中的层来重新复合，但会使用不同的复合属性。</p>
+</blockquote>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><ol>
+<li>硬件加速并不是前端专有的东西，它是一个很宽泛的计算机概念——把软件的工作交给特定的硬件，更高效的完成某项任务。对于前端来说，就是使用特定的CSS属性，把元素提升成合成层，交给GPU处理；</li>
+<li>合成层中的“层”可以被认为是真正物理上的层，浏览器把它独立出来，单独拿给GPU处理，而层叠上下文的“层”则是指渲染层，更像是一个概念上的层，一个合成层可以包含多个渲染层；</li>
+<li>层爆炸指的是大量元素意料之外被提升成合成层，即隐式合成；层压缩是浏览器对隐式合成的优化，chrome在94版本中做到比较完善了；</li>
+<li>使用transform、opacity取代传统属性来实现一些动画，并把他们提升到一个单独的合成层，能跳过布局计算和重新绘制，直接合成，能避免不必要的回流、重绘；</li>
+<li>大多数人都很喜欢使用 <code>translateZ(0)</code> 来进行所谓的硬件加速，以提升性能，但是性能优化并没有所谓的“银弹”，<code>translateZ(0)</code> 不是，本文列出的优化建议也不是。抛开了对页面的具体分析，任何的性能优化都是站不住脚的，盲目的使用一些优化措施，结果可能会适得其反。因此切实的去分析页面的实际性能表现，不断的改进测试，才是正确的优化途径。</li>
+</ol>
+<p> </p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/3-Brower/%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8F/" style="float: left;">
+        ← 加载顺序
+    </a>
+    
+    
+    <a class="pull-right" href="/1-JavaScript/for%E5%BE%AA%E7%8E%AF/">
+        for循环 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

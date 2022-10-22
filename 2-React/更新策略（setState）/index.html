@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>更新策略（setState） | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-04-29T07:49:59.000Z" itemprop="datePublished">
+          2022-04-29
+      </time>
+    
+    
+    | 
+    <a href='/tags/react/'>react</a>
+    
+    
+</span>
+                <h1>更新策略（setState）</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>说在前面：因为批量更新，所以才异步执行</p>
+<h2 id="异步策略"><a href="#异步策略" class="headerlink" title="异步策略"></a>异步策略</h2><h3 id="setState-是同步还是异步的"><a href="#setState-是同步还是异步的" class="headerlink" title="setState  是同步还是异步的?"></a>setState  是同步还是异步的?</h3><p>setState 方法本身是被同步调用，但并不代表 react 的 state 就会被立马同步地更新，而是要根据当前执行上下文来判断。</p>
+<p>正常情况下，也就是没有使用concurrent组件是同步更新的，但是不会立即获取到最新state的值。因为调用setState，只是将你传进来的新的state放入updateQueue这条链表上，等这个点击事件结束后，合成事件内部不会立即执行，会触发内部的一个回调函数，在回调函数中更新state以及重新渲染</p>
+<ol>
+<li>开启concurrent模式，才真正的开启异步方式（postMessage，放入eventLoop中），同样获取不到最新的state状态，是组件更新操作放入事件循环中。</li>
+<li>使用了<code>flushSync（）</code>这个api，react更新是完全同步的，改一个，渲染一个，可以获得到最新的state</li>
+<li>使用setTimeOut或者原生的绑定事件，也是同步更新的。可以获得到最新的state，不是在合成事件中的话，就可以获得最新的state</li>
+<li>react中的合成事件，就是为了触发事件的回调函数放入事件循环中</li>
+</ol>
+<blockquote>
+<p>执行一次setState，获取fiber，创建一个更新，将这个更新存到了这个fiber（第一次的fiber）的updataQueue上，</p>
+<p>但是现在的workInProgress fiber上没有更新队列，所以将第一次fiber的updataQueue指向到了workInProgress上。</p>
+<p>因为使用了fiber双缓存树，新创建的workInProgress Fiber上是没有updateQueue，所以说，要同步updateQueue，updateQueue这条链表在两颗树上，来回的传递</p>
+</blockquote>
+<h2 id="批量策略"><a href="#批量策略" class="headerlink" title="批量策略"></a>批量策略</h2><h4 id="Old-react-version"><a href="#Old-react-version" class="headerlink" title="Old-react-version"></a>Old-react-version</h4><p>在浏览器事件中是可以批量更新的（react合成事件），也就是setState是同步操作，可批量更新。</p>
+<p>但是在 <code>handleClick</code> 中请求数据，然后在数据请求成功之后更新状态，那么 React 不会触发批量更新，而是执行两次独立的更新。需要使用<code>unstable_batchedUpdates</code>包裹<code>setState</code>操作，可实现异步批量更新。在新版本后将会废弃</p>
+<p>在 React 18 之前，我们只在 React 事件处理函数中执行过程中进行批量更新。在默认情况下，对 <code>promises</code>、<code>setTimeout</code>、原生事件处理函数或其他任何事件中的状态更新都不会进行批量更新。</p>
+<h4 id="New-react-version"><a href="#New-react-version" class="headerlink" title="New-react-version"></a>New-react-version</h4><p>从 React 18 的 <code>createRoot</code> 开始，不论在哪里， 所有更新都将自动进行批量更新。</p>
+<p>可使用<code>flushSync()</code>开启非批量更新。</p>
+<h2 id="批量更新分支和事务"><a href="#批量更新分支和事务" class="headerlink" title="批量更新分支和事务"></a>批量更新分支和事务</h2><p>调用setState不同场景，多个setState调用</p>
+<ol>
+<li><p>产生新的state，进入state状态队列，react随后开始处理将要更新的实例对象</p>
+<blockquote>
+<p><code>isBatchingUpdates</code>：默认值是<code>false</code></p>
+</blockquote>
+</li>
+<li><p>进入判断，若当前没有处于批量更新状态，会把将<code>isBatchingUpdates</code>置为<code>true</code>，在这之间会进行事务处理，之后进行遍历<code>dirtyComponent组件</code>队列，执行更新。</p>
+<p>如果处于批量更新状态，组件实例进入<code>dirtyComponent</code>队列。</p>
+<blockquote>
+<p>首次进入是<code>isBatchingUpdates = false</code> ，会将标识位置为<code>true</code>，用事务调用前一步方法，保证当前的组件进入脏组件队列。</p>
+</blockquote>
+</li>
+<li><p>合成事件或者生命周期中的<code>setState</code>都会被包装成事物，会先将<code>isBatchingUpdates</code>置为true，将组件实例压入到脏组件数组中。</p>
+</li>
+<li><p>而一些定时器或者原生事件，没有经过react合成事件包装的，所以没有事务概念，不会调改状态<code>isBatchingUpdates</code>，所以没有批处理操作。</p>
+</li>
+<li><p>当 react 自身的事件处理函数或 react 生命周期触发时，isBatchingUpdates 会被赋值为 true，当更新完成时又会被复原为 false</p>
+</li>
+</ol>
+<h4 id="setState流程"><a href="#setState流程" class="headerlink" title="setState流程"></a>setState流程</h4><ol>
+<li>将setState传入的partialState参数存储在当前组件实例的state暂存队列中。</li>
+<li>判断当前React是否处于批量更新状态，如果是，将当前组件加入待更新的组件队列中。</li>
+<li>如果未处于批量更新状态，将批量更新状态标识设置为true，用事务再次调用前一步方法，保证当前组件加入到了待更新组件队列中。</li>
+<li>调用事务的waper方法，关闭批量更新，发起组件更新。遍历待更新组件队列依次执行更新。</li>
+<li>执行生命周期componentWillReceiveProps。</li>
+<li>将组件的state暂存队列中的state进行合并，获得最终要更新的state对象，并将队列置为空。</li>
+<li>执行生命周期componentShouldUpdate，根据返回值判断是否要继续更新。</li>
+<li>执行生命周期componentWillUpdate。</li>
+<li>执行真正的更新，render。</li>
+<li>执行生命周期componentDidUpdate。</li>
+</ol>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/%E5%A4%A7%E6%95%B4%E6%95%B0%E5%8A%A0%E6%B3%95/" style="float: left;">
+        ← 大整数加法
+    </a>
+    
+    
+    <a class="pull-right" href="/2-React_Hooks/hook%E6%9C%AC%E8%B4%A8/">
+        hook本质 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

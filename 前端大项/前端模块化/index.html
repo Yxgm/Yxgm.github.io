@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>前端模块化 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-07-31T06:58:50.126Z" itemprop="datePublished">
+          2022-07-31
+      </time>
+    
+</span>
+                <h1>前端模块化</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="1-为什么要模块化"><a href="#1-为什么要模块化" class="headerlink" title="1. 为什么要模块化"></a>1. 为什么要模块化</h2><p>​    对于刚开始 只是单纯的html css js ，后来随着前端的日益增长，在开发阶段我们需要更加细腻的划分模块，保证项目的可拓展，可维护性，最后再将模块全部打包起来，在合成一个文件，经历合-开-合，三个阶段。<strong>模块化主要是用来抽离公共代码，隔离作用域，避免变量冲突等。</strong></p>
+<h2 id="2-两种模块化方案"><a href="#2-两种模块化方案" class="headerlink" title="2. 两种模块化方案"></a>2. 两种模块化方案</h2><p>CommonJs：代码放在一个立即执行函数中，一些module，require函数依靠闭包存储，从而完成模块化。</p>
+<p>ESModule: 语法层面的模块化。一般情况下我们写的 <code>ES6 module</code> 语法会还是会通过 <code>bable</code> 等工具转化为 CommonJS 语法的，原理：可见<a href="./打包原理.md">wbpack手写篇</a></p>
+<h2 id="3-CMJ和ESM的区别"><a href="#3-CMJ和ESM的区别" class="headerlink" title="3. CMJ和ESM的区别"></a>3. CMJ和ESM的区别</h2><h4 id="ES-Module-：（import-export方式）"><a href="#ES-Module-：（import-export方式）" class="headerlink" title="ES-Module ：（import export方式）"></a>ES-Module ：（import export方式）</h4><table>
+<thead>
+<tr>
+<th></th>
+<th align="center">特性</th>
+<th align="center">意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td align="center">只读引用</td>
+<td align="center">import的变量是只读的，不允许修改引入变量的值，当遇到import命令时，会生成一个只读引用。等到脚本真正执行时，再根据这个只读引用到被加载的那个模块里面去取值。如果修改引入变量会报错：SyntaxError: “count” is read-only。</td>
+</tr>
+<tr>
+<td>2</td>
+<td align="center">动态、无缓存</td>
+<td align="center">对于动态来说，原始值发生变化，import加载的值也会发生变化，同时是是没有缓存的。</td>
+</tr>
+<tr>
+<td>3</td>
+<td align="center">静态建立模块关系</td>
+<td align="center">模块关系的建立是发生在代码编译阶段，在编译阶段esm就要确定模块之间的依赖关系，导入导出必须位于模块的顶层作用域，而且必须是静态路径，在编译阶段就可以分析出模块的依赖关系。如果是动态路径将无法确认。</td>
+</tr>
+<tr>
+<td>4</td>
+<td align="center">异步</td>
+<td align="center"><span style="color:red">ESM模块的import命令是异步加载，有一个独立的模块依赖的解析阶段。</span></td>
+</tr>
+<tr>
+<td>5</td>
+<td align="center">循环引用</td>
+<td align="center"><strong>循环加载时，ESM模块仅仅是生成了引用，直到用的时候才会加载，并且没有缓存，每次都是动态的去被加载的模块中取值。所以esm根本不关心是否发生了“循环引用”，他只是生成了一个模块引用，需要开发者自己保证，真正读值的时候可以取得值。</strong></td>
+</tr>
+</tbody></table>
+<h4 id="Common-Js-（require，module-export）"><a href="#Common-Js-（require，module-export）" class="headerlink" title="Common-Js:（require，module.export）"></a>Common-Js:（require，module.export）</h4><table>
+<thead>
+<tr>
+<th></th>
+<th align="center">特性</th>
+<th align="center">意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td align="center">浅拷贝</td>
+<td align="center">对于基本数据类型，属于复制，同时，在另一个模块可以对该模块输出的变量重新赋值。对于复杂数据类型，属于浅拷贝。由于两个模块引用的对象指向同一个内存空间，因此对该模块的值做修改时会影响另一个模块。</td>
+</tr>
+<tr>
+<td>2</td>
+<td align="center">有缓存</td>
+<td align="center">使用require命令加载同一个模块时，不会再执行该模块，而是取到缓存之中的值，CommonJS模块无论加载多少次，都只会在第一次加载时运行一次，以后返回第一次运行的结果，除非手动清除系统缓存。</td>
+</tr>
+<tr>
+<td>3</td>
+<td align="center">动态建立模块关系</td>
+<td align="center">模块依赖关系的建立是动态的，require的模块路径可以动态指定，支传表达式，if判断判断是否加载某个模块。因此，在cjs模块被执行前，并没有办法确定明确的依赖关系，模块的导入、导出发生在代码的运行阶段。</td>
+</tr>
+<tr>
+<td>4</td>
+<td align="center">同步加载</td>
+<td align="center"><span style="color:red">CommonJS 模块的require是同步加载模块。</span></td>
+</tr>
+<tr>
+<td>5</td>
+<td align="center">循环引用</td>
+<td align="center"><strong>循环加载时，脚本代码在require的时候，就会全部执行。一旦出现某个模块被”循环加载”，就只输出已经执行的部分，还未执行的部分不会输出。</strong></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>加载原理（循环加载）<a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2015/11/circular-dependency.html">参考链接</a></p>
+</blockquote>
+<h2 id="4-总结：ES6-module-相对于-CommonJS-最大的区别就是两点："><a href="#4-总结：ES6-module-相对于-CommonJS-最大的区别就是两点：" class="headerlink" title="4. 总结：ES6 module 相对于 CommonJS 最大的区别就是两点："></a>4. 总结：ES6 module 相对于 CommonJS 最大的区别就是两点：</h2><ul>
+<li>在执行模块前首先需要加载所有的依赖模块，如果加载有问题直接报错</li>
+<li>ES6 module 的模块引入的都是变量，函数，类的引用这是很有先进性的，还有值得一提的就是可以按需引入自己需要的接口，方便tree-sharking</li>
+</ul>
+<h2 id="5-其他补充"><a href="#5-其他补充" class="headerlink" title="5. 其他补充"></a>5. 其他补充</h2><h3 id="1-ES-Module在经过babel转化后还是成了CommonJS"><a href="#1-ES-Module在经过babel转化后还是成了CommonJS" class="headerlink" title="1. ES Module在经过babel转化后还是成了CommonJS"></a>1. ES Module在经过babel转化后还是成了CommonJS</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> a <span class="keyword">from</span> <span class="string">&quot;./a&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line"><span class="comment">//babel转化后：</span></span><br><span class="line"><span class="meta">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(<span class="built_in">exports</span>, <span class="string">&quot;__esModule&quot;</span>, &#123; <span class="attr">value</span>: <span class="literal">true</span> &#125;);</span><br><span class="line"><span class="comment">//ESM 被转为 CJS 时，转译器会在其导出的对象中定义一个值为 true 的私有的变量 __esModule</span></span><br><span class="line"><span class="keyword">var</span> _a = <span class="built_in">require</span>(<span class="string">&quot;./a&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> _a2 = <span class="title function_">_interopRequireDefault</span>(_a);</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">_interopRequireDefault</span>(<span class="params">obj</span>) &#123;</span><br><span class="line">  <span class="comment">// 如果是ESM则直接返回obj，否则返回带有default属性的新对象</span></span><br><span class="line">  <span class="keyword">return</span> obj &amp;&amp; obj.<span class="property">__esModule</span> ? obj : &#123; <span class="attr">default</span>: obj &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(_a2.<span class="property">default</span>);</span><br></pre></td></tr></table></figure>
+
+<p>ESM 的export相当于往 CJS 的exports上添加属性</p>
+<ol>
+<li><code>export var/let/const/function/class...</code> 会往 <code>exports</code> 上添加同名属性</li>
+<li><code>export default</code> 会往 <code>exports</code> 上添加 default 属性</li>
+</ol>
+<h3 id="2-问题require，module等等都是从哪里来的"><a href="#2-问题require，module等等都是从哪里来的" class="headerlink" title="2. 问题require，module等等都是从哪里来的"></a>2. 问题require，module等等都是从哪里来的</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span> (<span class="params"><span class="built_in">exports</span>, <span class="built_in">require</span>, <span class="variable language_">module</span>, __filename, __dirname</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> name = <span class="string">&quot;lm&quot;</span>;</span><br><span class="line">    <span class="built_in">exports</span>.<span class="property">name</span> = name;</span><br><span class="line">&#125;)(&#123;modules&#125;)</span><br><span class="line"><span class="comment">//在 CommonJS 规范中代码在运行时会被包裹在一个立即执行函数中，之后我们会改变这个立即执行函数中内部 this 的指向，指向的便是 module.exports 这个空对象。这便可以很好的解释我们 node.js 中内部 this 指向的是一个空对象的问题。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">name</span> = <span class="string">&#x27;sxy&#x27;</span>;<span class="comment">//所以说console.log(this)，输出的就是exports对象</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);<span class="comment">//&#123; name: &#x27;sxy&#x27; &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>阮一峰：<a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/#docs/module-loader#ES6-%E6%A8%A1%E5%9D%97%E4%B8%8E-CommonJS-%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B7%AE%E5%BC%82">https://es6.ruanyifeng.com/#docs/module-loader#ES6-%E6%A8%A1%E5%9D%97%E4%B8%8E-CommonJS-%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B7%AE%E5%BC%82</a></p>
+<h3 id="3-Webpack模块兼容"><a href="#3-Webpack模块兼容" class="headerlink" title="3. Webpack模块兼容"></a>3. Webpack模块兼容</h3><p>Common.js同步加载</p>
+<p>ADM异步加载</p>
+<p>ES6 module</p>
+<h3 id="4-Webpack模块打包"><a href="#4-Webpack模块打包" class="headerlink" title="4. Webpack模块打包"></a>4. Webpack模块打包</h3><p>既然模块规范有这么多，那webpack是如何去解析不同的模块呢？</p>
+<p>webpack根据webpack.config.js中的入口文件，在入口文件里识别模块依赖，不管这里的模块依赖是用CommonJS写的，还是ES6 Module规范写的，webpack会自动进行分析，并通过转换（不同的资源使用不同的loader去转化）、编译代码，打包成最终的文件。<code>最终文件中的模块实现是基于webpack自己实现的webpack_require（es5代码）</code>，所以打包后的文件可以跑在浏览器上。</p>
+<h3 id="5-模块化实现原理——IIFE（立即执行函数）"><a href="#5-模块化实现原理——IIFE（立即执行函数）" class="headerlink" title="5. 模块化实现原理——IIFE（立即执行函数）"></a>5. 模块化实现原理——IIFE（立即执行函数）</h3><p>因为浏览器本身不支持模块化，那么webpack和require等模块化工具就用函数作用域来hack模块化的效果，整体打包生成的代码是一个IIFE（立即执行函数），函数参数是我们写的各个模块组成的数组，每一个我们说的模块，在这里就是一个函数。</p>
+<h4 id="1-Common-js实现思想"><a href="#1-Common-js实现思想" class="headerlink" title="1. Common.js实现思想"></a>1. Common.js实现思想</h4><ol>
+<li>首先闭包变量存储installModules对象，定义__webapck__require函数，函数意思根据模块的id，来实现模块的require函数。__webapck__require函数会根据模块id，检查是否缓存了已加载的模块，有返回缓存exports</li>
+<li>没有的话，在installModules，moduleId为key，模块为value，构造出一个模块对象，随后调用我们写的代码，会通过字符串拼接成一个函数声明，执行模块函数将<code>module</code>、<code>module.exports</code>和<code>__webpack_require__</code>作为参数传入。</li>
+<li>注意这里做了一个动态绑定，将模块函数的调用对象绑定为<code>module.exports</code>，这是为了保证在模块中的this指向当前模块。</li>
+<li>调用之后，标记模块为已加载，返回模块exports的内容</li>
+<li>利用前面定义的<code>__webpack_require__ </code>函数，require第0个模块，也就是入口模块。</li>
+<li>就完成了对第一个模块的require，然后第一个模块会根据自己对其他模块的require，依次加载其他模块，最终形成一个依赖网状结构。webpack管理着这些模块的缓存，如果一个模块被require多次，那么只会有一次加载过程，而返回的是缓存的内容，这也是commonjs的规范。</li>
+<li>所以说我们总是说模块，模块的实质是一个经过包装后的函数，exports，module，require作为参数的函数。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span>(<span class="params">modules</span>)&#123;<span class="comment">//modules为一个函数（模块）数组</span></span><br><span class="line"><span class="comment">// 1、模块缓存对象</span></span><br><span class="line"><span class="keyword">var</span> installedModules = &#123;&#125;;</span><br><span class="line"><span class="comment">// 2、webpack实现的require</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">__webpack_require__</span>(<span class="params">moduleId</span>) &#123;</span><br><span class="line">    <span class="comment">// 3、判断是否已缓存模块</span></span><br><span class="line">    <span class="keyword">if</span>(installedModules[moduleId]) &#123;</span><br><span class="line">        <span class="keyword">return</span> installedModules[moduleId].<span class="property">exports</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 4、缓存模块</span></span><br><span class="line">    <span class="keyword">var</span> <span class="variable language_">module</span> = installedModules[moduleId] = &#123;</span><br><span class="line">        <span class="attr">i</span>: moduleId,</span><br><span class="line">        <span class="attr">l</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">exports</span>: &#123;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 5、调用模块函数</span></span><br><span class="line">    modules[moduleId].<span class="title function_">call</span>(<span class="variable language_">module</span>, <span class="variable language_">module</span>.<span class="property">exports</span>, __webpack_require__);</span><br><span class="line">    <span class="comment">// 6、标记模块为已加载</span></span><br><span class="line">    <span class="variable language_">module</span>.<span class="property">l</span> = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">// 7、返回module.exports</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">module</span>.<span class="property">exports</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 8、require第一个模块</span></span><br><span class="line"><span class="keyword">return</span> <span class="title function_">__webpack_require__</span>(__webpack_require__.<span class="property">s</span> = <span class="number">0</span>);</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-ES-module实现思想"><a href="#2-ES-module实现思想" class="headerlink" title="2. ES module实现思想"></a>2. ES module实现思想</h4><p>对比common规范打包，es Module下打包代码只有模版数组部分发生了变化，本身的iife函数结构是没有变化的。对于webpack是如何识别的，ast babel</p>
+<ol>
+<li>首先通过Object.defineProperty在__webapck__require上添加属性__esModule，值为true，表明这是一个es模块，现在来说没什么用，之后会在两种模式混用的时候会发挥作用。</li>
+<li>接着调用__webpack_require__函数，和common一样流程</li>
+<li>最后在通过Object.defineProperty,将加在exports上的属性，设置属性描述符 configurable:false ,get使用取值器函数，保证是值的引用</li>
+</ol>
+<p>Babel转化：直接export出去的变量，是加在export对象上的， default出去的是加在export的default属性上的，<a target="_blank" rel="noopener" href="https://zacharykwan.com/2018/02/23/webpack%E5%8E%9F%E7%90%86/webpack%E6%A8%A1%E5%9D%97%E5%8C%96%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%20%E5%85%BC%E5%AE%B9%E5%90%84JavaScript%E6%A8%A1%E5%9D%97%E5%8C%96%E8%A7%84%E8%8C%83%E7%9A%84%E5%8E%9F%E7%90%86/">没读懂</a></p>
+<h5 id="1-babel-与-webpack-的关系"><a href="#1-babel-与-webpack-的关系" class="headerlink" title="1. babel 与 webpack 的关系"></a>1. babel 与 webpack 的关系</h5><ul>
+<li>webpack：将 ES module、CommonJS、amd、cmd 等模块化通过自己内部的机制统一成 webpack 的模块化。</li>
+<li>babel：转码 es6 语法，配合一些列 babel 工具链可以将新的 es2015+ 代码转换成所有浏览器支持的 es代码，babel 也可以将 es6 模块转换成 commonjs 模块</li>
+</ul>
+<h5 id="2-es-module-与-commonjs-为何可以混用"><a href="#2-es-module-与-commonjs-为何可以混用" class="headerlink" title="2. es module 与 commonjs 为何可以混用"></a>2. es module 与 commonjs 为何可以混用</h5><ul>
+<li>因为 babel 会把 es module 转换成 commonjs 规范的代码</li>
+<li>babel 转码 es module 时如果遇到 <code>export default</code> 这种导出模块的书写方式后，会将其转换成 <code>exports.default</code> ，这时如果用 <code>require</code> 引入时，需要对其加上 <code>.default</code> 如 <code>require(&#39;./a.js&#39;).default</code> 这样才能获取 a 模块 <code>export default</code> 导出的 <code>a</code></li>
+<li><code>import</code> 动态加载的模块也需要 <code>.default</code> 才能获取真实模块导出的值，如 <code>import(&#39;./a.js&#39;).then(res =&gt; res.dafault)</code></li>
+</ul>
+<h2 id="6-发展历史"><a href="#6-发展历史" class="headerlink" title="6. 发展历史"></a>6. 发展历史</h2><img src="../assets/mo1.jpg">
+
+<img src="../assets/mo2.jpg">
+
+<img src="../assets/mo3.jpg">
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/4-Webpack/npm%E8%BF%87%E7%A8%8B/" style="float: left;">
+        ← npm过程
+    </a>
+    
+    
+    <a class="pull-right" href="/1-Css/%E6%B5%8F%E8%A7%88%E5%99%A8css%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/">
+        浏览器css兼容问题 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

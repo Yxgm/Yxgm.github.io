@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>函数式编程 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-08-22T11:09:18.147Z" itemprop="datePublished">
+          2022-08-22
+      </time>
+    
+    
+    | 
+    <a href='/tags/函数式编程/'>函数式编程</a>,
+    
+    <a href='/tags/纯函数/'>纯函数</a>,
+    
+    <a href='/tags/副作用/'>副作用</a>
+    
+    
+</span>
+                <h1>函数式编程</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="1-函数是“一等公民”-First-Class-Functions"><a href="#1-函数是“一等公民”-First-Class-Functions" class="headerlink" title="1. 函数是“一等公民” (First-Class Functions)"></a>1. 函数是“一等公民” (First-Class Functions)</h2><p>​    这是函数式编程得以实现的<strong>前提</strong>，因为我们基本的操作都是在操作函数。这个特性意味着函数与其他数据类型一样，处于平等地位，可以赋值给其他变量，也可以作为参数，传入另一个函数，或者作为别的函数的返回值。</p>
+<h2 id="2-声明式编程-Declarative-Programming"><a href="#2-声明式编程-Declarative-Programming" class="headerlink" title="2. 声明式编程 (Declarative Programming)"></a>2. 声明式编程 (Declarative Programming)</h2><p>​    函数式编程大多时候都是在声明我需要做什么，而非怎么去做。这种编程风格称为 <a href="https://link.zhihu.com/?target=https://zh.wikipedia.org/zh-cn/%E5%AE%A3%E5%91%8A%E5%BC%8F%E7%B7%A8%E7%A8%8B%EF%BC%9Foldformat=true">声明式编程</a> 。这样有个好处是代码的可读性特别高，因为声明式代码大多都是接近自然语言的，同时，它解放了大量的人力，因为它不关心具体的实现，因此它可以把优化能力交给具体的实现，这也方便我们进行分工协作。</p>
+<p>​    SQL 语句就是声明式的，你无需关心 Select 语句是如何实现的，不同的数据库会去实现它自己的方法并且优化。React 也是声明式的，你只要描述你的 UI，接下来状态变化后 UI 如何更新，是 React 在运行时帮你处理的，而不是靠你自己去渲染和优化 diff 算法。</p>
+<h2 id="3-惰性执行（Lazy-Evaluation）"><a href="#3-惰性执行（Lazy-Evaluation）" class="headerlink" title="3. 惰性执行（Lazy Evaluation）"></a>3. 惰性执行（Lazy Evaluation）</h2><p>​    所谓惰性执行指的是函数只在需要的时候执行，即不产生无意义的中间变量。像刚才的例子，函数式编程跟命令式编程最大的区别就在于几乎没有中间变量，它从头到尾都在写函数，只有在最后的时候才通过调用 <code>convertName</code> 产生实际的结果。相当于不断的返回函数，在最后一步调用函数</p>
+<h2 id="4-无状态State-lessness、数据不可变Immutable、没有副作用（No-Side-Effects）"><a href="#4-无状态State-lessness、数据不可变Immutable、没有副作用（No-Side-Effects）" class="headerlink" title="4. 无状态State lessness、数据不可变Immutable、没有副作用（No Side Effects）"></a>4. 无状态State lessness、数据不可变Immutable、没有副作用（No Side Effects）</h2><img src='https://bucket922.oss-cn-beijing.aliyuncs.com/blog-img/function.jpg' width=100%>
+
+<h5 id="1-数据不可变"><a href="#1-数据不可变" class="headerlink" title="1. 数据不可变"></a>1. 数据不可变</h5><p>​    它要求你所有的数据都是不可变的，这意味着如果你想修改一个对象，那你应该创建一个新的对象用来修改，而不是修改已有的对象。    </p>
+<h5 id="2-无状态"><a href="#2-无状态" class="headerlink" title="2. 无状态"></a>2. 无状态</h5><p>​    主要是强调对于一个函数，不管你何时运行，它都应该像第一次运行一样，给定相同的输入，给出相同的输出，<mark>完全不依赖外部状态的变化。</mark></p>
+<h5 id="3-没有副作用"><a href="#3-没有副作用" class="headerlink" title="3. 没有副作用"></a>3. 没有副作用</h5><p>​    <strong>没有副作用的好处</strong>：没有副作用的函数不依赖于我们传递参数以外的任何东西，无论上下文如何切换，写下无副作用函数将永远有效，并且永恒的东西变化的频率是很低的，测试起来更容易，调试更轻松，这也是为什么很多编程语言倾向于副作用。</p>
+<p>​    <strong>什么是有副作用的函数</strong>：完成函数主要功能之外完成的其他副要功能。函数中最主要的功能是根据输入<strong>返回结果</strong>，而在函数中我们最常见的副作用就是<strong>随意操纵外部变量</strong>。同时还有很多比如说：使用I&#x2F;O，引发异常或中止错误、从函数范围之外检索值、磁盘检索这些都被认作为副作用。</p>
+<h2 id="5-纯函数pure，纯函数式编程"><a href="#5-纯函数pure，纯函数式编程" class="headerlink" title="5. 纯函数pure，纯函数式编程"></a>5. 纯函数pure，纯函数式编程</h2><p>​    纯函数算是在 “没有副作用” 的要求上再进一步了。相信你已经在很多地方接触过这个词，在 <a href="https://link.zhihu.com/?target=https://redux.js.org/introduction/three-principles">Redux 的三大原则中</a>，我们看到，它要求所有的修改必须使用纯函数。</p>
+<p>​    其实纯函数的概念很简单就是两点：</p>
+<ol>
+<li>无状态的：函数的的运行结果不依赖全局变量，this 指针，IO 操作等。</li>
+<li>不产生副作用：参考上文。</li>
+</ol>
+<h2 id="6-函数式编程的优缺点"><a href="#6-函数式编程的优缺点" class="headerlink" title="6. 函数式编程的优缺点"></a>6. 函数式编程的优缺点</h2><p>​    比如，<code>React</code>、<code>lodash</code>和<code>Redux</code>等就巧妙应用了<code>js</code>的函数式编程，使得暴露出来的接口十分稳定，接口结构清晰。但是这些还只是用到了函数式的方式和技巧，还并不是完全的函数范式，真正的函数范式的限制更加严格，但是我认为不能一味的去追求这些严格的理论，而是适合的才是最好的。</p>
+<p>​    其中的一些函数式编程模型，比如：闭包（Closure，可搂sure）、高阶函数、柯里化（Currying，可瑞ing）和组合（Composing）等，让更多的框架借鉴和使用，函数式编程这些特性给前端带来了更多的活力。</p>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li><strong>代码简洁，开发快速</strong>：函数式编程大量使用函数的组合，函数的复用率很高，减少了代码的重复，因此程序比较短，开发速度较快。</li>
+<li><strong>接近自然语言，易于理解</strong>：函数式编程大量使用声明式代码，基本都是接近自然语言的，加上它没有乱七八糟的循环，判断的嵌套，因此特别易于理解。</li>
+<li>**易于”并发编程”**：函数式编程没有副作用，所以函数式编程不需要考虑“死锁”（Deadlock），所以根本不存在“锁”线程的问题。</li>
+<li><strong>更少的出错概率</strong>：因为每个函数都很小，而且相同输入永远可以得到相同的输出，因此测试很简单，同时函数式编程强调使用纯函数，没有副作用，因此也很少出现奇怪的 Bug。</li>
+</ul>
+<p>一句话来形容函数式编程：Less code, fewer bugs</p>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li><strong>性能</strong>：函数式编程相对于指令式编程，性能绝对是一个短板，因为它往往会对一个方法进行过度包装，从而产生上下文切换的性能开销。同时，在 JS 这种非函数式语言中，函数式的方式必然会比直接写语句指令慢（引擎会针对很多指令做特别优化）。就拿原生方法 <code>map</code> 来说，它就要比纯循环语句实现迭代慢 8 倍。</li>
+<li><strong>资源占用</strong>：在 JS 中为了实现对象状态的不可变，往往会创建新的对象，因此，它对垃圾回收（Garbage Collection）所产生的压力远远超过其他编程方式。这在某些场合会产生十分严重的问题。</li>
+<li><strong>递归陷阱</strong>：在函数式编程中，为了实现迭代，通常会采用递归操作，为了减少递归的性能开销，我们往往会把递归写成尾递归形式，以便让解析器进行优化。但是众所周知，JS 是不支持尾递归优化的（虽然 ES6 中将尾递归优化作为了一个规范，但是真正实现的少之又少，<a href="https://link.zhihu.com/?target=http://kangax.github.io/compat-table/es6/">传送门</a>）</li>
+</ul>
+<p>因此，在性能要求很严格的场合，函数式编程其实并不是太合适的选择。</p>
+<p>但是换种思路想，软件工程界从来就没有停止过所谓的银弹之争，却也从来没诞生过什么真正的银弹，各种编程语言层出不穷，各种框架日新月异，各种编程范式推陈出新，结果谁也没有真正的替代谁。</p>
+<p>学习函数式编程真正的意义在于：让你意识到在指令式编程，面向对象编程之外，还有一种全新的编程思路，一种用函数的角度去<strong>抽象</strong>问题的思路。学习函数式编程能大大丰富你的武器库，不然，<strong>当你手中只有一个锤子，你看什么都像钉子</strong></p>
+<p>我们完全可以在日常工作中将函数式编程作为一种辅助手段，在条件允许的前提下，借鉴函数式编程中的思路，例如：</p>
+<ul>
+<li>多使用纯函数减少副作用的影响。</li>
+<li>使用柯里化增加函数适用率。</li>
+<li>使用 Pointfree 编程风格，减少无意义的中间变量，让代码更且可读性。</li>
+</ul>
+<p>​    最后，还是那句老生常谈的话：没有最好的，只有最适合的。希望大家在实际项目中，能根据自己的需求选择最适合自己的编程范式，也希望通过学习这种新的编程范式，可以让我们在二进制的世界行走得更加游刃有余。</p>
+<blockquote>
+<h5 id="函数式编程应用举例："><a href="#函数式编程应用举例：" class="headerlink" title="函数式编程应用举例："></a>函数式编程应用举例：</h5><p>比如我开车去吃饭，这个业务如果用面向对象，就我，车，饭3个对象，我调用了开车的方法，把车作为参数传进。这个很好理解。<br>如果用函数式编程的思维来分解这个问题，用汉语应该怎么表达呢？该怎么设计函数和变量呢？函数式编程的封装程度是不是比面向对象要高？</p>
+<p>调用“驾驶”这个函数，传进去一个“我”和“车”，返回一个“新的我”；再调用函数“吃”，传进去“新的我“和“饭”，返回“另一个我”。开车前的“我”和到达目的地后“新的我”是完全不同的两个东西，就像上一秒的我和这一秒的我有区别一样。如果引入时序的话，上一个我和下一个我显然是同一个对象，但是函数式去掉了时序的存在，所以每个时刻的我都是不同的我。</p>
+</blockquote>
+<blockquote>
+<p>参考文章：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/81302150">https://zhuanlan.zhihu.com/p/81302150</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/28292740">https://www.zhihu.com/question/28292740</a></p>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000039022245">https://segmentfault.com/a/1190000039022245</a></p>
+</blockquote>
+<h2 id="7-解决了一些问题"><a href="#7-解决了一些问题" class="headerlink" title="7. 解决了一些问题"></a>7. 解决了一些问题</h2><p>​    函数式编程关心数据的映射，命令式编程关心解决问题的步骤，如今前端应用功能越来越多，用户的交互越来越多，需要处理的用户数据也是越来越复杂，管理这些数据是比较关心的问题。</p>
+<p>​    函数范式来处理这些数据，就可以使数据的每一次修改都变的可以追溯，可以更容易的定位到问题所在，因为无副作用的特性，减少了原始数据的噪声，是每一次修改数据都比较稳定。</p>
+<ol>
+<li>函数式编程，我们的状态state，在经过一个又一个的map函数（函子），生成了新的状态。</li>
+<li>数据不可变，纯函数，管道，若干细化的函数组成一个复杂函数，解耦</li>
+<li>函数即对象，函数柯里化，函数第一公民，闭包</li>
+<li>函数如同一个一个管道一样，让数据每经过一个管道就会发生改变，并且又收到了容器中，</li>
+</ol>
+<h4 id="函子"><a href="#函子" class="headerlink" title="函子"></a>函子</h4><p>map知道如何在上下文中映射函数值。它首先会打开该容器，然后把值通过函数映射为另外一个值，最后把结果值再次包裹到一个新的同类型的容器中。而这种变换容器内的值的方法(map)称为<a target="_blank" rel="noopener" href="https://link.segmentfault.com/?enc=xGq+GS9ORVXXSRIb+HEPaQ==.KmaQUljUouo7t2XRpazBu4QicRXkcfrjmU90AWrHB0jSYdjepKd6QElJ0wgErDhf39DmRORXCQGhy4plcQgQRg==">Functor(函子)</a>。就是map函数</p>
+<p>map方法，Promise的then方法、数组的filter</p>
+<h4 id="应用函子"><a href="#应用函子" class="headerlink" title="应用函子"></a>应用函子</h4><p>每一次apply一个函子functor，就相当于把函数降元一次，我们可以得出一个结论，一个柯里化的函数，有几个参数，我们就可以apply几次。</p>
+<h4 id="Applicative-Functor-和-Functor-的区别和联系"><a href="#Applicative-Functor-和-Functor-的区别和联系" class="headerlink" title="Applicative Functor 和 Functor 的区别和联系"></a>Applicative Functor 和 Functor 的区别和联系</h4><p>根据 <code>F(f).ap(F(x)) == F(x).map(f)</code>，我们可以得出一个结论，假如一个盒子 (Box) ，实现了 <code>ap</code> 方法，那么我们一定可以利用 <code>ap</code> 方法推导出一个 <code>map</code> 方法，如果拥有了 <code>map</code> 方法，那它就是一个 <code>Functor</code> ，所以我们也可以认为 <code>Applicative</code> 是 <code>Functor</code> 的拓展，比 <code>Functor</code> 更强大。<br>那么强大在何处呢？<code>Functor</code> 只能映射一个接收单个参数的函数(e.g., <code>x =&gt; y</code>)，如果我们想把接收多个参数的函数(e.g., <code>x =&gt; y =&gt; z</code>)应用到多个值上，则是 <code>Applicative</code> 的舞台了，想想 <code>checkUserInfo</code> 的例子。</p>
+<blockquote>
+<p>毫无疑问，Applicative Funtor 可以 <code>apply</code> 多次（当然包括一次），那么如果函数只有一个参数的情况下，则可以认为 <code>map</code> 和 <code>apply</code> 是等效的，换句话说：<code>map</code> 相当于 <code>apply</code> 一次。<br>上面是实际应用中的对比，从抽象的数学层面来对比：</p>
+</blockquote>
+<ul>
+<li>Functor: 应用一个函数到包裹的值：<code>Box(1).map(x =&gt; x+1)</code>.</li>
+<li>Applicative: 应用一个包裹的函数到包裹的值：<code>Box(x =&gt; x+1).ap(Box(1))</code>。</li>
+</ul>
+<h4 id="为什么使用函子Functor"><a href="#为什么使用函子Functor" class="headerlink" title="为什么使用函子Functor?"></a>为什么使用函子Functor?</h4><p>​    抽象，对于函数运用的抽象，可以使用Functor(函子)，都是返回同样类型的 <code>Functor</code>，因此可以不断的链式调用，其实这些都是 Box 理念的延伸，</p>
+<p>​    纵观整个函数式编程的核心就在于把一个个的小函数组合成更高级的函数。</p>
+<p>​    函子是我们介绍的范畴论中的最最最基本的一个概念，不过我们目前解决的都是最简单的问题（更优秀的组合（map），更健壮的代码（fromNullAble），更纯的错误处理（TryCatch））</p>
+<h4 id="单子-Monad-函子实现了chain方法"><a href="#单子-Monad-函子实现了chain方法" class="headerlink" title="单子(Monad)函子实现了chain方法"></a>单子(Monad)函子实现了<code>chain</code>方法</h4><p>掌握 Monad 在编程中可以理解为 <code>chainable</code> 的对象，用来解决嵌套的 Box 问题，抓住这个重点已经足够了。</p>
+<p>promise就是单子（monad）</p>
+<h4 id="点到即止"><a href="#点到即止" class="headerlink" title="点到即止"></a>点到即止</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">double</span> = (<span class="params">x</span>) =&gt; x * <span class="number">2</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">discount</span> = (<span class="params">x</span>) =&gt; x * <span class="number">0.8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">coupon</span> = (<span class="params">x</span>) =&gt; x - <span class="number">50</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">compose</span> =</span><br><span class="line">  (<span class="params">...fns</span>) =&gt;</span><br><span class="line">  <span class="function">(<span class="params">number</span>) =&gt;</span></span><br><span class="line">    fns.<span class="title function_">reduceRight</span>(<span class="function">(<span class="params">v, f</span>) =&gt;</span> <span class="title function_">f</span>(v), number);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> finalPrice = <span class="title function_">compose</span>(coupon, discount, double);</span><br><span class="line"><span class="keyword">const</span> final = <span class="title function_">finalPrice</span>(<span class="number">100</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(final);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 所以说在开发中，数组的map这个函数就如果管道一样，有点函数式编程的意思，但是我们试试想要一个容器罢了</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Box</span> = (<span class="params">x</span>) =&gt; (&#123;</span><br><span class="line">  <span class="attr">map</span>: <span class="function">(<span class="params">fn</span>) =&gt;</span> <span class="title class_">Box</span>(<span class="title function_">fn</span>(x)),</span><br><span class="line">  <span class="attr">inspect</span>: <span class="function">() =&gt;</span> x</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">finalPrice</span> = (<span class="params">str</span>) =&gt;</span><br><span class="line">  <span class="title class_">Box</span>(str)</span><br><span class="line">    .<span class="title function_">map</span>(<span class="function">(<span class="params">x</span>) =&gt;</span> x * <span class="number">2</span>)</span><br><span class="line">    .<span class="title function_">map</span>(<span class="function">(<span class="params">x</span>) =&gt;</span> x * <span class="number">0.8</span>)</span><br><span class="line">    .<span class="title function_">map</span>(<span class="function">(<span class="params">x</span>) =&gt;</span> x - <span class="number">50</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> result = <span class="title function_">finalPrice</span>(<span class="number">100</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result.<span class="title function_">inspect</span>()); <span class="comment">// =&gt; Box(110)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//惰性</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">LazyBox</span> = (<span class="params">g</span>) =&gt; (&#123;</span><br><span class="line">  <span class="attr">map</span>: <span class="function">(<span class="params">f</span>) =&gt;</span> <span class="title class_">LazyBox</span>(<span class="function">() =&gt;</span> <span class="title function_">f</span>(<span class="title function_">g</span>())),</span><br><span class="line">  <span class="attr">fold</span>: <span class="function">(<span class="params">f</span>) =&gt;</span> <span class="title function_">f</span>(<span class="title function_">g</span>())</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">finalPrice</span> = (<span class="params">str</span>) =&gt;</span><br><span class="line">  <span class="title class_">LazyBox</span>(<span class="function">() =&gt;</span> str)</span><br><span class="line">    .<span class="title function_">map</span>(<span class="function">(<span class="params">x</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;str:&#x27;</span>, str);</span><br><span class="line">      <span class="keyword">return</span> x;</span><br><span class="line">    &#125;)</span><br><span class="line">    .<span class="title function_">map</span>(<span class="function">(<span class="params">x</span>) =&gt;</span> x * <span class="number">2</span>)</span><br><span class="line">    .<span class="title function_">map</span>(<span class="function">(<span class="params">x</span>) =&gt;</span> x * <span class="number">0.8</span>)</span><br><span class="line">    .<span class="title function_">map</span>(<span class="function">(<span class="params">x</span>) =&gt;</span> x - <span class="number">50</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> res = <span class="title function_">finalPrice</span>(<span class="number">100</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(res); <span class="comment">// =&gt; &#123; map: [Function: map], fold: [Function: fold] &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>电子书链接：<a target="_blank" rel="noopener" href="https://github.com/7-sevens/Developer-Books">https://github.com/7-sevens/Developer-Books</a></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/%E8%B6%85%E8%84%B1%E9%A2%86%E6%82%9F/web3.0/" style="float: left;">
+        ← web3.0
+    </a>
+    
+    
+    <a class="pull-right" href="/%E4%B8%9A%E5%8A%A1%E5%92%8C%E6%80%9D%E6%83%B3/%E9%89%B4%E6%9D%83%E9%97%AE%E9%A2%98/">
+        鉴权问题 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>hook用法 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-03-11T00:55:19.254Z" itemprop="datePublished">
+          2022-03-11
+      </time>
+    
+    
+    | 
+    <a href='/tags/react/'>react</a>,
+    
+    <a href='/tags/hook/'>hook</a>
+    
+    
+</span>
+                <h1>hook用法</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="useState"><a href="#useState" class="headerlink" title="useState"></a>useState</h3><p>每一次渲染都有它自己的 props 和 state，每一次渲染都有它自己的事件处理函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [count setState]= <span class="title function_">useState</span>(<span class="number">0</span>)<span class="comment">//不想采用合并策略，使用回调函数更新方式，也称函数式更新</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">click</span>=(<span class="params"></span>)=&gt;&#123;<span class="title function_">setState</span>(<span class="function"><span class="params">count</span> =&gt;</span> count + <span class="number">1</span> );<span class="comment">//如此方法解决setState合并问题&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>惰性初始化<code>State</code>，<code>state</code>永远是第一次初始化的值，后续在函数组件<code>re-render</code>的时候，函数组件内所有代码都会重新执行一遍。此时<code>initialState</code>的初始值是一个相对开销较大的<code>IO</code>操作。每次函数组件<code>re-render</code>时，第一行代码都会被执行一次，引起不必要的性能损耗。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> initialState = <span class="title class_">Number</span>(<span class="variable language_">window</span>.<span class="property">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;count&#x27;</span>))</span><br><span class="line"><span class="keyword">const</span> [count, setCount] = <span class="title class_">React</span>.<span class="title function_">useState</span>(initialState)</span><br><span class="line"><span class="comment">//那么我们完全可以使用如下写法</span></span><br><span class="line"><span class="keyword">const</span> [count, setCount ]= <span class="title class_">React</span>.<span class="title function_">useState</span>( <span class="function">() =&gt;</span> <span class="title class_">Number</span> (<span class="variable language_">window</span>.<span class="property">localStorage</span>.<span class="title function_">getItem</span>(<span class="string">&#x27;count&#x27;</span>)))</span><br></pre></td></tr></table></figure>
+
+<p>死循环</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">useState声明出的数据，永远是初始化的闭包。</span><br><span class="line">函数组件更新，使用<span class="keyword">const</span> query=&#123;<span class="attr">index</span>:<span class="number">0</span>,...&#125;定义的数据就会重新定义，导致发送网络请求的hook重新执行，</span><br><span class="line"><span class="keyword">const</span> query =&#123;<span class="attr">index</span>:<span class="number">0</span>,...&#125;;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="title function_">useEffect</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">do</span> something <span class="comment">//such as 网络请求</span></span><br><span class="line">  <span class="title function_">setState</span>(..) <span class="comment">//页面挂载，执行useEffect内函数，网络请求后set数据，触发页面重新刷新，导致query重新定义一遍,而useEffect钩子又依赖query，导致重新执行</span></span><br><span class="line">&#125;，[query])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>解决方法：需要使用useState、useMemo、useCallback包裹</p>
+</blockquote>
+<h3 id="useReducer（reducer，initState）"><a href="#useReducer（reducer，initState）" class="headerlink" title="useReducer（reducer，initState）"></a>useReducer（reducer，initState）</h3><p>导致组件重新渲染，和redux的使用方法一样</p>
+<p>如果业务不是特别大，可以使用uesContext+useReducer替代redux</p>
+<blockquote>
+<p>const [ state , ] &#x3D; useReducer()</p>
+</blockquote>
+<h3 id="useMemo，useCallback"><a href="#useMemo，useCallback" class="headerlink" title="useMemo，useCallback"></a>useMemo，useCallback</h3><p>性能优化，解决父组件重新刷新，子组件重新渲染问题。（v8引擎生成一个匿名函数成本很低），<strong>第二个参数为依赖数组，显式声明依赖数据</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">useCallback</span>(fn, deps) 相当于 <span class="title function_">useMemo</span>(<span class="function">() =&gt;</span> fn, deps)。useCallback一般和memo搭配使用，避免子组件的不必要的性能浪费。</span><br><span class="line">将一个函数（网络请求有关），传递给子组件，让子组件调用，可能就会发生死循环，也就是函数没有被useCallback包裹。</span><br><span class="line">useCallback就是让一个函数还是原来的引用地址。两次比较即可命中react性能优化。</span><br><span class="line"></span><br><span class="line">useMemo使用场景</span><br><span class="line"><span class="number">1.</span> useMemo仅仅是相当于react版本的computed计算属性，减少不必要的计算开销。</span><br><span class="line"><span class="number">2.</span> 我们使用useMemo包裹变量的时候，并且传给子组件，父组件rerender，但是传递的包裹变量是无关，子组件不应该刷新，单使用useMemo是不够的，还需要使用react.<span class="property">memo</span> 包裹子组件。useMemo前提就是组件浅比较</span><br><span class="line">   因为：react默认的性能优化，是全等比较，新旧props是两个不同的对象，所以未命中。</span><br><span class="line"><span class="number">3.</span> hack用法：用useMemo包裹组件返回值</span><br></pre></td></tr></table></figure>
+
+<h3 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h3><p>模拟组件第一次挂载，更新组件，组件销毁生命周期，第二个参数（依赖刷新数组）和vue中的依赖采集是一个意思</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">useEffect</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">	<span class="comment">//定时器，发送网络请求等</span></span><br><span class="line">  <span class="keyword">return</span> （<span class="comment">//卸载定时器等组件必要操作）</span></span><br><span class="line">&#125;，[依赖数据])</span><br></pre></td></tr></table></figure>
+
+<h3 id="useLayoutEffect"><a href="#useLayoutEffect" class="headerlink" title="useLayoutEffect"></a>useLayoutEffect</h3><p>执行时机在paint（绘制）之前，函数签名和useEffect是一样的，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useLayoutEffect和useEffect都是在commit阶段执行，但是不同时机，useEffect在commit阶段结尾异步调用，useLayout/componentDidMount同步调用</span><br></pre></td></tr></table></figure>
+
+<h3 id="useRef（和类组件的createRef一样）"><a href="#useRef（和类组件的createRef一样）" class="headerlink" title="useRef（和类组件的createRef一样）"></a>useRef（和类组件的createRef一样）</h3><p>不会随着函数式组件的刷新，而重新赋值，拿到的总是第一次初始化的值，也称持久化的一个数据，所以可以改变数据而不触发re-render的骚操作</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我们可以利用持久化数据这个特性,模拟函数组件的<span class="variable language_">this</span>，在初始化阶段，我们存入一些数据，在之后的useEffect等hook中，用到useRef存入的数据 </span><br></pre></td></tr></table></figure>
+
+<h3 id="useContext（不使用props，从而传递数据，透传）"><a href="#useContext（不使用props，从而传递数据，透传）" class="headerlink" title="useContext（不使用props，从而传递数据，透传）"></a>useContext（不使用props，从而传递数据，透传）</h3><p>在外部定义createContext，并且在外层组件通过value注入，内存的函数式组件即可使用useContext，拿到注入的值，在组件刷新的时候从useContext取出的函数是不会变化的，都是一个地址</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useRef, useState, useContext, createContext &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Context</span> = <span class="title function_">createContext</span>(); <span class="comment">//外部模块声明</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Parent</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> store = &#123; count, setCount &#125;;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">Context.Provider</span> <span class="attr">value</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Child</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">Context.Provider</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Child</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="comment">//   const &#123; count, setCount &#125; = useContext(Context); //拥有了hook写法</span></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      &#123;/* <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;count&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;(e)</span> =&gt;</span> setCount(count + 1)&#125;&gt;改变context中的数据<span class="tag">&lt;/<span class="name">button</span>&gt;</span> //如此写法如同connect函数*/&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Context.Consumer</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;(value) =&gt; &#123;</span></span><br><span class="line"><span class="language-xml">          const &#123; count, setCount &#125; = value;</span></span><br><span class="line"><span class="language-xml">          return (</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">              &#123;count&#125;</span></span><br><span class="line"><span class="language-xml">              <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;(e)</span> =&gt;</span> setCount(value.count + 1)&#125;children=&#123;&#x27; 改变context中的数据&#x27;&#125;/&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          );</span></span><br><span class="line"><span class="language-xml">        &#125;&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Context.Consumer</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>使不使用<code>hook</code>的写法，都是在子组件中拿到外层组件注入的value值（其中可以有改变数据的方法，**Context函数注入和redux非常相似 **，只不过<code>context</code>是从<code>context</code>中拿到数据和<code>change</code>，<code>redux</code>中是从<code>props</code>中拿取）。</p>
+<h3 id="useImperativeHandle-了解"><a href="#useImperativeHandle-了解" class="headerlink" title="useImperativeHandle(了解)"></a>useImperativeHandle(了解)</h3><p>在父组件中拿到子组件的ref对象，对子组件的操作进行限制，在父组件中调用子组件中规定的ref劫持方法，来实现对子组件的控制，子组件组件对ref进行限制，直将focus暴露给父组件，相当于做个ref缩小劫持</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sub = <span class="title function_">forwardRef</span>(<span class="function">(<span class="params">props, ref</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> input = <span class="title function_">useRef</span>();</span><br><span class="line">  <span class="comment">//这里有意切断ref与input标签的联系，只让组件拿到input标签的引用</span></span><br><span class="line">  <span class="title function_">useImperativeHandle</span>(ref, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    input.<span class="property">current</span>.<span class="title function_">focus</span>();</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> &#123;<span class="attr">...props</span>&#125; <span class="attr">ref</span>=<span class="string">&#123;input&#125;</span> /&gt;</span></span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="useLocation，useHistory，useParams等等"><a href="#useLocation，useHistory，useParams等等" class="headerlink" title="useLocation，useHistory，useParams等等"></a>useLocation，useHistory，useParams等等</h3><h3 id="自定义钩子"><a href="#自定义钩子" class="headerlink" title="自定义钩子"></a>自定义钩子</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">useUpdated</span>(<span class="params">callback</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> isMounted = <span class="title function_">useRef</span>(<span class="literal">false</span>);</span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;<span class="comment">//只有组件状态更新的时候才会发生变化</span></span><br><span class="line">    isMounted.<span class="property">current</span> ? <span class="title function_">callback</span>() : (isMounted.<span class="property">current</span> = <span class="literal">true</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">aaa</span>(<span class="params">props</span>) &#123;</span><br><span class="line">  <span class="title function_">useUpdated</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;使用自定义钩子，只有在组件更新的时候改变&quot;</span>));</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">onClick</span>=<span class="string">&#123;(e)</span> =&gt;</span> setCount(count + 1)&#125;&gt;&#123;count&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="forwardRef"><a href="#forwardRef" class="headerlink" title="forwardRef"></a>forwardRef</h3><p>原来我们在高阶组件中写的一些ref转发，使用这个hook就不再需要了,<code>ref</code>转发的目的是为了在父组件中可以拿到子组件中的元素。如此操作我们可以拿到input的所有方法，可以随意修改，违反开闭原则，新的hook来处理<code>useImperativeHandle</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Sub</span> = <span class="title function_">forwardRef</span>(<span class="function">(<span class="params">props, ref</span>) =&gt;</span> &#123;<span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">ref</span>=<span class="string">&#123;ref&#125;</span> /&gt;</span></span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Parent</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">  input = <span class="title function_">createRef</span>();</span><br><span class="line">  <span class="title function_">componentDidMount</span>(<span class="params"></span>) &#123;   <span class="variable language_">this</span>.<span class="property">input</span>.<span class="property">current</span>.<span class="title function_">focus</span>(); &#125;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;<span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Sub</span> <span class="attr">ref</span>=<span class="string">&#123;this.input&#125;</span> /&gt;</span></span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>面试题：hook不可用于条件判断，如何自己实现hook。</p>
+<p>答：单向链表存储hook，决定了hook的注册顺序</p>
+</blockquote>
+<h2 id="useState-1"><a href="#useState-1" class="headerlink" title="useState"></a>useState</h2><p>useState中的setState和类组件组件中的setState使用效果不同。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params">props</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(&#123; <span class="attr">value</span>: <span class="number">0</span>, <span class="attr">name</span>: <span class="string">&#x27;sxy&#x27;</span> &#125;);</span><br><span class="line">  <span class="keyword">return</span> (<span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					&#123;count.value&#125;:&#123;count.name&#125;</span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;(e)</span> =&gt;</span> setCount(&#123; value: count.value + 1 &#125;)&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">					//如此写state的值只会有value，name将会消失</span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>);&#125;</span><br><span class="line">  </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">extends</span> <span class="title class_">React</span>.<span class="property">Component</span> &#123;</span><br><span class="line">  state = &#123; <span class="attr">name</span>: <span class="string">&#x27;sxy&#x27;</span>, <span class="attr">value</span>: <span class="number">0</span> &#125;;</span><br><span class="line">  handleValue = <span class="function">() =&gt;</span> &#123;<span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123; <span class="attr">value</span>: <span class="number">10</span> &#125;);</span><br><span class="line">    <span class="comment">//如此写的setState，会将原来state合并，还是会留有name属性</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;this.state.name&#125;:&#123;this.state.value&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;(e)</span> =&gt;</span> this.handleValue()&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">       			<span class="tag">&lt;/&gt;</span></span>  )&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2-React/%E9%80%BB%E8%BE%91%E5%A4%8D%E7%94%A8%E5%92%8CHOC/" style="float: left;">
+        ← 逻辑复用和HOC
+    </a>
+    
+    
+    <a class="pull-right" href="/2-Vue/vue-router/">
+        Vue-Router →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

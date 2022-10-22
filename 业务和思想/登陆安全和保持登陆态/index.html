@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>登录安全和保持登录态 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-03-30T09:39:53.606Z" itemprop="datePublished">
+          2022-03-30
+      </time>
+    
+</span>
+                <h1>登录安全和保持登录态</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="登陆安全"><a href="#登陆安全" class="headerlink" title="登陆安全"></a>登陆安全</h2><h6 id="前端登陆是明文传输还是加密传输呢？"><a href="#前端登陆是明文传输还是加密传输呢？" class="headerlink" title="前端登陆是明文传输还是加密传输呢？"></a>前端登陆是明文传输还是加密传输呢？</h6><p>都可以，前提是https，TLS是保证安全的前提：虽然我们传输了一个明文，但是是TLS对称加密的密文，如果没有https的消息管道保护机制，前端传明文还是密文都是一样不安全的。</p>
+<p>一般意义上，TLS 是可以保证我们和服务器端传输的安全性的，这安全性主要包括三方面：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E6%9C%BA%E5%AF%86%E6%80%A7&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:1270846719%7D">机密性</a>。（第三方截获数据无法知道明文是什么）非对称加密和对称加密实现</li>
+<li>数据完整性。（第三方篡改数据，会使得数据变得无效）hash 散列，加盐算法实现</li>
+<li>认证。（交流双方可以确认对方的身份，第三方无法伪装成任何一方进行交流）CA机构实现</li>
+</ol>
+<p>​        对于明文传输的话，可以有第三方客户端实现，模拟登陆</p>
+<p>​        如果前端是加密密文传输的话，因为我们不知道他的加密算法，所以就无法模仿第三方登录，从而阻止了很多潜在的第三方客户端的存在和机器人。从技术上遏制第三方应用和机器人的存在，这便是知乎前端登录加密的意义。</p>
+<p>​        如果你的生态是开放的，像 Github 这样，把 API 公开，鼓励各种第三方客户端，那前端就没必要加密，如果你是闭源生态，巴不得所有人都从你这个入口进来，那关键部分做一下前端代码的加密混淆，会减少很多第三方应用。</p>
+<h6 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h6><p>使用HTTPS，服务器端加盐后hash存储，前端可加密可不加密，后端拿到数据，在加盐加密存入数据库。</p>
+<p>对于md5的加密方式，可能通过反映射关系的彩虹表（暴力穷举表），进行破解。所以说在此推出的加盐算法是为加大彩虹表的难度，所以加盐的本质目的是：<strong>增加密码长度</strong>。</p>
+<p>其实说白了吧，如果你只是要防御彩虹表，仅仅针对彩虹表防御，你只需要把你的密码<strong>拉到特别长</strong>，彩虹表<strong>直接失效</strong>，有没有盐都失效了……</p>
+<p>更进一步的，如果你的密码长度足够长，长到比哈希值的长度还要多出不少。这时候即便别人找到了一个碰撞，<strong>那大概率也不是你的密码了</strong>，你密码的安全可以得到更彻底的保护</p>
+<p>所以说加盐加密，盐的长度很长是最后的解决方案，同时hash函数使用SHA-512的强度。</p>
+<h6 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h6><p>sha比md5更加安全</p>
+<p>登陆时的验证码也是措施，防止机器人登陆</p>
+<p>后端验证码是由后端生成的验证码。</p>
+<p>当用户打开登录页面后，浏览器会向服务器发送请求并携带生成的令牌tolken，服务器随机生成验证码验证码，并将验证码和tolken的对应关系存储在redis缓冲中，之后会在前端动态的生成一张验证码图片。</p>
+<p>当用户输入验证码并点击登录的时候，服务器会在redsi缓存中找到该浏览器的token对应的验证码，验证验证码是否正确，如果正确，接下来开始比较用户名和密码。</p>
+<h2 id="保持登陆态"><a href="#保持登陆态" class="headerlink" title="保持登陆态"></a>保持登陆态</h2><h3 id="（一）session机制保持会话"><a href="#（一）session机制保持会话" class="headerlink" title="（一）session机制保持会话"></a>（一）session机制保持会话</h3><h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h3><ul>
+<li>高并发情况下，会占用服务器大量内存</li>
+<li>分布式（一个业务分成几个子业务，部署在多个服务器）或者集群（一个业务部署在多个服务器）的时候，session不能共享。</li>
+</ul>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ul>
+<li>高并发的时候可以将session存储到redis，如果用户长时间没有访问，将session存储到redis，就减少了服务器的压力。</li>
+<li>分布式或者集群的时候，先通过redis来判断用户状态也可以实现session共享.</li>
+</ul>
+<h3 id="（二）cookie机制保持会话"><a href="#（二）cookie机制保持会话" class="headerlink" title="（二）cookie机制保持会话"></a>（二）cookie机制保持会话</h3><h3 id="使用的方法"><a href="#使用的方法" class="headerlink" title="使用的方法"></a>使用的方法</h3><ul>
+<li>登录验证后，创建登录凭证（比如：用户id+登录时间+过期时间），将登录凭证进行加密（为了避免暴露信息），加密后写到浏览器的cookie，以后，每次请求都发送cookie，服务器根据对应的解密算法对其进行验证（或者将加密过的cookie内容存储到数据库，请求服务器的时候，服务器在数据库进行查找）。</li>
+</ul>
+<h3 id="存在的问题-1"><a href="#存在的问题-1" class="headerlink" title="存在的问题"></a>存在的问题</h3><ul>
+<li>每次访问都提交cookie，增加请求量</li>
+<li>其他访问可能需要cookie（比如说购物车的信息存放在cookie），浏览器对每个域存储的cookie的大小有限制，那么需要控制加密后的凭证。</li>
+</ul>
+<h3 id="（三）token机制保持会话"><a href="#（三）token机制保持会话" class="headerlink" title="（三）token机制保持会话"></a>（三）token机制保持会话</h3><h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><ul>
+<li>cookie 和session依赖于浏览器，如果客户端不是浏览器，那么需要手动添加token（和cookie类似，也是登录凭证），将token添加到http header或者做为参数添加到url。</li>
+</ul>
+<h3 id="存在的问题-2"><a href="#存在的问题-2" class="headerlink" title="存在的问题"></a>存在的问题</h3><ul>
+<li>每次访问的时候手动添加token</li>
+<li>和cookie 的方式一样增加了请求量</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="不同的方式适合不同的应用场景，视情况使用。"><a href="#不同的方式适合不同的应用场景，视情况使用。" class="headerlink" title="不同的方式适合不同的应用场景，视情况使用。"></a>不同的方式适合不同的应用场景，视情况使用。</h3><h3 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h3><ul>
+<li>所有的方式目的都是为了验证用户状态。</li>
+<li>都需要在客户端存储凭证。</li>
+</ul>
+<h3 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h3><ul>
+<li>第一种是通过是通过空间换时间，消耗内存存储session对象，但是判断用户状态不用复杂的逻辑。第二种第三种用时间换空间，在服务器端逻辑处理进行判断用户状态。</li>
+</ul>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/3-NetWork/http%E5%8C%BA%E5%88%AB%E5%92%8C%E5%BF%83%E8%B7%B3%E6%A3%80%E6%B5%8B/" style="float: left;">
+        ← http区别和心跳检测
+    </a>
+    
+    
+    <a class="pull-right" href="/%E6%A1%86%E6%9E%B6%E5%B7%AE%E5%BC%82/%E8%B7%AF%E7%94%B1%E4%B9%8B%E9%97%B4%E7%9A%84%E5%B7%AE%E5%BC%82/">
+        路由的差异 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

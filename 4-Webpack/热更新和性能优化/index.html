@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>热更新和性能优化 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-04-03T00:39:19.782Z" itemprop="datePublished">
+          2022-04-03
+      </time>
+    
+    
+    | 
+    <a href='/tags/webpack/'>webpack</a>,
+    
+    <a href='/tags/热更新/'>热更新</a>,
+    
+    <a href='/tags/构建性能加速/'>构建性能加速</a>
+    
+    
+</span>
+                <h1>热更新和性能优化</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="热更新："><a href="#热更新：" class="headerlink" title="热更新："></a>热更新：</h2><p>首先，介绍webpack-dev-server:</p>
+<p>webpack-dev-server 主要包含了三个部分：</p>
+<ol>
+<li><p>webpack: 负责编译代码</p>
+</li>
+<li><p>webpack-dev-middleware: 主要负责构建内存文件系统，把webpack的 OutputFileSystem 替换成 InMemoryFileSystem。同时作为Express的中间件拦截请求，从内存文件系统中把结果拿出来。</p>
+</li>
+<li><p>express：负责搭建请求路由服务。</p>
+</li>
+</ol>
+<p>其次，介绍工作流程:</p>
+<ol>
+<li><p>启动dev-server，webpack开始构建，在编译期间会向 entry 文件注入热更新代码；</p>
+</li>
+<li><p>Client 首次打开后，Server 和 Client 基于Socket建立通讯渠道；</p>
+</li>
+<li><p>修改文件，Server 端监听文件发送变动，webpack开始编译，直到编译完成会触发”Done”事件；</p>
+</li>
+<li><p>Server通过socket 发送消息告知 Client；</p>
+</li>
+<li><p>Client根据Server的消息（hash值和state状态），通过ajax请求获取 Server 的manifest描述文件；</p>
+</li>
+<li><p>Client对比当前 modules tree ，再次发请求到 Server 端获取新的JS模块；</p>
+</li>
+<li><p>Client获取到新的JS模块后，会更新 modules tree并替换掉现有的模块；</p>
+</li>
+<li><p>最后调用 module.hot.accept() 完成热更新；</p>
+</li>
+</ol>
+<ul>
+<li>通过<code>webpack-dev-server</code>创建两个服务器：提供静态资源的服务（express）和Socket服务</li>
+<li>express server 负责直接提供静态资源的服务（打包后的资源直接被浏览器请求和解析）</li>
+<li>socket server 是一个 websocket 的长连接，双方可以通信</li>
+<li>当 socket server 监听到对应的模块发生变化时，会生成两个文件.json（manifest文件）和.js文件（update chunk）</li>
+<li>通过长连接，socket server 可以直接将这两个文件主动发送给客户端（浏览器）</li>
+<li>浏览器拿到两个新的文件后，通过HMR runtime机制，加载这两个文件，并且针对修改的模块进行更新</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">webpack.<span class="property">HotModuleReplacementPlugin</span>负责比对<span class="variable language_">module</span>的hash生成</span><br><span class="line"></span><br><span class="line">  hotUpdateMainContentByFilename.<span class="title function_">set</span>(filename, &#123;							      </span><br><span class="line">      removedChunkIds,</span><br><span class="line">      removedModules,</span><br><span class="line">      updatedChunkIds,</span><br><span class="line">      assetInfo</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">webpack-hot-middleware负责获取<span class="title class_">HotModuleReplacementPlugin</span>对比出来的chunk信息丢给客户端</span><br><span class="line">  服务端核心代码</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">onDone</span>(<span class="params">statsResult</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (closed) <span class="keyword">return</span>;</span><br><span class="line">      <span class="comment">// Keep hold of latest stats so they can be propagated to new clients</span></span><br><span class="line">      latestStats = statsResult; <span class="comment">// 取到最新的chunk的stats信息</span></span><br><span class="line">      <span class="title function_">publishStats</span>(<span class="string">&#x27;built&#x27;</span>, latestStats, eventStream, opts.<span class="property">log</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    compiler.<span class="property">hooks</span>.<span class="property">done</span>.<span class="title function_">tap</span>(<span class="string">&#x27;webpack-hot-middleware&#x27;</span>, onDone); <span class="comment">// webpack的插件钩子，一次更新编译后完成调用</span></span><br><span class="line">    eventStream.<span class="title function_">publish</span>(&#123; <span class="comment">// 通过EventSource长链接推送给前端，（这里还有很多逗比说HMR是websocket,sock.js实现的）</span></span><br><span class="line">      <span class="attr">name</span>: name,</span><br><span class="line">      <span class="attr">action</span>: action,</span><br><span class="line">      <span class="attr">time</span>: stats.<span class="property">time</span>, <span class="comment">// stats 就是 onDone 取到的chunk信息</span></span><br><span class="line">      <span class="attr">hash</span>: stats.<span class="property">hash</span>,</span><br><span class="line">      <span class="attr">warnings</span>: stats.<span class="property">warnings</span> || [],</span><br><span class="line">      <span class="attr">errors</span>: stats.<span class="property">errors</span> || [],</span><br><span class="line">      <span class="attr">modules</span>: <span class="title function_">buildModuleMap</span>(stats.<span class="property">modules</span>),</span><br><span class="line">    &#125;);</span><br><span class="line">  客户端核心代码</span><br><span class="line">    <span class="keyword">var</span> applyResult = <span class="variable language_">module</span>.<span class="property">hot</span>.<span class="title function_">apply</span>(applyOptions, applyCallback); <span class="comment">// 接收到变更的chunk信息</span></span><br><span class="line"></span><br><span class="line">在webpack包下的hrm目录下有个<span class="title class_">LazyCompilationPlugin</span>.<span class="property">js</span>文件</span><br><span class="line">  核心代码</span><br><span class="line">  <span class="title class_">Template</span>.<span class="title function_">indent</span>([</span><br><span class="line">    <span class="string">&quot;module.hot.accept();&quot;</span>,</span><br><span class="line">    <span class="string">`module.hot.accept(<span class="subst">$&#123;<span class="built_in">JSON</span>.stringify(</span></span></span><br><span class="line"><span class="subst"><span class="string">      chunkGraph.getModuleId(<span class="variable language_">module</span>)</span></span></span><br><span class="line"><span class="subst"><span class="string">    )&#125;</span>, function() &#123; module.hot.invalidate(); &#125;);`</span>,</span><br><span class="line">    <span class="string">&quot;module.hot.dispose(function(data) &#123; delete data.resolveSelf; dispose(data); &#125;);&quot;</span>,</span><br><span class="line">    <span class="string">&quot;if (module.hot.data &amp;&amp; module.hot.data.resolveSelf) module.hot.data.resolveSelf(module.exports);&quot;</span> <span class="comment">// 得到最新的chunk代码</span></span><br><span class="line">  ]),</span><br><span class="line"></span><br><span class="line">总结起来就是：webpack.<span class="property">HotModuleReplacementPlugin</span>负责生成变更的chunk信息 -&gt; webpack-hot-middleware负责接受到这些信息然后通过<span class="title class_">EventSource</span>丢给客户端 -&gt; 同时webpack-hot-middleware也负责接受chunk信息传递给<span class="variable language_">module</span>.<span class="property">hot</span>链 -&gt; webpack通过hot.<span class="property">accept</span>传入文件名获取对应的moduleId然后在hot.<span class="property">data</span>中取代码</span><br></pre></td></tr></table></figure>
+
+<h2 id="性能加速："><a href="#性能加速：" class="headerlink" title="性能加速："></a>性能加速：</h2><ol>
+<li>将loader 应用于最少数量的必要模块 </li>
+<li>尽量少的使用 loader &#x2F; plugin, 每个额外的都有其启动时间</li>
+<li>移除不必要的模块</li>
+<li>多进程、多实例 TerserPlugin.parallel</li>
+<li>减少 resolve.modules, resolve.extensions, resolve.mainFiles,     resolve.descriptionFiles 中条目数量，提高解析速度</li>
+<li>babel-loader、TerserPlugin.cache、hard-source-webpack-plugin 开启缓存</li>
+<li>图片压缩</li>
+<li>动态 Polyfill 服务，不同设备浏览器返回不同的 Polyfill *    <a target="_blank" rel="noopener" href="https://polyfill.io/v3/polyfill.min.js">https://polyfill.io/v3/polyfill.min.js</a></li>
+</ol>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2-Redux&Router/usePrompt/" style="float: left;">
+        ← usePrompt
+    </a>
+    
+    
+    <a class="pull-right" href="/%E5%89%8D%E7%AB%AF%E5%A4%A7%E9%A1%B9/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+        前端性能优化 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

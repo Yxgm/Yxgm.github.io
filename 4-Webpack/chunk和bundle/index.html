@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>chunk和bundle | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2021-05-20T06:02:20.000Z" itemprop="datePublished">
+          2021-05-20
+      </time>
+    
+    
+    | 
+    <a href='/tags/webpack/'>webpack</a>,
+    
+    <a href='/tags/chunk/'>chunk</a>,
+    
+    <a href='/tags/bundle/'>bundle</a>
+    
+    
+</span>
+                <h1>chunk和bundle</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="比较重要的一些概念"><a href="#比较重要的一些概念" class="headerlink" title="比较重要的一些概念"></a>比较重要的一些概念</h2><ol>
+<li><p>Compiler 对象包含了 Webpack 环境所有的的配置信息，包含 options，loaders，plugins 这些信息，这个对象在 Webpack 启动时候被实例化，它是全局唯一的，可以简单地把它理解为 Webpack 实例；</p>
+</li>
+<li><p>Compilation 对象包含了当前的模块资源、编译生成资源、变化的文件等。当 Webpack 以开发模式运行时，每当检测到一个文件变化，一次新的 Compilation 将被创建。Compilation 对象也提供了很多事件回调供插件做扩展。通过 Compilation 也能读取到 Compiler 对象。</p>
+</li>
+<li><p>Loader</p>
+<blockquote>
+<p>一句话描述：模块转换器，将非js模块转化为webpack能识别的js模块.</p>
+<p>loader 让 webpack 能够去处理那些非 JavaScript 文件.less&#x2F;sass ——&gt; css </p>
+<p>loader 可以将所有类型的文件转换为 webpack 能够处理的有效模块,然后你就可以利用 webpack 的打包能力,对它们进行处理。<br>本质上,webpack loader 将所有类型的文件,转换为应用程序的依赖图（和最终的 bundle）可以直接引用的模块。</p>
+</blockquote>
+</li>
+<li><p>Plugin</p>
+<blockquote>
+<p>一句话描述：扩展插件，在webpack运行的各个阶段，都会广播出去相对应的事件，插件可以监听到这些事件的发生，在特定的时机做相对应的事情</p>
+<p>loader 被用于转换某些类型的模块,而插件则可以用于执行范围更广的任务。<br>插件的范围包括,从打包优化和压缩,一直到重新定义环境中的变量。插件接口功能极其强大,可以用来处理各种各样的任务。资源优化，模块划分，环境变量的定义等等。</p>
+<p>在 webpack 运行的生命周期中会广播出各种事件，Plugin 就可以监听这些事件，在触发时通过 webpack 提供的 API 改变输出结果。<br>在插件中，可以拿到 Compile 和 Compilation 的引用对象，使用它们广播事件，这些事件可以被其他插件监听到，或者对他们做出一定修改，其他插件拿到的也是变化的对象。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="chunk-和-bundle-的区别"><a href="#chunk-和-bundle-的区别" class="headerlink" title="chunk 和 bundle 的区别"></a>chunk 和 bundle 的区别</h2><ol>
+<li>Chunk是Webpack打包过程中Modules的集合，是打包过程中的概念，从一个入口模块开始，入口模块引用其他模块，模块再引用模块。Webpack通过引用关系逐个打包模块，这些module就形成了一个Chunk、当然如果有多个入口模块，可能会产出多条打包路径，每条路径都会形成一个Chunk。</li>
+</ol>
+<p>产生chunk的方法：1. entry入口、2. 异步加载代码 、3.common块分割</p>
+<p>同时对应的这三种chunk类型</p>
+<blockquote>
+<ol>
+<li><code>entry chunk</code>   入口块，包含runtime运行时的块 一旦entry chunk失去了runting，就会变成<code>initial chunk</code>；(in 内show)</li>
+<li><code>normal chunk</code> 普通块，普通块可以动态的进行加载。通常会以jsonp的包装方式进行加载。而<code>code splitting</code>主要使用的就是普通块。</li>
+<li><code>initial chunk</code> 初始块，初始块就是普通块，跟普通块相同的是不包含运行时，不同的是初始块是计算在初始加载过程时间内的。一旦入口块失去了运行时，就会变成初始块。这个转变经常由<code>splitChunks</code>实现。</li>
+</ol>
+</blockquote>
+<ol start="2">
+<li><p>Bundle我们最终输出的一个或多个打包好的文件.</p>
+</li>
+<li><p>Chunk 和 Bundle 的关系：大多数情况下，一个Chunk会生产一个Bundle，但是当我们开启source-map后, chunk和bundle就不是一对一的关系了，一个chunk就会对应一个bundle和一个map</p>
+</li>
+<li><p>所以可以有这样的一个总结：Chunk是过程中的代码块，Bundle是打包结果输出的代码块, Chunk在构建完成就呈现为Bundle。</p>
+</li>
+<li><p>生成Chunk的几种方式</p>
+</li>
+</ol>
+<ul>
+<li>entry配置一个key, value为数组</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">mode</span>: <span class="string">&quot;production&quot;</span>,</span><br><span class="line">    <span class="attr">entry</span>: &#123;</span><br><span class="line">        <span class="attr">index</span>: [<span class="string">&quot;./src/index.js&quot;</span>, <span class="string">&quot;./src/add.js&quot;</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">output</span>: &#123;</span><br><span class="line">        <span class="attr">filename</span>: <span class="string">&quot;[name].js&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到这种情况, 也只会产生一个chunk，数组形式，也是产生一个chunk。</p>
+<ul>
+<li>entry配置多个key</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">mode</span>: <span class="string">&quot;production&quot;</span>,</span><br><span class="line">    <span class="attr">entry</span>: &#123;</span><br><span class="line">        <span class="attr">index</span>: <span class="string">&quot;./src/index.js&quot;</span>,</span><br><span class="line">        <span class="attr">common</span>: <span class="string">&quot;./src/common.js&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">output</span>: &#123;</span><br><span class="line">        <span class="attr">filename</span>: <span class="string">&quot;[name].js&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到这种情况, 产生了common和index两个chunk, 配置的key也就会被用为chunkName.</p>
+<p>而output中filename字段, 将被用为bundle的名称。</p>
+<ul>
+<li>Split Chunk</li>
+</ul>
+<p>咱们来改一下文件引用结构, 修改一下配置。</p>
+<ol>
+<li><p>add.js 和 multiply.js 都引用common.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// add.js</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">CommonFn</span> <span class="keyword">from</span> <span class="string">&#x27;./common.js&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">CommonFn</span>(a + b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// multiply.js</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">CommonFn</span> <span class="keyword">from</span> <span class="string">&#x27;./common.js&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">multiply</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">CommonFn</span>(a * b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装lodash</p>
+</li>
+</ol>
+<p><code>npm i lodash</code></p>
+<ol start="3">
+<li>修改index.js</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">    once</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&#x27;lodash&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Add</span> <span class="keyword">from</span> <span class="string">&#x27;./add.js&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Multiply</span> <span class="keyword">from</span> <span class="string">&#x27;./multiply.js&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> onceAdd = <span class="title function_">once</span>(<span class="title class_">Add</span>);</span><br><span class="line"><span class="keyword">const</span> addRes = <span class="title function_">onceAdd</span>(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line"><span class="keyword">const</span> mulRes = <span class="title class_">Multiply</span>(<span class="number">2</span>, <span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(addRes);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(mulRes);</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>修改webpack.config.js</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">entry</span>: &#123;</span><br><span class="line">        <span class="attr">main</span>: <span class="string">&quot;./src/index.js&quot;</span>,</span><br><span class="line">        <span class="attr">other</span>: <span class="string">&quot;./src/multiply.js&quot;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">output</span>: &#123;</span><br><span class="line">        <span class="attr">filename</span>: <span class="string">&quot;[name].js&quot;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="attr">optimization</span>: &#123;</span><br><span class="line">        <span class="attr">runtimeChunk</span>: <span class="string">&quot;single&quot;</span>,</span><br><span class="line">        <span class="attr">splitChunks</span>: &#123;</span><br><span class="line">            <span class="attr">cacheGroups</span>: &#123;</span><br><span class="line">                <span class="attr">commons</span>: &#123;</span><br><span class="line">                    <span class="attr">chunks</span>: <span class="string">&quot;initial&quot;</span>,</span><br><span class="line">                    <span class="attr">minChunks</span>: <span class="number">2</span>,</span><br><span class="line">                    <span class="attr">minSize</span>: <span class="number">0</span> <span class="comment">// 默认是20000, 这里为了演示生成commonChunks, 对最小体积不做限制</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="attr">vendor</span>: &#123;</span><br><span class="line">                    <span class="attr">test</span>: <span class="regexp">/node_modules/</span>,</span><br><span class="line">                    <span class="attr">chunks</span>: <span class="string">&quot;initial&quot;</span>,</span><br><span class="line">                    <span class="attr">name</span>: <span class="string">&quot;vendor&quot;</span>,</span><br><span class="line">                    <span class="attr">enforce</span>: <span class="literal">true</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>看一下这种配置会产生几个chunk?</li>
+</ol>
+<p>配置介绍： <a target="_blank" rel="noopener" href="https://webpack.docschina.org/configuration/optimization/#optimizationruntimechunk">https://webpack.docschina.org/configuration/optimization/#optimizationruntimechunk</a><br>官方runtime解释：runtime以及伴随的 manifest 数据，主要是指：在浏览器运行时，webpack 用来连接模块化的应用程序的所有代码。runtime 包含：在模块交互时，连接模块所需的加载和解析逻辑。包括浏览器中的已加载模块的连接，以及懒加载模块的执行逻辑。<a hraf="https://www.webpackjs.com/concepts/manifest/#runtime">官网</a></p>
+<ul>
+<li>entry main</li>
+<li>entry other</li>
+<li>runtimeChunk: single</li>
+<li>splitChunks commons</li>
+<li>splitChunks vendor</li>
+</ul>
+<h2 id="webpack的打包流程（自我叙述）"><a href="#webpack的打包流程（自我叙述）" class="headerlink" title="webpack的打包流程（自我叙述）"></a>webpack的打包流程（自我叙述）</h2><ol>
+<li><p>进入入口文件</p>
+</li>
+<li><p>用fs提取出文件，转化成ast树，并且提取出引入声明（ImportDeclaration）的token节点，拿到value（依赖文件的路径）。</p>
+</li>
+<li><p>现在我们拿到了入口文件的依赖模块路径，就可以构建出一个入口文件的概括createAsset函数。如下所示</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">id</span>: <span class="number">0</span>,   <span class="attr">lename</span>: <span class="string">&#x27;./source/entry.js&#x27;</span>,     <span class="attr">dependencies</span>: [ <span class="string">&#x27;./message&#x27;</span> ],     <span class="attr">code</span>:.....&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接下来就是要递归的去构建入口文件依赖的依赖。</p>
+<blockquote>
+<ol>
+<li>将入口文件的描述对象放入数组allAssets，遍历数组</li>
+<li>并且在遍历入口文件依赖，拼接绝对路径，而且将依赖的绝对路径扔入createAsset函数，构建出依赖的概述对象</li>
+<li>current Asset上增加哈希表，将依赖的relativePath做为key，id作为value</li>
+<li>并且将依赖asset push到allAssets数组中，以便下一个current asset 进入allAssets</li>
+<li>最后返回allAssets，完成了依赖图的构建</li>
+</ol>
+</blockquote>
+</li>
+<li><p>有了allAssets 依赖图，那么就要构建iife函数</p>
+</li>
+</ol>
+<h2 id="手写一个迷你版的webpack"><a href="#手写一个迷你版的webpack" class="headerlink" title="手写一个迷你版的webpack"></a>手写一个迷你版的webpack</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 找到一个入口文件</span></span><br><span class="line"><span class="comment">//2. 解析这个入口文件，提起他的依赖</span></span><br><span class="line"><span class="comment">//3. 解析入口文件依赖的依赖，递归构建出依赖图，描述出所有文件的依赖关系</span></span><br><span class="line"><span class="comment">//4. 把所有文件打包成一个文件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> babylon = <span class="built_in">require</span>(<span class="string">&#x27;babylon&#x27;</span>);</span><br><span class="line"><span class="comment">//babylon是一个基于babel的解析器，将代码转化成ast树</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> babel = <span class="built_in">require</span>(<span class="string">&#x27;babel-core&#x27;</span>);</span><br><span class="line"><span class="comment">// 将ast树转化成低级浏览器也适配的js代码</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> traverse = <span class="built_in">require</span>(<span class="string">&#x27;babel-traverse&#x27;</span>).<span class="property">default</span>;</span><br><span class="line"><span class="comment">// 可以像遍历对象一样，遍历ast树</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="variable constant_">ID</span> = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createAsset</span>(<span class="params">filename</span>) &#123;</span><br><span class="line">  <span class="comment">//createAssets函数，构建并且返回module对象</span></span><br><span class="line">  <span class="keyword">const</span> content = fs.<span class="title function_">readFileSync</span>(filename, <span class="string">&#x27;utf-8&#x27;</span>);</span><br><span class="line">  <span class="keyword">const</span> ast = babylon.<span class="title function_">parse</span>(content, &#123;</span><br><span class="line">    <span class="attr">sourceType</span>: <span class="string">&#x27;module&#x27;</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> dependencies = [];</span><br><span class="line">  <span class="title function_">traverse</span>(ast, &#123;</span><br><span class="line">    <span class="title class_">ImportDeclaration</span>: <span class="function">(<span class="params">&#123; node &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">      dependencies.<span class="title function_">push</span>(node.<span class="property">source</span>.<span class="property">value</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> &#123; code &#125; = babel.<span class="title function_">transformFromAst</span>(ast, <span class="literal">null</span>, &#123;</span><br><span class="line">    <span class="attr">presets</span>: [<span class="string">&#x27;env&#x27;</span>]</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">const</span> id = <span class="variable constant_">ID</span>++;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    id,</span><br><span class="line">    filename,</span><br><span class="line">    dependencies,</span><br><span class="line">    code</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// mainAsset入口文件的概括 &#123;</span></span><br><span class="line"><span class="comment">//     id: 0,</span></span><br><span class="line"><span class="comment">//     filename: &#x27;./source/entry.js&#x27;,</span></span><br><span class="line"><span class="comment">//     dependencies: [ &#x27;./message&#x27; ],</span></span><br><span class="line"><span class="comment">//     code:.....</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 已经获得了单个文件的依赖，接下来尝试构建依赖图</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createGraph</span>(<span class="params">entry</span>) &#123;</span><br><span class="line">  <span class="comment">//createGraph函数，需要注意的是要形成一个依赖和Id的映射关系mapping的数据结构</span></span><br><span class="line">  <span class="keyword">const</span> mainAsset = <span class="title function_">createAsset</span>(entry);</span><br><span class="line">  <span class="keyword">const</span> allAsset = [mainAsset]; <span class="comment">//所有模块的集合</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> asset <span class="keyword">of</span> allAsset) &#123;</span><br><span class="line">    <span class="comment">//asset单个模块</span></span><br><span class="line">    <span class="keyword">const</span> dirname = path.<span class="title function_">dirname</span>(asset.<span class="property">filename</span>);</span><br><span class="line">    asset.<span class="property">mapping</span> = &#123;&#125;;</span><br><span class="line">    asset.<span class="property">dependencies</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params">relativePath</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> absolutePath = path.<span class="title function_">join</span>(dirname, relativePath);</span><br><span class="line">      <span class="keyword">const</span> childAsset = <span class="title function_">createAsset</span>(<span class="string">`./<span class="subst">$&#123;absolutePath&#125;</span>.js`</span>);</span><br><span class="line">      asset.<span class="property">mapping</span>[relativePath] = childAsset.<span class="property">id</span>; <span class="comment">//</span></span><br><span class="line">      allAsset.<span class="title function_">push</span>(childAsset);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> allAsset;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> graph = <span class="title function_">createGraph</span>(<span class="string">&#x27;./source/entry.js&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">bundle</span>(<span class="params">graph</span>) &#123;</span><br><span class="line">  <span class="comment">//bundle函数主要是拼接一个iife函数，把所有的modules作为参数传入，把模块函数拼接起来</span></span><br><span class="line">  <span class="keyword">let</span> modules = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  graph.<span class="title function_">forEach</span>(<span class="function">(<span class="params"><span class="variable language_">module</span></span>) =&gt;</span> &#123;</span><br><span class="line">    modules += <span class="string">`<span class="subst">$&#123;<span class="variable language_">module</span>.id&#125;</span>:[</span></span><br><span class="line"><span class="string">      function(require, module, exports)&#123;</span></span><br><span class="line"><span class="string">        <span class="subst">$&#123;<span class="variable language_">module</span>.code&#125;</span></span></span><br><span class="line"><span class="string">      &#125;,</span></span><br><span class="line"><span class="string">      <span class="subst">$&#123;<span class="built_in">JSON</span>.stringify(<span class="variable language_">module</span>.mapping)&#125;</span></span></span><br><span class="line"><span class="string">    ],`</span>;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 0:[fn ,mapping]</span></span><br><span class="line"><span class="comment">//注意：这里的localRequire函数是我们在代码体中书写的require函数，通过写的相对路径来找到依赖mapping中对应的模块id，然后在调用上层的require函数，执行依赖模块的代码体，并且返回exports对象，如果该模块又依赖别的模块，同理，会找模块依赖的依赖，所以说，require函数是深度遍历，直到找到依赖的末尾，才会依次返回、执行。</span></span><br><span class="line">  <span class="keyword">const</span> result = <span class="string">`</span></span><br><span class="line"><span class="string">  (function(modules)&#123;</span></span><br><span class="line"><span class="string">    function require(id)&#123;</span></span><br><span class="line"><span class="string">      const [fn,mapping] = modules[id];</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">      function localRequire(relativePath)&#123;         </span></span><br><span class="line"><span class="string">        return require(mapping[relativePath]);</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">   </span></span><br><span class="line"><span class="string">    const module=&#123; exports:&#123;&#125; &#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    fn(localRequire, module, module.exports);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    return module.exports;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    require(0);</span></span><br><span class="line"><span class="string">  &#125;(&#123;<span class="subst">$&#123;modules&#125;</span>&#125;))</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> res = <span class="title function_">bundle</span>(graph);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span><br></pre></td></tr></table></figure>
+
+
+
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/3-NetWork/http%E6%8A%A5%E6%96%87%EF%BD%9C%E4%B8%AD%E6%96%AD/" style="float: left;">
+        ← http报文，请求中断
+    </a>
+    
+    
+    <a class="pull-right" href="/3-Brower/%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B%E3%80%81BOM/">
+        事件模型和BOM对象 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

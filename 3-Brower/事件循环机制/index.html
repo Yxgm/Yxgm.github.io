@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>事件循环机制 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-02-08T04:05:30.000Z" itemprop="datePublished">
+          2022-02-08
+      </time>
+    
+    
+    | 
+    <a href='/tags/浏览器/'>浏览器</a>,
+    
+    <a href='/tags/事件循环/'>事件循环</a>
+    
+    
+</span>
+                <h1>事件循环机制</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="浏览器和node事件循环区别"><a href="#浏览器和node事件循环区别" class="headerlink" title="浏览器和node事件循环区别"></a><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903761949753352#heading-11">浏览器和node事件循环区别</a></h1><h2 id="一、浏览器事件循环"><a href="#一、浏览器事件循环" class="headerlink" title="一、浏览器事件循环"></a>一、浏览器事件循环</h2><p>浏览器中, js引擎线程会循环从 <code>任务队列</code> 中读取事件并且执行, 这种运行机制称作 <code>Event Loop</code> (事件循环).</p>
+<p>在ES3以及以前的版本中，JavaScript本身没有发起异步请求的能力，也就没有微任务的存在。在ES5之后，JavaScript引入了<code>Promise</code>，这样，不需要浏览器，JavaScript引擎自身也能够发起异步任务了。</p>
+<h4 id="1-浏览器的GPU线程和web前端密切相关，包括如下线程："><a href="#1-浏览器的GPU线程和web前端密切相关，包括如下线程：" class="headerlink" title="1. 浏览器的GPU线程和web前端密切相关，包括如下线程："></a>1. 浏览器的GPU线程和web前端密切相关，包括如下线程：</h4><ul>
+<li><strong>GPU渲染线程</strong></li>
+<li><strong>JS引擎线程</strong></li>
+<li><strong>事件触发线程</strong>（和EventLoop密切相关）</li>
+<li><strong>定时触发器线程</strong></li>
+<li><strong>异步HTTP请求线程</strong></li>
+</ul>
+<blockquote>
+<p>GPU渲染线程和JS引擎线程是互斥的，为了防止DOM渲染的不一致性，其中一个线程执行时另一个线程会被挂起。</p>
+</blockquote>
+<img  src="../assets/raf.jpg">
+
+<h4 id="2-任务队列分为macro-task（宏任务）与micro-task（微任务），在最新标准中，它们被分别称为task与jobs"><a href="#2-任务队列分为macro-task（宏任务）与micro-task（微任务），在最新标准中，它们被分别称为task与jobs" class="headerlink" title="2. 任务队列分为macro-task（宏任务）与micro-task（微任务），在最新标准中，它们被分别称为task与jobs"></a>2. 任务队列分为<code>macro-task</code>（宏任务）与<code>micro-task</code>（微任务），在最新标准中，它们被分别称为<code>task</code>与<code>jobs</code></h4><table>
+<thead>
+<tr>
+<th align="left">任务类型</th>
+<th>事件类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">宏任务</td>
+<td><code>setTimeOut</code> 、 <code>setInterval</code> 、 <code>setImmediate</code> 、 <code>I/O</code> 、<code>messageChannel</code>、全局<code>script</code>，<code>ajax的各种回调函数</code>、dom的回调函数</td>
+</tr>
+<tr>
+<td align="left">微任务</td>
+<td><code>process.nextTick</code> 、<code>Promise</code> 、<code>MutationObserver（dom变化，会触发回调函数）</code> 、<code>async(实质上也是promise)</code>、<code>queueMicrotask</code></td>
+</tr>
+</tbody></table>
+<p><strong>重点补充dom的回调事件</strong></p>
+<p><span style="color:red">native events –&gt; async，dispatchEvent() –&gt; sync</span></p>
+<p><span style="color:red">原生事件 → 异步调用，dispatchEvent() → 同步调用</span></p>
+<p>​    与浏览器原生事件不同，<strong>原生事件是由 DOM 派发的，并通过<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop">event loop</a>异步调用事件处理程序</strong>，而<code>dispatchEvent()</code>则是同步调用事件处理程序。在调用<code>dispatchEvent()</code>后，所有监听该事件的事件处理程序将在代码继续前执行并返回。<code>dispatchEvent()</code>是 create-init-dispatch 过程的最后一步，用于将事件调度到实现的事件模型中。可以使用<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Event/Event">Event</a>构造函数来创建事件。</p>
+<p>​    对于人工合成（synthetic）的事件派发（dispatch）是同步执行的，包括执行click（），dispatchEvent两种方式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;click&#x27;</span>); &#125;) 下面两种都是同步触发执行</span><br><span class="line">div.<span class="title function_">dispatchEvent</span>(<span class="keyword">new</span> <span class="title class_">Event</span>(<span class="string">&quot;click&quot;</span>))</span><br><span class="line">div.<span class="title function_">click</span>()</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-执行机制-Running"><a href="#3-执行机制-Running" class="headerlink" title="3. 执行机制-Running"></a>3. 执行机制-Running</h4><p>macro-task –&gt;  所产生的micro-task （一轮结束）–&gt; macro-task –&gt;micro-task <span style="color:red">（补充：macro作为主导，他有支配micro的能力，也就是说在macro消灭了之后，他所产生的micro必须全部执行完，然后才能进入下一个macro任务，一次event Loop只取一个macro）</span></p>
+<p>（埋伏弱）macro，（麦克弱）micro</p>
+<p>事件循环从宏任务队列开始，这个时候，宏任务队列中，只有一个<code>script(整体代码)</code>任务，执行script（整体代码）宏任务，其中如果产生微任务，将其推入微任务队列，在宏任务执行完之后，所产生的微任务立即执行（微任务执行时机是在宏任务执行之后，UI渲染之前执行）执行顺序如下：</p>
+<blockquote>
+<ol>
+<li><p>执行一个<strong>宏任务</strong>（首次执行的主代码块或者<strong>任务队列</strong>中的回调函数）</p>
+</li>
+<li><p>执行过程中如果遇到<strong>微任务</strong>，就将它添加到<strong>微任务</strong>的任务队列中</p>
+</li>
+<li><p><strong>宏任务</strong>执行完毕后，立即执行当前<strong>微任务</strong>队列中的所有任务（依次执行）</p>
+</li>
+<li><p><strong>JS引擎线程</strong>挂起，<strong>GPU线程</strong>执行渲染</p>
+</li>
+<li><p><strong>GPU线程</strong>渲染完毕后挂起，<strong>JS引擎线程</strong>执行<strong>任务队列</strong>中的下一个<strong>宏任务</strong></p>
+</li>
+</ol>
+</blockquote>
+<p>浏览器为了能让JS线程和GUI线程有序切换，会在宏任务结束之后，下一个宏任务执行之前，对页面进行重新渲染（宏任务-&gt;渲染-&gt;宏任务…….）</p>
+<p><strong>微任务</strong>是在当前<strong>宏任务</strong>执行结束之后立即执行的任务（在当前 <strong>宏任务</strong>执行之后，UI渲染之前执行的任务）。<strong>微任务</strong>的响应速度相比<code>setTimeout</code>（下一个<strong>宏任务</strong>）会更快，因为无需等待UI渲染。</p>
+<p>至于为什么nextTick在微任务中可以拿到更新后的dom，并进行一些操作。是因为我们写的nextTick回调函数放在了微任务最后，（见详解）响应式依赖的副作用函数都在它之前执行完毕，就可以拿到新内存中的dom了，UI渲染只是浏览器的一个动作，在之后执行。</p>
+<h5 id="js在浏览器环境：调用栈、job队列、task队列、WebAPI、eventLoop（不再说宏任务，微任务）"><a href="#js在浏览器环境：调用栈、job队列、task队列、WebAPI、eventLoop（不再说宏任务，微任务）" class="headerlink" title="js在浏览器环境：调用栈、job队列、task队列、WebAPI、eventLoop（不再说宏任务，微任务）"></a>js在浏览器环境：调用栈、job队列、task队列、WebAPI、eventLoop（不再说宏任务，微任务）</h5><p>Call stack调用栈：调用栈是解释器（比如浏览器中的 JavaScript 解释器）追踪函数执行流的一种机制。当执行环境中调用了多个<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/Function">函数</a>时，通过这种机制，我们能够追踪到哪个函数正在执行，执行的函数体中又调用了哪个函数。</p>
+<p>task队列：存放宏任务回调</p>
+<p>jobs队列：存放微任务回调</p>
+<p>eventLoop：事件循环机制</p>
+<p>WebAPI：AJAX请求<strong>、</strong>操作DOM<strong>、</strong>访问local storage<strong>、</strong>使用worker等等</p>
+<h6 id="Eg1-setTimeout举例"><a href="#Eg1-setTimeout举例" class="headerlink" title="Eg1: setTimeout举例"></a>Eg1: setTimeout举例</h6><p>​    全局script代码执行，放入call stack进行之行，中途碰到setTimeOut，触发webAPI的执行，然后将回调函数enqueue入队到callback queue（内部又分task队列和jobs队列）中，<span style="color:red">之后等待定时器到时间并且call stack（调用栈）为空的时候</span>，event loop（事件循环），从callback queue中出队队头元素回调函数取出，放入调用栈中，进行之行。<strong>callback queue和call stack不同的是，回调队列事FIFO先进先出的机制</strong>。</p>
+<h6 id="Eg2-promise-then举例"><a href="#Eg2-promise-then举例" class="headerlink" title="Eg2:promise.then举例"></a>Eg2:promise.then举例</h6><p>​    首先来说promise.then是job回调，对于job来说，一定会有一个宿主的task任务作为主导，莫一个主导的task执行，碰到then方法，将then中的回调函数入队到callback queue中的micro队列中，当本轮的task任务执行完毕，也就是call stack空的时候，会将当前task所产生的micro队列中所有的回调函数全部按队列顺序取出，放入执行栈进行执行。而对于中途碰到的task任务，将会放到后面几轮的tick中，在进行执行。</p>
+<p>​    所以说微任务，实现了插队机制，插在在下一个task之前，进行执行。</p>
+<h5 id="一般什么时候用到nextTick呢？"><a href="#一般什么时候用到nextTick呢？" class="headerlink" title="一般什么时候用到nextTick呢？"></a>一般什么时候用到nextTick呢？</h5><p>在数据发生变化后要执行某个操作，而这个操作依赖因你数据改变而改变的dom，那么这个操作就应该放在nextTick中。</p>
+<h4 id="4-补充：定时器setTimeout而不是setInterval"><a href="#4-补充：定时器setTimeout而不是setInterval" class="headerlink" title="4. 补充：定时器setTimeout而不是setInterval"></a>4. 补充：定时器setTimeout而不是setInterval</h4><p>用setTimeout模拟定期计时和直接用setInterval是有区别的。</p>
+<p>因为每次setTimeout计时到后就会去执行，然后执行一段时间后才会继续setTimeout，中间就多了误差 （误差多少与代码执行时间有关）</p>
+<p>而setInterval则是每次都精确的隔一段时间推入一个事件 （但是，事件的实际执行时间不一定就准确，还有可能是这个事件还没执行完毕，下一个事件就来了）</p>
+<p>而且setInterval有一些比较致命的问题就是：</p>
+<ul>
+<li>累计效应（上面提到的），如果setInterval代码在（setInterval）再次添加到队列之前还没有完成执行， 就会导致定时器代码连续运行好几次，而之间没有间隔。 就算正常间隔执行，多个setInterval的代码执行时间可能会比预期小（因为代码执行需要一定时间）</li>
+<li>而且把浏览器最小化显示等操作时，setInterval并不是不执行程序， 它会把setInterval的回调函数放在队列中，等浏览器窗口再次打开时，一瞬间全部执行时，对于每次启动定时器的时候，要先清理一下定时器，避免页面关闭时，没有及时的关闭定时器。</li>
+<li><strong>每个 setTimeout 产生的任务会直接 push 到任务队列中；而 setInterval 在每次把任务 push 到任务队列前，都要进行一下判断(看上次的任务是否仍在队列中，如果有则不添加，没有则添加)。</strong>这是ecma规定的，至于为什么这么规定，是为了避免出现定时器回调函数执行多次的情况</li>
+<li>值得注意的是，<code>setInterval()</code> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/setTimeout"><code>setTimeout()</code></a> 共享同一个 ID 池，并且 <code>clearInterval()</code> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/clearTimeout"><code>clearTimeout()</code></a> 在技术上是可互换使用的。但是，我们应该匹配使用 <code>clearInterval()</code> 和 <code>clearTimeout()</code>，以避免代码杂乱无章，并增强代码的可维护性。</li>
+</ul>
+<p>所以，鉴于这么多但问题，目前一般认为的最佳方案是：<strong>用setTimeout模拟setInterval，或者特殊场合直接用requestAni mationFrame</strong></p>
+<h4 id="5-为什么要区分微任务和宏任务？"><a href="#5-为什么要区分微任务和宏任务？" class="headerlink" title="5. 为什么要区分微任务和宏任务？"></a>5. 为什么要区分微任务和宏任务？</h4><p>js机制在对待任务时，认为他们应该是不平等的。也就是说执行更快的任务应该可以插队，不必等执行耗时就的先执行完。从更底层来说：</p>
+<ul>
+<li>微任务是线程之间的切换，速度快。不用进行上下文切换，可以快速的一次性做完所有的微任务。</li>
+<li>宏任务是进程之间的切换，速度慢，且每次执行需要切换上下文。因此一个Eventloop中只执行一个宏任务。</li>
+<li>微任务执行快，一次性可以执行很多个，并且可以插队在下一个宏任务之前完成，利用这个特性，减少浏览器的重绘重排。在当前宏任务执行后立刻清空微任务可以达到<strong>伪同步</strong>的效果，这对视图渲染效果起到至关重要的作用。</li>
+</ul>
+<p>而往往视图的渲染是在宏任务执行之后的，先执行微任务可以确保在视图渲染之前，数据已经更新。</p>
+<h4 id="6-ajax的异步"><a href="#6-ajax的异步" class="headerlink" title="6. ajax的异步"></a>6. ajax的异步</h4><p>ajax的open，send方法都是同步的，当ajax请求被服务器响应并且收到response后，浏览器事件触发线程捕获到ajax的回调函数<code>onreadystatec hange</code> (当然也可能触发onload, 或者 onerror等等) . 该回调事件并没有被立即执行, 而是被添加到 <code>任务队列</code> 的末尾. 直到js引擎空闲了, <code>任务队列</code> 的任务才被捞出来, 按照添加顺序, 挨个执行, 当然也包括刚刚append到队列末尾的 <code>onreadystatechange</code> 事件.</p>
+<h2 id="二、Node循环概述"><a href="#二、Node循环概述" class="headerlink" title="二、Node循环概述"></a>二、Node循环概述</h2><p>V8引擎解析JavaScript脚本。解析后的代码，调用Node API。libuv库负责Node API的执行。它将不同的任务分配给不同的线程，形成一个Event Loop（事件循环），以异步的方式将任务的执行结果返回给V8引擎。V8引擎再将结果返回给用户。</p>
+<h4 id="六个阶段"><a href="#六个阶段" class="headerlink" title="六个阶段"></a>六个阶段</h4><p>其中libuv引擎中的事件循环分为 6 个阶段，它们会按照顺序反复运行。每当进入某一个阶段的时候，都会从对应的回调队列中取出函数去执行。当队列为空或者执行的回调函数数量到达系统设定的阈值，就会进入下一阶段。</p>
+<h4 id="大致流程："><a href="#大致流程：" class="headerlink" title="大致流程："></a>大致流程：</h4><p>外部输入数据 –&gt;  轮询阶段(poll)  –&gt;  检查阶段(check)  –&gt;  关闭事件回调阶段(close callback)  –&gt;</p>
+<p>定时器检测阶段(timer)–&gt;  I&#x2F;O事件回调阶段(I&#x2F;O callbacks)  –&gt;  闲置阶段(idle, prepare)</p>
+<ol>
+<li><span style='color:red'>timers 阶段：这个阶段执行timer（setTimeout、setInterval）的回调</span></li>
+<li>I&#x2F;O callbacks 阶段：处理一些上一轮循环中的少数未执行的 I&#x2F;O 回调</li>
+<li>idle, prepare 阶段：仅node内部使用</li>
+<li>poll 阶段：获取新的I&#x2F;O事件, 适当的条件下node将阻塞在这里,一些异步读文件，接口请求等等都是在这个阶段进行，检索新的IO事件，执行IO相关的回调，大多数都会在这个位置阻塞</li>
+<li><span style='color:red'>check 阶段：执行 setImmediate() 的回调</span></li>
+<li>close callbacks 阶段：执行 socket 的 close 事件回调</li>
+</ol>
+<h4 id="Micro-Task-与-Macro-Task"><a href="#Micro-Task-与-Macro-Task" class="headerlink" title="Micro-Task 与 Macro-Task"></a>Micro-Task 与 Macro-Task</h4><p>Node端事件循环中的异步队列也是这两种：macro（宏任务）队列和 micro（微任务）队列。</p>
+<ul>
+<li>常见的 macro-task 比如：setTimeout、setInterval、 setImmediate、script（整体代码）、 I&#x2F;O 操作等。</li>
+<li>常见的 micro-task 比如: process.nextTick、new Promise().then(回调)等。</li>
+</ul>
+<h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><h5 id="process-nextTick"><a href="#process-nextTick" class="headerlink" title="process.nextTick"></a>process.nextTick</h5><p>这个函数其实是独立于 Event Loop 之外的，它有一个自己的队列，当每个阶段完成后，如果存在 nextTick 队列，就会清空队列中的所有回调函数，并且优先于其他 microtask 执行。</p>
+<h2 id="三、Node与浏览器的-Event-Loop-差异"><a href="#三、Node与浏览器的-Event-Loop-差异" class="headerlink" title="三、Node与浏览器的 Event Loop 差异"></a>三、Node与浏览器的 Event Loop 差异</h2><p>浏览器环境下，microtask的任务队列是每个macrotask执行完之后执行。而在Node.js中，microtask会在事件循环的各个阶段之间执行，也就是一个阶段执行完毕，就会去执行microtask队列的任务。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Node 10以前</th>
+<th align="left">Node 11以后</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">先执行完一个阶段的所有宏任务（同源宏任务）,在执行完nextTick队列里面的内容，最后执行完微任务队列的内容</td>
+<td align="left">和浏览器的行为统一了，都是每执行一个宏任务就执行完微任务队列。</td>
+</tr>
+</tbody></table>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ol>
+<li>Node端，microtask 在事件循环的各个阶段之间执行</li>
+<li>浏览器端，microtask 在事件循环的 macrotask 执行完之后执行</li>
+</ol>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2-Vue/%E6%A0%B8%E5%BF%83%E5%BA%93/" style="float: left;">
+        ← 核心库
+    </a>
+    
+    
+    <a class="pull-right" href="/%E4%B8%9A%E5%8A%A1%E5%92%8C%E6%80%9D%E6%83%B3/axios%E6%8B%A6%E6%88%AA%E5%99%A8%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/">
+        axios原理 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>手写中间件原理 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-04-13T09:00:54.600Z" itemprop="datePublished">
+          2022-04-13
+      </time>
+    
+    
+    | 
+    <a href='/tags/hook/'>hook</a>,
+    
+    <a href='/tags/洋葱模型/'>洋葱模型</a>
+    
+    
+</span>
+                <h1>手写中间件原理</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="洋葱模型"><a href="#洋葱模型" class="headerlink" title="洋葱模型"></a>洋葱模型</h2><p>​        就是一层一层的函数嵌套，<code>data</code>就是我们要处理的<code>state</code>如果要是在express或者koa中，那就是我们要接受到的参数，一层一层处理之后，在传给下一个函数。</p>
+<p>​        <code>Redux-Thunk</code>最主要的作用是帮你给异步<code>action</code>传入<code>dispatch</code>，这样你就不用从调用的地方手动传入<code>dispatch</code>，从而实现了调用的地方和使用的地方的解耦。</p>
+<h3 id="redux中间件异步操作"><a href="#redux中间件异步操作" class="headerlink" title="redux中间件异步操作"></a>redux中间件异步操作</h3><ol>
+<li>为了使用一些异步的代码，使用Middleaware中间件,比如说cookie解析，日志记录，文件压缩，调用接口等操作。</li>
+<li>中间件的概念：在dispatch派发action到reducer这个过程中，拓展一些自己的代码</li>
+</ol>
+<p>redux-thunk：网络请求中间件（只是将传入的action函数帮我们执行了，并且又dispatch了一次同步action）</p>
+<h2 id="手写中间件"><a href="#手写中间件" class="headerlink" title="手写中间件"></a>手写中间件</h2><ol>
+<li>辅助函数compose，避免函数右偏，此处需要说明的一点，源码中数组靠前的函数后执行，</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="title function_">compose</span>(a,b,c)(<span class="string">&quot;data&quot;</span>) ==&gt;  (<span class="title function_">c</span>(<span class="title function_">b</span>(<span class="title function_">a</span>(<span class="string">&quot;data&quot;</span>)))) </span><br><span class="line"><span class="comment">//洋葱模型，为了让，左侧的写法转化成右侧，使用compare函数转化。</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">compare</span>(<span class="params">...arr</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (arr.<span class="property">length</span> === <span class="number">0</span>) <span class="keyword">return</span> <span class="function">(<span class="params">arg</span>) =&gt;</span> arg; <span class="comment">// 直接透传下去</span></span><br><span class="line">  <span class="keyword">if</span> (arr.<span class="property">length</span> === <span class="number">1</span>) <span class="keyword">return</span> arr[<span class="number">0</span>];</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">const</span> [first, ...other] = arr;</span><br><span class="line">  <span class="keyword">return</span> other.<span class="title function_">reduce</span>(<span class="function">(<span class="params">pre, current</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> <span class="title function_">current</span>(<span class="title function_">pre</span>(...args));<span class="comment">//顺序执行还是逆序执行，都是可控的</span></span><br><span class="line">  &#125;, first);</span><br><span class="line">&#125;</span><br><span class="line">真正意义的compose函数</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">compose</span> =</span><br><span class="line">  (<span class="params">...fns</span>) =&gt;</span><br><span class="line">  <span class="function">(<span class="params">arg</span>) =&gt;</span></span><br><span class="line">    fns.<span class="title function_">reduce</span>(<span class="function">(<span class="params">per, curr</span>) =&gt;</span> <span class="title function_">curr</span>(per), arg);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>reducer</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> initialState = &#123;<span class="attr">counter</span>: <span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">reducer</span>(<span class="params">state = initialState, action</span>) &#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.<span class="property">type</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;INCREMENT&#x27;</span>:<span class="keyword">return</span> &#123; <span class="attr">counter</span>: state.<span class="property">counter</span> + action.<span class="property">data</span> &#125;;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;RESET&#x27;</span>:<span class="keyword">return</span> &#123; <span class="attr">counter</span>: <span class="number">0</span> &#125;;</span><br><span class="line">    <span class="attr">default</span>: <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>index.js</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>; <span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">&#x27;./reducer.js&#x27;</span>; <span class="keyword">import</span> compose <span class="keyword">from</span> <span class="string">&#x27;./compose.js&#x27;</span></span><br><span class="line"><span class="comment">//模拟 service request ，这不重要</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getData</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;middleware function has begin &#x27;</span>);</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="title function_">resolve</span>(<span class="number">100</span>), <span class="number">1000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">applyMiddleware</span>(<span class="params">...middleWares</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> store = <span class="title function_">createStore</span>(reducer); <span class="comment">//创建store</span></span><br><span class="line">  <span class="keyword">let</span> dispatch = store.<span class="property">dispatch</span>;  <span class="comment">//为什么不直接传入store.getState(),闭包导致data不变 </span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> middlewareApi = &#123;store,  dispatch&#125;;  <span class="comment">//闭包传入state和dispatch</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> chain = middleWares.<span class="title function_">map</span>(<span class="function">(<span class="params">middleware</span>) =&gt;</span> <span class="title function_">middleware</span>(middlewareApi));</span><br><span class="line">  </span><br><span class="line">	<span class="comment">//下面的操作 等价于 logger( thunk( store.dispatch ) ) ，只是写法不同,并且对于thunk中间件来说，必须最后一个执行，也即是在洋葱模型的最里层</span></span><br><span class="line">  dispatch = <span class="title function_">compose</span>(...chain)(dispatch);</span><br><span class="line">  <span class="keyword">return</span> &#123; store, dispatch &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// action是用户传递进来的函数，或者是action对象，thunk是函数就执行</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">thunk</span>= (<span class="params">&#123; getState, dispatch &#125;</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">next</span>) =&gt;</span> &#123;        <span class="comment">//next 就是我们上面传递的store.dispatch函数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">action</span>) =&gt;</span> &#123;    <span class="comment">//action是用户传递进来的函数，或者是action对象</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> action === <span class="string">&#x27;function&#x27;</span>) <span class="keyword">return</span> <span class="title function_">action</span>(dispatch, getState); <span class="comment">//是函数就执行</span></span><br><span class="line">      <span class="keyword">return</span> <span class="title function_">next</span>(action);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">logger</span> =</span><br><span class="line">  (<span class="params">&#123; store, _ &#125;</span>) =&gt;</span><br><span class="line">  <span class="function">(<span class="params">next</span>) =&gt;</span></span><br><span class="line">  <span class="keyword">async</span> (action) =&gt; &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(store.<span class="title function_">getState</span>());</span><br><span class="line">    <span class="keyword">await</span> <span class="title function_">next</span>(action);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(store.<span class="title function_">getState</span>());</span><br><span class="line">  &#125;;</span><br><span class="line"><span class="keyword">const</span> &#123; store, dispatch &#125; = <span class="title function_">applyMiddleware</span>(thunk, logger);<span class="comment">//注意此处的中间件顺序，</span></span><br></pre></td></tr></table></figure>
+
+<p>​        第一层柯西化，将store和dispatch传入（主要目的是解耦dispatch调用和使用的地方），第二层接受一次一次包装的next函数，最后一次才将用户传入的action传入。</p>
+<p>​        <code>eg:log(thunk(&quot;hello&quot;)),对于log函数来说，next函数就是thunk（&#39;hello&#39;）,而thunk函数的next就是我们最上面构造的dispatch函数时，传入的原始dispatch函数</code>    </p>
+<p>​        对于thunk中间件，自己总结如下：thunk必须要在第一个参数，也就是一个洋葱模型中的最内层，最后在执行thunk逻辑，因为如果thunk中判断action是function ，就会执行调用原始的dispatch，不在走包装后的dispatch逻辑）。<br>​        洋葱模型：经过第一层中间件，第一层中间件的内部逻辑，变成next函数，并且交给下一层中间件处理。<br>​        一层一层的递交下去，到最后层，执行原始的dispatch函数。将要执行的函数逻辑，包成成next函数，再次传给外层中间件，一层一层包裹起来。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//test.js</span></span><br><span class="line"><span class="title function_">dispatch</span>(<span class="keyword">async</span> (dispatch) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="title function_">getData</span>();</span><br><span class="line">  <span class="title function_">dispatch</span>(&#123; <span class="attr">type</span>: <span class="string">&#x27;INCREMENT&#x27;</span>, <span class="attr">data</span>: res &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Hack实现中间件"><a href="#Hack实现中间件" class="headerlink" title="Hack实现中间件"></a>Hack实现中间件</h2><ol>
+<li>hack技术：monkeyingpatch（修改原有的api）</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> next=store.<span class="property">dispatch</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">dispatchAndLodding</span>(<span class="params">action</span>)&#123;</span><br><span class="line">  <span class="comment">//在派发之前做一些逻辑处理</span></span><br><span class="line">  next（action）</span><br><span class="line">  <span class="comment">//派发之后做一些逻辑处理</span></span><br><span class="line">&#125;</span><br><span class="line">store.<span class="property">dispatch</span>=dispatchAndLodding</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>将上面的函数封装：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">patchLogging</span>(<span class="params">store</span>)&#123;</span><br><span class="line">  <span class="keyword">const</span> next=store.<span class="property">dispatch</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">dispatchAndLogging</span>(<span class="params">action</span>)&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;在派发之前做一些逻辑处理,比如说日志记录等&quot;</span>)</span><br><span class="line">  	next（action）</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;在派发之后做一些逻辑处理,比如说日志记录等&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line"> <span class="comment">// store.dispatch=disopatchAndLogging</span></span><br><span class="line">  <span class="keyword">return</span> disopatchAndLogging</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>封装patchThunk的功能：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">patchThunk</span>(<span class="params">store</span>)&#123;</span><br><span class="line">	<span class="keyword">const</span> next=store.<span class="property">dispatch</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">dispatchAndThunk</span>(<span class="params">action</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> action === <span class="string">&#x27;function&#x27;</span>)&#123;</span><br><span class="line">			<span class="title function_">action</span>(next,store.<span class="property">getStore</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    	<span class="title function_">next</span>(action)  </span><br><span class="line">    &#125;</span><br><span class="line">  &#125; </span><br><span class="line"> <span class="comment">//store.dispatch=dispatchThunk</span></span><br><span class="line">  <span class="keyword">return</span> dispatchThunk</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果我们想使用这个中间件的话，在index文件夹中直接调用即可,但是不会直接调用，而是使用applyMiddleware </p>
+<ol start="4">
+<li>applyMiddleware封装：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">appleMiddleware</span> (...middlewares)&#123;</span><br><span class="line">  <span class="keyword">const</span> newMiddlewares = [...middlewares]</span><br><span class="line">	newMiddlewares.<span class="title function_">forEach</span>(<span class="function">(<span class="params">middleware</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">//middleware(store) 下面的写法是patchLogging,patchThunk纯函数化写法</span></span><br><span class="line">		store.<span class="property">dispatch</span> = <span class="title function_">middleware</span>(store)</span><br><span class="line">&#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//外层调用方式：</span></span><br><span class="line"><span class="title function_">appleMiddleware</span>(patchLogging,patchThunk)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="combineReducer函数"><a href="#combineReducer函数" class="headerlink" title="combineReducer函数"></a>combineReducer函数</h3><p>combineReducer函数内部源码中判断派发的action是否改变了state，如果没有改变的话，代表不需要刷新界面，返回的state还是旧的state。</p>
+<ol>
+<li>ui相关的组件内部可以维护的状态，在组件内部自己来维护</li>
+<li>只要是需要共享的状态，组件共享的数据，都交给redux来管理和维护</li>
+<li>从服务器请求回来的数据（包括请求的操作），交给redux来维护</li>
+<li>在路由发生改变的时候，数据需要保留的情况下（数据持久化），应放入redux之中，</li>
+</ol>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2-Vue/nextTick/" style="float: left;">
+        ← nextTick
+    </a>
+    
+    
+    <a class="pull-right" href="/2-Redux&Router/usePrompt/">
+        usePrompt →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

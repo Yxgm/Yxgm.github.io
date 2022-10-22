@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>内核渲染机制（进程、线程） | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-02-14T13:21:46.000Z" itemprop="datePublished">
+          2022-02-14
+      </time>
+    
+    
+    | 
+    <a href='/tags/浏览器/'>浏览器</a>,
+    
+    <a href='/tags/渲染机制/'>渲染机制</a>,
+    
+    <a href='/tags/进程、线程/'>进程、线程</a>
+    
+    
+</span>
+                <h1>内核渲染机制（进程、线程）</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="1-什么是进程和线程"><a href="#1-什么是进程和线程" class="headerlink" title="1. 什么是进程和线程"></a>1. 什么是进程和线程</h2><h4 id="进程："><a href="#进程：" class="headerlink" title="进程："></a>进程：</h4><p>​    进程是系统中正在运行的一个程序，<strong>程序一旦运行就是进程</strong>。进程可以看成<strong>程序执行的一个实例，可以视作为浏览器打开了多个tab页，每个tab页相当于独立的进程</strong>。进程是<strong>系统资源分配的独立实体</strong>，每个进程都拥有独立的地址空间。一个进程无法访问另一个进程的变量和数据结构，如果想让一个进程访问另一个进程的资源，需要使用进程间通信，比如管道，文件，套接字等。</p>
+<p>​    一个进程可以拥有多个线程，每个线程使用其所属进程的栈空间。线程与进程的一个主要区别是，统一进程内的一个主要区别是，同一进程内的多个线程会共享部分状态，多个线程可以读写同一块内存（一个进程无法直接访问另一进程的内存）。同时，每个线程还拥有自己的寄存器和栈，其他线程可以读写这些栈内存。</p>
+<h4 id="线程："><a href="#线程：" class="headerlink" title="线程："></a>线程：</h4><p><strong>线程是进程的一个实体</strong>，是进程的一条执行路径。线程是进程的一个特定执行路径。当一个线程修改了进程的资源，它的兄弟线程可以立即看到这种变化。</p>
+<p>线程和进程的区别：</p>
+<p>1.地址空间和其他资源（如打开文件）：进程间相互独立，同一进程的各线程间共享。某进程内的线程在其他进程内不可见。</p>
+<p>2.通信：进程间通信IPC（管道，信号量，共享内存，消息队列），线程间可以直接独写进程数据段（如全局变量）来进程通信——需要进程同步和互斥手段的辅助，以保证数据的一致性。</p>
+<p>3.调度和切换：线程上下文切换比进程上下文切换快得多。</p>
+<p>4.在多线程OS中，进程不是一个可执行的实体。（看不懂，忽略不计）</p>
+<p>对于进程中的内存空间，进程内的线程都是共享的，但是对于内存的使用，有互斥锁的机制，防止多个线程同时读写某一块内存区域。同时信号量机制就如同房间的钥匙，5个信号量，5把锁，第六个人是进不去的</p>
+<h4 id="进程间通信方式"><a href="#进程间通信方式" class="headerlink" title="进程间通信方式"></a>进程间通信方式</h4><ul>
+<li><code>管道通信</code>：就是操作系统在内核中开辟一段缓冲区，进程1可以将需要交互的数据拷贝到这个缓冲区里，进程2就可以读取了</li>
+<li><code>消息队列通信</code>：消息队列就是用户可以添加和读取消息的列表，消息队列里提供了一种从一个进程向另一个进程发送数据块的方法，不过和管道通信一样每个数据块有最大长度限制</li>
+<li><code>共享内存通信</code>：就是映射一段能被其他进程访问的内存，由一个进程创建，但多个进程都可以访问，共享进程最快的是<code>IPC</code>方式</li>
+<li><code>信号量通信</code>：比如信号量初始值是1，进程1来访问一块内存的时候，就把信号量设为0，然后进程2也来访问的时候看到信号量为0，就知道有其他进程在访问了，就不访问了</li>
+<li><code>socket</code>：其他的都是同一台主机之间的进程通信，而在不同主机的进程通信就要用到socket的通信方式了，比如发起http请求，服务器返回数据</li>
+</ul>
+<h4 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h4><p><code>孤儿进程</code>：故名思义，就是没爹的孩子。父进程退出了，而它的一个或多个进程还在运行，那么这些子进程都会成为孤儿进程。这些孤儿都将被init进程收养，并负责这些孤儿的以后</p>
+<p><code>僵尸进程</code>：就是子进程比父进程先结束，而父进程又没有释放子进程占用的资源，那么子进程的描述还留在系统中，这种进程就是僵尸进程</p>
+<h2 id="2-浏览器包含的进程"><a href="#2-浏览器包含的进程" class="headerlink" title="2. 浏览器包含的进程"></a>2. 浏览器包含的进程</h2><h4 id="1-Browser进程-浏览器的主进程-负责协调和控制浏览器-只有一个"><a href="#1-Browser进程-浏览器的主进程-负责协调和控制浏览器-只有一个" class="headerlink" title="1. Browser进程(浏览器的主进程, 负责协调和控制浏览器, 只有一个)"></a>1. Browser进程(浏览器的主进程, 负责协调和控制浏览器, 只有一个)</h4><ul>
+<li>负责浏览器界面的显示, 与用户交互, 如前进后退</li>
+<li>负责各个页面的管理, 创建和销毁其他进程</li>
+<li>将Renderer进程得到的内存中的图片绘制到用户界面上</li>
+<li>网络资源的管理、下载等</li>
+</ul>
+<h4 id="2-浏览器渲染（renderer）进程，也是浏览器内核（多个）"><a href="#2-浏览器渲染（renderer）进程，也是浏览器内核（多个）" class="headerlink" title="2. 浏览器渲染（renderer）进程，也是浏览器内核（多个）"></a>2. 浏览器渲染（renderer）进程，也是浏览器内核（多个）</h4><blockquote>
+<p>为什么是多线程：如果多个页面共用一个进程，在某个tab页崩溃时，将导致同进程中的其他页面崩溃，极其印象用户体验；而且进程之间是不会共享资源和地址空间的，所以不会存在太多的安全问题。当然，多进程相对于单进程而言，对内存等资源的消耗更大。</p>
+</blockquote>
+<ul>
+<li><strong>合成线程（Compositor Thread）</strong>。这是最先被告知垂直同步事件（async event，操作系统告知浏览器刷新一帧图像的信号）的线程。它接收所有的输入事件。如果可能，合成线程会避免进入主线程，自己尝试将输入的事件（比如滚动）转换为屏幕的移动。它会更新图层的位置，并经由 GPU 线程直接向 GPU 提交帧来完成这个操作。如果输入事件需要进行处理，或者有其他的显示工作，它将无法直接完成该过程，这就需要主线程了。</li>
+<li><strong>主线程（Main Thread）</strong>在这里浏览器执行我们熟知和喜欢的那些任务：JavaScript，样式，布局和绘制。（这一点以后会变化，有了 <a href="https://link.juejin.cn/?target=https://surma.link/things/houdini-intro/">Houdini</a>，我们可以在合成线程中运行一些代码）主线程荣获“最容易导致 jank 奖”，很大程度上是因为它要做的事情太多了这个事实。（译注：jank 指页面内容抖动卡顿，由于页面内容的更新频率跟不上屏幕刷新频率导致）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">线程</th>
+<th align="center"></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">JS引擎线程,                           JS内核</td>
+<td align="center">1.负责执行JS脚本, 如v8</td>
+<td>2. 解析JavaScript脚本, 执行代码</td>
+<td>3. 每个Tab页只有一个JS线程</td>
+</tr>
+<tr>
+<td align="center">GUI线程</td>
+<td align="center">1.负责渲染页面, 解析HTML、CSS构建DOM树和RenderObject结构, 布局和绘制等</td>
+<td>2.页面需要重绘或回流时, 该线程就会执行</td>
+<td>3. GUI线程与JS引擎线程互斥</td>
+</tr>
+<tr>
+<td align="center">事件线程</td>
+<td align="center">1.归属于浏览器而不是JS引擎, 用来控制事件循环</td>
+<td>2.当遇到需要异步执行的代码时, 会将相应的事件添加到事件队列中</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">定时器线程</td>
+<td align="center">1.setTimeout 和 setInterval 所在线程 浏览器的定时器并不是由JS引擎计数的, 因为JS引擎是单线程, 如果处于阻塞状态会影响计时的准确性</td>
+<td>2.计时完毕后,定时器线程会将事件添加到事件队列中,等待JS引擎空闲后执行</td>
+<td>3.W3C规范要求setTimeout的最小时间间隔为4ms</td>
+</tr>
+<tr>
+<td align="center">异步HTTP请求线程（多个）</td>
+<td align="center">1.单独处理ajax请求，一个ajax请求创建一个新的http请求线程，</td>
+<td>2.检测到状态变更时，如果设置有回调函数，异步线程就产生状态变更事件，将回调函数放入事件队列中，等待JS引擎空闲后执行；</td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>合成图块栅格化线程（Compositor Tile Worker）</strong>。由合成线程派生的一个或多个线程，用于处理栅格化任务。我们稍后再讨论。</li>
+<li><strong>service Worker 和 web Worker</strong> 进程也存在于渲染进程，先排除在外（因为他们把事情弄的很复杂）</li>
+</ul>
+<h4 id="3-第三方插件进程（多个）："><a href="#3-第三方插件进程（多个）：" class="headerlink" title="3. 第三方插件进程（多个）："></a>3. 第三方插件进程（多个）：</h4><p>每个插件对应一个进程, 仅当使用该插件时才会创建</p>
+<h4 id="4-GPU进程（一个）："><a href="#4-GPU进程（一个）：" class="headerlink" title="4. GPU进程（一个）："></a>4. GPU进程（一个）：</h4><p>这是一个单一的进程，在帧被提交时，GPU进程会将图块的位图和其他数据（四边形顶点）上传至GPU，真正把像素显示到屏幕上，GPU只有一个进程，叫GPU线程，用于3D图像的绘制</p>
+<h4 id="5-网络进程（一个）："><a href="#5-网络进程（一个）：" class="headerlink" title="5. 网络进程（一个）："></a>5. 网络进程（一个）：</h4><p>负责发起和接受网络请求，之前归属于browser进程中，最近独立出来。自己对网络进程的理解，无论是url的那中http请求还是说ajax请求都需要通过网络进程总体协调。</p>
+<p>对于多数的http请求是同步的，而ajax请求大多情况下是异步的。这两者皆可同步异步</p>
+<img src="https://bucket922.oss-cn-beijing.aliyuncs.com/blog-img/%E8%BF%9B%E7%A8%8B.jpg" width="60%" style="margin:0 auto">
+
+<h2 id="3-Renderer进程（浏览器内核）和Browser进程之间的通信"><a href="#3-Renderer进程（浏览器内核）和Browser进程之间的通信" class="headerlink" title="3. Renderer进程（浏览器内核）和Browser进程之间的通信"></a>3. Renderer进程（浏览器内核）和Browser进程之间的通信</h2><ol>
+<li><p>Browser进程如同容器一样，它管理着各个Tab页面（主控进程），一个Renderer进程管理着一个Tab页（Tab页的渲染进程）</p>
+</li>
+<li><p>两个站点使用同一渲染进程的两个条件</p>
+</li>
+</ol>
+<ul>
+<li>两个站点必须属于同一站点</li>
+<li>两个站点之间要有连接关系（同一浏览上下文组）</li>
+</ul>
+<ol start="3">
+<li>打开一个Tab页过程:</li>
+</ol>
+<ul>
+<li>默认下，Chrome会为每个页面分配一个渲染进程，如果从当前页面打开了一个新页面并且为同一站点，将会使用同一个renderer进程。渲染进程进入准备阶段。</li>
+<li><span style="color:red">Browser收到用户的请求，接收到url，通过进程之间通信ipc，交给网络进程，网络进程进行网络请求，需要获取页面内容（网络下载资源等），随后将该任务通过RendererHost接口传递给Renderer进程</span></li>
+<li>Renderer进程的Renderer接口收到消息，简单解释后，交给渲染线程，然后开始渲染</li>
+<li>渲染线程接收请求，加载网页并渲染网页，这其中可能需要Browser进程获取资源和需要GPU进程来帮助渲染，当然可能会有JS线程操作DOM（这样可能会造成回流并重绘），最后Render进程将结果传递给Browser进程</li>
+<li>Browser进程接收到结果并将结果绘制出来</li>
+</ul>
+<h2 id="4-标签页和进程的关系"><a href="#4-标签页和进程的关系" class="headerlink" title="4. 标签页和进程的关系"></a>4. 标签页和进程的关系</h2><p>顶级域名：.com .cn </p>
+<p>一级域名： test.com，fooa.cn</p>
+<p>相同站点：同站点是指协议和根域名相同，既为相同站点，如<a target="_blank" rel="noopener" href="http://local.test.com,http//beta.test.com%EF%BC%8Chttp://test.com:8000%EF%BC%8C%E4%BB%A5%E4%B8%8A%E5%9D%87%E4%B8%BA%E5%90%8C%E4%B8%80%E7%AB%99%E7%82%B9%E3%80%82">http://local.test.com，http://beta.test.com，http://test.com:8000，以上均为同一站点。</a></p>
+<ul>
+<li><p>同源站点：同源是指，协议，<a target="_blank" rel="noopener" href="https://dnspod.cloud.tencent.com/">域名</a>，端口完全相同才算是同源，其中有一项不同，则为跨域。</p>
+</li>
+<li><p>相同站点：同站点是指协议和根域名相同，既为相同站点，如<a target="_blank" rel="noopener" href="http://local.test.com,http//beta.test.com%EF%BC%8Chttp://test.com:8000%EF%BC%8C%E4%BB%A5%E4%B8%8A%E5%9D%87%E4%B8%BA%E5%90%8C%E4%B8%80%E7%AB%99%E7%82%B9%EF%BC%8Chttp://other.com%EF%BC%8Chttp://test.com">http://local.test.com，http://beta.test.com，http://test.com:8000，以上均为同一站点，http://other.com，http://test.com</a>  协议相同、根域名不同为不同站点</p>
+</li>
+<li><p>浏览上下文：一个标签页所包含的内容，window对象，浏览历史，滚动条位置等信息</p>
+</li>
+<li><p>浏览上下文组：通过脚本可以把浏览上下文关联起来，称之为浏览上下文组</p>
+</li>
+</ul>
+<p>得到如下结论：</p>
+<ul>
+<li>a标签页面打开可以将页面之间创建连接。拥有同一浏览上下文组</li>
+<li>同源站点和同一站点共用父页面的渲染进程</li>
+<li>不同站点会新创建一个渲染进程</li>
+</ul>
+<h2 id="5-一次简单的导航"><a href="#5-一次简单的导航" class="headerlink" title="5. 一次简单的导航"></a>5. 一次简单的导航</h2><h3 id="第一步：处理输入"><a href="#第一步：处理输入" class="headerlink" title="第一步：处理输入"></a>第一步：处理输入</h3><p>当用户开始在导航栏上面输入内容的时候，UI线程（UI thread）做的第一件事就是询问：“你输入的字符串是一些搜索的关键词（search query）还是一个URL地址呢？”。因为对于Chrome浏览器来说，导航栏的输入既可能是一个可以直接请求的域名还可能是用户想在搜索引擎（例如Google）里面搜索的关键词信息，所以当用户在导航栏输入信息的时候UI线程要进行一系列的解析来判定是将用户输入发送给搜索引擎还是直接请求你输入的站点资源。</p>
+<h3 id="第二步：开始导航"><a href="#第二步：开始导航" class="headerlink" title="第二步：开始导航"></a>第二步：开始导航</h3><p>当用户按下回车键的时候，UI线程会叫网络线程（network thread）初始化一个网络请求来获取站点的内容。这时候tab上会展示一个提示资源正在加载中的旋转圈圈，而且网络线程会进行一系列诸如DNS寻址以及为请求建立TLS连接的操作。</p>
+<p>响应的头部有Content-Type信息，而响应的主体有真实的数据</p>
+<p>如果响应的主体是一个HTML文件，浏览器会将获取的响应数据交给渲染进程（renderer process）来进行下一步的工作。如果拿到的响应数据是一个压缩文件（zip file）或者其他类型的文件，响应数据就会交给下载管理器（download manager）来处理。</p>
+<p>网络线程在询问响应的数据是不是来自安全源的HTML文件</p>
+<p>网络线程在把内容交给渲染进程之前还会对内容做<a href="https://link.zhihu.com/?target=https://safebrowsing.google.com/">SafeBrowsing</a>检查。如果请求的域名或者响应的内容和某个已知的病毒网站相匹配，网络线程会给用户展示一个警告的页面。除此之外，网络线程还会做<a href="https://link.zhihu.com/?target=https://www.chromium.org/Home/chromium-security/corb-for-developers">CORB</a>（<strong>C</strong>ross <strong>O</strong>rigin <strong>R</strong>ead <strong>B</strong>locking）检查来确定那些敏感的跨站数据不会被发送至渲染进程。</p>
+<h3 id="第四步：寻找一个渲染进程（renderer-process）"><a href="#第四步：寻找一个渲染进程（renderer-process）" class="headerlink" title="第四步：寻找一个渲染进程（renderer process）"></a>第四步：寻找一个渲染进程（renderer process）</h3><p>在网络线程做完所有的检查后并且能够确定浏览器应该导航到该请求的站点，它就会告诉UI线程所有的数据都已经被准备好了。UI线程在收到网络线程的确认后会为这个网站寻找一个渲染进程（renderer process）来渲染界面。</p>
+<p>网络线程告诉UI线程去寻找一个渲染进程来渲染界面</p>
+<p>由于网络请求可能需要长达几百毫秒的时间才能完成，为了缩短导航需要的时间，浏览器会在之前的一些步骤里面做一些优化。例如在第二步中当UI线程发送URL链接给网络线程后，它其实已经知晓它们要被导航到哪个站点了，所以在网络线程干活的时候，UI线程会主动地为这个网络请求启动一个渲染线程。如果一切顺利的话（没有重定向之类的东西出现），网络线程准备好数据后页面的渲染进程已经就准备好了，这就节省了新建渲染进程的时间。不过如果发生诸如网站被重定向到不同站点的情况，刚刚那个渲染进程就不能被使用了，它会被摒弃，一个新的渲染进程会被启动。</p>
+<h3 id="第五步：提交（commit）导航"><a href="#第五步：提交（commit）导航" class="headerlink" title="第五步：提交（commit）导航"></a>第五步：提交（commit）导航</h3><p>到这一步的时候，数据和渲染进程都已经准备好了，浏览器进程（browser process）会通过IPC告诉渲染进程去提交本次导航（commit navigation）。除此之外浏览器进程还会将刚刚接收到的响应数据流传递给对应的渲染进程让它继续接收到来的HTML数据。一旦浏览器进程收到渲染线程的回复说导航已经被提交了（commit），导航这个过程就结束了，文档的加载阶段（document loading phase）会正式开始。</p>
+<p>到了这个时候，导航栏会被更新，安全指示符（security indicator）和站点设置UI（site settings UI）会展示新页面相关的站点信息。当前tab的会话历史（session history）也会被更新，这样当你点击浏览器的前进和后退按钮也可以导航到刚刚导航完的页面。为了方便你在关闭了tab或窗口（window）的时候还可以恢复当前tab和会话（session）内容，当前的会话历史会被保存在磁盘上面。</p>
+<p>浏览器进程通过IPC来对渲染进程发起渲染页面的请求</p>
+<h3 id="额外步骤：初始加载完成（Initial-load-complete）"><a href="#额外步骤：初始加载完成（Initial-load-complete）" class="headerlink" title="额外步骤：初始加载完成（Initial load complete）"></a>额外步骤：初始加载完成（Initial load complete）</h3><p>当导航提交完成后，渲染进程开始着手加载资源以及渲染页面。我会在后面的文章中讲述渲染进程渲染页面的具体细节。一旦渲染进程“完成”（finished）渲染，它会通过IPC告知浏览器进程（注意这发生在页面上所有帧（frames）的<strong>onload</strong>事件都已经被触发了而且对应的处理函数已经执行完成了的时候），然后UI线程就会停止导航栏上旋转的圈圈。</p>
+<p>我这里用到“完成”这个词，因为后面客户端的JavaScript还是可以继续加载资源和改变视图内容的。</p>
+<p>渲染进程通过IPC告诉浏览器进程页面已经加载完成了</p>
+<h4 id="输入url的浏览器进程角度："><a href="#输入url的浏览器进程角度：" class="headerlink" title="输入url的浏览器进程角度："></a>输入url的浏览器进程角度：</h4><ol>
+<li>浏览器进程接收url，组装协议拼接成完整的URL，通过进程之间的通信，将url交给网络请求进程，（这一部分可以展开浏览器的机制以及进程与线程之间的关系）</li>
+<li>开启网络线程到发出一个完整的http请求（这一部分涉及到dns查询，tcp&#x2F;ip请求，五层因特网协议栈等知识）</li>
+<li>从服务器接收到请求到对应后台接收到请求（这一部分可能涉及到负载均衡，安全拦截以及后台内部的处理等等）</li>
+<li>后台和前台的http交互（这一部分包括http头部、响应码、报文结构、cookie等知识，可以提下静态资源的cookie优化，以及编码解码，如gzip压缩等）</li>
+<li>单独拎出来的缓存问题，http的缓存（这部分包括http缓存头部，etag，catch-control等）</li>
+<li>浏览器接收到http数据包后的解析流程（解析html-词法分析然后解析成dom树、解析css生成css规则树、合并成render树，然后layout、painting渲染、复合图层的合成、GPU绘制、外链资源的处理、loaded和domcontentloaded等）</li>
+<li>CSS的可视化格式模型（元素的渲染规则，如包含块，控制框，BFC，IFC等概念）</li>
+<li>JS引擎解析过程（JS的解释阶段，预处理阶段，执行阶段生成执行上下文，VO，作用域链、回收机制等等）</li>
+<li>其它（可以拓展不同的知识模块，如跨域，web安全，hybrid模式等等内容</li>
+</ol>
+<h2 id="6-导航到不同的站点"><a href="#6-导航到不同的站点" class="headerlink" title="6. 导航到不同的站点"></a>6. 导航到不同的站点</h2><p>一个最简单的导航情景已经描述完了！可是如果这时用户在导航栏上输入一个不一样的URL会发生什么呢？如果是这样，浏览器进程会重新执行一遍之前的那几个步骤来完成新站点的导航。不过在浏览器进程做这些事情之前，它需要让当前的渲染页面做一些收尾工作，具体就是询问一下当前的渲染进程需不需要处理一下**<a href="https://link.zhihu.com/?target=https://developer.mozilla.org/en-US/docs/Web/Events/beforeunload">beforeunload</a>**事件。</p>
+<p><strong>beforeunload</strong>可以在用户重新导航或者关闭当前tab时给用户展示一个“你确定要离开当前页面吗？”的二次确认弹框。浏览器进程之所以要在重新导航的时候和当前渲染进程确认的原因是，当前页面发生的一切（包括页面的JavaScript执行）是不受它控制而是受渲染进程控制，所以它也不知道里面的具体情况。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/beforeunload_event">beforeunload</a>,对于浏览器的beforeunload事件回调函数的参数必须是event，而且需要阻止默认事件，并且event. returnValue&#x3D;””,才能正确的响应事件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;beforeunload&#x27;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line"><span class="comment">// Cancel the event as stated by the standard.</span></span><br><span class="line">event.<span class="title function_">preventDefault</span>();</span><br><span class="line"><span class="comment">// Chrome requires returnValue to be set.</span></span><br><span class="line">event.<span class="property">returnValue</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong>不要随便给页面添加<strong>beforeunload</strong>事件监听，你定义的监听函数会在页面被重新导航的时候执行，因此这会增加重导航的时延。beforeunload事件监听函数只有在十分必要的时候才能被添加，例如用户在页面上输入了数据，并且这些数据会随着页面消失而消失。</p>
+<p>浏览器进程通过IPC告诉渲染进程它将要离开当前页面导航到新的页面了</p>
+<p>如果重新导航是在页面内被发起的呢？例如用户点击了页面的一个链接或者客户端的JavaScript代码执行了诸如<strong>window.location &#x3D; “<a href="https://link.zhihu.com/?target=https://newsite.com">https://newsite.com</a>“<strong>的代码。这种情况下，渲染进程会自己先检查一个它有没有注册</strong>beforeunload</strong>事件的监听函数，如果有的话就执行，执行完后发生的事情就和之前的情况没什么区别了，唯一的不同就是这次的导航请求是由渲染进程给浏览器进程发起的。</p>
+<p>如果是重新导航到不同站点（different site）的话，会有另外一个渲染进程被启动来完成这次重导航，而当前的渲染进程会继续处理现在页面的一些收尾工作，例如<strong>unload</strong>事件的监听函数执行。<a href="https://link.zhihu.com/?target=https://developers.google.com/web/updates/2018/07/page-lifecycle-api%23overview_of_page_lifecycle_states_and_events">Overview of page lifecycle states</a>这篇文章会介绍页面所有的生命周期状态，<a href="https://link.zhihu.com/?target=https://developers.google.com/web/updates/2018/07/page-lifecycle-api">the Page Lifecycle API</a>会教你如何在页面中监听页面状态的变化。</p>
+<p>浏览器进程告诉新的渲染进程去渲染新的页面并且告诉当前的渲染进程进行收尾工作</p>
+<p>浏览器渲染： <a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1629189">https://cloud.tencent.com/developer/article/1629189</a></p>
+<p>一文看懂Chrome浏览器运行机制：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/102149546">https://zhuanlan.zhihu.com/p/102149546</a></p>
+<p>浏览器渲染流水线解析与网页动画性能优化：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/30534023">https://zhuanlan.zhihu.com/p/30534023</a></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/%E6%A1%86%E6%9E%B6%E5%B7%AE%E5%BC%82/%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E7%9A%84%E5%B7%AE%E5%BC%82/" style="float: left;">
+        ← 状态管理的差异
+    </a>
+    
+    
+    <a class="pull-right" href="/2-Vue/vue%E9%AB%98%E7%BA%A7%E5%92%8C%E7%BB%86%E8%8A%82/">
+        vue高级用法和细节 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

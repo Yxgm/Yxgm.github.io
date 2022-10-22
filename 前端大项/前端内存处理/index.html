@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>前端内存处理 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2021-08-12T03:03:05.000Z" itemprop="datePublished">
+          2021-08-12
+      </time>
+    
+</span>
+                <h1>前端内存处理</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="1-你了解js中的内存管理吗-什么情况会导致内存泄露？"><a href="#1-你了解js中的内存管理吗-什么情况会导致内存泄露？" class="headerlink" title="1. 你了解js中的内存管理吗? 什么情况会导致内存泄露？"></a>1. 你了解js中的内存管理吗? 什么情况会导致内存泄露？</h2><ol>
+<li><p>内存的生命周期</p>
+<p> 内存分配：当我们申明变量、函数、对象的时候，系统会自动为他们分配内存<br> 内存使用：即读写内存，也就是使用变量、函数等<br> 内存回收：使用完毕，由垃圾回收机制自动回收不再使用的内存</p>
+</li>
+<li><p>Js中的内存分配 左查（LHS）</p>
+</li>
+<li><p>Js中的内存使用 右查（RHS）</p>
+<p> 使用值的过程实际上是对分配内存进行读取与写入的操作。 读取与写入可能是写入一个变量或者一个对象的属性值，甚至传递函数的参数。</p>
+</li>
+<li><p>Js中的垃圾回收机制</p>
+<p> 垃圾回收算法主要依赖于引用的概念。<br> 在内存管理的环境中，一个对象如果有访问另一个对象的权限（隐式或者显式），叫做一个对象引用另一个对象。<br> 例如，一个Javascript对象具有对它原型的引用（隐式引用）和对它属性的引用（显式引用）。<br> 在这里，“对象”的概念不仅特指 JavaScript 对象，还包括函数作用域（或者全局词法作用域）。</p>
+<p> 4.1 引用计数垃圾回收</p>
+<p> 引用计数算法定义“内存不再使用”的标准很简单，就是看一个对象是否有指向它的引用。 如果没有其他对象指向它了，说明该对象已经不再需了。</p>
+<p> 但它却存在一个致命的问题：循环引用。</p>
+<p> 如果两个对象相互引用，尽管他们已不再使用，垃圾回收不会进行回收，导致内存泄露。</p>
+<p> 4.2 标记清除算法</p>
+<p> 标记清除算法将“不再使用的对象”定义为“无法达到的对象”。 简单来说，就是从根部（在JS中就是全局对象）出发定时扫描内存中的对象。 凡是能从根部到达的对象，都是还需要使用的。 那些无法由根部出发触及到的对象被标记为不再使用，稍后进行回收。</p>
+<p> 4.2.1 垃圾收集器在运行的时候会给存储在内存中的所有变量都加上标记。<br> 4.2.2 从根部出发将能触及到的对象的标记清除。<br> 4.2.3 那些还存在标记的变量被视为准备删除的变量。<br> 4.2.4 最后垃圾收集器会执行最后一步内存清除的工作，销毁那些带标记的值并回收它们所占用的内存空间。</p>
+</li>
+<li><p>常见的内存泄露</p>
+<p> 5.1 意外的全局变量 ，使用“use strict”，避免没有必要的全局变量</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    bar1 = <span class="string">&#x27;some text&#x27;</span>; <span class="comment">// 没有声明变量 实际上是全局变量 =&gt; window.bar1</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">bar2</span> = <span class="string">&#x27;some text&#x27;</span> <span class="comment">// 全局变量 =&gt; window.bar2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">foo</span>();</span><br></pre></td></tr></table></figure>
+
+<p> 5.2 未被清理的定时器和回调函数</p>
+<p> 如果后续 renderer 元素被移除，整个定时器实际上没有任何作用。 但如果你没有回收定时器，整个定时器依然有效, 不但定时器无法被内存回收， 定时器函数中的依赖也无法回收。在这个案例中的 serverData 也无法被回收。及时销毁时间监听器，和setInterval</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> serverData = <span class="title function_">loadData</span>();</span><br><span class="line"><span class="built_in">setInterval</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> renderer = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;renderer&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(renderer) &#123;</span><br><span class="line">        renderer.<span class="property">innerHTML</span> = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(serverData);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, <span class="number">5000</span>); <span class="comment">// 每 5 秒调用一次</span></span><br></pre></td></tr></table></figure>
+<p> 5.3 闭包</p>
+<p> 在 JS 开发中，我们会经常用到闭包，一个内部函数，有权访问包含其的外部函数中的变量。 下面这种情况下，闭包也会造成内存泄露</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> theThing = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> replaceThing = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line"><span class="keyword">var</span> originalThing = theThing;</span><br><span class="line"><span class="keyword">var</span> unused = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (originalThing) <span class="comment">// 对于 &#x27;originalThing&#x27;的引用</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;hi&quot;</span>);</span><br><span class="line">&#125;;</span><br><span class="line">theThing = &#123;</span><br><span class="line">    <span class="attr">longStr</span>: <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">1000000</span>).<span class="title function_">join</span>(<span class="string">&#x27;*&#x27;</span>),</span><br><span class="line">    <span class="attr">someMethod</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;message&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">setInterval</span>(replaceThing, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<p> 这段代码，每次调用 replaceThing 时，theThing 获得了包含一个巨大的数组和一个对于新闭包 someMethod 的对象。 同时 unused 是一个引用了 originalThing 的闭包。<br> 这个范例的关键在于，闭包之间是共享作用域的，尽管 unused 可能一直没有被调用，但是 someMethod 可能会被调用，就会导致无法对其内存进行回收。 当这段代码被反复执行时，内存会持续增长。</p>
+<p> 5.4 dom引用</p>
+<p> 很多时候, 我们对 Dom 的操作, 会把 Dom 的引用保存在一个数组或者 Map 中。所以说针对这种情况我们可以使用weakMap这种结果来实现。</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> elements = &#123;</span><br><span class="line">    <span class="attr">image</span>: <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;image&#x27;</span>)</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">doStuff</span>(<span class="params"></span>) &#123;</span><br><span class="line">    elements.<span class="property">image</span>.<span class="property">src</span> = <span class="string">&#x27;http://example.com/image_name.png&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">removeImage</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">removeChild</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;image&#x27;</span>));</span><br><span class="line">    <span class="comment">// 这个时候我们对于 #image 仍然有一个引用, Image 元素, 仍然无法被内存回收.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 上述案例中，即使我们对于 image 元素进行了移除，但是仍然有对 image 元素的引用，依然无法对齐进行内存回收。</p>
+</li>
+<li><p>如何避免内存泄露</p>
+<p> 减少不必要的全局变量，使用严格模式避免意外创建全局变量。<br> 在你使用完数据后，及时解除引用（闭包中的变量，dom引用，定时器清除）。<br> 组织好你的逻辑，避免死循环等造成浏览器卡顿，崩溃的问题。</p>
+</li>
+</ol>
+<p>内存泄漏排查： <a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904165672484871#heading-16">https://juejin.cn/post/6844904165672484871#heading-16</a></p>
+<h2 id="2-内存泄露的排查手段"><a href="#2-内存泄露的排查手段" class="headerlink" title="2.内存泄露的排查手段"></a>2.内存泄露的排查手段</h2><p>可能大家都听过臭名昭著的 “内存泄露”，然而面对茫茫祖传代码，如何找到造成内存泄露的地方，却让人无从下手。这边我们还是借助谷歌的开发者工具， <code>Chrome</code> 浏览器，<code>F12</code> 打开开发者工具，我找了阮一峰老师的 ES6 网站演示。</p>
+<h3 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h3><p>点击这个按钮启动记录，然后切换到网页进行操作，录制完成后点击 <code>stop</code> 按钮，开发者工具会从录制时刻开始记录当前应用的各项数据情况</p>
+<p>选中<code>JS Heap</code>，下面展现出来的一条蓝线，就是代表了这段记录过程中，JS 堆内存信息的变化情况。</p>
+<p>有大佬说，根据这条蓝线就可以判断是否存在内存泄漏的情况：<strong>如果这条蓝线一直成上升趋势，那基本就是内存泄漏了</strong>。其实我觉得这么讲有失偏颇，JS 堆内存占用率上升并不一定就是内存泄漏，只能说明有很多未被释放的内存而已，至于这些内存是否真的在使用，还是说确实是内存泄漏，还需要进一步排查</p>
+<h3 id="memory"><a href="#memory" class="headerlink" title="memory"></a>memory</h3><p>借助开发者工具的 Memory 选项，可以更精确地定位内存使用情况。</p>
+<p>当生成了第一个快照的时候，开发者工具窗口已经显示了很详细的内存占用情况。</p>
+<p>字段解释：</p>
+<ul>
+<li><code>Constructor</code> — 占用内存的资源类型</li>
+<li><code>Distance</code> — 当前对象到根的引用层级距离</li>
+<li><code>Shallow Size</code> — 对象所占内存（不包含内部引用的其它对象所占的内存）(单位：字节)</li>
+<li><code>Retained Size</code> — 对象所占总内存（包含内部引用的其它对象所占的内存）(单位：字节)</li>
+</ul>
+<p>将每项展开可以查看更详细的数据信息。</p>
+<p>我们再次切回网页，继续操作几次，然后再次生成一个快照。</p>
+<p>这边需要特别注意这个 <code>#Delta</code> ，如果是正值，就代表新生成的内存多，释放的内存少。其中的闭包项，如果是正值，就说明存在内存泄漏</p>
+<h3 id="3-内存泄露的解决方案"><a href="#3-内存泄露的解决方案" class="headerlink" title="3. 内存泄露的解决方案"></a>3. 内存泄露的解决方案</h3><ol>
+<li>使用严格模式，避免不经意间的全局变量泄露：</li>
+<li>关注 <code>DOM</code> 生命周期，在销毁阶段记得解绑相关事件或者可以使用事件委托的手段统一处理事件，减少由于事件绑定带来的额外内存开销</li>
+<li>避免过度使用闭包。</li>
+</ol>
+<blockquote>
+<p>大部分的内存泄漏还是由于代码不规范导致的。代码千万条，规范第一条，代码不规范，开发两行泪。</p>
+</blockquote>
+<h2 id="4-实现sizeOf函数-Get-size-of-a-JavaScript-object-in-Bytes"><a href="#4-实现sizeOf函数-Get-size-of-a-JavaScript-object-in-Bytes" class="headerlink" title="4. 实现sizeOf函数, Get size of a JavaScript object in Bytes"></a>4. 实现sizeOf函数, Get size of a JavaScript object in Bytes</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> seen = <span class="keyword">new</span> <span class="title class_">WeakSet</span>();</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sizeOfObject</span>(<span class="params">object</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (object == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> bytes = <span class="number">0</span></span><br><span class="line">    <span class="keyword">const</span> properties = <span class="title class_">Object</span>.<span class="title function_">keys</span>(object);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; properties.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> key = properties[i]</span><br><span class="line">        <span class="comment">// Do not recalculate circular references</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> object[key] === <span class="string">&#x27;object&#x27;</span> &amp;&amp; object[key] !== <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (seen.<span class="title function_">has</span>(object[key])) &#123;</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            &#125;</span><br><span class="line">            seen.<span class="title function_">add</span>(object[key])</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        bytes += <span class="title function_">calculator</span>(key)</span><br><span class="line">        bytes += <span class="title function_">calculator</span>(object[key])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> bytes</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">calculator</span>(<span class="params">object</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> objectType = <span class="keyword">typeof</span> object;</span><br><span class="line">    <span class="keyword">switch</span> (objectType) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;string&#x27;</span>:</span><br><span class="line">            <span class="keyword">return</span> object.<span class="property">length</span> * <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;boolean&#x27;</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">4</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;number&#x27;</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">8</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;object&#x27;</span>:</span><br><span class="line">            <span class="keyword">if</span> (<span class="title class_">Array</span>.<span class="title function_">isArray</span>(object)) &#123;</span><br><span class="line">                <span class="keyword">return</span> object.<span class="title function_">map</span>(calculator).<span class="title function_">reduce</span>(<span class="keyword">function</span> (<span class="params">acc, curr</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> acc + curr</span><br><span class="line">                &#125;, <span class="number">0</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="title function_">sizeOfObject</span>(object);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="attr">default</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> testData = &#123;</span><br><span class="line">    <span class="attr">a</span>: <span class="number">111</span>,</span><br><span class="line">    <span class="attr">b</span>: <span class="string">&#x27;cccc&#x27;</span>,</span><br><span class="line">    <span class="number">2222</span>: <span class="literal">false</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">calculator</span>(testData))</span><br></pre></td></tr></table></figure>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2-Redux&Router/connect%E5%87%BD%E6%95%B0%E3%80%81%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88/" style="float: left;">
+        ← connect函数和替代方案
+    </a>
+    
+    
+    <a class="pull-right" href="/3-NetWork/http%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB/">
+        http请求方式的区别 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>堆栈、栈帧、string | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-07-01T07:33:35.465Z" itemprop="datePublished">
+          2022-07-01
+      </time>
+    
+    
+    | 
+    <a href='/tags/js/'>js</a>,
+    
+    <a href='/tags/堆栈/'>堆栈</a>
+    
+    
+</span>
+                <h1>堆栈、栈帧、string</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="string虽然是基本类型但是是放在堆里的"><a href="#string虽然是基本类型但是是放在堆里的" class="headerlink" title="string虽然是基本类型但是是放在堆里的"></a>string虽然是基本类型但是是放在堆里的</h1><p>​    我们知道v8引擎需要用执行栈来维护程序执行期间的上下文状态，而要想通过栈这种数据结构达到最高效率的切换上下文，执行栈的每一项都可以用相同长度的位来存储，只有这样JavaScript引擎才可以通过执行栈的索引来快速切换上下文，以提高程序的效率。 </p>
+<p>​    所以v8引擎中的栈存储的都是相同位数的值，JavaScript引擎在遇到声明语句时，会在栈中申请一个空间，当给这个变量赋值时，会有两种情况：</p>
+<ol>
+<li>如果值的类型是Boolean、Null、Undefined、Number，那么直接把这个值保存在栈中</li>
+<li>如果是其他类型的值，JavaScript引擎会在堆中申请一个内存空间，然后把这个值保存在堆中，再将这个值在堆中的引用赋值给这个值在栈中的内存空间</li>
+</ol>
+<p>​    栈的结构和非常适合函数调用过程。因为函数可以被其他函数调用，子函数在被父函数调用的时候，父函数必定在子函数调用结束之后才有可能结束，因此在函数的声明周期上符合后进先出；另外由于函数有作用域，因此在资源分配的角度也符合后进先出</p>
+<p>​    在栈上分配资源和销毁资源的速度非常快，这主要归结于栈空间是连续的，分配空间和销毁空间只需要移动下指针就可以了，系统会自动释放。而堆是无序的，不会自动释放,栈中存储的每一项都是相同长度的引用，字符串可以无限长度，当然不是存在栈中</p>
+<p><span style="color:red">    由于效率的原因，我们希望JS只复制对字符串的引用，而不是字符串的内容。但是另一方面，字符串在许多方面都和基本类型的表现相似，而字符串是不可变的这一事实（即没法改变一个字符串值的内容），因此可以将字符串看成行为与基本类型相似的不可变引用类型。</span></p>
+<p>​    对于string比较，比较的是堆中值的asico转化后的结果</p>
+<p>​    对于字符串，要是引用了s的属性，js就会价格字符串通过new String的方法转化为对象，包装成对象，当属性引用结束，这个新对象就会销毁这个对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s=<span class="string">&quot;test&quot;</span>;</span><br><span class="line">s.<span class="property">len</span>=<span class="number">4</span>; <span class="comment">//构造字符串对象，给对象设置属性，随机对象就会销毁</span></span><br><span class="line"><span class="keyword">var</span> t=s.<span class="property">len</span><span class="comment">//读到是undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>​    如果是new String（）的话就不会这样，new 出来的对象会持续保存，这也是原因所在。</p>
+<h1 id="栈和堆"><a href="#栈和堆" class="headerlink" title="栈和堆"></a>栈和堆</h1><p>栈：基本类型 （Undefined、Null、Boolean、Number）——原始值（原始值代表了原始的数据类型） 基本类型在内存中占据<strong>空间小、大小固定</strong>，他们的值保存在栈(stack)空间，上下文切换速度快，栈stack为自动分配的内存空间，它由系统自动释放；</p>
+<blockquote>
+<p>内存中栈区的数据，在函数调用结束后，就会自动的出栈，不需要程序进行操作，操作系统会自动执行，换句话说：栈中的变量在函数调用结束后，就会消失。</p>
+<p>因此栈的特点：轻量，不需要手动管理，函数调时创建，调用结束则消失。</p>
+</blockquote>
+<p>堆：引用类型 （Object，Function，Array等）——引用值,引用类型占据<strong>空间大、大小不固定</strong>, 栈内存中存放地址指向堆(heap)内存中的对象。是按引用访问的,堆heap是动态分配的内存，大小不定也不会自动释放。</p>
+<p>堆内存与栈内存是有区别的：<strong>栈内存运行效率比堆内存高</strong>，<strong>空间相对推内存来说较小</strong>，反之则是堆内存的特点。</p>
+<h4 id="1-对js中闭包变量存储位置的思考"><a href="#1-对js中闭包变量存储位置的思考" class="headerlink" title="1. 对js中闭包变量存储位置的思考"></a>1. 对js中闭包变量存储位置的思考</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">count</span> () &#123;</span><br><span class="line">    <span class="keyword">let</span> num = -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span>  <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> num++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> numCount = <span class="title function_">count</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">numCount</span>())<span class="comment">//0</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">numCount</span>())<span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+
+<p>通过count调用之后，返回的函数中持有nums变量，由外部的变量持有。如果说基本类型在栈中，那么在count函数执行完之后，num就该销毁了，但是我们依然可以正常的去访问输出num，所以闭包num并没有销毁，<strong>他不在栈中，而是在堆中</strong>。</p>
+<p>对于函数中的闭包变量，（return出去，被外部持有了生命周期），这些变闭包量会存在函数的scope属性上，是函数的一个属性[[Scopes]],因为这个闭包本身就是函数所产生的。</p>
+<img src="../assets/scopr.jpg">
+
+<h4 id="2-变量类型"><a href="#2-变量类型" class="headerlink" title="2. 变量类型"></a>2. 变量类型</h4><p>局部变量（函数中声明且在函数结束不会被其他作用域所使用）、被捕捉变量（被别的作用域变量使用）、全局变量。</p>
+<p>var变量相当于给global对象添加了一条属性，而let&#x2F;const变量不会改变windows对象，而是将变量的声明放在了一个特殊的对象下（与scope类似）。全局上下文是每一个函数闭包</p>
+<h4 id="3-得出以下结论⚠️⚠️"><a href="#3-得出以下结论⚠️⚠️" class="headerlink" title="3. 得出以下结论⚠️⚠️"></a>3. 得出以下结论⚠️⚠️</h4><ol>
+<li><p>被捕捉变量(函数捕捉到的闭包变量、全局变量)：值都是在堆中，栈中存地址。</p>
+</li>
+<li><p>局部变量(函数中声明的变量)：基本类型在栈，存储的是数据本身，引用类型地址放在栈，值放在堆。</p>
+</li>
+</ol>
+<p><span style="color:red">捕捉变量全都存在堆中！唯一存在栈中的数据是局部变量中的未捕获的基础类型变量</span></p>
+<blockquote>
+<p>总结：</p>
+<p>全局中的基本类型和引用类型都存在堆中，地址存在全局执行上下文栈</p>
+<p>局部变量的基本类型存在栈中、引用类型的地址存在栈中，值存在堆中、闭包的值存在堆中。</p>
+</blockquote>
+<h4 id="4-js如何判断一个变量是局部变量呢"><a href="#4-js如何判断一个变量是局部变量呢" class="headerlink" title="4. js如何判断一个变量是局部变量呢"></a>4. js如何判断一个变量是局部变量呢</h4><p>​    判断是否被内部函数引用即可</p>
+<p>​    仅有在函数体内的未被捕获变量是存在栈中（包括基础类型和引用类型的地址值）还有，在前期，js 的所有变量都是存在堆中的，那为什么有一部分变量到后来存在栈中呢？是因为编译器的优化，因为栈中访问更快。</p>
+<p>​    但如何判断出什么是局部变量，是一个难题，所以在早起的js 引擎中，所有的变量都是存储在堆中，直到发展到后期，引擎能判断出什么是局部变量，这才将局部的基本数据类型放在栈中，因为栈更符合函数执行的逻辑和更高的性能，这算是一种性能上的优化！</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903997615128583#heading-8">https://juejin.cn/post/6844903997615128583#heading-8</a></p>
+<h4 id="5-栈帧概念"><a href="#5-栈帧概念" class="headerlink" title="5. 栈帧概念"></a>5. 栈帧概念</h4><p>​    调用栈是解释器追踪函数执行流的一种机制，可以通过调用栈追踪到哪个函数正在执行，而栈帧是指一个函数调用单独分配的那部分栈空间，有当前帧，和调用帧两个概念，函数A调用了函数B，当前这个情况，B是当前帧指栈顶，也就是新函数，调用帧指A函数，也是旧函数。函数执行完，会清除当前帧出调用栈。栈满，会引发堆栈爆炸。</p>
+<p>​    尾调用：在一个函数最后调用别的函数，即为尾调用，但是调用栈会不断的增多，最后一并弹出栈，<span style="color:red">可尾调用优化，即在最后调用别的函数的时候，加上return，即可结束当前函数，弹出当前函数的栈帧，当前调用栈只有two函数的栈帧了，进入下一函数的调用</span>，对于chorme浏览器禁止了尾调用优化，safari是好的。</p>
+<p>​    尾递归：使用尾递归优化时，展开看到的<code>调用栈</code>中只会有当前执行的函数，不会储存上层的数据，这样就会减少内存的使用。 <code>尾递归</code>的本质实际上就是将方法需要的上下文通过方法的参数传递进下一次调用之中，以达到去除上层依赖。栈的使用空间为O(n)。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//尾递归实现阶乘</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">factorial</span>(<span class="params">n, total = <span class="number">1</span></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">1</span>) <span class="keyword">return</span> total;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">factorial</span>(n - <span class="number">1</span>, n * total); <span class="comment">//不在依赖上一步的执行结果，永远只有一个调用帧，不会有栈爆炸</span></span><br><span class="line">  <span class="comment">//  return factorial(n - 1) * n;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//尾递归实现斐波那契数列</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params">n, num1 = <span class="number">0</span>, num2 = <span class="number">1</span></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> num2;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">foo</span>(n - <span class="number">1</span>, num2, num1 + num2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6959549674990600228#heading-5">https://juejin.cn/post/6959549674990600228#heading-5</a></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/3-Brower/%E5%86%85%E6%A0%B8%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/" style="float: left;">
+        ← 内核渲染机制
+    </a>
+    
+    
+    <a class="pull-right" href="/%E8%B6%85%E8%84%B1%E9%A2%86%E6%82%9F/OOP%E5%92%8CFP/">
+        OOP和FP →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

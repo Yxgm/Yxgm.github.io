@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>跨域意义，复杂请求 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-04-16T00:51:45.404Z" itemprop="datePublished">
+          2022-04-16
+      </time>
+    
+    
+    | 
+    <a href='/tags/浏览器/'>浏览器</a>,
+    
+    <a href='/tags/跨域/'>跨域</a>
+    
+    
+</span>
+                <h1>跨域意义，复杂请求</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>跨域：所以说在浏览器的同源策略下，ajkx请求存在跨域问题，而服务器之间不存在跨域，因为是服务器又不是浏览器🤔</p>
+<p>跨域：仅仅是浏览器拿不到网络请求回来的数据，而不是发送不出去。⚠️</p>
+<h3 id="本质来说："><a href="#本质来说：" class="headerlink" title="本质来说："></a>本质来说：</h3><p>都是Http请求</p>
+<p>​    <code>AJAX</code>通<code>xmlHttpRequest</code>对象请求服务器服务器接受请求返数据实现刷新交互，普通http请求通<code>httpRequest</code>象请求服务器接受请求返数据需要页面刷新<br>​    <code>XMLHttpRequest</code>是一个标准的 javascript 对象，它允许您在<code> javascript</code> 中从浏览器发出 <code>HTTP </code>请求.<code>HttpRequest</code>是一个服务器端对象，表示对服务器的请求.<br>​    总之 - 一个在浏览器中工作，另一个在 Web 服务器中工作. 他们也有完全不同的角色. <code>XMLHttp Request</code>用于在浏览器中获取 Web 资源.<code> HttpRequest</code>表示传入的请求.</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903816060469262#heading-10">掘金跨域</a></p>
+<p>项目启动dev-server的时候，会启动本地服务，将本地的一个端口，作为服务器，将我们打包好的bundle投放在服务器上，webpack的代理就是将我们向不同源的服务器请求代理到我们启用的端口上，由我们启动的服务器代理浏览器去请求数据，完成跨域。对于启用代理只是多开发环境来说。</p>
+<p>生产环境下：打包之后后端的服务器代码和前端的包都是放在一个服务器上面，不需要跨域。开发环境下的时候需要跨域</p>
+<p>后端node express：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&quot;express&quot;</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>()</span><br><span class="line"><span class="keyword">const</span> cors = <span class="built_in">require</span>(<span class="string">&quot;cors&quot;</span>)</span><br><span class="line">app.<span class="title function_">ues</span>(<span class="title function_">cors</span>())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>即可开启cors，完成跨域（设计了请求头*），但是是不安全的，因为所有的</p>
+</blockquote>
+<h2 id="1-跨域的真正意义"><a href="#1-跨域的真正意义" class="headerlink" title="1. 跨域的真正意义"></a>1. 跨域的真正意义</h2><p>先明确一点：跨域：仅仅是浏览器屏蔽了网络请求回来的数据，而不是发送不出去。⚠️</p>
+<p>大概的原理就是客户端第会通过服务端返回的一些 <code>Header</code> 去判断该请求是否允许跨域，比如，<code>Access-Control-Allow-Origin</code> 告诉客户端允许请求在哪些 <code>Origin</code> 下被发送，这些 <code>Header</code> 一般都是我们配在 <code>Server</code> 上的。</p>
+<h3 id="预检请求"><a href="#预检请求" class="headerlink" title="预检请求"></a>预检请求</h3><p>​        在发送真正的请求之前，浏览器会先发送一个<code>Preflight</code>请求，预检请求方法为 <code>OPTIONS</code>。</p>
+<p>​        预检请求有一个很重要的作用就是 <code>询问</code> 服务端是不是允许这次请求，如果当前请求是个跨域的请求，你可以理解为：<code>询问</code> 服务端是不是允许请求在当前域下跨域发送。当然，它还有其他的作用，比如 <code>询问</code> 服务端支持哪些 HTTP 方法。</p>
+<h3 id="预检的过程"><a href="#预检的过程" class="headerlink" title="预检的过程"></a>预检的过程</h3><p>​        服务端是不会真正执行逻辑的，返回一些 <code>HTTP Header</code>，以此来告诉客户端是不是要发送真正的请求。如果服务端告诉客户端，请求是允许被发送的，那真正的请求才会发出去。</p>
+<blockquote>
+<p><code>Eg</code>: 比如：我在 <code>a.com</code> 这个 <code>origin</code> 下，发送了 <code>conardli.top</code> 这个域名的请求。那么浏览器会先向  <code>conardli.top</code> 发送一个预检，预检请求不会真正执行这个域名的请求，而是返回了一些 <code>CORS Header</code>，比如 <code>Access-Control-Allow-Origin: a.com</code>（a克赛s，奥尔真）</p>
+<p>这时候浏览器发现，<code>conardli.top</code> 的请求是允许在 <code>a.com</code> 下发送的，才会真正发出请求。这时服务端才会真正执行请求接口的逻辑。</p>
+</blockquote>
+<h2 id="2-简单请求和复杂请求"><a href="#2-简单请求和复杂请求" class="headerlink" title="2. 简单请求和复杂请求"></a>2. 简单请求和复杂请求</h2><p>所有的请求都会有预检吗？当然不是，只是复杂请求会有预检</p>
+<h3 id="简单请求"><a href="#简单请求" class="headerlink" title="简单请求"></a>简单请求</h3><p>若请求满足所有下述条件，则该请求可视为“简单请求”：</p>
+<p>使用下列方法之一：1. GET、2. HEAD、3. POST</p>
+<p>并且Content-Type 的值仅限于下列三者之一：1. text&#x2F;plain 2. multipart&#x2F;form-data3. application&#x2F;x-www-form-urlencoded</p>
+<p><strong>请求中没有自定义HTTP头部。所谓的自定义头部，在实际的项目里，我们经常会遇到需要在header头部加上一些token或者其他的用户信息，用来做用户信息的校验。</strong></p>
+<p>除下面的请求头，不得人为设置该集合之外的其他首部字段。该集合为：</p>
+<table>
+<thead>
+<tr>
+<th>Accept</th>
+<th>Accept-Language</th>
+<th>Content-Language</th>
+<th>Content-Type （需要注意额外的限制）</th>
+<th>DPR</th>
+<th>Downlink</th>
+<th>Save-Data&#x2F;Width&#x2F;Viewport-Width</th>
+</tr>
+</thead>
+</table>
+<p>请求中的任意XMLHttpRequestUpload 对象均没有注册任何事件监听器；XMLHttpRequestUpload 对象可以使用 XMLHttpRequest.upload 属性访问。</p>
+<p>请求中没有使用 ReadableStream 对象。</p>
+<p>对于简单请求，只服务端设置Access-Control-Allow-Origin即可，前端无须设置，若要带cookie请求：前后端都需要设置。</p>
+<p>需注意的是：由于同源策略的限制，所读取的cookie为跨域请求接口所在域的cookie，而非当前页。如果想实现当前页cookie的写入，可参考nginx反向代理中设置proxy_cookie_domain 和 NodeJs中间件代理中cookieDomainRewrite参数的设置。</p>
+<h3 id="复杂请求"><a href="#复杂请求" class="headerlink" title="复杂请求"></a>复杂请求</h3><p>不符合以上条件的请求就肯定是复杂请求了。<br>复杂请求的CORS请求，会在正式通信之前，增加一次HTTP查询请求，称为 <code>预检</code> 请求,该请求是 <code>option</code> 方法的，通过该请求来知道服务端是否允许跨域请求。</p>
+<h3 id="简单请求与复杂请求的跨域设置"><a href="#简单请求与复杂请求的跨域设置" class="headerlink" title="简单请求与复杂请求的跨域设置"></a>简单请求与复杂请求的跨域设置</h3><p>　针对简单请求，在进行CORS设置的时候，我们只需要设置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Access-Control-Allow-Origin:*</span><br><span class="line">// 如果只是针对某一个请求源进行设置的话，可以设置为具体的值</span><br><span class="line">Access-Control-Allow-Origin: &#x27;http://www.***.com&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>　针对复杂请求，我们需要设置不同的响应头。因为在预检请求的时候会携带相应的请求头信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Access-Control-Request-Method: POST</span><br><span class="line">Access-Control-Request-Headers: X-CUSTOMER-HEADER, Content-Type</span><br></pre></td></tr></table></figure>
+
+<p>　相应的响应头信息为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Access-Control-Allow-Origin: http://foo.example</span><br><span class="line">Access-Control-Allow-Methods: POST, GET, OPTIONS</span><br><span class="line">Access-Control-Allow-Headers: X-PINGOTHER, Content-Type</span><br><span class="line">Access-Control-Max-Age: 86400// 设置max age，浏览器端会进行缓存。没有过期之前真对同一个请求只会发送一次预检请求</span><br></pre></td></tr></table></figure>
+
+<p>　　如果发送的预检请求被进行了重定向，那大多数的浏览器都不支持对预检请求的重定向。我们可以通过先发送一个简单请求的方式，获取到重定向的url <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseURL">XHR.responseURL</a>，然后再去请求这个url。</p>
+<p>1、附带身份凭证的请求</p>
+<p>　　一般而言，对于跨域 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest"><code>XMLHttpRequest</code></a>或 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch</a> 请求，浏览器<strong>不会</strong>发送身份凭证信息。如果要发送凭证信息，需要设置 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en/DOM/XMLHttpRequest">XMLHttpRequest</a> 的某个特殊标志位。</p>
+<p>　　如果在发送请求的时候，给xhr 设置了<strong>withCredentials为true</strong>，从而向服务器发送 Cookies，如果服务端需要想客户端也发送cookie的情况，需要<strong>服务器端也返回<code>Access-Control-Allow-Credentials: true</code>响应头信息</strong>。</p>
+<p>　　对于附带身份凭证的请求，服务器不得设置 <code>Access-Control-Allow-Origin</code>的值为“<code>*</code>”。</p>
+<p>　　这是因为请求的首部中携带了<code>Cookie</code>信息，如果 <code>Access-Control-Allow-Origin</code>的值为“<code>*</code>”，请求将会失败。而将 <code>Access-Control-Allow-Origin</code>的值设置为 <code>http://foo.example</code>（请求源），则请求将成功执行。</p>
+<h2 id="3-options-请求"><a href="#3-options-请求" class="headerlink" title="3. options 请求"></a>3. options 请求</h2><blockquote>
+<p>HTTP 的 OPTIONS 方法 用于获取目的资源所支持的通信选项。客户端可以对特定的 URL 使用 OPTIONS 方法，也可以对整站（通过将 URL 设置为“*”）使用该方法。</p>
+</blockquote>
+<p>​        简单来说，就是可以用 options 请求去嗅探某个请求在对应的服务器中都支持哪种请求方法。在前端中我们一般不会主动发起这个请求，但是往往你可以看到浏览器中相同的请求发起了 2 次。</p>
+<p>​        其实，这是因为在跨域的情况下，在浏览器发起”复杂请求”时主动发起的。跨域共享标准规范要求，对那些可能对服务器数据产生副作用的 HTTP 请求方法（特别是 GET 以外的 HTTP 请求，或者搭配某些 MIME 类型的 POST 请求），浏览器必须首先使用 OPTIONS 方法发起一个预检请求（preflight request），从而获知服务端是否允许该跨域请求。服务器确认允许之后，才发起实际的 HTTP 请求。某些请求不会触发 CORS 预检请求，这样的请求一般称为”简单请求”,而会触发预检的请求则称为”复杂请求”。</p>
+<h3 id="options-关键的请求头字段"><a href="#options-关键的请求头字段" class="headerlink" title="options 关键的请求头字段"></a>options 关键的请求头字段</h3><p>request header 的关键字段</p>
+<table>
+<thead>
+<tr>
+<th>关键字段</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Access-Control-Request-Method</td>
+<td>告知服务器，实际请求将使用 POST 方法</td>
+</tr>
+<tr>
+<td>Access-Control-Request-Headers</td>
+<td>告知服务器，实际请求将携带的自定义请求首部字段</td>
+</tr>
+</tbody></table>
+<p>如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Access-Control-Request-Method: POST</span><br><span class="line">Access-Control-Request-Headers: X-PINGOTHER, Content-Type</span><br></pre></td></tr></table></figure>
+
+<p>response header 的关键字段</p>
+<table>
+<thead>
+<tr>
+<th>关键字段</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Access-Control-Allow-Methods</td>
+<td>表明服务器允许客户端使用什么方法发起请求</td>
+</tr>
+<tr>
+<td>Access-Control-Allow-Origin</td>
+<td>允许跨域请求的域名，如果要允许所有域名则设置为 *</td>
+</tr>
+<tr>
+<td>Access-Control-Allow-Headers</td>
+<td>服务器允许的自定义请求首部字段</td>
+</tr>
+<tr>
+<td>Access-Control-Max-Age</td>
+<td>指定了预检请求的结果能够被缓存多久</td>
+</tr>
+</tbody></table>
+<h3 id="Options-请求优化"><a href="#Options-请求优化" class="headerlink" title="Options 请求优化"></a>Options 请求优化</h3><p>当我们发起跨域请求时，如果是简单请求，那么我们只会发出一次请求，但是如果是复杂请求则先发出 options 请求，用于确认目标资源是否支持跨域，然后浏览器会根据服务端响应的 header 自动处理剩余的请求，如果响应支持跨域，则继续发出正常请求，如果不支持，则在控制台显示错误。</p>
+<p>由此可见，当触发预检时，跨域请求便会发送 2 次请求，既<strong>增加了请求数</strong>，也<strong>延迟了请求真正发起的时间</strong>，严重影响性能。</p>
+<p>所以，我们可以优化 Options 请求，主要有 2 种方法。</p>
+<ol>
+<li>转为简单请求，如用 JSONP 做跨域请求</li>
+<li>对 options 请求进行缓存，服务器端设置 Access-Control-Max-Age 字段，那么当第一次请求该 URL 时会发出 OPTIONS 请求，浏览器会根据返回的 Access-Control-Max-Age 字段缓存该请求的 OPTIONS 预检请求的响应结果（具体缓存时间还取决于浏览器的支持的默认最大值，取两者最小值，一般为 10 分钟）。在缓存有效期内，该资源的请求（URL 和 header 字段都相同的情况下）不会再触发预检。（chrome 打开控制台可以看到，当服务器响应 Access-Control-Max-Age 时只有第一次请求会有预检，后面不会了。注意要开启缓存，去掉 disable cache 勾选。）</li>
+</ol>
+<h2 id="4-总结"><a href="#4-总结" class="headerlink" title="4. 总结"></a>4. 总结</h2><p>最后来总结下要点：</p>
+<ul>
+<li>简单请求：不管是否跨域，只要发出去了，一定会到达服务端并被执行，浏览器只会隐藏返回值</li>
+<li>复杂请求：先发预检，预检不会真正执行业务逻辑，预检通过后才会发送真正请求并在服务端被执行</li>
+</ul>
+<h2 id="6-crossOrigin补充"><a href="#6-crossOrigin补充" class="headerlink" title="6. crossOrigin补充"></a>6. crossOrigin补充</h2><p>以跨域cors的方式来请求资源。</p>
+<table>
+<thead>
+<tr>
+<th>crossOrigin的value</th>
+<th align="center">意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>anonymous：</td>
+<td align="center">【匿名的】在请求中的 header 中的带上 Origin 属性，但请求不会带上 cookie 和其他的一些认证信息。</td>
+</tr>
+<tr>
+<td>use-credentials：</td>
+<td align="center">【使用凭据】 这个就同时会在跨域请求中带上 cookie 和其他的一些认证信息。加了证书的CORS</td>
+</tr>
+</tbody></table>
+<p>​        script：引入了跨域脚本，如果有报错，如果不加上crossOrigin，无法正确响应错误，加上后，可以拿到错误信息。同时需要跨域脚本的服务器必须通过 Access-Control-Allow-Origin 头信息允许当前域名可以获取错误信息</p>
+<p>​        其他包含url的标签（img，link等等）：默认情况，Cors保护机制，浏览器规定cancas只能按tainted方式读取非同域名下的图片资源，（大概意思只能将图片贴在canvas，但不可读取），防止照片信息泄密。</p>
+<p>​        想象一下，一个别有用心的网站想知道用户在 Gmail 有没有账户，比如 chrisyue.com，写一个 link （img）标签引入 Gmail 的 favicon （five 费肯）的资源。如果没有 CORS 的保护，chrisyue.c om 可以通过 canvas 来读出图片内容并将其发送到攻击者服务器，造成信息泄露（用户是否有账号，信息如何等等）</p>
+<p>​        所以说对于img标签，加上了cossorigin之后，就可以操纵图片数据。和操作同域名的照片一样。</p>
+<h2 id="7-image跨域问题"><a href="#7-image跨域问题" class="headerlink" title="7. image跨域问题"></a>7. image跨域问题</h2><p>​        问题的关键在于，同一张图片，先用 ‘img’ 标签去加载了，然后再在 JS 代码中，创建一个 ‘img’ 并且设置了 crossOrigin 的跨域属性为 ‘anonymous’，那么在 JS 中创建的 ‘img’ 就会出现访问图片而产生跨域的问题。</p>
+<p>​        img加载图片，默认缓存起来，之后js发送corssOrigin的请求图片，js想用跨域（CORS）的方式去请求资源，但是图片已经被缓存，显然不是。所以浏览器直接拒接请求</p>
+<h6 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h6><ol>
+<li>禁用缓存（disable cache）后，js就可以正常的请求资源</li>
+<li>将img也添加<code>corssOrigin = &quot;anonymous&quot;</code>，这就相当于给图片请求请求头中设置了origin信息(地址)，同时响应头<code>access-control-allow-origin:*</code></li>
+<li>服务器必须加上字段，否则，客户端设置了也是没用的。<code>Access-Control-Allow-Origin: *</code></li>
+<li>先清理一下游览器所缓存的图片。否则你就会发现，有的图片可以访问，而有的不可以。那是因为缓存中之前存储了未 CORS 的图片。</li>
+</ol>
+<h2 id="8-携带cookie跨域，在同域名下默认携带cookie"><a href="#8-携带cookie跨域，在同域名下默认携带cookie" class="headerlink" title="8. 携带cookie跨域，在同域名下默认携带cookie"></a>8. 携带cookie跨域，在同域名下默认携带cookie</h2><ol>
+<li><p>需要后端<code>Access-Control-Allow-Origin</code>关闭*，写特定域名（谁想跨域携带cookie，就写谁的域名）</p>
+</li>
+<li><p>需要后端<code>Access-Control-Allow-Cretials(卡瑞单瘦）</code>设置为true，代表允许跨域携带凭证，相应的Access-Control-Allow-Credentials就一定不为true。</p>
+</li>
+<li><p>前端使用带 credentials 的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">XHR</a> ：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">xhr.<span class="title function_">open</span>(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;http://example.com/&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line">xhr.<span class="property">withCredentials</span> = <span class="literal">true</span>;</span><br><span class="line">xhr.<span class="title function_">send</span>(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<p>使用带 credentials 的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch</a> ：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">fetch</span>(url, &#123; <span class="attr">credentials</span>: <span class="string">&#x27;include&#x27;</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>Mock.js 会修改XMlHttprequest</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">axios.<span class="property">interceptors</span>.<span class="property">request</span>.<span class="title function_">ues</span>(<span class="function">(<span class="params">config</span>)=&gt;</span>&#123;</span><br><span class="line">  condig.<span class="property">withCredentials</span> = <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">return</span> config;</span><br><span class="line">&#125;)<span class="comment">//</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>​    CORS请求发出时如果设定了 credentials，但服务端配置了 http 响应首部 <code>Access-Control-Allow-Origin</code> 的值为通配符 (<code>&quot;*&quot;</code>) ，而这与使用 credentials 相悖。这是出于一种安全策略，比如：在<code>cookie</code>中存取的是用户的登录信息，又不限制客户端的请求来源，他人获取到<code>cookie</code>以后则可随意发起请求，登录该用户账号，损害用户权益</p>
+<p>​    这也解释了用img标签，有<code>use-credentials</code>字段的时候，报错，因为这个属性相当于前端请求设置<code>Credential</code>为<code>true</code>，但是后端设置的 <code>Origin：*</code>。所以报错。</p>
+<h2 id="9-细节补充"><a href="#9-细节补充" class="headerlink" title="9. 细节补充"></a>9. 细节补充</h2><ol>
+<li><p>css没有跨域问题</p>
+</li>
+<li><p>canvas的drawImage使用跨域图片，会报错 </p>
+<p> 解决办法：</p>
+<ol>
+<li><p>如果图片不大不多可以使用base64.</p>
+</li>
+<li><p>实例的image对象的设置img.crossOrigin &#x3D; ‘ ‘;并且在服务器端设置Access-Control-Allow-Origin:*(或运行的域名)</p>
+</li>
+</ol>
+</li>
+<li><p>有的字体的引入可能会产生跨域问题，</p>
+</li>
+</ol>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/%E4%B8%9A%E5%8A%A1%E5%92%8C%E6%80%9D%E6%83%B3/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="float: left;">
+        ← 设计模式和原则
+    </a>
+    
+    
+    <a class="pull-right" href="/2-Vue/nextTick/">
+        nextTick →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

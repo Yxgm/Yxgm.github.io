@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>http区别和心跳检测 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-03-30T12:47:17.000Z" itemprop="datePublished">
+          2022-03-30
+      </time>
+    
+    
+    | 
+    <a href='/tags/网络/'>网络</a>,
+    
+    <a href='/tags/NetWork/'>NetWork</a>
+    
+    
+</span>
+                <h1>http区别和心跳检测</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="首先解释一下许久未明的概念"><a href="#首先解释一下许久未明的概念" class="headerlink" title="首先解释一下许久未明的概念"></a>首先解释一下许久未明的概念</h1><blockquote>
+<h3 id="HTTP-与-TCP-区别"><a href="#HTTP-与-TCP-区别" class="headerlink" title="HTTP 与 TCP 区别"></a>HTTP 与 TCP 区别</h3><p>TCP 协议对应于传输层，而 HTTP 协议对应于应用层，从本质上来说，二者没有可比性：</p>
+<ul>
+<li>HTTP 对应于应用层，TCP 协议对应于传输层</li>
+<li>HTTP 协议是在 TCP 协议之上建立的，HTTP 在发起请求时通过 TCP 协议建立起连接服务器的通道，请求结束后，立即断开 TCP 连接</li>
+<li>HTTP 是无状态的短连接，而 TCP 是有状态的长连接</li>
+<li>TCP是传输层协议，定义的是数据传输和连接方式的规范，HTTP是应用层协议，定义的是传输数据的内容的规范</li>
+</ul>
+<p>说明：从HTTP&#x2F;1.1起，默认都开启了Keep-Alive，此处说的是http的keep-alive，保持连接特性，简单地说，当一个网页打开完成后，客户端和服务器之间用于传输HTTP数据的TCP连接不会关闭，如果客户端再次访问这个服务器上的网页，会继续使用这一条已经建立的连接Keep-Alive不会永久保持连接，它有一个保持时间，可以在不同的服务器软件(如Apache)中设定这个时间。</p>
+</blockquote>
+<h3 id="一、tcp的keepalive-无连接符-，目的是为了确认该keepalive是健康且可通讯的"><a href="#一、tcp的keepalive-无连接符-，目的是为了确认该keepalive是健康且可通讯的" class="headerlink" title="一、tcp的keepalive(无连接符)，目的是为了确认该keepalive是健康且可通讯的"></a>一、tcp的keepalive(无连接符)，目的是为了确认该keepalive是健康且可通讯的</h3><p>​        侧重在保持客户端和服务端的连接，一方会不定期发送心跳包给另一方，默认开启。 1.如果主机可达，对方就会响应ACK应答，就认为是存活的。 2.如果可达，但应用程序退出，对方就发FIN应答，发送TCP撤消连接。 3.如果可达，但应用程序崩溃，对方就发RST消息。</p>
+<p>​        在客户端和服务端间的网络一切正常、且双方都没主动发起关闭连接的请求时，此TCP连接理论上可以永久保持。但是，网络情况是及其复杂的，<strong>在双方长时间未通讯时，如何得知对方还活着？如何得知这个TCP连接是健康且具有通讯能力的？</strong>，这就是tcp keepalive的解决办法。</p>
+<p>​        设想一下，如果tcp层没有keepalive的机制，一旦一方断开连接却没有发送FIN给另外一方的话，那么另外一方会一直以为这个连接还是存活的，几天，几月。那么这对服务器资源的影响是很大的。</p>
+<h3 id="二、http层的keep-alive"><a href="#二、http层的keep-alive" class="headerlink" title="二、http层的keep-alive"></a>二、http层的keep-alive</h3><p>​        若开启后，在一次http请求中，服务器进行响应后，不再直接断开TCP连接，而是将TCP连接维持一段时间。在这段时间内，如果同一客户端再次向服务端发起http请求，便可以复用此TCP连接，向服务端发起请求，并重置timeout时间计数器，在接下来一段时间内还可以继续复用。这样无疑省略了反复创建和销毁TCP连接的损耗。</p>
+<h3 id="三、缺点"><a href="#三、缺点" class="headerlink" title="三、缺点"></a>三、缺点</h3><p>​        启用HTTP keep-Alive的优缺点： 优点：keep-alive机制避免了频繁建立和销毁连接的开销。 同时，减少服务端TIME_WAIT状态的TCP连接的数量(因为由服务端进程主动关闭连接) 缺点：若keep-alive timeout设置的时间较长，长时间的TCP连接维持，会一定程度的浪费系统资源。总体而言，HTTP keep-Alive的机制还是利大于弊的，只要合理使用、配置合理的timeout参数。</p>
+<h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><p>回到文章开头提出的问题：<strong>HTTP和TCP的长连接有何区别？HTTP中的keep-alive和TCP中keepalive又有什么区别？</strong></p>
+<p>1、TCP连接往往就是我们广义理解上的长连接，因为它具备双端连续收发报文的能力；开启了keep-alive的HTTP连接，也是一种长连接，但是它由于协议本身的限制，服务端无法主动发起应用报文。</p>
+<p>2、TCP中的keepalive是用来保鲜、保活的；HTTP中的keep-alive机制主要为了让支撑它的TCP连接活的的更久，所以通常又叫做：HTTP persistent connection（持久连接） 和 HTTP connection reuse（连接重用）。</p>
+<p><span style="color:red">3、TCP的keepalive用来检测，心跳检测，为了提高可靠性，HTTP的keep-alive是生效开关的，一个是用来复用 TCP 连接，是为了提高性能的。</span></p>
+<h1 id="HTTP区别"><a href="#HTTP区别" class="headerlink" title="HTTP区别"></a>HTTP区别</h1><h3 id="一、HTTP版本差异"><a href="#一、HTTP版本差异" class="headerlink" title="一、HTTP版本差异"></a>一、HTTP版本差异</h3><ol>
+<li><p>HTTP1.0  无状态、短连接</p>
+</li>
+<li><p>HTTP1.1  持久连接&#x2F;请求管道化&#x2F;增加缓存处理（新的字段如cache-control）&#x2F;增加Host字段&#x2F;支持断点传输等（把文件分成几部分</p>
+<p> 对于http1.x，采用的是半双工即Half duplex Communication，是指在通信过程的任意时刻，信息既可由A传到B，又能由B传A，但只能有一个方向上的传输存在。采用半双工方式时，通信系统每一端的发送器和接收器，通过收&#x2F;发开关转接到通信线上，进行方向的切换，因此，会产生时间延迟 </p>
+</li>
+<li><p>HTTP2.0  二进制分帧实现多路复用&#x2F;头部压缩&#x2F;服务器推送。</p>
+<p> 全双工通信，具体表现为：浏览器针对同一个域名的资源，只建立一个tcp连接通道，所有的针对这个域名的请求全部在这个通道中完成，并且引入了流的机制，这条通道可以同时处理多个request，这不同于http1.1的pepeline，http2的多路复用，对于request的响应并不会因为上一个request的响应未完成而阻塞</p>
+</li>
+</ol>
+<h4 id="HTTP1-0和HTTP1-1之间的区别"><a href="#HTTP1-0和HTTP1-1之间的区别" class="headerlink" title="HTTP1.0和HTTP1.1之间的区别"></a>HTTP1.0和HTTP1.1之间的区别</h4><ol>
+<li><p>缓存处理</p>
+<p>在HTTP1.0中主要是用header里面的If-Modified-Since，Expires作为缓存判断的标准，而HTTP1.1则引入了更多的缓存控制策略，例如Etag,If-Unmodified-Since,If-Match,If-None-Match等更多可供选择的缓存头来控制缓存策略。</p>
+</li>
+<li><p>带宽优化及网络连接的使用</p>
+</li>
+</ol>
+<p>​    在HTTP1.0中，存在一些浪费带宽的现象，例如客户端只是需要某个对象的某一部分，而服务器却将整个对象传送过来了，并且不支持断点续传功能。HTTP1.1则在请求头引入了range头域，它允许只请求资源的某个部分，即返回码是206（Partial Content），这样就方便了开发者自由的选择以便于充分利用带宽和连接</p>
+<ol start="3">
+<li>错误通知的管理</li>
+</ol>
+<p>​    在HTTP1.1中新增了24个错误状态响应码，如409（Conflit）表示请求的资源和资源的当前状态发生冲突，410(Gone)表示服务器上的某个资源被永久的删除。</p>
+<ol start="4">
+<li>Host头处理</li>
+</ol>
+<p>​    在HTTP1.0中认为每台服务器都绑定一个唯一的IP地址，因此请求消息中的URL并没有传递主机名Hostname,但是随着虚拟主机的发展，在一台物理服务器上可以存在多个虚拟主机，并且共享一个IP地址，HTTP1.1的请求消息和响应消息都应支持Host头域，且请求消息中如果没有Host头域会报告一个错误400 Bad Request。</p>
+<ol start="5">
+<li>长连接</li>
+</ol>
+<p>​    HTTP1.1支持长连接和请求的流水线处理，在一个TCP连接上可以传送多个HTTP请求和响应，减少了建立和关闭连接的消耗和延迟，在HTTP1.1中默认开启Connection: keep-alive，一定程度上弥补了HTTP1.0每次请求都要创建连接的缺点。</p>
+<h4 id="HTTP2-0和HTTP1-1之间的区别"><a href="#HTTP2-0和HTTP1-1之间的区别" class="headerlink" title="HTTP2.0和HTTP1.1之间的区别"></a>HTTP2.0和HTTP1.1之间的区别</h4><ol>
+<li>新的二进制格式</li>
+</ol>
+<blockquote>
+<p>HTTP1.1的解析是基于文本的，基于文本协议的格式解析存在天然缺陷，二进制则不同，只有0和1的组合，基于这种考虑HTTP2.0的协议解析采用二进制格式，实现方便且健壮。</p>
+</blockquote>
+<ol>
+<li>多路复用</li>
+</ol>
+<blockquote>
+<p>关于这部分的介绍请看HTTP2.0新特性关于多路复用的介绍。</p>
+</blockquote>
+<ol>
+<li>首部压缩</li>
+</ol>
+<blockquote>
+<p>关于这部分的介绍请看HTTP2.0新特性关于首部压缩的介绍。</p>
+</blockquote>
+<ol>
+<li>服务器推送</li>
+</ol>
+<blockquote>
+<p>关于这部分的介绍请看HTTP2.0新特性关于服务器推送的介绍。</p>
+</blockquote>
+<h4 id="HTTP-1-0-x2F-1-1-x2F-2-0在并发请求上主要区别是什么"><a href="#HTTP-1-0-x2F-1-1-x2F-2-0在并发请求上主要区别是什么" class="headerlink" title="HTTP 1.0&#x2F;1.1&#x2F;2.0在并发请求上主要区别是什么?"></a>HTTP 1.0&#x2F;1.1&#x2F;2.0在并发请求上主要区别是什么?</h4><ol>
+<li><p>HTTP&#x2F;1.0<br> 每次TCP连接只能发送一个请求，当服务器响应后就会关闭这次连接，下一个请求需要再次建立TCP连接.</p>
+</li>
+<li><p>HTTP&#x2F;1.1</p>
+<ol>
+<li>默认采用持续连接(TCP连接默认不关闭，可以被多个请求复用，不用声明Connection: keep-alive)</li>
+<li>如果想不建立长链接修改字段 Connection : close</li>
+<li>增加了管道机制，在同一个TCP连接里，允许多个请求同时发送，增加了并发性，进一步改善了HTTP协议的效率，<br>   但是同一个TCP连接里，所有的数据通信是按次序进行的。回应慢，会有许多请求排队，造成”队头堵塞”。</li>
+<li>HTTP&#x2F;1.1 中的一个消息是由 Start Line + header + body 组成的，而 HTTP&#x2F;2 中一个消息是由 HEADER frame + 若干个 DATA frame 组成的。</li>
+</ol>
+<p>   <strong>翻译：必须要顺序处理，服务器的响应并不能并发。一问一答形式</strong>
+   </p>
+</li>
+<li><p>HTTP&#x2F;2.0</p>
+<ol>
+<li>双工模式，即不仅客户端能够同时发送多个请求，服务端也能同时处理多个请求，解决了队头堵塞的问题，所有的HTTP2.0通信都在一个TCP连接上完成，这个连接可以承载任意数量的双向数据流</li>
+<li>基于二进制分帧实现多路复用，同一个连接并发处理多个请求，而且并发请求的数量比HTTP1.1大了好几个数量级。增加服务器推送的功能，不经请求服务端主动向客户端发送数据。没有次序概念。</li>
+<li><span style="color:red">HTTP&#x2F;2 所有性能增强的核心在于新的二进制分帧层，它定义了如何封装 HTTP 消息并在客户端与服务器之间传输。这里所谓的“层”，指的是位于套接字接口与应用可见的高级 HTTP API 之间一个经过优化的新编码机制：HTTP 的语义（包括各种动词、方法、标头）都不受影响，不同的是传输期间对它们的编码方式变了。 HTTP&#x2F;1.x 协议以换行符作为纯文本的分隔符，而 HTTP&#x2F;2 将所有传输的信息分割为更小的消息和帧，并采用二进制格式对它们编码。</span></li>
+<li>这样一来，客户端和服务器为了相互理解，都必须使用新的二进制编码机制：HTTP&#x2F;1.x 客户端无法理解只支持 HTTP&#x2F;2 的服务器，反之亦然。不过不要紧，现有的应用不必担心这些变化，因为客户端和服务器会替我们完成必要的分帧工作。</li>
+</ol>
+</li>
+</ol>
+<h3 id="二、http2的一些概念解释："><a href="#二、http2的一些概念解释：" class="headerlink" title="二、http2的一些概念解释："></a>二、http2的一些概念解释：</h3><h5 id="二进制分帧实现多路复用："><a href="#二进制分帧实现多路复用：" class="headerlink" title="二进制分帧实现多路复用："></a>二进制分帧实现多路复用：</h5><ol>
+<li><p><span style="color:red">如何分辨帧：每个请求是一个数据流，数据流以消息的方式发送，而消息又分为多个帧，帧头部记录着stream id用来标识所属的数据流，不同属的帧可以在连接中随机混杂在一起。接收方根据每个帧头部的<strong>流标识符（stream id）</strong>重新组装。</span></p>
+</li>
+<li><p>如何分辨头部：由一帧的帧头中的帧类型（1个字节），来分辨该帧的payload是http头还是http的数据</p>
+</li>
+<li><p>多路复用（连接共享）可能会导致关键请求被阻塞：HTTP2.0里每个数据流都可以设置优先级和依赖，优先级高的数据流会被服务器优先处理和返回给客户端，数据流还可以依赖其他的子数据流。</p>
+</li>
+</ol>
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ba1f2a26cf7e4bc19e5a873335a9f4c3~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp?" alt="image.png" style="zoom:50%;margin:0 auto"/>
+
+<blockquote>
+<p>HTTP2的二进制帧主要包括头部帧和数据帧，其中头部帧包括3个字节的帧长度，1字节的帧类型和1字节的标志位以及31bit的流标识符，接下来将详细介绍每一部分的作用。</p>
+</blockquote>
+<ul>
+<li><p>帧长度：表示的是数据帧的长度。</p>
+</li>
+<li><p>帧类型：表示这个帧是数据帧还是控制帧。</p>
+<ul>
+<li>有很多帧类型：headers frame此帧专门用来传递 <strong>HTTP header(相当于 HTTP&#x2F;1.1 中的 start line + header)</strong> </li>
+<li>data frame 承载 HTTP 请求或响应有效载荷</li>
+<li>….详细请鉴：<a target="_blank" rel="noopener" href="https://halfrost.com/http2-http-frames-definitions/">https://halfrost.com/http2-http-frames-definitions/</a></li>
+</ul>
+</li>
+<li><p>标志位：用于携带简单的控制信息，例如通过标志位来表示流的优先级。</p>
+</li>
+<li><p>流标识符：用来表示这个帧属于哪个流的，接收方可以根据这个信息从乱序的帧里面找到相同流id的帧，从而有序的组装信息。</p>
+</li>
+<li><p>数据帧：存放的时经过HPACK算法压缩后的HTTP头部或数据体。</p>
+</li>
+</ul>
+<h5 id="头部压缩"><a href="#头部压缩" class="headerlink" title="头部压缩"></a>头部压缩</h5><p>在HTTP1.0&#x2F;1.1中，头部元数据都是以纯文本的形式发送的，通常会给每个请求增加500~800字节的负荷。</p>
+<p>HTTP2.0使用encoder来减少需要传输的header大小，通讯双方各自cache一份header fields表，既避免了重复header的传输，又减小了需要传输的大小。高效的压缩算法可以很大的压缩header，减少发送包的数量从而降低延迟。</p>
+<p>原理：</p>
+<p>HTTP2使用HPACK算法压缩请求和响应标头的元数据，这种格式支持通过静态霍夫曼编码对传输的头部字段进行编码，从而减小了传输的大小，同时这种压缩算法要求客户端和服务器同时维护和更新一个首部表，这个首部表能够跟踪和存储之前发送过的键值对，对于相同的数据不再通过每次请求和响应进行发送，假如第一个请求发送了所有的头部字段，第二个请求则只需发送有差异的字段，这样可以减少冗余的数据，降低开销。HPACK主要包含两个压缩模块，索引表和静态霍夫曼编码，其中索引表又包含静态表和动态表。静态表包含61个预定义Header的Key value，传输的时候使用对应的索引Index替换。动态表是一个先进先出的队列，初始的时候是空的，解压header的时候按需添加，每次添加的时候放在队首，移除的时候从队尾开始，动态表的大小不是无限制的。</p>
+<h5 id="服务器推送：-lt-x3D-x3D-超a"><a href="#服务器推送：-lt-x3D-x3D-超a" class="headerlink" title="服务器推送：&lt;&#x3D;&#x3D;超a"></a><a target="_blank" rel="noopener" href="https://www.infoq.cn/article/qydn85t4g4dl4vbae3n2">服务器推送：</a>&lt;&#x3D;&#x3D;超a</h5><p>服务器除了对最初请求的响应外，服务器还可以额外的向客户端推送资源，而无需客户端明确的请求，这不同于socket。</p>
+<ol>
+<li>标识依赖资源</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.w3.org/TR/preload/">W3C候选推荐标准</a>建议了依赖资源的两种做法：文件内&lt; link&gt;标签和 HTTP 头部携带, 表示该资源后续会被使用, 可以预请求, 关键字 preload 修饰这个资源,</p>
+<h5 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h5><blockquote>
+<p>在HTTP2协议中，我们可以在同一个TCP连接中，建立多个数据流，这些数据流之间也是存在相互竞争的，因此也需要对流中的帧进行流量控制，但是只有流量帧受流量控制，而其他类型的帧不受流量控制，HTTP2通过使用WINDOW_UPDATE帧来提供流量控制。</p>
+</blockquote>
+<blockquote>
+<p>HTTP2协议中的流量控制有以下几个特征：</p>
+</blockquote>
+<ul>
+<li>流量控制基于HTTP连接的每一跳进行的，而非端到端的控制。（这里的每一跳指的是HTTP连接中间可能的代理服务器）</li>
+<li>接收方公布自己打算在每个流以及整个连接上分别接收多少字节，这是一个以信用为基础的方案。</li>
+<li>流量控制是有方向的，由接收者全面控制，接收方可以为每个流和整个连接设置任意的窗口大小，发送方必须尊重接收方设置的流量控制限制。</li>
+<li>无论是新流还是整个连接，流量控制窗口的初始值是65535字节。</li>
+<li>HTTP2只定义了WINDOW_UPDATE帧的格式和语义，并没有对通信双方如何实现进行约束。</li>
+</ul>
+<h3 id="三、-HTTP1-1长连接和HTTP2-0多路复用的区别"><a href="#三、-HTTP1-1长连接和HTTP2-0多路复用的区别" class="headerlink" title="三、 HTTP1.1长连接和HTTP2.0多路复用的区别?"></a>三、 HTTP1.1长连接和HTTP2.0多路复用的区别?</h3><p>HTTP&#x2F;1.1：同一时间一个TCP连接只能处理一个请求, 采用一问一答的形式, 上一个请求响应后才能处理下一个请求. 由于浏览器最大TCP连接数的限制, 所以有了最大并发请求数的限制. </p>
+<p>问：听说谷歌浏览器支持6个同域名请求的并发？ 因为谷歌浏览器最大支持6个tcp链接</p>
+<p>HTTP&#x2F;2.0：同域名下所有通信都在单个连接上完成，消除了因多个 TCP 连接而带来的延时和内存消耗。单个连接上可以并行交错的请求和响应，之间互不干扰</p>
+<h3 id="四、-为什么HTTP1-1不能实现多路复用"><a href="#四、-为什么HTTP1-1不能实现多路复用" class="headerlink" title="四、 为什么HTTP1.1不能实现多路复用?"></a>四、 为什么HTTP1.1不能实现多路复用?</h3><p>HTTP2是基于二进制“帧”的协议，HTTP1.1是基于“文本分割”解析的协议。</p>
+<p>HTTP1.1的报文结构中, 服务器需要不断的读入字节，直到遇到换行符, 或者说一个空白行. 处理顺序是串行的, 一个请求和一个响应需要通过一问一答的形式才能对应起来.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">GET</span> / <span class="variable constant_">HTTP</span>/<span class="number">1.1</span></span><br><span class="line"><span class="title class_">Accept</span>:text/html,application/xhtml+xml,application/xml;q=<span class="number">0.9</span>,image/webp,image/apng,*<span class="comment">/*;q=0.8</span></span><br><span class="line"><span class="comment">Accept-Encoding:gzip, deflate, br</span></span><br><span class="line"><span class="comment">Accept-Language:zh-CN,zh;q=0.9,en;q=0.8</span></span><br><span class="line"><span class="comment">Cache-Control:max-age=0</span></span><br><span class="line"><span class="comment">Connection:keep-alive</span></span><br><span class="line"><span class="comment">Host:www.imooc.com</span></span><br><span class="line"><span class="comment">Referer:https://www.baidu.com/</span></span><br></pre></td></tr></table></figure>
+
+<p>​    HTTP2.0中，有两个非常重要的概念，分别是帧（frame）和流（stream）。帧代表着最小的数据单位，每个帧会标识出该帧属于哪个流，流也就是多个帧组成的数据流。<br>​    多路复用，就是在一个 TCP 连接中可以存在多条流。换句话说，也就是可以发送多个请求，对端可以通过帧中的标识知道属于哪个请求。通过这个技术，可以避免 HTTP 旧版本中的队头阻塞问题，极大的提高传输性能。</p>
+<h3 id="五、HTTP2有什么缺点？"><a href="#五、HTTP2有什么缺点？" class="headerlink" title="五、HTTP2有什么缺点？"></a>五、HTTP2有什么缺点？</h3><ol>
+<li>TCP以及TCP+TLS建立连接的延时，HTTP2使用TCP协议来传输，而如果使用HTTPS还需要使用TLS协议进行安全传输，而使用TLS也需要一个握手的过程，这也会带来一些延时。</li>
+<li>TCP的队头阻塞并没有彻底解决，在HTTP2中，多个请求是在一个TCP管道中的，当HTTP2出现丢包的时候，整个TCP都要开始等待重传，此时会阻塞该TCP连接中的所有请求。此时可能还不如HTTP1.1中的多个TCP连接效率高。队头阻塞分为TCP队头阻塞和HTTP队头阻塞，HTTP2解决的是HTTP队头阻塞，但是TCP的队头阻塞并未解决。因为HTTP是应用层协议，TCP是传输层协议。</li>
+<li>多路复用导致服务器压力上升，多路复用由于没有限制同时请求数量，有可能出现短时间内请求数爆发的情况，会导致服务器压力上升。</li>
+<li>多路复用容易超时，大批量的请求同时发送，但是网络的带宽和服务器的资源是有限的，此时可能会出现请求超时的情况。</li>
+</ol>
+<h4 id="HTTP2-0多路复用在什么情况下效率不如1-1？"><a href="#HTTP2-0多路复用在什么情况下效率不如1-1？" class="headerlink" title="HTTP2.0多路复用在什么情况下效率不如1.1？"></a>HTTP2.0多路复用在什么情况下效率不如1.1？</h4><blockquote>
+<p>HTTP2.0在丢包的时候效率可能不如1.1，因为在出现丢包的情况下，整个TCP都要开始等待重传，也就导致后面的所有数据都被阻塞了，但是对于HTTP1.1来说，可以开启多个TCP连接，出现这种情况只会影响到其中一个连接，剩余的TCP连接还可以正常传输数据。</p>
+</blockquote>
+<h4 id="二进制分帧的根本目的是什么，只是为了读取速度快吗？"><a href="#二进制分帧的根本目的是什么，只是为了读取速度快吗？" class="headerlink" title="二进制分帧的根本目的是什么，只是为了读取速度快吗？"></a>二进制分帧的根本目的是什么，只是为了读取速度快吗？</h4><blockquote>
+<p>二进制分帧的根本目的是为了更有效的利用底层TCP协议，同时也是HTTP2协议中的其他功能和性能优化的基础。</p>
+</blockquote>
+<h4 id="HTTP2中的长连接相比于http1中手动指定keep-alive的优势、原理"><a href="#HTTP2中的长连接相比于http1中手动指定keep-alive的优势、原理" class="headerlink" title="HTTP2中的长连接相比于http1中手动指定keep-alive的优势、原理"></a>HTTP2中的长连接相比于http1中手动指定keep-alive的优势、原理</h4><ol>
+<li>HTTP1.X中的keep-alive必须按照请求发送的顺序返回响应，但是HTTP2多路复用可以不按顺序进行响应。</li>
+<li>HTTP1.X中的keep-alive单个TCP连接在同一时刻只能处理一个请求，HTTP2单个TCP在同一时刻可以发送多个请求和响应</li>
+</ol>
+<h3 id="六、HTTP3-0"><a href="#六、HTTP3-0" class="headerlink" title="六、HTTP3.0"></a>六、HTTP3.0</h3><h4 id="为什么要有HTTP3-0？"><a href="#为什么要有HTTP3-0？" class="headerlink" title="为什么要有HTTP3.0？"></a>为什么要有HTTP3.0？</h4><blockquote>
+<p>之所以要有HTTP3主要原因还在于上文提到的HTTP2存在的问题，这些问题的根源是底层支撑的TCP协议造成的。Google意识到这些问题之后，于是就提出了基于UDP协议的QUIC协议，让HTTP跑在QUIC上，而不是TCP上，这就是HTTP3，HTTP3解决了HTTP2存在的队头阻塞问题。</p>
+</blockquote>
+<h4 id="HTTP3为什么选择UDP？"><a href="#HTTP3为什么选择UDP？" class="headerlink" title="HTTP3为什么选择UDP？"></a>HTTP3为什么选择UDP？</h4><blockquote>
+<p>HTTP3选择UDP主要有以下一些原因：</p>
+</blockquote>
+<ul>
+<li>基于TCP开发的设备和协议非常多，兼容起来困难。</li>
+<li>TCP协议栈是Linux内部的重要部分，修改和升级成本很大。</li>
+<li>UDP本身是无连接的、没有建链和拆链成本。</li>
+<li>UDP的数据包无队头阻塞问题。</li>
+<li>UDP改造成本小。</li>
+</ul>
+<h4 id="HTTP3新特性"><a href="#HTTP3新特性" class="headerlink" title="HTTP3新特性"></a>HTTP3新特性</h4><ol>
+<li>多路复用，解决了TCP队头阻塞问题。</li>
+</ol>
+<blockquote>
+<p>HTTP2.0协议的多路复用机制解决了HTTP层的队头阻塞问题，但是在TCP层仍然存在队头阻塞问题，如果基于TCP协议，会出现某个数据包丢失导致整个连接数据被阻塞。QUIC协议是基于UDP协议实现的，在一条链上可以有多个流，流与流之间是互不影响的，一个流的包发生丢包只需这个流的包进行重传，其他流的包不受影响，这样就解决了TCP存在的队头阻塞问题，同时QUIC协议在移动端的表现也比TCP好，因为TCP是基于IP和端口号去识别连接的，这种变化在多变的移动端网络环境下是很脆弱的，QUIC通过Id的方式去识别连接，不管网络环境如何变化，只要ID不变，就能迅速连上。</p>
+</blockquote>
+<ol>
+<li>0RTT建链</li>
+</ol>
+<blockquote>
+<p>RTT指的是数据包在网络中一来一回的时间消耗。RTT包括三部分：往返传播时延、网络设备内排队时延、应用程序数据处理时延。</p>
+</blockquote>
+<blockquote>
+<p>一般来说HTTPS协议建立完整的链接需要TCP握手和TLS我受不，总计至少需要2-3个RTT，普通的HTTP协议也需要至少一个RTT才可以完成握手，然而QUIC协议可以实现在第一个包就包含有效的应用数据，从而实现0RTT，但是这是有前提条件的，对于第一次交互的客户端和服务端0RTT也是做不到的，因为双方需要进行1RTT的密钥交换，首次连接客户端对密钥信息进行了缓存，在缓存有效时间内，再次连接可以跳过这个1RTT，实现0RTT的数据交互。</p>
+</blockquote>
+<ol>
+<li>前向纠错机制</li>
+</ol>
+<blockquote>
+<p>QUIC协议的的每个数据包除了它本身的内容之外，还包括了部分其他数据包的数据，因此少量的丢包可以通过其他包的冗余数据直接组装而无需重传，向前纠错牺牲了每个数据包可以发送数据的上限，但是减少了因为丢包导致的数据重传，因为数据重传将会消耗更多的时间，假如要发送三个包，协议会计算出这三个包的异或值并单独发出一个校验包，也就是总共发出了四个包，当非校验包丢失的时候，可以通过另外三个包计算出丢失的数据包的内容，当然这种技术只能使用在丢失一个包的情况，如果出现丢失多个包的情况，就只能使用重传机制了。</p>
+</blockquote>
+<ol>
+<li>连接迁移</li>
+</ol>
+<blockquote>
+<p>网络切换几乎无时无刻都在发生。TCP协议使用五元组来表示一条唯一的连接，当我们从4G环境切换到WiFi环境的时候，手机的IP地址会发生变化，此时就必须创建新的TCP连接才能继续传输数据。QUIC协议摒弃了五元组的概念，使用64位随机数作为连接的ID，并使用该ID表示连接，基于QUIC协议，在切换流量和WiFi的时候，不会出现重连的情况，提高了效率。</p>
+</blockquote>
+<ol>
+<li>加密认证的报文</li>
+</ol>
+<blockquote>
+<p>TCP协议头部没有经过任何加密和认证，所以在传输过程中很容易被中间网络设备篡改，注入和窃听，但是QUIC除了个别报文外，所有报文头部都是经过加密认证的。</p>
+</blockquote>
+<ol>
+<li>实现了类似TCP的流量控制，传输可靠性的功能。</li>
+</ol>
+<blockquote>
+<p>虽然UDP不提供可靠性的传输，但QUIC在UDP的基础上增加了一层来保证数据可靠性的可靠性传输，它提供了数据包重传，拥塞控制以及其他一些TCP中存在的</p>
+</blockquote>
+<h4 id="tcp"><a href="#tcp" class="headerlink" title="tcp"></a>tcp</h4><ol>
+<li><strong>不支持流级复用</strong>，TCP会将所有对象序列化在同一个流中，因此，它不知道TCP段的对象级分区，无法在同一个流中复用数据包</li>
+<li><strong>会产生冗余通信</strong>，tco三次连接握手会有冗余的消息交换序列</li>
+<li><strong>可能会间歇性地挂起数据传输</strong>，tcp中有个因为序列顺序处理丢失的问题的缺陷称为行头阻塞</li>
+</ol>
+<h4 id="QUIC"><a href="#QUIC" class="headerlink" title="QUIC"></a>QUIC</h4><ol>
+<li>同样拥有<strong>头部压缩</strong>，并优化了对乱序发送的支持，也优化了压缩率</li>
+<li>放弃tcp，通过<strong>udp</strong>建立，提高了连接建立的速度，降低了延迟</li>
+<li>tcp本身是无法解决<strong>队头拥塞</strong>，quic则<strong>解决</strong>了这个问题</li>
+<li>Connection ID使得http3支持<strong>连接迁移</strong>以及NAT的重绑定</li>
+</ol>
+<p>最全的http：<a target="_blank" rel="noopener" href="https://juejin.cn/post/7024304793426329614">https://juejin.cn/post/7024304793426329614</a></p>
+<p>解释http2 ：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903734670000142">https://juejin.cn/post/6844903734670000142</a></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/3-NetWork/%E5%87%A0%E7%A7%8D%E8%AF%B7%E6%B1%82%E5%AF%B9%E8%B1%A1/" style="float: left;">
+        ← 几种请求对象，asynchronous JavaScript and xml
+    </a>
+    
+    
+    <a class="pull-right" href="/%E4%B8%9A%E5%8A%A1%E5%92%8C%E6%80%9D%E6%83%B3/%E7%99%BB%E9%99%86%E5%AE%89%E5%85%A8%E5%92%8C%E4%BF%9D%E6%8C%81%E7%99%BB%E9%99%86%E6%80%81/">
+        登录安全和保持登录态 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

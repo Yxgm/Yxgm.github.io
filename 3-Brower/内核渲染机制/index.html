@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>内核渲染机制 | 一宿更名_BLOG</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="一宿更名_BLOG">
+    <meta name="author" content="盛祥玉">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="一宿更名_BLOG" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/1-Css/" class="animsition-link">1-Css<small>(11)</small></a></li>
+				    
+				    <li><a href="/categories/1-JavaScript/" class="animsition-link">1-JavaScript<small>(14)</small></a></li>
+				    
+				    <li><a href="/categories/1-TypeScript/" class="animsition-link">1-TypeScript<small>(3)</small></a></li>
+				    
+				    <li><a href="/categories/2-React/" class="animsition-link">2-React<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/2-React-Hooks/" class="animsition-link">2-React_Hooks<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/2-Redux和Router/" class="animsition-link">2-Redux和Router<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/2-Vue/" class="animsition-link">2-Vue<small>(12)</small></a></li>
+				    
+				    <li><a href="/categories/3-Brower/" class="animsition-link">3-Brower<small>(30)</small></a></li>
+				    
+				    <li><a href="/categories/4-Node/" class="animsition-link">4-Node<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/4-Promise/" class="animsition-link">4-Promise<small>(7)</small></a></li>
+				    
+				    <li><a href="/categories/4-Webpack/" class="animsition-link">4-Webpack<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/业务和思想/" class="animsition-link">业务和思想<small>(15)</small></a></li>
+				    
+				    <li><a href="/categories/前端大项/" class="animsition-link">前端大项<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/基础补充/" class="animsition-link">基础补充<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/框架差异/" class="animsition-link">框架差异<small>(8)</small></a></li>
+				    
+				    <li><a href="/categories/算法相关/" class="animsition-link">算法相关<small>(10)</small></a></li>
+				    
+				    <li><a href="/categories/超脱领悟/" class="animsition-link">超脱领悟<small>(9)</small></a></li>
+				    
+				    <li><a href="/categories/面试复盘/" class="animsition-link">面试复盘<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">一宿更名_BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-07-13T03:31:33.538Z" itemprop="datePublished">
+          2022-07-13
+      </time>
+    
+    
+    | 
+    <a href='/tags/浏览器/'>浏览器</a>,
+    
+    <a href='/tags/渲染机制/'>渲染机制</a>
+    
+    
+</span>
+                <h1>内核渲染机制</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="渲染流程"><a href="#渲染流程" class="headerlink" title="渲染流程"></a>渲染流程</h2><p>接收到Browser进程的任务，并且拿到下载的资源</p>
+<h4 id="1-构建dom树"><a href="#1-构建dom树" class="headerlink" title="1. 构建dom树"></a>1. 构建dom树</h4><blockquote>
+<p>将HTML转化为浏览器可以理解的结构dom树，也可称为layout树</p>
+<p>（1）HTML词法、语法的解析、<br>词法分析：把字符流初步解析成我们可理解的”词”，学名叫token。<br>语法分析：把开始结束标签配对、属性赋值好、父子关系连接好、构成dom树。<br>（2）请求js，css</p>
+</blockquote>
+<p>需要注意的一点：dom树和渲染树，dom树和cssom树并行构建渲染树（render tree），对于dom树和渲染树的区别：dom树和html标签一一对应，包括head和隐藏元素，渲染树不包括head和隐藏标签，大段文本的都一行都是独立节点，每一个节点都有对应的css属性。</p>
+<h4 id="2-样式计算（注意是计算）"><a href="#2-样式计算（注意是计算）" class="headerlink" title="2. 样式计算（注意是计算）"></a>2. 样式计算（注意是计算）</h4><blockquote>
+<ol>
+<li>将css转化为浏览器可以理解的结构-styleSheets </li>
+<li>转化样式表中的属性值，标准化</li>
+<li>计算具体样式（继承，样式层叠等等）</li>
+<li>遍历 layout 树为每一个节点标注其样式信息，然后将带有样式信息的 layout 树传递到下一阶段</li>
+</ol>
+</blockquote>
+<h4 id="3-布局阶段（layout）"><a href="#3-布局阶段（layout）" class="headerlink" title="3. 布局阶段（layout）"></a>3. 布局阶段（layout）</h4><blockquote>
+<p>我们将再次遍历 layout 树，为节点标注其尺寸、位置信息，至此我们已两次对 layout 树进行标注，然后将它传递给合成阶段</p>
+</blockquote>
+<h4 id="4-分层（composition-setup）"><a href="#4-分层（composition-setup）" class="headerlink" title="4. 分层（composition setup）"></a>4. 分层（composition setup）</h4><p>在合成设置阶段我们会确定需要绘制多少个合成层（<code>compositing layers</code>），以及它们的尺寸、位置、层叠顺序等，最终目的是为了标记layer，收集layer，之后通过这写layer再做渲染绘制。</p>
+<blockquote>
+<p> （1）图层树（LayerTree） 页面中有复杂效果，如 3D 变换、页面滚动，或者使用 z-indexing 做 z 轴排序等，渲染引擎还需要为特定的节点生成专用的图层，并生成一棵对应的图层树。 </p>
+<p> （2）图层树和布局树的关系 布局树的每一个节点自己没有单独的图层，就属于父节点的图层，反正所有的节点都会直接或者间接地从属于一个层， </p>
+<p> （3）哪些节点会创建新的图层，浏览器会单独让gpu渲染，提高性能</p>
+<ol>
+<li>拥有 层叠上下文属性 的元素会被提升为单独的一层。 比如：明确定位属性position：fixed、定义透明属性opacity、使用 CSS 滤镜filter的元素</li>
+<li>需要剪裁（clip） 的地方也会被创建为图层。 比如div内容的文字超出div范围，会被裁剪，渲染引擎单独为文字部分单独创建一个层； 如果出现滚动条，滚动条也会被提升为单独的层；</li>
+<li><strong>对于z-index，需要配合设置定位属性(或者一些 CSS3 属性)，才能够生效。</strong></li>
+</ol>
+</blockquote>
+<p>渲染图层和合成图层，拥有层叠上下文的属性会生成一个新的层叠上下文对象（一个渲染图层），渲染图层是一个二维的概念，无论如何重叠都是归依于根的层叠上下文，而合成图层完全脱离根层叠上下文，开辟了新的位图。</p>
+<p>对于浏览器的分层机制，是关于合成图层和渲染图层的知识点，请移步本层文件夹的 第一个markdown</p>
+<h4 id="5-图层绘制（print）"><a href="#5-图层绘制（print）" class="headerlink" title="5. 图层绘制（print）"></a>5. 图层绘制（print）</h4><p>绘制阶段会获取 layout 树的标注以及在合成设置阶段所记录信息，然后创建一个由原始绘图命令组成的“显示列表”，它会指示合成器如何进行像素绘制。 图层的绘制会拆分很多的小的绘制指令，然后再把这些指令按照顺序组成一个待绘制的列表</p>
+<ul>
+<li><strong>当图层越多时，合成图层所花的时间越多，重绘时绘制的区域越小，更新越快。</strong></li>
+<li><strong>当图层越少时，合成图层所花的时间越少，重绘时绘制的区域越大，更新越慢。</strong></li>
+</ul>
+<h4 id="6-合成显示"><a href="#6-合成显示" class="headerlink" title="6. 合成显示"></a>6. 合成显示</h4><h6 id="1-合成线程进行分块"><a href="#1-合成线程进行分块" class="headerlink" title="1. 合成线程进行分块"></a>1. 合成线程进行分块</h6><blockquote>
+<p>主线程会把绘制列表提交（commit）给合成线程，进行真正的绘制</p>
+<p>合成线程会把图层划分为图块（tile），图块的大小通常是 256x256 或者 512x512</p>
+</blockquote>
+<h6 id="2-栅格化"><a href="#2-栅格化" class="headerlink" title="2. 栅格化"></a>2. 栅格化</h6><blockquote>
+<ol>
+<li>栅格化，是指将图块转化为位图，图块是栅格化执行的最小单位。渲染进程维护了一个栅格化的线程池，所有的图块栅格化都是在线程池内执行的</li>
+<li>按照视口附近的图快来优先生成位图</li>
+<li>栅格化过程都会使用GPU来加速生成，使用GPU生层位图的过程叫做 <strong>快速栅格化</strong>，或者GPU栅格化，生成的位图被保存在GPU内存中，这是跨进程操作，渲染进程中的栅格化线程到GPU进程的GPU线程</li>
+</ol>
+</blockquote>
+<img src="https://bucket922.oss-cn-beijing.aliyuncs.com/blog-img/renderer.jpg" width="500" style="margin:0 auto">
+
+<h6 id="3-合成和显示"><a href="#3-合成和显示" class="headerlink" title="3. 合成和显示"></a>3. 合成和显示</h6><blockquote>
+<ol>
+<li>一旦所有图块都被光栅化，合成线程就会生成一个绘制图块的命令——“DrawQuad”，然后将该命令提交给浏览器进程。 </li>
+<li>浏览器进程里面有一个叫 viz 的组件，用来接收合成线程发过来的 DrawQuad 命令，然后根据 DrawQuad 命令，将其页面内容绘制到内存中，最后再将内存显示在屏幕上。</li>
+<li>之前说到的图块存于GPU内存中，GPU将图块draw到屏幕上</li>
+</ol>
+</blockquote>
+<img src="https://bucket922.oss-cn-beijing.aliyuncs.com/blog-img/2.png" width="600" style="margin:0 auto">
+
+<h2 id="总结渲染过程"><a href="#总结渲染过程" class="headerlink" title="总结渲染过程"></a>总结渲染过程</h2><p>1.转化DOM树（dom） 2. 样式表计算（style） 3. 创建布局树，进行布局定位（layout）4. 分图层（layer）5. 图层绘制（paint） 6. 合成显示（分图块（titles）、栅格化（raster）、GPU提交帧（draw quad）、显示（display））</p>
+<p>在css属性改变的时候，重渲染分别为“重排”，“重绘”，“直接合成”三种情况，分别从“布局定位”、“合成显示”、“直接合成”开始，在走一遍上面的流程。</p>
+<ol>
+<li>重排：修改几何属性，影响layout后面全部</li>
+<li>重绘：修改一些不影响的布局属性，比如颜色，影响paint后面所有</li>
+<li>直接合成：合成层的transkform，opacity修改，只需要将多个图层再次合并，而生成位图，最终展示到屏幕上</li>
+</ol>
+<blockquote>
+<p>重排一定会引起重绘</p>
+</blockquote>
+<p>合成：</p>
+<p>修改不要布局不要绘制的属性，只影响后续的合成操作tiles后面，性能会提升  </p>
+<p>常见的就是css3硬件加速（GPU加速），GPU并行计算，<code>transform: translateZ(0)、opacity、filters、will-change， will-change</code>提前告诉浏览器元素会发生什么变化；</p>
+<blockquote>
+<p>硬件加速减少CPU的操作，利用GPU进行渲染的一种优化方案。主要是因为css的上面提及到的一些属性，不会触发repaint。（已验证）</p>
+</blockquote>
+<p><strong>需要重点说的是：</strong>在GPU渲染过程中，一些元素符合了某些规则，而别提升到了独立的层（不同的图层），一旦独立出来，就不会影响其他dom的布局，所以可以利用这些规则，将经常变化的dom主动提升到独立的层，在浏览器一帧layout和paint的时间了</p>
+<p>如果有一些元素不需要用到上述属性，但是需要触发硬件加速效果，可以使用一些小技巧来诱导浏览器开启硬件加速。</p>
+<details>
+  <summary>诱导开启硬件加速</summary>
+  -webkit-transform: translateZ(0);<br/>
+  -moz-transform: translateZ(0);<br/>
+  -ms-transform: translateZ(0);<br/>
+  -o-transform: translateZ(0);<br/>
+  transform: translateZ(0);或者<br/>
+  transform: rotateZ(360deg);<br/>
+  transform: translate3d(0, 0, 0);<br/>
+</details>
+
+<details>
+  <summary>可以让浏览器创建单独的层</summary>
+1. 3D变换 或者透视变换（perspective，transform） 的 CSS3 属性。<br/>
+2. 使用加速视频解码的 video 元素。<br/>
+3. 拥有 3D（WebGL） 上下文或者加速 2D 上下文的 canvas 元素。<br/>
+4. 混合插件（Flash)。<br/>
+5. 对自己的 opacity 做 CSS 动画或使用一个动画 webkit 变换的元素。<br/>
+6. 拥有加速 CSS 过滤器的元素。（will-change）<br/>
+7. 元素有一个包含复合层的后代节点(换句话说，就是一个元素拥有一个子元素，该子元素在自己的层里)。<br/>
+8. 元素有一个兄弟元素在复合图层渲染，并且该兄弟元素的 z-index 较小，那这个元素也会被应用到复合图层。</details>
+
+
+<h2 id="浏览器的一帧动作一帧动作（国外文献）"><a href="#浏览器的一帧动作一帧动作（国外文献）" class="headerlink" title="浏览器的一帧动作一帧动作（国外文献）"></a>浏览器的一帧动作<a target="_blank" rel="noopener" href="https://github.com/xitu/gold-miner/blob/master/TODO1/the-anatomy-of-a-frame.md">一帧动作（国外文献）</a></h2><img src="https://bucket922.oss-cn-beijing.aliyuncs.com/blog-img/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%80%E5%B8%A7%E5%8A%A8%E4%BD%9C.jpg" width=1200/>
+
+<h4 id="1-渲染进程的合成线程Compositor-Thread，从垂直信号入手"><a href="#1-渲染进程的合成线程Compositor-Thread，从垂直信号入手" class="headerlink" title="1.渲染进程的合成线程Compositor Thread，从垂直信号入手"></a>1.渲染进程的合成线程Compositor Thread，从垂直信号入手</h4><p>vsync 是浏览器刚刚将一个满满的像素窗口推到显示器上，并且开始生成下一个像素窗口了。因此对于渲染进程来说，这意味着全员都已做好准备生成新的像素点。</p>
+<ol>
+<li>在显卡中有一块叫着前缓冲区的地方，存放着显示器要显示的图像，显示器会按照一定的频率来读取这块前缓冲区，并将前缓冲区中的图像显示在显示器上，不同的显示器读取的频率是不同的，通常情况下是 60HZ ，也就是说显示器会每间隔 1&#x2F;60 秒就读取一次前缓冲区。 </li>
+<li>当显示器将一帧画面绘制完成后，并在准备读取下一帧之前，显示器会发出一个垂直同步信号（vertical synchronization），简称 VSync</li>
+<li>操作系统告知浏览器刷新一帧图像的信号，合成进程是最先被告知垂直同步事件vsync event。</li>
+</ol>
+<h4 id="2-处理事件输入"><a href="#2-处理事件输入" class="headerlink" title="2.处理事件输入"></a>2.处理事件输入</h4><p>从合成线程将输入的数据，传递到主线程的事件处理函数。</p>
+<h4 id="3-RAF-requestAnimation"><a href="#3-RAF-requestAnimation" class="headerlink" title="3.RAF~requestAnimation"></a>3.RAF~requestAnimation</h4><p>调用 RAF在每一帧的开始，确切的说是raf的回调任务会在每一帧的开始执行；</p>
+<h4 id="4-上面的渲染过程"><a href="#4-上面的渲染过程" class="headerlink" title="4.上面的渲染过程"></a>4.上面的渲染过程</h4><p> dom、sytle、layout、layers、paint、tiles、raster、draw quad、display </p>
+<h4 id="5-帧结束还有时间调用requestIdleCallback"><a href="#5-帧结束还有时间调用requestIdleCallback" class="headerlink" title="5.帧结束还有时间调用requestIdleCallback"></a>5.帧结束还有时间调用requestIdleCallback</h4><p> 理想的一帧时间是 16ms (1000ms &#x2F; 60)，如果浏览器处理完上述的任务(布局和绘制之后)，还有盈余时间，浏览器就会调用 requestIdleCallback 的回调</p>
+<blockquote>
+<p>注意的是浏览器<strong>并不需要执行所有步骤</strong>，具体情况取决于哪些步骤是必需的。例如，如果没有新的 HTML 要解析，那么解析 HTML 的步骤就不会触发。通常<a href="https://link.juejin.cn/?target=https://developers.google.com/web/fundamentals/performance/rendering/%23the-pixel-pipeline">提升性能的最佳方法</a>，只是简单地移除流程中部分步骤被触发的需要！</p>
+</blockquote>
+<h2 id="重新理解浏览器的一帧"><a href="#重新理解浏览器的一帧" class="headerlink" title="重新理解浏览器的一帧"></a>重新理解浏览器的一帧</h2><img  src="https://bucket922.oss-cn-beijing.aliyuncs.com/blog-img/raf.jpg">
+
+<ol>
+<li>从requestAnimationFarme中，重新理解一下浏览器的一帧，自我理解是浏览器的一帧是从raf的回调执行到绘制完成，也就是（begin frame~~paint），而**<code>一些输入事件，JS代码执行是夹在两帧中的动作</code>**。</li>
+</ol>
+<h2 id="记一次面试题"><a href="#记一次面试题" class="headerlink" title="记一次面试题"></a>记一次面试题</h2><h6 id="在浏览器中，搜索输入法联想出关键词，这一动作的注入，发生在了浏览器哪个阶段？"><a href="#在浏览器中，搜索输入法联想出关键词，这一动作的注入，发生在了浏览器哪个阶段？" class="headerlink" title="在浏览器中，搜索输入法联想出关键词，这一动作的注入，发生在了浏览器哪个阶段？"></a>在浏览器中，搜索输入法联想出关键词，这一动作的注入，发生在了浏览器哪个阶段？</h6><p>​    浏览器收到一个用户输入信号，在composition开始阶段（分层合成阶段），会判断出此区域是一个单独的图层，会被单独地放在一个layer中，单独地在这个layer中进行合成和渲染一些操作。</p>
+<p>​    明确是composition start阶段，就是在刚开始就识别出来他是一个单独的layer，所以说我们在开发的时候，是用一些css属性，将某个视图提高单独的图层，就是利用这个composition start这段劫持操作，来做的一些优化，每个浏览器有一定差异，同时对于输入法有一定的字体或者一些别的差异，对于这些差异是由输入法和浏览器共同渲染绘制的，最后在形成一个layer，大体的流程是不同的。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85/low-code/" style="float: left;">
+        ← low-code
+    </a>
+    
+    
+    <a class="pull-right" href="/1-JavaScript/%E5%A0%86%E6%A0%88%E3%80%81%E6%A0%88%E5%B8%A7%E3%80%81string/">
+        堆栈、栈帧、string →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 盛祥玉. All Rights Reserved.
+                </p>
+                <p>Theme By <a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/Yxgm" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>
